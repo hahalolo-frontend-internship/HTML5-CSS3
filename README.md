@@ -6,7 +6,7 @@
     HTLM là ngôn ngữ đánh dấu siêu văn bản
 * ### HTML DOM là gì?
     1. DOM 
-    
+
             Viết tắt của Document Object Model
             Gồm 3 thành phần: 
             - Element
@@ -52,7 +52,7 @@
         ```
         
 
-* ### Element Thường Sử Dụng
+* ### Element 
     1. Img
         ```html
             <img src="#" alt="#"></img>
@@ -109,15 +109,109 @@
         <summary>   - Xác định đề tài cho details phần tử
         <div>       - được sử dụng để tạo ra một khu vực kiểu block nào đó trên một website, hay bạn có thể hiểu là gom nhóm tập hợp các phần tử trên website vào một khu vực.
     7. Thẻ meta
-        - Được sử dụng để cung cấp metadata về tài liệu HTML.
-        - Được sử dụng để định nghĩa các thông tin cơ bản như mô tả trang web, từ khóa, tác giả.
+        -Thường được đặt ở phần đầu trong `<head>` của trang html để cung cấp thông tin về trang web cho công cụ tìm kiếm.
+        -Bao gồm: nhan đề, từ khóa chính, tóm tắt nội dng, ngôn ngữ chính được sử dụng...
+        - Những thẻ meta quan trọng
+            - Thẻ meta description : thẻ này tóm tắt nội dung của trang web.
+                ```html
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                ``` 
+            - Thẻ meta content-type: 
+                ```html
+                   <meta name="description" content="Nội dung chính của trang">
+                ``` 
+                - Khai báo hệ thống ký tự trên trang web sử dụng, cho biết nội dung trang web dược mã hóa ký tự ra sao, để có thể hiển thị thông tin 1 cách tốt nhất.
+            - Thẻ meta viewport:
+                ```html
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                ``` 
+                - Để cần tối ưu website cho phù hợp với nhiều thiết bị thì bạn cần phải dùng đến thẻ này. Thẻ này sẽ hướng dẫn trình duyệt cách điều khiển kích thước cũng như tỉ lệ phóng to thu nhỏ.
+                - Ý nghĩa: 
+                    - width=devivce-width là để diều chỉnh cho khớp độ rộng màn hình với số pixel của thiết bị
+                    - initial-scale=1 thiết lập tỉ lệ zoom ban đầu là 1:1 giữa pixel CSS và pixel của thiết bị.
+            - Thẻ meta open graph  : Giúp cho các mạng xã hội như FB, TW, ZL.. xác định được những thông tin chính xác về trang web, và hiển thị những thông tin đó khi có ai đó chia sẽ trang web lên mạng xã hội.
+                - Các loại thẻ OG:
+                    1. Ảnh đại diện (image): ứng với property="og:image", thuộc tính thể hiện ảnh đại diện cho trang web.
+                    2. Nhan đề (title): ứng với property="og:title", nhan đề của trang web nó tương tự như thẻ title
+                    3. Url của trang web (dưới title và ẩn trong image): ứng với property="og:url" hiển thị url của trang web.
+                    4. Đoạn mô tả ngắn (description) tương ứng với property="og:description" mô tả ngắn trang web 
+                    5. Type mô tả loại đối tượng thông tin mà bạn đang muốn chia sẻ như là book, game, movie ..
+                    - [Link Đọc Thêm Các Loại Thẻ OG](https://ogp.me/#types)
+                ```html
+                    <meta property="og:title" content="The Rock">
+                    <meta property="og:type" content="video.movie">
+                    <meta property="og:url" content="http://127.0.0.1:5500/HTML5/index.html">
+                    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images">
+                    <meta property="og:desciption" content="https://encrypted-tbn0.gstatic.com/images">
+                ```
+            - Thẻ meta robots : được sử dụng đặt trong trang webstie để điều khiển robots đọc nội dung từng tra. Nếu muốn một trang web của mình như một landing page chạy quảng cáo hoặc một trang nội dung mà bạn muốn chặn không cho bot GG quét tới thì chỉnh sửa thẻ meta robots như sau
+                ```html
+                <meta name="robots" content="index, follow"> 
+                <meta name="robots" content="noindex, nofollow"> 
+                <meta name="robots" content="noindex"> 
+                <meta name="robots" content="nofollow"> 
+                ```
+            - Thẻ meta language: Khai báo về ngôn ngữ chính mà trang web sử dụng.
+                ```html
+                    <html lang="en">
+                ```
+            - Thẻ meta geo: Khai báo vị trí địa lý cụ thể của doanh nghiệp. Mục đích để cho công cụ tìm kiếm định hướng tốt hơn với người dùng trong khu vực mà bạn đang cung cấp sản phẩm dịch vụ.
+                ```html
+                <meta name="geo.region" content="HU" /> - Khu vực
+                <meta name="geo.placename" content="Huế" /> - Tên địa điểm
+                <meta name="geo.position" content="47.181759;19.506094" /> - Định vị
+                <meta name="ICBM" content="47.181759, 19.506094" />
+
+                ```
+
+    8. SVG (Scalable Vector Graphics)
+        - Là một định dạng hình ảnh sử dụng cấu trúc XML để hiển thị hình ảnh dưới dạng vector.
+        - Khi co giản không làm giảm chất lượng hình ảnh.
+
         ```html
-            <meta name="#" content="" charset="" http-equiv="">
-                - Name: Cung cấp tên HTML cho một thông tin có trong thuộc tính content
-                - Content: Xác định nội dung cho thông tin dữ liệu
-                - Charset: Mã hóa ký tự- Xác định bộ mã ký tự cho văn bản HTML
-                - http-quiv : Cung cấp tiêu đề HTML cho một thông tin có trong thuộc tính content
+            <text x="5" y="30"></text> tạo một thẻ text
+            <line x1="3" y1="19" x2="83" y2="19"></line>
+            Tạo đường thẳng đơn
+            <rect x="3" y="3" width="80" height="60"></rect>
+            Tạo hình chữ nhật và hình vuông
+            <circle cx="50" cy="50" r="40"></circle>
+            Tạo hình tròn
+            <polygon points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78" />
+            Vẽ bất kì đa giác ngẫu nhiên 
+            <g id="my-group">
+                <rect x="0" y="100" width="100" height="100" fill="#59fa81" />
+                <rect x="100" y="0" width="100" height="100" fill="#ad4a3d" />
+            </g>
+            Nhóm bất kỳ thẻ nào khác
+
+             <path d="M 100 100 L 200 200 H 10 V 40 H 70"
+            fill="#59fa81" stroke="#d85b49" stroke-width="3" />
+            Là một chuỗi các đường thẳng và đường cong là công cụ mạnh nhất để vẽ bằng cách sử dụng SVG
+            
+            <textPath>
         ```
+                fill: thuộc tính màu cho hình
+                stroke: thuộc tính màu cho line
+                x: góc trên bên trái nằm trên truc x
+                y: góc trên bên trái nằm trên trục y
+                rx,ry dùng để bo tròn các góc
+                width: chiều rộng cái hình
+                height: chiều cao của cái hình
+                cx, cy: tọa độ trung tâm 
+                r: bán kính 
+                x1, y1 : là tọa độ bắt đầu
+                x2, y2 : là tọa độ kết thúc
+                point  : là tập tọa độ x,y 
+                M (Move) : một tập tọa độ x,y
+                L (Line) : tập tạo độ x,y để vẽ đường 
+                H (Horizontal Line) là một đường nằm ngang, nó chỉ nhận tọa độ x
+                V (Vertical) là một đường thẳng đứng , nó chỉ nhận tọa độ y
+                Z (Close Path) tạo một đường quay trở lại điểm ban đầu
+                A (Arch) hình cung
+                Q là một đường cong Bezier bậc 2
+
+
+    9.
     
 * ### Attribute 
     1. Class 
@@ -140,11 +234,4 @@
         - Xác định thông tin thêm về một phần tử
         - Khi rê chuột lên phần tử có thuộc tính title thì nó sẽ hiển thị dưới dạng văn bản
         - Nó có thể sử dụng ở bất kỳ trên phần tử HTML.  
-    4. Viewport
-         ```html
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            - initial-scale=1.0 : Độ phóng to ban đầu
-            - device-width      : Chiều rộng bằng chiều rộng của thiết bị.
-        ```
-        - Giải quyết vấn đề nội dung không hiển thị như ý muốn cụ thể là nội dung bị phóng to hoặc thu nhỏ với tỷ lệ khác đi.
-        - [Tham khảo thêm](https://hocwebchuan.com/tutorial/responsive/responsive_viewport.php)
+    
