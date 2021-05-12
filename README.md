@@ -80,10 +80,14 @@
                 <td></td>
             </tr>
         </table>
+        - Các element trong Table
         - caption: Là Tag chú thích của bảng luôn nằm đầu trong Tag Table
         - tr : Là tag xác định một hàng trong bảng
         - th : Tiêu đề của bảng
         - td : Là tag xác định dữ liệu của bảng
+        - thead : được sử dụng để nhóm nội dung header trong một bảng
+        - tbody : được dùng để nhóm nội dung body trong một bảng
+        - tfooter: được dùng để nhóm nội dung footer trong một bảng
     4. List
         ```html
         <ul>
@@ -114,11 +118,11 @@
         - Những thẻ meta quan trọng
             - Thẻ meta description : thẻ này tóm tắt nội dung của trang web.
                 ```html
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <meta name="description" content="Nội dung chính của trang">
                 ``` 
             - Thẻ meta content-type: 
                 ```html
-                   <meta name="description" content="Nội dung chính của trang">
+                   <meta charset="UTF-8">
                 ``` 
                 - Khai báo hệ thống ký tự trên trang web sử dụng, cho biết nội dung trang web dược mã hóa ký tự ra sao, để có thể hiển thị thông tin 1 cách tốt nhất.
             - Thẻ meta viewport:
@@ -188,6 +192,8 @@
             fill="#59fa81" stroke="#d85b49" stroke-width="3" />
             Là một chuỗi các đường thẳng và đường cong là công cụ mạnh nhất để vẽ bằng cách sử dụng SVG
             
+            <defs> Dùng để định nghĩa phần tử khai báo 1 lần và tái sử dụng được nhiều lần. Tất cả những gì bên trong sẽ không được hiển thị lên màng hình trừ khi ta gọi nó ra
+            <use> Giúp ta sử dụng các phần tử được định nghĩa ở các vị trí mình cần
             <textPath>
         ```
                 fill: thuộc tính màu cho hình
@@ -211,7 +217,14 @@
                 Q là một đường cong Bezier bậc 2
 
 
-    9.
+    9. Thẻ figure 
+        - Là một tag block thích hợp để xác định một nội dung cần tách biệt rõ ràng. Thường đi cùng với nó là figcaption
+        ```html
+        <figure>
+            <figcaption></figcaption>
+            <img src="#">
+        </figure> 
+        ```
     
 * ### Attribute 
     1. Class 
