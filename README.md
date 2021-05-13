@@ -1,5 +1,3 @@
-# HTML5-CSS3
-
 ## HTML5
 ---
 * ### HTML là gì?
@@ -19,8 +17,7 @@
 
 
 * ### Xử lý Text
-    * Heading
-        1. Heading 1-6
+    1. Heading 1-6
         ```html
         <h1>Heading 1</h1>   
         <h2>Heading 2</h2>   
@@ -29,7 +26,7 @@
         <h5>Heading 5</h5>   
         <h6>Heading 6</h6>   
         ```
-        2. Paragraphs
+    2. Paragraphs
         ```html 
         <p>Paragraph</p>
         <pre></pre>                  -hiển thị mặt định text
@@ -38,18 +35,34 @@
         <strong></strong> <b></b>    -in đậm
         <i></i>                      -in nghiêng
         ```
-        3. Link
+    3. Link
+            - Text link
+            ```html
+            <a href="link" target="#" name="#"></a>   
+            ```
+            - Img Link
+            ```html
+            <a href="/html" target="_self">
+                <img src="/images/logo/html-tutorial.png" alt="HTML" /> 
+            </a> 
+            ```
+            - Email Link
+            ```html
+            <a href= "mailto:your_email@example.com">Send Email</a> 
+            ```
+            - Thuộc tính:
+                + href cho biết điểm đến của liên kết
+                + target có 4 loại: 
+                    
+                    _self  : Mở tài liệu trong cùng 1 cửa sổ khi click vào
+                    
+                    _blank : Mở tài liệu trong một cửa sổ mới.
 
-        ```html
-        <a href="link" target="#"></a>   
-        - Tag a có 2 Attibute thường dùng là:  
-        + href cho biết điểm đến của liên kết
-        + target có 4 loại: 
-            _self  : Mở tài liệu trong cùng 1 cửa sổ khi click vào
-            _blank : Mở tài liệu trong một cửa sổ mới.
-            _parent: Mở tài liệu trong khung cha chứa nó
-            _top   : Mở tài liệu trong khung chính
-        ```
+                    _parent: Mở tài liệu trong khung cha chứa nó
+                    
+                    _top   : Mở tài liệu trong khung chính
+                + name: dùng để liên kết tới khu vực trong trang mà bạn muốn tới.
+        
         
 
 * ### Element 
@@ -171,12 +184,13 @@
                 <meta name="ICBM" content="47.181759, 19.506094" />
 
                 ```
-
     8. SVG (Scalable Vector Graphics)
         - Là một định dạng hình ảnh sử dụng cấu trúc XML để hiển thị hình ảnh dưới dạng vector.
         - Khi co giản không làm giảm chất lượng hình ảnh.
 
         ```html
+            <svg></svg>
+            - Những thẻ thường dùng nằm trong svg
             <text x="5" y="30"></text> tạo một thẻ text
             <line x1="3" y1="19" x2="83" y2="19"></line>
             Tạo đường thẳng đơn
@@ -199,7 +213,10 @@
             <defs> Dùng để định nghĩa phần tử khai báo 1 lần và tái sử dụng được nhiều lần. Tất cả những gì bên trong sẽ không được hiển thị lên màng hình trừ khi ta gọi nó ra
             <use> Giúp ta sử dụng các phần tử được định nghĩa ở các vị trí mình cần
             <textPath>
-        ```
+                
+        ```     
+
+                viewBox: xác định vị trí và kích thước của một cửa sổ xem SVG
                 fill: thuộc tính màu cho hình
                 stroke: thuộc tính màu cho line
                 x: góc trên bên trái nằm trên truc x
@@ -219,8 +236,6 @@
                 Z (Close Path) tạo một đường quay trở lại điểm ban đầu
                 A (Arch) hình cung
                 Q là một đường cong Bezier bậc 2
-
-
     9. Thẻ figure 
         - Là một tag block thích hợp để xác định một nội dung cần tách biệt rõ ràng. Thường đi cùng với nó là figcaption
         ```html
@@ -314,7 +329,29 @@
             - name : chỉ định một tên được sử dụng để nhận diện các thành phần trên form
             - novalidate: chỉ định trình duyệt sẽ không hợp lệ cho form
             - target: chỉ định đích của một địa chỉ trong thuộc tính action.
-* ### Attribute 
+    13. ifame
+        - Được sử dụng để hiện thị một trang web trong một trang web khác
+        ```html
+        <iframe src="#" width="600" height="300">
+        Rat tiec vi trinh duyet cua ban khong ho tro Iframe.
+        </iframe>
+        ```
+        - Thuộc tính:
+            - src: tên file hoặc địa chỉ url sẽ được hiển thị trong iframe
+            - name" tên iframe
+            - noresize:  ngăn người sử dụng kéo lại kích thước.
+            - marginwitdth: xác định độ rộng của khoảng cách trái và phải
+            - marginheight: xác định khoảng cách trên và dưới 
+            - srolling : hiển thị thanh cuộn trên iframe
+    14. Source
+        - Dùng để hiển định tài nguyên, cho trình nghe nhạc hoặc xem phim trong trang web thường dùng trong thẻ `<audio></audio>` hoặc `<video></video>` và `<picture>`.
+        - Thuộc tính
+            - Media: Hiển thị tại kích thước màn hình nào đó có các giá trị như width, height
+            - srcset: sử dụng các ảnh khác nhau dùng cho thẻ picture
+            - src: sử dụng để xác định URL của tập tin phương tiện dùng cho thẻ audio và video
+
+        -
+* ### Attribute (thuộc tính chung thường dùng)
     1. Class 
         - Sử dụng được trên nhiều element HTML 
         - Phân biệt chữ hoa chữ thường
@@ -335,4 +372,28 @@
         - Xác định thông tin thêm về một phần tử
         - Khi rê chuột lên phần tử có thuộc tính title thì nó sẽ hiển thị dưới dạng văn bản
         - Nó có thể sử dụng ở bất kỳ trên phần tử HTML.  
-    
+    4. Hidden
+        - Ẩn phần tử
+    5. Style
+        - Nhúng style trực tiếp vào element
+
+* ### MEDIA
+    1. Video
+        Hiển thị video
+        ```html
+            <video width="320" height="240" controls>
+                <source src="https://youtu.be/Mq8uItzRBKk" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        ```
+    2. Âm thanh
+
+        ```html
+            <audio controls>
+                <source src="horse.ogg" type="audio/ogg">
+                <source src="horse.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        ```
+
