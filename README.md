@@ -293,27 +293,27 @@
                         week]`
             - value `[text]`: chỉ định giá trị của một phần tử input
             - width `[pixels]`: chỉ định chiều rộng của một phần tử input (chỉ đối với type="image")
-        12. Form
-           - Dùng để nhập dữ liệu từ phía người dùng
-           - Các element
-                input
-                textarea : ô văn bản nhập nhiều dòng 
-                label : nhãn
-                fieldset : nhóm các phần tử liên quan
-                legend : mô trả cho thẻ fildset
-                select : định nghĩa 1 list drop-down
-                optgroup : định nghĩa một nhóm các tùy chọn liên quan thành một danh sách drop-down
-                option : định nghĩa một option trong một danh sách drop-down
-                button : định nghĩa một nút có thể click
-            - Các thuộc tính
-                accept-charset: chỉ định bảng mã được sử dụng trong form 
-                action: chỉ định một địa chỉ url sẽ gữi dữ liệu trên form tới
-                autocomplete: chỉ định cho trình duyệt tự động từ người sử dụng đã nhập trước đó.
-                enctype : chỉ định mã hóa dữ liệu gữi đi
-                method : chỉ định phương thức HTTP được sử dụng khi gữi form
-                name : chỉ định một tên được sử dụng để nhận diện các thành phần trên form
-                novalidate: chỉ định trình duyệt sẽ không hợp lệ cho form
-                target: chỉ định đích của một địa chỉ trong thuộc tính action.
+    12. Form
+        - Dùng để nhập dữ liệu từ phía người dùng
+        - Các element
+            - input
+            - textarea : ô văn bản nhập nhiều dòng 
+            - label : nhãn
+            - fieldset : nhóm các phần tử liên quan
+            - legend : mô trả cho thẻ fildset
+            - select : định nghĩa 1 list drop-down
+            - optgroup : định nghĩa một nhóm các tùy chọn liên quan thành một danh sách drop-down
+            - option : định nghĩa một option trong một danh sách drop-down
+            - button : định nghĩa một nút có thể click
+        - Các thuộc tính
+            - accept-charset: chỉ định bảng mã được sử dụng trong form 
+            - action: chỉ định một địa chỉ url sẽ gữi dữ liệu trên form tới
+            - autocomplete: chỉ định cho trình duyệt tự động từ người sử dụng đã nhập trước đó.
+            - enctype : chỉ định mã hóa dữ liệu gữi đi
+            - method : chỉ định phương thức HTTP được sử dụng khi gữi form
+            - name : chỉ định một tên được sử dụng để nhận diện các thành phần trên form
+            - novalidate: chỉ định trình duyệt sẽ không hợp lệ cho form
+            - target: chỉ định đích của một địa chỉ trong thuộc tính action.
 * ### Attribute 
     1. Class 
         - Sử dụng được trên nhiều element HTML 
