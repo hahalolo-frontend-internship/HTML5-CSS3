@@ -88,6 +88,9 @@
         - thead : được sử dụng để nhóm nội dung header trong một bảng
         - tbody : được dùng để nhóm nội dung body trong một bảng
         - tfooter: được dùng để nhóm nội dung footer trong một bảng
+        - Thuộc tính : 
+                - cols 
+                - rows
     4. List
         ```html
         <ul>
@@ -111,7 +114,8 @@
         <footer>    - Xác định chân trang cho một tài liệu hoặc một phần
         <details>   - Xác định các chi tiết bổ sung mà người dùng có thể mở và đóng theo yêu cầu
         <summary>   - Xác định đề tài cho details phần tử
-        <div>       - được sử dụng để tạo ra một khu vực kiểu block nào đó trên một website, hay bạn có thể hiểu là gom nhóm tập hợp các phần tử trên website vào một khu vực.
+        <div>       - Nhóm các phần tử liên quan lại thành một khối (block) 
+        <span>      - Nhóm các văn bản, hình ảnh,... thành nhóm nhỏ (inline)
     7. Thẻ meta
         -Thường được đặt ở phần đầu trong `<head>` của trang html để cung cấp thông tin về trang web cho công cụ tìm kiếm.
         -Bao gồm: nhan đề, từ khóa chính, tóm tắt nội dng, ngôn ngữ chính được sử dụng...
@@ -137,7 +141,7 @@
                 - Các loại thẻ OG:
                     1. Ảnh đại diện (image): ứng với property="og:image", thuộc tính thể hiện ảnh đại diện cho trang web.
                     2. Nhan đề (title): ứng với property="og:title", nhan đề của trang web nó tương tự như thẻ title
-                    3. Url của trang web (dưới title và ẩn trong image): ứng với property="og:url" hiển thị url của trang web.
+                    3. Url của trang web (trên title và ẩn trong image): ứng với property="og:url" hiển thị url của trang web.
                     4. Đoạn mô tả ngắn (description) tương ứng với property="og:description" mô tả ngắn trang web 
                     5. Type mô tả loại đối tượng thông tin mà bạn đang muốn chia sẻ như là book, game, movie ..
                     - [Link Đọc Thêm Các Loại Thẻ OG](https://ogp.me/#types)
@@ -225,7 +229,91 @@
             <img src="#">
         </figure> 
         ```
-    
+    10. Thẻ Marquee
+        - Di chuyển chữ hoặc ảnh theo chiều ngang dọc một cách tự động.
+        ```html 
+            <marquee>Đây là một ví dụ về html marquee </marquee>
+        ```
+        - Thuộc tính  
+            - behavior: chỉ định di chuyển bằng 1 trong 3 giá trị sau: scroll, side và alternate
+            - direction : chỉ định hướng di chuyển của nội dung. Các giá trị left, right, down, up
+            - width: chiều rộng 
+            - height: chiều cao
+            - hspace: chiều cao không giang tính bằng px mà marquee di chuyển trong nó.
+            - vspace: chiều rộng không giang tính bằng px mà marquee di chuyển trong nó.
+            - scrolldelay: độ trễ khi cuộn theo s
+            - scrollamount: số lần cuộn theo số
+            - loop: vòng lặp cho nội dung của marquee theo số.
+            - bgcolor: màu nền của marquee
+    11. Thẻ input
+        - Dùng để cho người dùng nhập dữ liệu
+        - Thuộc tính:
+            - accept `[file_extension,audio,video/*,image/*,media_type]`: chỉ định kiểu của file mà server chấp nhận (chỉ khi type="file")
+            - alt  `[text]` : chỉ định một văn bản thay thế cho hình ảnh
+            - autocomplete `[on,off]`: chỉ định một phần tử input có cần phải bật tính năng tự động hoàn tất
+            - autofocus  `[autofocus]`: chỉ định răng một phần tử input được focus tự động khi trang tải trang web
+            - checked `[checked]`: chỉ định rằng một phần tử có được chọn trước khi tải trang web (đối với type="checkbox" or type="radio")
+            - dirname `[inputname.dir]`: chỉ định hướng văn bản sẽ được gửi
+            - disabled `[disabled]`: chỉ định phần tử input bị vô hiệu hóa
+            - form `[form_id]`: chỉ định một hoặc nhiều form mà có phần tử input thuộc về nó
+            - formaciton `[URL]`: chỉ định URL của file sẽ xử lý các thông tin của form được gửi (đối với type="submit" và type="image")
+            - formenctype`[	application/x-www-form-urlencoded,multipart/form-data,text/plain]`: Chỉ định cách dữ liệu của form phải được mã hoá khi gửi nó lên máy chủ (đối với type="submit" và type="image")
+            - formmethod `[get,post]`: định nghĩa phương thức HTTP chovieejc gửi dữ liệu của form tới action URL (đối với type="submit" và type="image")
+            - list `[datalist_id]`: tham chiếu đến một phần tử datalist chứa các tùy chọn được định nghĩa trước.
+            - multiple `[multiple]` : chỉ định rằng người dùng có thể nhập nhiều hơn một giá trị cho phần tử input
+            - name `[text]`: chỉ định tên của một phần tử input
+            - pattern `[regexp]`: chỉ định một biểu thức chính quy được sử dụng để kiểm tra giá  trị phần tử.
+            - placeholder `[text]`: Chỉ định một gợi ý gắn mà mô tả giá trị mong đợi của một phần tử input.
+            - readonly `[readonly] `: Chỉ đinh rằng một trường input là chỉ đọc
+            - required `[required]` : Chỉ định rằng một trường input phải được nhập trước khi gửi form
+             - size `[number]`: Chỉ định chiều rộng theo ký tự của một phần tử input
+             - src `[URL]`: Chỉ định URL để sử dụng như 1 nút gửi (chỉ đối với type="image")
+             - step `[number]`: Chỉ định các khoảng cách số hợp lệ cho một trường nhập
+             - type `[	button
+                        checkbox,
+                        color,
+                        date,
+                        datetime-local,
+                        email,
+                        file,
+                        hidden,
+                        image,
+                        month,
+                        number,
+                        password,
+                        radio,
+                        range,
+                        reset,
+                        search,
+                        submit,
+                        tel,
+                        text,
+                        time,
+                        url,
+                        week]`
+            - value `[text]`: chỉ định giá trị của một phần tử input
+            - width `[pixels]`: chỉ định chiều rộng của một phần tử input (chỉ đối với type="image")
+        12. Form
+           - Dùng để nhập dữ liệu từ phía người dùng
+           - Các element
+                input
+                textarea : ô văn bản nhập nhiều dòng 
+                label : nhãn
+                fieldset : nhóm các phần tử liên quan
+                legend : mô trả cho thẻ fildset
+                select : định nghĩa 1 list drop-down
+                optgroup : định nghĩa một nhóm các tùy chọn liên quan thành một danh sách drop-down
+                option : định nghĩa một option trong một danh sách drop-down
+                button : định nghĩa một nút có thể click
+            - Các thuộc tính
+                accept-charset: chỉ định bảng mã được sử dụng trong form 
+                action: chỉ định một địa chỉ url sẽ gữi dữ liệu trên form tới
+                autocomplete: chỉ định cho trình duyệt tự động từ người sử dụng đã nhập trước đó.
+                enctype : chỉ định mã hóa dữ liệu gữi đi
+                method : chỉ định phương thức HTTP được sử dụng khi gữi form
+                name : chỉ định một tên được sử dụng để nhận diện các thành phần trên form
+                novalidate: chỉ định trình duyệt sẽ không hợp lệ cho form
+                target: chỉ định đích của một địa chỉ trong thuộc tính action.
 * ### Attribute 
     1. Class 
         - Sử dụng được trên nhiều element HTML 
