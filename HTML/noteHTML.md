@@ -1,5 +1,3 @@
-## HTML
-
 ## HTML Basic
 
 **_Một vài thẻ Meta Cơ Bản_**
@@ -35,12 +33,36 @@
 ## 1. Một số thẻ text
 
 ```html
-<h1>
-  This's h1, And tag heading have total 6 tags. from 1 to 6 Corresponding 6
-  level from hight to low
-</h1>
-<p>this's tag paragraph</p>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<!-- Tương ứng với 6 cấp độ -->
 ```
+
+`Kết quả đầu ra`
+
+<img src="./imgs/Untitled5.png" alt="các thẻ heading">
+
+```html
+<p>this's tag paragraph</p>
+<p>
+  My Bonnie lies over the ocean. My Bonnie lies over the sea. My Bonnie lies
+  over the ocean. Oh, bring back my Bonnie to me.
+</p>
+```
+
+`Kết quả đầu ra: `
+
+My Bonnie lies over the ocean.
+
+My Bonnie lies over the sea.
+
+My Bonnie lies over the ocean.
+
+Oh, bring back my Bonnie to me.
 
 ```html
 <pre>
@@ -196,11 +218,46 @@ ví dụ về thẻ strong
 
 ## 5. Thẻ link
 
+1. Cú pháp thẻ link bình thường:
+
 ```html
-<a href="https://www.google.com/" title="link to google"> Google Link</a>
+<a href="https://www.google.com/" target="" title="link to google">
+  Google Link</a
+>
 ```
 
 `Kết quả đầu ra: `<a href="https://www.google.com/" title="link to google"> Google Link</a>
+
+- là thẻ link buồn phải có **Attribute href**
+- Ngoài ra thẻ a còn có một số attribute chính khác như là target, tittle, download, etc...
+- Attribute `target` Có 4 value:
+  - **self: là value mặc định. K có attribute Target nó cũng tự hiểu là **self. Có tác dụng là mở trang khác trong cùng 1 window
+  - \_\_blank: Mở tài liệu sang 1 tab or window khác
+  - \_\_parent: Mở tài liệu trong khung cha.
+  - \_\_top: Mở tài liệu trong toàn bộ khung chính
+- Attribute `download`: Chỉ định mục tiêu sẽ được down khi người dùng nhấp vào liên kết
+
+2.  Link hình ảnh:
+
+```html
+<a
+  href="https://www.google.com/"
+  target=""
+  title="link to google"
+  target="__blank"
+>
+  <img src="./imgs/Untitled6.png" alt="link to google" />
+</a>
+```
+
+`Kết quả đầu ra: `
+<a
+href="https://www.google.com/"
+target=""
+title="link to google"
+target="\_\_blank">
+<img src="./imgs/Untitled6.png" alt="link to google" />
+</a>
 
 ## 6. Thẻ liệt kê danh sách
 
@@ -377,13 +434,13 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 ```html
 <picture>
   <source
-    media="(min-width: 650px)"
+    media="(min-width: 1000px)"
     srcset="
       https://kinhnghiemquy.com/upload/img/2020/01/14/ca_betta_2_1578970632441.jpg
     "
   />
   <source
-    media="(min-width: 465px)"
+    media="(min-width: 700px)"
     srcset="https://baokhuyennong.com/wp-content/uploads/2020/11/ca-xiem-1.jpg"
   />
   <img
@@ -394,13 +451,10 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 ```
 
 `Kết quả đầu ra:`
-<picture>
 
-  <source media="(min-width: 650px)" srcset="https://kinhnghiemquy.com/upload/img/2020/01/14/ca_betta_2_1578970632441.jpg">
-  <source media="(min-width: 465px)" srcset="https://baokhuyennong.com/wp-content/uploads/2020/11/ca-xiem-1.jpg">
-  <img src="https://suncaphe.com/wp-content/uploads/2020/12/Cung-c%E1%BA%A5p-c%C3%A1-betta-1.jpg" style="width: 300px">
-</picture>
+<img src="./imgs/Untitled7.png" >
 
+- Nó không hiện 1 lúc 3 ảnh
 - Element `picture` có thể chứa nhiều nhiều emls `<scource>` và mỗi elm `<source>` đó link tới những hình ảnh khác nhau thông qua srcset ="url".
 - Trình duyệt sẽ tự động chọn hình ảnh với chế độ xem hoặc thiết bị hiện tại
 - Mỗi emls `<scource>` có thuộc tính `media` để xác định break point để thay đổi hình ảnh cho phù hợp
@@ -649,6 +703,38 @@ Ví dụ 1 ý nghĩa 1 số thẻ:
 
 ## 13. Thành phần đồ họa:
 
-- tag svg là từ viết tắc của scalable vector graphic ( vector đồ họa mở rộng ). SVG định nghĩa đồ họa dựa trên vectơ ở định dạng XML. nó được dùng để định dạng đồ họa cho web. Nó có 1 số methods cho việc vẽ là paths, boxes, circles, text, and graphic images
+1. SVG
 
-- canvas là thành phần được dùng để vẽ đồ họa.Nó là vùng chứa cho đồ họa. Nó có 1 số methods cho việc vẽ paths, boxes, circles, text, and adding images.
+- tag svg là từ viết tắc của scalable vector graphic ( vector đồ họa mở rộng ).
+- SVG định nghĩa đồ họa dựa trên vectơ ở định dạng XML. nó được dùng để định dạng đồ họa cho web. Nó có 1 số methods cho việc vẽ là paths, boxes, circles, text, and graphic images
+
+```html
+<svg width="100" height="100">
+  <circle
+    cx="50"
+    cy="50"
+    r="40"
+    stroke="green"
+    stroke-width="4"
+    fill="yellow"
+  />
+</svg>
+```
+
+<img src="./imgs/Untitled8.png">
+
+2. Canvas
+
+- canvas là thành phần được dùng để vẽ đồ họa.Nó là vùng chứa cho đồ họa.
+- Nó có 1 số methods cho việc vẽ paths, boxes, circles, text, and adding images.
+- Phần tử HTML được sử dụng để vẽ đồ họa một cách nhanh chóng, thông qua JavaScript
+
+Ví dụ đơn giản:
+
+```html
+<canvas id="myCanvas" width="200" height="100"></canvas>
+```
+
+`Kết quả đầu ra: `
+
+<img src="./imgs/Untitled9.png" alt ="canvas">
