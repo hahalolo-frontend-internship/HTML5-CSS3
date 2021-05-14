@@ -56,7 +56,7 @@
 
 `Kết quả đầu ra: `
 
-<p>this's tag paragraph</p>git
+<p>this's tag paragraph</p>
 <p>
 My Bonnie lies over the ocean. My Bonnie lies over the sea.My Bonnie lies over the ocean. Oh, bring back my Bonnie to me.
 
@@ -94,6 +94,85 @@ Thẻ pre bảo toàn mọi khoảng trắng bên trong thẻ
 <img src="../url" alt="alternate for img when url faild" />
 <!-- Đây là thẻ hình ảnh, alt là attribute chỉ định văn bản thay thế cho hình ảnh khi ảnh bị lỗi or sai đường dẫn -->
 ```
+
+**1. Thẻ image**
+
+```html
+<img
+  src="https://i.pinimg.com/originals/64/aa/4c/64aa4cb31e0a64ec096c41f45c8de878.png"
+  alt="dog"
+  style="width:40%"
+/>
+```
+
+`Kết quả đầu ra: `
+<img src="https://i.pinimg.com/originals/64/aa/4c/64aa4cb31e0a64ec096c41f45c8de878.png" alt="dog" style="width:40%">
+
+Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, JPEG, PNG, SVG`
+
+**2. thẻ image có sử dụng thuộc tính usemap:**
+
+```html
+<img
+  src="https://hutbuicongnghiep.com/wp-content/uploads/2020/11/cho-sieu-dang-yeu.jpg"
+  alt="dog"
+  style="width:40%"
+  usemap="#mymap"
+/>
+<map name="mymap">
+  <area
+    shape="rect"
+    coords="34,44,270,350"
+    alt="Computer"
+    href="https://www.google.com/"
+/></map>
+```
+
+`Kết quả đầu ra:`
+<img
+  src="https://hutbuicongnghiep.com/wp-content/uploads/2020/11/cho-sieu-dang-yeu.jpg"
+  alt="dog"
+  style="width:300px"
+  usemap="#mymap"
+/>
+<map name="mymap">
+<area
+    shape="rect"
+    coords="50,50,150,150"
+    alt="Computer"
+    href="https://www.google.com/"
+/></map>
+
+**3. Thẻ picture:**
+
+```html
+<picture>
+  <source
+    media="(min-width: 1000px)"
+    srcset="
+      https://kinhnghiemquy.com/upload/img/2020/01/14/ca_betta_2_1578970632441.jpg
+    "
+  />
+  <source
+    media="(min-width: 700px)"
+    srcset="https://baokhuyennong.com/wp-content/uploads/2020/11/ca-xiem-1.jpg"
+  />
+  <img
+    src="https://suncaphe.com/wp-content/uploads/2020/12/Cung-c%E1%BA%A5p-c%C3%A1-betta-1.jpg"
+    style="width: 300px"
+  />
+</picture>
+```
+
+`Kết quả đầu ra:`
+
+<img src="./imgs/Untitled7.png" >
+
+- Nó không hiện 1 lúc 3 ảnh
+- Element `picture` có thể chứa nhiều nhiều emls `<scource>` và mỗi elm `<source>` đó link tới những hình ảnh khác nhau thông qua srcset ="url".
+- Trình duyệt sẽ tự động chọn hình ảnh với chế độ xem hoặc thiết bị hiện tại
+- Mỗi emls `<scource>` có thuộc tính `media` để xác định break point để thay đổi hình ảnh cho phù hợp
+- Ngoài ra Một số trình duyệt hoặc thiết bị có thể không hỗ trợ tất cả các định dạng hình ảnh. Ta sử dụng `<picture>` để Trình duyệt sẽ sử dụng định dạng hình ảnh mà nó nhận dạng được và bỏ qua tất cả những elms còn lại
 
 ## 3. Một Số thẻ định dạng phổ biến:
 
@@ -377,88 +456,7 @@ target="\_\_blank">
 </tbody>
 </table>
 
-## 8. Thẻ Table
-
-**1. Thẻ image**
-
-```html
-<img
-  src="https://i.pinimg.com/originals/64/aa/4c/64aa4cb31e0a64ec096c41f45c8de878.png"
-  alt="dog"
-  style="width:40%"
-/>
-```
-
-`Kết quả đầu ra: `
-<img src="https://i.pinimg.com/originals/64/aa/4c/64aa4cb31e0a64ec096c41f45c8de878.png" alt="dog" style="width:40%">
-
-Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, JPEG, PNG, SVG`
-
-**2. thẻ image có sử dụng thuộc tính usemap:**
-
-```html
-<img
-  src="https://hutbuicongnghiep.com/wp-content/uploads/2020/11/cho-sieu-dang-yeu.jpg"
-  alt="dog"
-  style="width:40%"
-  usemap="#mymap"
-/>
-<map name="mymap">
-  <area
-    shape="rect"
-    coords="34,44,270,350"
-    alt="Computer"
-    href="https://www.google.com/"
-/></map>
-```
-
-`Kết quả đầu ra:`
-<img
-  src="https://hutbuicongnghiep.com/wp-content/uploads/2020/11/cho-sieu-dang-yeu.jpg"
-  alt="dog"
-  style="width:300px"
-  usemap="#mymap"
-/>
-<map name="mymap">
-<area
-    shape="rect"
-    coords="50,50,150,150"
-    alt="Computer"
-    href="https://www.google.com/"
-/></map>
-
-**3. Thẻ picture:**
-
-```html
-<picture>
-  <source
-    media="(min-width: 1000px)"
-    srcset="
-      https://kinhnghiemquy.com/upload/img/2020/01/14/ca_betta_2_1578970632441.jpg
-    "
-  />
-  <source
-    media="(min-width: 700px)"
-    srcset="https://baokhuyennong.com/wp-content/uploads/2020/11/ca-xiem-1.jpg"
-  />
-  <img
-    src="https://suncaphe.com/wp-content/uploads/2020/12/Cung-c%E1%BA%A5p-c%C3%A1-betta-1.jpg"
-    style="width: 300px"
-  />
-</picture>
-```
-
-`Kết quả đầu ra:`
-
-<img src="./imgs/Untitled7.png" >
-
-- Nó không hiện 1 lúc 3 ảnh
-- Element `picture` có thể chứa nhiều nhiều emls `<scource>` và mỗi elm `<source>` đó link tới những hình ảnh khác nhau thông qua srcset ="url".
-- Trình duyệt sẽ tự động chọn hình ảnh với chế độ xem hoặc thiết bị hiện tại
-- Mỗi emls `<scource>` có thuộc tính `media` để xác định break point để thay đổi hình ảnh cho phù hợp
-- Ngoài ra Một số trình duyệt hoặc thiết bị có thể không hỗ trợ tất cả các định dạng hình ảnh. Ta sử dụng `<picture>` để Trình duyệt sẽ sử dụng định dạng hình ảnh mà nó nhận dạng được và bỏ qua tất cả những elms còn lại
-
-## 9. Thẻ Form
+## 8. Thẻ Form
 
 ```html
 <form action="/action_page.php" target="_blank" method="GET">
@@ -566,7 +564,7 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 
 <img  src="./imgs/Untitled1.png" alt="form" style="width: 400px">
 
-## 10. Thẻ Iframe
+## 9. Thẻ Iframe
 
 ```html
 <iframe width="100%" height="400" src="https://www.24h.com.vn/"> </iframe>
@@ -576,7 +574,7 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 
 <img src="./imgs/Untitled2.png" alt="24h.com.vn" style="width: 400">
 
-## 11. Các thẻ Media
+## 10. Các thẻ Media
 
 **1. Tag Video**
 
@@ -649,7 +647,7 @@ Thì khi trình duyệt khởi động thì người dùng chỉ cần click và
 
   Ta cũng có thể kết hợp với thuộc tính `autoplay` và `mute` và `controls` bằng dấu `&` đăng sau **url** tùy mục đích sử dụng
 
-## 12. Các thẻ có nghĩa Và các thẻ không có nghĩa: ( semantic & non-semantic)
+## 11. Các thẻ có nghĩa Và các thẻ không có nghĩa: ( semantic & non-semantic)
 
 - Thành phần có nghĩa là thành phần mô tả ý nghĩa rõ ràng của nó đối với trình duyệt và người phát triển.
 
