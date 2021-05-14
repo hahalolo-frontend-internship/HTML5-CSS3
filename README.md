@@ -219,7 +219,7 @@ HTLM là ngôn ngữ đánh dấu siêu văn bản
                 <circle cx="100" cy="100" r="100" fill="#529fca" />
         </svg>
     ```    
-    - Những thẻ thường dùng nằm trong svg
+    * ### Những thẻ thường dùng nằm trong svg
     - `<text>` với x y là vị trí vẽ đi kèm với thẻ `<tspan>` dùng để định dạng thêm chữ trong `<text>`
     ```html
         <svg>
@@ -254,11 +254,13 @@ HTLM là ngôn ngữ đánh dấu siêu văn bản
         />
     </svg> 
     ```
-     - Nhóm bất kỳ thẻ nào khác
+     - g dùng để nhóm bất kỳ thẻ nào khác
+    ```html
     <g id="my-group">
         <rect x="0" y="100" width="100" height="100" fill="#59fa81" />
         <rect x="100" y="0" width="100" height="100" fill="#ad4a3d" />
     </g>
+    ```
     - path là một chuỗi các đường thẳng và đường cong. Là công cụ mạnh nhất để vẽ bằng cách sử dụng svg, và nó rất phức tạp. Dùng attribute d chứa các lệnh điều hướng như:
         - M(Move): x y tọa độ điểm bắt đầu
         - L(Line): x y tọa độ điểm để vẽ đường
