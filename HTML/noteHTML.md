@@ -617,7 +617,8 @@ Ví dụ:
 ,
 <footer></footer>
 ,
-<section>...</section>
+<section></section>
+,...
 ```
 
 Trong mỗi thẻ trên ta có thể hiểu phần nào nội dung mỗi thẻ đó chứa.
@@ -636,15 +637,12 @@ Ví dụ 1 ý nghĩa 1 số thẻ:
 <details>
   <summary></summary>
   <small> </small>
-  <details>
-    <!-- Xác định tiêu đề cho elm details  -->
-    <figure></figure>
-    <!-- thẻ chỉ định nội dung độc lập, như đồ họa, sơ đồ, ảnh -->
-    <figcaption></figcaption>
-    <!-- Thẻ định nghĩa 1 Chú thích cho 1 thành phần <figure> -->
-    ....
-  </details>
 </details>
+<!-- Xác định tiêu đề cho elm details  -->
+<figure></figure>
+<!-- thẻ chỉ định nội dung độc lập, như đồ họa, sơ đồ, ảnh -->
+<figcaption></figcaption>
+<!-- Thẻ định nghĩa 1 Chú thích cho 1 thành phần <figure> -->
 ```
 
 - Thành phần vô nghĩa là thành phần k mô tả ý nghĩa rõ ràng của nó: Ví dụ như `<div>` và `<span>`
