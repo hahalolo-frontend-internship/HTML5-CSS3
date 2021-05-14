@@ -57,7 +57,7 @@
 `Kết quả đầu ra: `
 
 <pre>
-  My Bonnie lies over the ocean.
+  My Bonnie lies              over the ocean.
 
   My Bonnie lies over the sea.
 
@@ -330,7 +330,7 @@ ví dụ về thẻ strong
 <img
   src="https://i.pinimg.com/originals/64/aa/4c/64aa4cb31e0a64ec096c41f45c8de878.png"
   alt="dog"
-  style="width:40%"
+  style="width:300px"
 />
 ```
 
