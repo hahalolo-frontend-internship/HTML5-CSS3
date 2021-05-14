@@ -544,9 +544,7 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 
 `Kết quả đầu ra: `
 
-<video controls  width="320" height="240" poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM10M_ATxpyciNv0HZ40i5XyZBBjQex4Ef2q7a180Z6Blz-pCTXZGjFjvsoin2iwcAD8U&usqp=CAU">
-  <source src="./../redcp.mp4" type="video/mp4">
-</video>
+<img src="./imgs/Untitled4.png" src="tag video">
 
 **2. Tag Audio**
 
@@ -557,10 +555,8 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 ```
 
 `Kết quả đầu ra: `
-<audio  width="320" height="240" controls>
 
-<source src="./../redcp.mp4" type="video/mp4">
-</audio >
+<img src="./imgs/Untitled3.png" src="tag Audio">
 
 **3. Phát Video dễ dàng hơn với Youtube**
 
@@ -609,25 +605,19 @@ Nói theo quan điểm cá nhân thì thành phần có nghĩa là cách đặt 
 
 ```html
 Ví dụ:
-<form>
-  ,
-  <table>
-    ,
-    <article>
-      ,
-      <header>
-        ,
-        <nav>
-          ,
-          <footer>
-            ,
-            <section>...</section>
-          </footer>
-        </nav>
-      </header>
-    </article>
-  </table>
-</form>
+<form></form>
+,
+<table></table>
+,
+<article></article>
+,
+<header></header>
+,
+<nav></nav>
+,
+<footer></footer>
+,
+<section>...</section>
 ```
 
 Trong mỗi thẻ trên ta có thể hiểu phần nào nội dung mỗi thẻ đó chứa.
