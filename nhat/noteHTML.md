@@ -44,11 +44,11 @@
 
 ```html
 <pre>
-  My Bonnie lies over the ocean.
+  My Bonnie lies            over the ocean.
 
   My Bonnie lies over the sea.
 
-  My Bonnie lies over the ocean.
+  My Bonnie lies            over the ocean.
 
   Oh, bring back my Bonnie to me.
 </pre>
@@ -57,11 +57,11 @@
 `Kết quả đầu ra: `
 
 <pre>
-  My Bonnie lies              over the ocean.
+  My Bonnie lies            over the ocean.
 
   My Bonnie lies over the sea.
 
-  My Bonnie lies over the ocean.
+  My Bonnie lies            over the ocean.
 
   Oh, bring back my Bonnie to me.
 </pre>
@@ -330,7 +330,7 @@ ví dụ về thẻ strong
 <img
   src="https://i.pinimg.com/originals/64/aa/4c/64aa4cb31e0a64ec096c41f45c8de878.png"
   alt="dog"
-  style="width:300px"
+  style="width:40%"
 />
 ```
 
@@ -512,64 +512,17 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 
 `Kết quả đầu ra:`
 
-<form action="/action_page.php" target="_blank" method="GET">
-<fieldset>
-    <legend>
-        Form:
-    </legend>
-    <label for="cars">Choose a car:</label>
-    <select name="cars" id="cars">
-      <optgroup label="Swedish Cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-      </optgroup>
-      <optgroup label="German Cars">
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </optgroup>
-    </select>
-    <br><br>
-    <label for="email">Enter your email:</label>
-    <input type="email" id="email" name="email" placeholder="abc@gmail.com">
-    <br><br>
-    <label for="colorpicker">pick your color</label>
-    <input type="color" id="colorpicker" name="colorpicker">
-    <br>
-    <br>
-    <input list="browsers" name="browser" id="browser" placeholder="this datalist">
-    <datalist id="browsers">
-      <option value="Edge">
-      <option value="Firefox">
-      <option value="Chrome">
-      <option value="Opera">
-      <option value="Safari">
-    </datalist>
-    <br>
-    <br>
-    <textarea name="areaMessage"></textarea>
-    <br><br>
-    <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="số lượng" style=" width: 100px">
-    <br><br>
-    <input type="text" name="example" readonly value="this's field only to Read not edit">
-    <br><br>
-    <input type="text" name="example" placeholder="this input type text" size="20" autofocus >
-    <br><br>
-    <input id="myNumber" name="myNumber" type="number" step="2" min="1.2">
-    <br><br>
-    <input type="submit" value="Submit" class="btn">
-    <input type="reset" value="reset" >
-</fieldset>
-</form>
+<img  src="./imgs/Untitled1.png" alt="form" style="width: 400px">
 
 ## 10. Thẻ Iframe
 
 ```html
-<iframe width="420" height="345" src="https://www.youtube.com"> </iframe>
+<iframe width="100%" height="400" src="https://www.24h.com.vn/"> </iframe>
 ```
 
 `Kết quả đầu ra: `
 
-<iframe width="420" height="345" src="https://www.youtube.com"> </iframe>
+<img src="./imgs/Untitled2.png" alt="24h.com.vn" style="width: 400">
 
 ## 11. Các thẻ Media
 
