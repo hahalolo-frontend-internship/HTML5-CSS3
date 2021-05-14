@@ -7,8 +7,6 @@
 <!-- Thẻ mã hóa ký tự cho phép viết hoa ...-->
 <!-- To display a HTML page correct, a web must know the character be set to used in the page, specified in meta tag-->
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
 <meta http-equiv="refresh" content="" />
 <!-- time in attribute "content" -->
 <!-- provide content security-policy, content type default, refreshpage, corresponding 1, 2, 3 -->
@@ -696,6 +694,8 @@ Ví dụ 1 ý nghĩa 1 số thẻ:
 ```
 
 - Thành phần vô nghĩa là thành phần k mô tả ý nghĩa rõ ràng của nó: Ví dụ như `<div>` và `<span>`
+
+`Để tìm hiểu chi tiết hơn click vào link này: `<a href="https://www.w3schools.com/html/html5_semantic_elements.asp"> Semantics </a>
 
 ## 13. Thành phần đồ họa:
 
