@@ -1,6 +1,4 @@
-## Ghi Chép Kiến Thức HTML
-
-<hr>
+## HTML
 
 ## HTML Basic
 
@@ -36,10 +34,11 @@
 
 ## 1. Một số thẻ text
 
-<hr>
-
 ```html
-<h1>This's h1, And tag heading have total 6 tags. from 1 to 6 Corresponding 6 level from hight to low</h1>
+<h1>
+  This's h1, And tag heading have total 6 tags. from 1 to 6 Corresponding 6
+  level from hight to low
+</h1>
 <p>this's tag paragraph</p>
 ```
 
@@ -54,7 +53,9 @@
   Oh, bring back my Bonnie to me.
 </pre>
 ```
+
 `Kết quả đầu ra: `
+
 <pre>
   My Bonnie lies over the ocean.
 
@@ -64,11 +65,10 @@
 
   Oh, bring back my Bonnie to me.
 </pre>
+
 Thẻ pre bảo toàn mọi khoảng trắng bên trong thẻ
 
 ## 2. Thẻ hình ảnh
-
-<hr>
 
 ```html
 <img src="../url" alt="alternate for img when url faild" />
@@ -76,8 +76,6 @@ Thẻ pre bảo toàn mọi khoảng trắng bên trong thẻ
 ```
 
 ## 3. Một Số thẻ định dạng phổ biến:
-
-<hr>
 
 ```html
 <p>ví dụ về thẻ b <b>Tag "b" 's used to make text bold </b></p>
@@ -168,8 +166,6 @@ ví dụ về thẻ strong
 
 ## 4. Một số thẻ trích dẫn:
 
-<hr>
-
 ```html
 <article>
   <p>Here is a quote from WWF's website:</p>
@@ -199,8 +195,6 @@ ví dụ về thẻ strong
 </article>
 
 ## 5. Thẻ link
-
-<hr>
 
 ```html
 <a href="https://www.google.com/" title="link to google"> Google Link</a>
@@ -281,8 +275,6 @@ ví dụ về thẻ strong
 
 ## 7. Thẻ Table
 
-<hr>
-
 ```html
 <table>
   <caption>
@@ -331,8 +323,6 @@ ví dụ về thẻ strong
 </table>
 
 ## 8. Thẻ Table
-
-<hr>
 
 **1. Thẻ image**
 
@@ -417,8 +407,6 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 - Ngoài ra Một số trình duyệt hoặc thiết bị có thể không hỗ trợ tất cả các định dạng hình ảnh. Ta sử dụng `<picture>` để Trình duyệt sẽ sử dụng định dạng hình ảnh mà nó nhận dạng được và bỏ qua tất cả những elms còn lại
 
 ## 9. Thẻ Form
-
-<hr>
 
 ```html
 <form action="/action_page.php" target="_blank" method="GET">
@@ -575,8 +563,6 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 
 ## 10. Thẻ Iframe
 
-<hr>
-
 ```html
 <iframe width="420" height="345" src="https://www.youtube.com"> </iframe>
 ```
@@ -586,8 +572,6 @@ Các định dạng hình ảnh có thể được dùng là: `APNG, GIF, ICO, J
 <iframe width="420" height="345" src="https://www.youtube.com"> </iframe>
 
 ## 11. Các thẻ Media
-
-<hr>
 
 **1. Tag Video**
 
