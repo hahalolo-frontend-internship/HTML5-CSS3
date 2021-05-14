@@ -82,15 +82,3 @@ selector:pseudo-class {
     - `:root`: Chọn phần tử `root`.
     - `:target`: chọn những element có `id` trùng với `href` trong thẻ `a`
 
-## 2. Grid
-
-- Cung cấp một hệ thống bố cục dựa trên lưới, với các hàng và cột, giúp thiết kế các web dễ dàng hơn mà không cần sử dụng float và position.
-- Bố cục lưới bao gồm một element mẹ, với 1 hoặc nhiều element con.
-- Sử dụng `display property` với `value grid` hoặc `inline-grid`.
-- Tất cả các con trực tiếp của `grid container` sẽ tự động trở thành các `grid items`.
-- `grid columns`: Các đường thẳng đứng của các `grid items` được gọi là `column`.
-  ![Column](grid_columns.png)
-- `grid rows`: Các đường ngang của các `grid items` được gọi là `rows`.
-  ![Row](grid_rows.png)
-- `Grid Gaps`: Khoảng cách giữ mỗi `column` / `row` gọi là `gaps`.
-  ![Gaps](grid_gaps.png)
