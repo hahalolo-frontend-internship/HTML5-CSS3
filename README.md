@@ -34,8 +34,8 @@ HTLM là ngôn ngữ đánh dấu siêu văn bản
 ```
 ## Thẻ meta
 ---
--Thường được đặt ở phần đầu trong `<head>` của trang html để cung cấp thông tin về trang web cho công cụ tìm kiếm.
--Bao gồm: nhan đề, từ khóa chính, tóm tắt nội dng, ngôn ngữ chính được sử dụng...
+- Thường được đặt ở phần đầu trong `<head>` của trang html để cung cấp thông tin về trang web cho công cụ tìm kiếm.
+- Bao gồm: nhan đề, từ khóa chính, tóm tắt nội dng, ngôn ngữ chính được sử dụng...
 ### Những thẻ meta quan trọng
 1. Thẻ meta description : thẻ này tóm tắt nội dung của trang web.
     ```html
