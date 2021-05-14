@@ -1,0 +1,304 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+    <!--"lang" attribute inside <html> to declare the language of the web page. This meant to assist search
+        engines and browsers
+     -->
+<head>
+
+    <meta charset="UTF-8">  <!-- Thẻ mã hóa ký tự cho phép viết hoa ...-->
+    <!-- To display a HTML page correct, a web must know the character be set to used in the page, specified in meta tag-->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content=""> <!-- time in attribute "content" -->
+    <!-- provide content security-policy, content type default, refreshpage, corresponding 1, 2, 3 -->
+
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <!-- Define keywords for search engines -->
+
+    <meta name="description" content="this is introduce about web page">
+    <!-- introduce about your web page -->
+
+    <meta name="author" content="John Doe">
+    <!-- introduce author for your web page -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the viewport to make your web look good in all devices-->
+    <link rel="stylesheet" href="index.css">
+    <title>Thẻ tiêu đề của trang web</title>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Some popular tags -->
+<h1> this 's tag h1. And tag h have total 6 tags. from 1 to 6</h1>
+<p> this's tag paragraph</p>
+<span> this's tag span</span>
+<br>
+<br>
+
+<h3>Some tag popular to formating Elms</h3>
+
+<p>ví dụ về thẻ b <b>Tag "b" 's used to make text bold </b>...</p>
+<p>ví dụ về thẻ strong <strong>Tag "strong" 's used to make text bold and this's text is important </strong>...</p>
+<p>ví dụ về thẻ i <i>Tag "i" 's used to make text itaclic </i>...</p>
+<p>ví dụ về thẻ em<em>"This text is emphasized and same as tag i. "</em></p>
+<p>ví dụ về thẻ small<small> "This is some smaller text."</small></p>
+<p>Ví dụ về thẻ mark "this's tag used to <mark>mark</mark>  text</p>
+<p>Ví dụ về thẻ del "this's tag used to <del>strike a line through </del> deleted text.</p>
+<p>>Ví dụ về thẻ ins <ins>underline inserted text</ins>.</p>
+<p>Ví dụ về thẻ sub <sub>tag sub</sub>.</p>
+<p>Ví dụ về thẻ sup <sup>tag sup</sup></p>
+<br>
+
+<h3>Some tag popular to Quotation </h3>
+
+<article>
+    <p>Here is a quote from WWF's website:</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        For 50 years, WWF has been protecting the future of nature.
+        The world's leading conservation organization,
+        WWF works in 100 countries and is supported by
+        1.2 million members in the United States and
+        close to 5 million globally.
+    </blockquote>
+    <p>thẻ blockquote là thẻ trích dẫn với attribute cite là nguồn gốc trích dẫn </p>
+</article>
+
+<article>
+    <p>Đây là 1 đoạn văn bản trong thẻ p không được chú thích bởi ngoặc kép: <q>Đây là văn bản chú thích được dùng trong thẻ q </q></p>
+</article>
+<article>
+    <p>Thẻ abbr là thẻ viết tắt: ví dụ  <abbr title="World Health Organization">WHO</abbr>.</p>
+</article>
+
+<address>
+    Written by Nhất.<br> 
+    Read by Nhất.<br>
+    207 Tăng Bạt Hổ, TP Huế
+</address>
+<p><cite>This's tag site</cite> tag này định nghĩa hoặc chú thích cho 1 sản phẩm sáng tạo như thơ, hình ảnh, 1 quyển sách</p>
+<p>Thẻ viêt ngược <bdo dir="rtl">this's tag bdo</bdo></p>
+
+<h3>Tag link</h3>
+<a href="https://www.google.com/" title="link to google"> This's link to Google</a>
+<br>
+<br>
+<h3>Tag table</h3>
+<table >
+    <caption>caption: this's table</caption>
+    <thead>
+            <th>title 1</th>
+            <th>title 2</th>
+            <th>title 3</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>content of title 1</td>
+            <td>content of title 2</td>
+            <td>content of title 2</td>
+        </tr>
+                <tr>
+            <td>content of title 1</td>
+            <td>content of title 2</td>
+            <td>content of title 2</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Tag List</h3>
+<!-- list order -->
+<ol type ="i">
+    <li>item 1 in order list</li>
+    <li>item 2 in order list</li>
+    <li>item 3 in order list</li>
+    <li>item 4 in order list</li>
+    <!-- order theo stt -->
+</ol>
+<ol type="A">
+    <li>item 1 in order list</li>
+    <li>item 2 in order list</li>
+    <li>item 3 in order list</li>
+    <li>item 4 in order list</li>
+    <!-- order theo alpha -->
+</ol>
+
+<ul type="square">
+    <li>item 1 in order list</li>
+    <li>item 2 in order list</li>
+    <li>item 3 in order list</li>
+    <li>item 4 in order list</li>
+</ul>
+    <!-- An unordered HTML list: -->
+<dl> 
+    <dt>Coffee</dt>  <!-- defined term <dt>-->
+        <dd>- black hot drink</dd> <!-- describles for term <dt>-->
+    <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+</dl>
+<!-- descript list  -->
+
+<h3>Tag Iframe</h3>
+<!-- <iframe width="420" height="345" src="https://www.24h.com.vn/">
+</iframe> -->
+
+<img  src="https://i.pinimg.com/originals/64/aa/4c/64aa4cb31e0a64ec096c41f45c8de878.png" alt="Trulli" style="width:100%">
+
+<h3>Tag form</h3>
+<form action="/action_page.php" target="_blank" method="GET">
+<fieldset>
+    <legend>
+        Form:
+    </legend>
+    <label for="cars">Choose a car:</label>
+    <select name="cars" id="cars">
+      <optgroup label="Swedish Cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+      </optgroup>
+      <optgroup label="German Cars">
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </optgroup>
+    </select>
+    
+        <!-- 
+        select defines a drop-down list:
+        - size attribute to specify amount item visible in menu dropdown
+        - beside, tag select have "multiple" attribute to choose more than one value
+
+        <option> element defines an option can be selected.
+        if <option> don't have attri selected. default, first item in drop down is selected
+     -->
+    <br><br>
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email" placeholder="abc@gmail.com">
+    <br><br>
+    <label for="colorpicker">pick your color</label>
+    <input type="color" id="colorpicker" name="colorpicker">
+    <br>
+    <br>
+    <input list="browsers" name="browser" id="browser" placeholder="this datalist">
+    <datalist id="browsers">
+      <option value="Edge">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+    <br>
+    <br>
+    <textarea name="areaMessage"></textarea>
+    <!-- 
+        textarea have some difference attributes such as: name, rows, cols
+        rows specifies the visible number of lines in textarea
+        cols specifies the visible width of a areatext
+     -->
+    <br><br>
+    <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="số lượng" style=" width: 100px">
+    <br><br>
+    <input type="text" name="example" readonly value="this's field only to Read not edit">
+    <br><br>
+    <input type="text" name="example" placeholder="this input type text" size="20" autofocus >
+    <!-- size attribute specifies visible width, in charaters, của 1 input field default size = 20
+        maxlength attribute specifies amount max charaters allow in an input field.
+        autofocus attribute specified cursor will always focus field which have a attribute autofocus
+    -->
+    <br><br>
+    <input id="myNumber" name="myNumber" type="number" step="2" min="1.2">
+    <!-- step là attribute có giá trị là number mà khi tăng hoặc giảm ứng với value đó được thêm hoặc trừ đi -->
+    <br><br>
+    <input type="submit" value="Submit" class="btn">
+    <input type="reset" value="reset" >
+    <!-- input type button will make form data reset all input back value default -->
+</fieldset>
+</form>
+<!-- form có các atributes như
+    - action: chỉ định nơi mà form data gửi tới when 1 form được submit
+    - autocomplete: Chỉ ra rằng liệu 1 form có autocomplete trước đó hay k ( value của attri này là on or of) tức là
+    kích double vào từng trường sẽ thấy có những phần hoàn thành trước đã đc lưu vào cookies
+    - enctype: là thuộc tính chỉ ra cách mà form nên được mã hóa khi submit nó đến server. ( thuộc tính này chỉ được dùng nếu có method ="post" )
+    - accept-charset: Chỉ định ra mã hóa ký tự cho form submit ("thường thì value là utf-8")
+    - name: chỉ định ra name của form
+    - novalidate: chỉ định ra form có nên được validated khi submit k?
+    - target: chỉ định nơi hiển thị phản hồi sau khi submit form 
+-->
+
+
+<br><br>
+
+<br><br>
+
+<h3>Some Tags Media Popular </h3>
+
+<video controls  width="320" height="240"
+poster="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM10M_ATxpyciNv0HZ40i5XyZBBjQex4Ef2q7a180Z6Blz-pCTXZGjFjvsoin2iwcAD8U&usqp=CAU">
+    <source src="./../redcp.mp4" type="video/mp4">
+</video>
+<!-- Besides, this tag video contain some attribute such as: "loop , autoplay, controls, muted, preload, 
+-->
+<br><br>
+
+<audio  width="320" height="240" controls>
+    <source src="./../redcp.mp4" type="video/mp4">
+</audio >
+
+<br><br>
+<h3>Some HTML Entities</h3>
+<p> &nbsp "& nbsp" là nửa khoảng ký tự trắng</p>
+<p> &reg "& reg" là ký hiệu cho thương hiệu đăng ký</p>
+<p>&copy "& copy" là ký hiệu cho bản quyền, nguồn gốc</p>
+<p>và 1 số ký hiệu khác như: &euro: "& euro"</p>
+<p>và 1 số ký hiệu khác như: &yen: "& yen"</p>
+<p>và 1 số ký hiệu khác như: &pound: "& pound"</p>
+<p>và 1 số ký hiệu khác như: &cent: "& cent"</p>
+
+
+<br><br>
+
+<div class="background-image"
+    style= "
+    width: 200px; padding-top: 200px;
+    background-image: url(https://kimipet.vn/wp-content/uploads/2019/01/gia-mua-ban-cho-phoc-soc-thukieng-12.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    "
+>
+<!-- if use background image in CSS we combined background-size = value "cover" or "contain" and background-position 
+    to guaranteed that images was located in position where we put images-->
+    <!-- and if use <tag image> we must be set width and height after we set property css object-fit with value to set vị trí -->
+</div>
+<!-- example about background image -->
+<br>
+
+
+
+<figure style="width: 400px;">
+    <img src="https://i.pinimg.com/originals/64/aa/4c/64aa4cb31e0a64ec096c41f45c8de878.png" alt="Trulli" style="width:100%">
+    <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+</figure>
+
+<footer >
+    <p>Author: Hege Refsnes</p>
+    <p><a href="mailto:thongnhatgraphic@gmail.com">thongnhatgraphic@gmail.com</a></p>
+</footer>
+
+    <a class="link"
+    data-js="link js"
+    href="https://www.google.com/search?q=google+d%E1%BB%8Bch&oq=g&aqs=chrome.2.69i60j69i57j69i59l3j69i60l2j69i65.768j0j7&sourceid=chrome&ie=UTF-8">
+    Link đến google dịch
+    </a>
+<section>thẻ section</section>
+
+
+<script type="module" src="js.js"></script>
+</body>
+
+</html>
