@@ -1,4 +1,4 @@
-# CSS
+# CSS3
 ## Background
    - `background-color` (màu nền)
       - a valid color name - like "red"
@@ -54,7 +54,7 @@
             background-position: right top; /*góc trên cùng bên phải: */
          }
       ```
-   - `background (shorthand property)` (thuộc tính tốc ký "gộp code 1 dòng")
+   - `background (shorthand property)` (thuộc tính tốc ký "gộp code 1 dòng có tất cả thuôc tính")
       ```css
          body {
             background: #ffffff url("img_tree.png") no-repeat right top;
@@ -134,7 +134,7 @@
 - Flex 
    ```css
       #main div {
-      -ms-flex: 1; /* IE 10 */ 
+      -ms-flex: 1; /* IE 10 dùng để hổ tr */ 
       flex: 1; /*flex-grow
                flex-shrink
                flex-basis */
