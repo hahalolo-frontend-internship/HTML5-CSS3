@@ -10,6 +10,10 @@
 <meta http-equiv="refresh" content="" />
 <!-- time in attribute "content" -->
 <!-- provide content security-policy, content type default, refreshpage, corresponding 1, 2, 3 -->
+<meta
+  http-equiv="content-security-policy"
+  content="Specifies a content policy for the document."
+/>
 
 <meta name="keywords" content="HTML, CSS, JavaScript" />
 <!-- Define keywords for search engines -->
@@ -17,11 +21,17 @@
 <meta name="description" content="this is introduce about web page" />
 <!-- introduce about your web page -->
 
+<meta name="application-name" content="Tên của trang web" />
+
 <meta name="author" content="John Doe" />
 <!-- introduce author for your web page -->
 
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- set the viewport to make your web look good in all devices-->
+
+<!-- HTML metadata is data about the HTML document. Metadata is not displayed. -->
+<!-- Metadata typically define the document title, character set, styles, scripts, and other meta information. -->
 ```
 
 Đây là một số thẻ **Meta** thông dụng. Và mô tả theo ý kiến cá nhân tìm hiểu.
@@ -70,6 +80,7 @@ My Bonnie lies over the ocean. My Bonnie lies over the sea.My Bonnie lies over t
 
   Oh, bring back my Bonnie to me.
 </pre>
+<!-- tag pre stand for by preserves  -->
 ```
 
 `Kết quả đầu ra: `
@@ -600,11 +611,15 @@ target="\_\_blank">
 <audio width="320" height="240" controls>
   <source src="./../redcp.mp4" type="video/mp4" />
 </audio>
+<!-- Tag này cũng có những attribute tương tự video -->
 ```
 
 `Kết quả đầu ra: `
 
 <img src="./imgs/Untitled3.png" src="tag Audio">
+
+`Các formats được HTML hỗ trợ:` **MP4, WebM và Ogg**.
+`format MP4` được Youtube khuyến khích.
 
 **3. Phát Video dễ dàng hơn với Youtube**
 

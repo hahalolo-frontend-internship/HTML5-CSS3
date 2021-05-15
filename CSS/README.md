@@ -1,11 +1,11 @@
 # CSS BASIC
 
-## Giới thiệu ngắn gọn:
+## 1. Giới thiệu ngắn gọn:
 
 - CSS là ngôn ngữ Chúng ta dùng để style cho 1 trang web
 - Được dùng để xác định kiểu cho các trang web, bao gồm thiết kế, bố cục hiển thị trên các thiết bị và kích thước màn hình khác nhau.
 
-## Cách thêm CSS:
+## 2. Cách thêm CSS:
 
 - Có 3 cách:
   - thêm từ 1 files .css bên ngoài
@@ -13,7 +13,7 @@
   - Css style từ bên trong file .html thông qua cặp thẻ `<style></style>` trong cặp thẻ `<head></head>`
   - inline style. Css thông qua thuộc tính **chung** **style** của ELMS
 
-## Sử dụng:
+## 3. Sử dụng:
 
 ### SELECTOR CƠ BẢN:
 
