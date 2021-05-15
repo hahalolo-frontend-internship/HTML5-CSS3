@@ -7,7 +7,7 @@ HTML (viết tắt của từ Hypertext Markup Language, hay là "Ngôn ngữ Đ
 3. [List](./node-html/List.md)
 4. [Media](./node-html/Media.md)
 5. [SVG](./node-html/SVG.md)
-7. [Basic](./node-html/Basic.md)
+6. [Basic](./node-html/Basic.md)
 
 # CSS
 ## CSS là gì?

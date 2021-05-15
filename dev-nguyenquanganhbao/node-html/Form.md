@@ -43,7 +43,7 @@
     ```html
     <form action="/action_page.php" novalidate>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="John Doe">
+        <input type="text" id="name" name="name" required>
         <input type="submit" value="Submit">
     </form>
     ```
@@ -88,7 +88,7 @@
     ```html
     <input type="text" id="name" name="name" disabled>
     ```
-    - `size`: Thuộc tính đầu vào chỉ định chiều rộng hiển thị, tính bằng ký tự, của trường đầu vào.
+    - `size`: Thuộc tính đầu vào chỉ định chiều rộng hiển thị, của trường đầu vào.
     ```html
     <input type="text" id="name" name="name" size="50">
     ```
@@ -112,7 +112,7 @@
     ```html
     <input type="text" id="name" name="name" pattern="[A-Za-z]{3}" placeholder="Enter name">
     ```
-    - `required`: Thuộc tính đầu vào chỉ định rằng một trường đầu vào phải được điền trước khi gửi biểu mẫu.
+    - `required`: Thuộc tính đầu vào chỉ định rằng một trường đầu vào phải được điền trước khi gửi và kiểm tra dữ liệu có hợp lệ không.
     ```html
     <input type="text" id="name" name="name" required>
     ```

@@ -79,6 +79,7 @@ VietJack Team</p>
     + `alt`: xác định một văn bản thay thế khi ảnh bị lỗi.
     + `width`: xác định chiều rộng của ảnh.
     + `height`: xác định chiều cao của ảnh.
+    ...
     ```html
     <img src="./images/logo3.png" alt="Hình ảnh trong HTML" width="150" height="100"/>
     ```

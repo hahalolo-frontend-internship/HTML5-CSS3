@@ -38,7 +38,7 @@
     + B bằng 101 (một ID là content, là một element là h1).
     + C bằng 1000 (inline style).
     + => Quy tắc (C) có độ ưu tiên cao nhất, nên màu của h1 là màu green.
-- Nếu có các Specificity bằng nhau, quy tắc viết sau cùng sẽ được áp dụng.
+- `Nếu có các Specificity bằng nhau, quy tắc viết sau cùng sẽ được áp dụng.`
 ```html
 <!DOCTYPE html>
 <html>

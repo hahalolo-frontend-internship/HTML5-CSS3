@@ -1,7 +1,7 @@
 # CSS Selector
 - Công cụ chọn trong CSS dùng để tìm (và chọn) phần tử HTML dựa trên tên, id, class, thuộc tính… của phần tử.
 1. Element Selector
-- Đây là công cụ chọn phần tử dựa vào tên phần tử.
+- Chọn phần tử dựa vào tên phần tử.
 ```css
 p {
   text-align: center;
@@ -10,7 +10,7 @@ p {
 /* tất cả phần tử <p> sẽ được căn giữa và có màu đỏ */
 ```
 2. Id Selector
-- Công cụ này dùng thuộc tính `id` của phần tử HTML để chọn. `id` của một phần tử trong trang phải là độc nhất nên `id Selector` dùng để chọn một phần tử duy nhất.
+- Chọn `id` của phần tử HTML. `id` của một phần tử trong trang phải là độc nhất nên `id Selector` dùng để chọn một phần tử duy nhất.
 ```css
 #para1 {
   text-align: center;
@@ -19,7 +19,7 @@ p {
 /*phần tử có id="para1" sẽ có màu đỏ và được căn giữa */
 ```
 3. Class Selector
-- Công cụ này chọn phần tử bằng thuộc tính `class`.
+- Chọn phần tử bằng thuộc tính `class`.
 ```css
 .center {
   text-align: center;
@@ -28,7 +28,7 @@ p {
 /* tất cả phần tử có class="center" sẽ có màu đỏ và được căn giữa */
 ```
 4. Descendant combinator Selector
-- Chọn các nút là con cháu của phần tử đầu tiên.
+- Chọn các phần tử con, cháu.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +54,7 @@ p {
 </html>
 ```
 5. Child combinator
-- Công cụ này dùng để chọn phần tử con.
+- Chọn phần tử con.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +147,7 @@ h1, h2, p {
 /* tất cả phần tử h1, h2, p sẽ có màu đỏ và được căn giữa */
 ```
 9. Attribute selector
-- Attribute selector là cách chọn các phần tử bạn muốn định kiểu (style) trong tài liệu HTML dựa vào thuộc tính của một hay nhiều thẻ HTML nào đó. Attribute selector có thể chọn được các đối tượng mà không cần phải khai báo thêm các Class hoặc ID vào trong thẻ HTML và vẫn có thể hướng được đến các thành phần đó, giúp code gọn gàng hơn và mạch lạc hơn.
+- Attribute selector là cách chọn các phần tử bạn muốn định kiểu (style) trong tài liệu HTML dựa vào thuộc tính của một hay nhiều thẻ HTML nào đó. Attribute selector có thể chọn được các đối tượng mà không cần phải khai báo thêm các Class hoặc ID vào trong thẻ HTML và vẫn có thể hướng đến được các thành phần đó.
 ```html
 <!DOCTYPE html>
 <html>
