@@ -29,7 +29,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   ```
 
-  - Thẻ meta content-type: Khai báo hệ thống ký tự mà trang web sử dụng, cho biết nội dung trang web dược mã hóa ký tự, để có thể hiển thị thông tin 1 cách tốt nhất.
+  - Thẻ meta content-type: Khai báo hệ thống ký tự mà trang web sử dụng, cho biết nội dung trang web được mã hóa ký tự, để có thể hiển thị thông tin 1 cách tốt nhất.
 
   ```html
   <meta charset="UTF-8" />
@@ -70,6 +70,9 @@
 
     ` lang`: Dùng để khai báo về ngôn ngữ mà trang web đang sử dụng, để công cụ tìm kiếm có định hướng tốt hơn cho người dùng.
 
+    ![og](baomoi.PNG)
+
+
     ```html
     <meta lang="en" />
     ```
@@ -82,6 +85,7 @@
     <meta name="geo.position" content="47.181759;19.506094" /> - Định vị
     <meta name="ICBM" content="47.181759, 19.506094" />
     ```
+
 
 ## Thẻ link
 
@@ -135,7 +139,7 @@
     - ![async](./async.PNG)
   - `Defer`: cho phép việc thực hiện (execute) chỉ sau khi toàn bộ Document đã được Parse.
 
-    - Các file sẽ được tải xuống một cách bất đồng bộ và được thực thi sau khi document được phân tích.
+    - Các file sẽ được tải xuống một cách bất đồng bộ và được thực thi sau khi document được Parse.
     - ![defer](./defer.PNG)
 
   - Nếu đặt thẻ `script` không chứa `async` và `defer` ở thẻ head thì sẽ diễn ra quá trình như sau: phân tích HTML -> Lấy mã `script` -> thực thi `script` (nếu gặp lỗi sẽ dừng lại) -> tiếp tục phân tích HTML -> hiển thị giao diện.
@@ -171,7 +175,7 @@
 ### `<header>`
 
 - Dùng cho phần đầu trang hoặc phần đầu của một thẻ.
-- Nên được dùng để bao ngoài nội dung giới thiệu trang.
+- Nên dùng để bao ngoài nội dung giới thiệu trang.
 
 ```html
 <article>
