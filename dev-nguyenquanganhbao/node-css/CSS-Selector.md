@@ -27,7 +27,117 @@ p {
 }
 /* tất cả phần tử có class="center" sẽ có màu đỏ và được căn giữa */
 ```
-4. Group Selector
+4. Descendant combinator Selector
+- Chọn các nút là con cháu của phần tử đầu tiên.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>Thẻ p</p> <!-- color red-->
+        </div>
+        <p>Thẻ p</p> <!-- color red-->
+    </div>
+</body>
+</html>
+```
+5. Child combinator
+- Công cụ này dùng để chọn phần tử con.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container > p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>Thẻ p</p>
+        </div>
+        <p>Thẻ p</p> <!-- color red-->
+    </div>
+</body>
+</html>
+```
+6. Adjacent sibling combinator
+- Chọn các phần tử cùng cấp liền kề.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container + p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>Thẻ p</p>
+        </div>
+        <p>Thẻ p</p>
+    </div>
+    <p>Thẻ p</p> <!-- color red-->
+    <p>Thẻ p</p>
+</body>
+</html>
+```html
+7. General sibling combinator
+- Chọn các phần tử cùng cấp.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container ~ p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>Thẻ p</p>
+        </div>
+        <p>Thẻ p</p>
+    </div>
+    <b>Thẻ b</b>
+    <p>Thẻ p</p> <!-- color red-->
+    <p>Thẻ p</p> <!-- color red-->
+</body>
+</html>
+``` 
+
+8. Group Selector
 - Công cụ này dùng để nhóm các phân tử có cùng kiểu lại.
 ```css
 h1, h2, p {
@@ -36,7 +146,7 @@ h1, h2, p {
 }
 /* tất cả phần tử h1, h2, p sẽ có màu đỏ và được căn giữa */
 ```
-5. Attribute selector
+9. Attribute selector
 - Attribute selector là cách chọn các phần tử bạn muốn định kiểu (style) trong tài liệu HTML dựa vào thuộc tính của một hay nhiều thẻ HTML nào đó. Attribute selector có thể chọn được các đối tượng mà không cần phải khai báo thêm các Class hoặc ID vào trong thẻ HTML và vẫn có thể hướng được đến các thành phần đó, giúp code gọn gàng hơn và mạch lạc hơn.
 ```html
 <!DOCTYPE html>
