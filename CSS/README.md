@@ -195,3 +195,5 @@ Gần giống `margin`
    - font-family
 
 Có thể được viết tắt là: `font: italic bold 12px/24px Georgia, serif;` tức là `font-style`: italic; `font-weight`: bold; font-size: 12px ; `line-height`: 24px và `font-family` là Georgia, serif
+
+#### Còn...
