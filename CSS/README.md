@@ -156,7 +156,9 @@ Gần giống `margin`
 
 **Short Hand**
 
-`border-width: 2px`, `border-style: solid` và `border-color: red` được viết ngắn gọn: `border: 2px solid red`
+`border-width: 10px`, `border-style: solid` và `border-color: red` được viết ngắn gọn: `border: 10px solid red`
+
+ví dụ: <img src="./imgs/10.png">
 
 **Border-radius**
 
@@ -201,11 +203,11 @@ tức là:
 - `font-size`: 12px/`line-height`: 24px
 - `font-family` là Georgia và font dự phòng là sans serif.
 
-#### CSS Icons:
+### CSS Icons:
 
 - Để thêm icon vào trong trang HTML, là thư viện icons như `Font Awesome`
 
-#### Link:
+### Link:
 
 - `Link` có thể được style những kiểu khác nhau phụ thuộc vào `trạng thái` của nó
   - `a:link` : là trạng thái bình thường khi link chưa được truy cập.
@@ -214,7 +216,7 @@ tức là:
   - `a:active` : là trạng thái link người dùng click nhưng chưa thả chuột ra.
 - `cursor` : một số thuộc tính `cursor` https://www.w3schools.com/css/tryit.asp?filename=trycss_cursor
 
-#### CSS Lists:
+### CSS Lists:
 
 - **Unordered List** : Được đánh dấu bằng dấu bằng dấu đầu dòng.
 
@@ -232,20 +234,173 @@ ex: <img src="./imgs/4.png" >
 
 - `Position The List Item Markers`:
 
-  - `Outside`:
+  - `Outside`: <img src="./imgs/7.png">
 
-   <img src="./imgs/7.png">
+  - `Inside`: <img src="./imgs/8.png">
 
-  - `Inside`:
+### CSS Table:
 
-   <img src="./imgs/8.png">
-
-#### CSS Table:
-
-##### `Table Border`:
+#### `Table Border`:
 
 **border-collapse** là thuộc tính để set table có một border duy nhất
 
 ví dụ: <img src="./imgs/9.png">
 
-#### CSS Table:
+### CSS background:
+
+- `Css background` là thuộc tính được dùng để thêm hiệu ứng backgrounds cho elms
+
+  - `background-color` value của nó là **color name**, **HEX** và **RGB**
+  - `background-image` là thuộc tính chỉ định 1 hình ảnh được dùng làm nền cho 1 thành phần.
+    ex: <img src="./imgs/14.png">
+
+  - `background-repeat` -`repeat-x`
+
+    - `repeat-y`
+    - `no-repeat`;
+
+  - `background-position`: value của nó là `top`, `right`, `bottom`, `left` và `center`.
+  - `background-attachment`: hình nền được `fixed` hay `scroll` với phần còn lại của trang
+    - `fixed`
+    - `croll`;
+  - `background-size`:
+
+    - `giá trị tuyệt đối` (giá trị lần lượt là width và height)
+    - `cover`
+    - `contain`
+
+  - `background-origin`:
+  - `content-box` toàn bộ hình ảnh đều nằm trong content.
+    <img src="./imgs/15.png">
+  - `border-box`
+    <img src="./imgs/16.png">
+  - `padding-box`
+    <img src="./imgs/17.png">
+
+#### CSS Position:
+
+- `Position` là thuộc tính chỉ định vị trí cho 1 element
+- Có 5 giá trị để định vị cho thuộc tính `position`: - `static` - `relative` - `fixed` - `absolute` - `sticky`.
+  Khi xét thuộc tính `position` với 1 trong 4 giá trị `relative` or `fixed` or `absolute` or `sticky`. Ta có thể dùng các thuộc tính như `top` khoảng cách so với top , `bottom` cách bot, `right` cách phải hoặc `left` cách trái để chỉ định vị trí cho elm đó.
+
+1.  `position: static` :
+
+    - Đây là giá trị mặc định của 1 elm.
+    - Static position này không thể dùng `top`, `bottom`, `right` or `left` để xét vị trị cho elm đó.
+    - Đây là giá trị hiển thị vị trí bình thường của elm đó hay được định vị theo dòng bình thường của trang
+
+2.  `position: relative` :
+
+    - Khi dùng thuộc tính này sẽ khiến elm đó bị điều chỉnh khỏi vị trí bình thường. Nhưng những elm cùng cấp ở phía sau sẽ không được điều chỉnh để phù hợp với khoảng trống mà do elm có `position: relative` để lại.
+
+ex:
+<img src="./imgs/18.png">
+
+3. `position: absolute` :
+
+   - 1 Element có thuộc tính `position: absolute`. Được chỉ định vị trí tương đối với vị trí của phần tử cha.
+   - Nếu 1 elm được sử dụng với `position: absolute` mà không có elm cha để làm gốc định vị. Thì nó sẽ phụ thuộc vào element `body`.
+
+   **Lưu ý:** elm cha để làm gốc định vị là có thể là `relative`, `fixed`, `sticky`
+
+   ví dụ: làm ví dụ trực tiếp trong này.
+
+   https://www.w3schools.com/css/tryit.asp?filename=trycss_position_absolute
+
+4. `position: sticky` :
+
+   - 1 element với thuộc tính `position: sticky` được định vị dựa trên vị trí hành vi cuộn của. `Cuộn trái`, `Cuộn phải` or `Cuộn xuống`. Khi cuộn ngã nào thì elm có thuộc tính `position: sticky` nó sẽ được `fixed` ngược về phía hướng cuộn lại.
+
+   ex: Tự code
+
+   https://www.w3schools.com/css/tryit.asp?filename=trycss_position_sticky
+
+#### CSS Overflow:
+
+- Là thuộc tính chỉ định có `ẩn nội dung` hay thêm `scroll bar` Khi nội dung của 1 element quá **lớn** để vừa với khu vực được chỉ định.
+- `Overflow` Có 4 giá trị:
+
+  - `visible`: default value, nếu nội dung vượt quá kích thước của 1 khối thì nó lấn ra bên ngoài
+
+    <img src="./imgs/19.png">
+
+  - `hidden `: Phần content bị tràn ra được ẩn đi
+
+     <img src="./imgs/20.png">
+
+  - `scroll`: Nếu content lớn hơn chiều rộng hoặc chiều dài của khối thì sẽ xuất hiện thanh `scroll bar`
+
+     <img src="./imgs/21.png">
+
+#### CSS Pseudo:
+
+1.  **Pseudo - Element:**
+
+**Một số lớp giả thông dụng**:
+
+- `::first-letter` Chỉ định chữ cái đầu tiên.
+  ex:
+  <img src="./imgs/22.png">
+
+- `::first-line` Chỉ định dòng đầu tiên
+
+  ex:
+  <img src="./imgs/23.png">
+
+- `::marker` chọn các element được đánh dấu của các mục trong 1 danh sách.
+
+  ex:
+
+  <img src="./imgs/25.png">
+
+- `::selection` là phần được người dùng bôi lên text
+
+  ex:
+
+   <img src="./imgs/26.png">
+
+- `:nth-child(n)` chọn phần tử thứ `n` của element nào đó . Tham số trong `:nth-child(param)` param có thể là `số` or even (phần tử con chẵn) or odd ( phần tử lẻ)
+
+  ex:
+  <img src="./imgs/27.png">
+
+- `:nth-last-child(n)` phần tử con thứ hai của phần tử thứ `n` cha của nó, tính từ phần tử cuối cùng:
+
+  ex:
+  <img src="./imgs/28.png">
+
+2. **Pseudo ::before và ::after:**
+
+- `::before` và `::after` được dùng để chèn nội dung trước và sau nội dung của một thành phần.
+
+- Ngoài ra cũng có thể chèn hình ảnh cho nó.
+- Để sử dụng `::before` và `::after` thì thuộc tính bắt buộc là phải có `content`
+
+  ex:
+  <img src= "./imgs/24.png">
+
+**Ngoài ra có thể tìm hiểu thêm:** https://www.w3schools.com/css/css_pseudo_elements.asp
+
+### CSS Advanced
+
+#### CSS Display cơ bản:
+
+`Display` là thuộc tính quan trọng trong việc control layout
+
+- Một số giá trị của `display`:
+
+  - `block`
+  - `inline`
+  - `none`
+  - `inline-block`
+
+- Mỗi elms HTML có giá trị `display` mặc định. Hầu hết mọi elms có default value là `block` or `inline`
+- Mỗi phần tử có thuộc tính `display: block` luôn bắt đầu 1 dòng mới và chiếm hết độ dài của 1 dòng. 1 số thẻ có thuộc tính block như: div, h1...h6, form, header, section, v.v...
+- Mỗi phần tử có thuộc tính `display: inline` 1 thành phần inline không bắt đầu 1 dòng mới và chỉ chiếm độ dài bằng nội dung nó chứa. Nó không phải thành phần khối nên không thể xét `margin` và `padding` cho: `top` và `bottom`
+- Mỗi phần tử có thuộc tính `display: inline-block` 1 thành phần inline block không bắt đầu 1 dòng mới và chỉ có độ dài bằng với nội dung nó chứa
+
+ex: <img src="./imgs/11.png">
+
+ex: <img src="./imgs/12.png">
+
+ex: <img src="./imgs/13.png">
