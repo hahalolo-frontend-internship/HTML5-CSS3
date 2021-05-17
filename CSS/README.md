@@ -271,10 +271,15 @@ ví dụ: <img src="./imgs/9.png">
 
   - `background-origin`:
   - `content-box` toàn bộ hình ảnh đều nằm trong content.
+
     <img src="./imgs/15.png">
+
   - `border-box`
+
     <img src="./imgs/16.png">
+
   - `padding-box`
+
     <img src="./imgs/17.png">
 
 #### CSS Position:
