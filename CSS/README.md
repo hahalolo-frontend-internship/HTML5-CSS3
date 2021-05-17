@@ -299,6 +299,7 @@ ví dụ: <img src="./imgs/9.png">
     - Khi dùng thuộc tính này sẽ khiến elm đó bị điều chỉnh khỏi vị trí bình thường. Nhưng những elm cùng cấp ở phía sau sẽ không được điều chỉnh để phù hợp với khoảng trống mà do elm có `position: relative` để lại.
 
 ex:
+
 <img src="./imgs/18.png">
 
 3. `position: absolute` :
@@ -345,11 +346,13 @@ ex:
 
 - `::first-letter` Chỉ định chữ cái đầu tiên.
   ex:
+
   <img src="./imgs/22.png">
 
 - `::first-line` Chỉ định dòng đầu tiên
 
   ex:
+
   <img src="./imgs/23.png">
 
 - `::marker` chọn các element được đánh dấu của các mục trong 1 danh sách.
@@ -372,6 +375,7 @@ ex:
 - `:nth-last-child(n)` phần tử con thứ hai của phần tử thứ `n` cha của nó, tính từ phần tử cuối cùng:
 
   ex:
+
   <img src="./imgs/28.png">
 
 2. **Pseudo ::before và ::after:**
@@ -382,6 +386,7 @@ ex:
 - Để sử dụng `::before` và `::after` thì thuộc tính bắt buộc là phải có `content`
 
   ex:
+
   <img src= "./imgs/24.png">
 
 **Ngoài ra có thể tìm hiểu thêm:** https://www.w3schools.com/css/css_pseudo_elements.asp
@@ -404,8 +409,14 @@ ex:
 - Mỗi phần tử có thuộc tính `display: inline` 1 thành phần inline không bắt đầu 1 dòng mới và chỉ chiếm độ dài bằng nội dung nó chứa. Nó không phải thành phần khối nên không thể xét `margin` và `padding` cho: `top` và `bottom`
 - Mỗi phần tử có thuộc tính `display: inline-block` 1 thành phần inline block không bắt đầu 1 dòng mới và chỉ có độ dài bằng với nội dung nó chứa
 
-ex: <img src="./imgs/11.png">
+ex:
 
-ex: <img src="./imgs/12.png">
+<img src="./imgs/11.png">
 
-ex: <img src="./imgs/13.png">
+ex:
+
+<img src="./imgs/12.png">
+
+ex:
+
+<img src="./imgs/13.png">
