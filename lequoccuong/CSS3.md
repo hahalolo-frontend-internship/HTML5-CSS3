@@ -213,7 +213,7 @@ grid-column: grid-column-start / grid-column-end.;
 
 ![fr](column.PNG)
 
-### 3.8grid-row
+### 3.8 grid-row
 
 - Cũng như `grid-column` nhưng thuộc tính này giúp chúng ta thiết lập vị trí và kích thước của phần tử theo hàng.
 
@@ -381,6 +381,7 @@ flex-flow: row wrap;
 - space-evenly
   ![space-evenly](space-evenly.PNG)
 - space-around
+
   ![space-around](space-around.PNG)
 
 ### 4.6 Align-items
@@ -389,16 +390,21 @@ flex-flow: row wrap;
 
 - Tuy nhiên nếu đổi flex-direction sang column thì align-items sẽ canh theo chiều ngang.
 - `align-items: center`
+
   ![align-items-center](align-items-center.PNG)
 
 - `align-items: baseline`
+
   ![align-items-baseline](align-items-baseline.PNG)
+
 - `align-items: stretch`
+
   ![align-items-stretch](align-items-stretch.PNG)
 
 ### 4.7 Align-self
 
 - Thuộc tính này tương tự với thuộc tính align-items, nhưng khác ở chỗ là áp dụng riêng lẻ cho các phần tử mà bạn muốn thay đổi giá trị của nó.
+
   ![align-self-center](align-self-center.PNG)
 
 ### 4.8 align content
