@@ -510,6 +510,7 @@ HTLM là ngôn ngữ đánh dấu siêu văn bản
         - placeholder `[text]`: Chỉ định một gợi ý gắn mà mô tả giá trị mong đợi của một phần tử input.
         
         - readonly `[readonly] `: Chỉ đinh rằng một trường input là chỉ đọc
+        - Một readonly yếu tố chỉ là không thể chỉnh sửa, nhưng được gửi khi gửi theo form. Một disabled yếu tố không thể chỉnh sửa và không được gửi khi gửi form.
         ```html
         <form action="#">
             <input type="text" value="abc" readonly />

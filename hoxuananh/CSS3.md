@@ -145,10 +145,57 @@ selector:pseudo-class {
         }
         ```
 
+# ATTRIBUTE SELECTOR
 
-    
+- Vùng chọn `[attribute="value"]` được sử dụng để chọn tất cả các phần tử có thuộc tính `[attribute]` và giá trị value được chỉ định.
+```css
+   li a[rel='contact'] {font-weight: bold;color: cadetblue;} 
+```
+- Bộ chọn `[attribute~="value"]` được sử dụng để chọn tất cả các phần tử có thuộc tính `[attribute]` chứa giá trị value được chỉ định.
+
+```css
+  li .friend[rel~='friend'] {font-weight: bold; font-size: 40px;} 
+```
+- Bộ chọn `[attribute|="value"]` được sử dụng để chọn tất cả các phần tử có thuộc tính `[attribute]` bắt đầu bằng giá trị value được chỉ định. Không áp dụng cho những giá trị viết liền nhau.
+```css
+   li a[class|='friend']{
+      font-size: 30px;
+      color: cornflowerblue;
+  } 
+```
+- Bộ chọn `[attribute^="value"]` được sử dụng để chọn tất cả các phần tử có thuộc tính `[attribute]` bắt đầu bằng giá trị value được chỉ định. Có thể áp dụng cho những giá trị viết liền nhau.
+```css
+  li a[class^='friend']{
+      font-size: 30px;
+      color: cornflowerblue;
+  } 
+```
+
+- Bộ chọn `[attribute$="value"]` được sử dụng để chọn tất cả các phần tử có thuộc tính `[attribute]` kết thúc bằng giá trị value được chỉ định.
+```css
+  li a[class$='1']{
+      font-size: 30px;
+      color: cornflowerblue;
+  } 
+```
+- Bộ chọn `[attribute*="value"]` được sử dụng để chọn tất cả các phần tử có thuộc tính `[attribute]` chứa bằng giá trị value được chỉ định.
+```css
+  li a[class*='e']{
+      font-size: 30px;
+      color: cornflowerblue;
+  } 
+```
+
+# DISPLAY FLEX
+
   
-      
+
+  
+
+
+
+
+
        
         
     
