@@ -1,0 +1,11 @@
+
+.linkexample {
+    color: red
+}
+
+.linkexample:visited {
+    color: green;
+  }
+a:active {
+    color: blue;
+  }

@@ -172,8 +172,6 @@ Gần giống `margin`
 #### CSS Width/Height:
 
 1. set width và height để xác định chiều rộng và chiều cao của 1 elm
-2. set max-width:
-   - Khi một elm có max-width = 1 giá trị nhất định. Và khi ta co cửa sổ trình duyệt nhỏ hơn giá trị max-width của elm đó thì eml đó chiếm 100% chiều rộng của độ dài dòng ( Chiều dài tối đa của 1 elm)
 
 #### CSS Fonts:
 
@@ -194,6 +192,60 @@ Gần giống `margin`
    - font-size/line-height
    - font-family
 
-Có thể được viết tắt là: `font: italic bold 12px/24px Georgia, serif;` tức là `font-style`: italic; `font-weight`: bold; font-size: 12px ; `line-height`: 24px và `font-family` là Georgia, serif
+Có thể được viết tắt là:
+`font: italic bold 12px/24px Georgia, sans serif;`
+tức là:
 
-#### Còn...
+- `font-style`: italic;
+- `font-weight`: bold;
+- `font-size`: 12px/`line-height`: 24px
+- `font-family` là Georgia và font dự phòng là sans serif.
+
+#### CSS Icons:
+
+- Để thêm icon vào trong trang HTML, là thư viện icons như `Font Awesome`
+
+#### Link:
+
+- `Link` có thể được style những kiểu khác nhau phụ thuộc vào `trạng thái` của nó
+  - `a:link` : là trạng thái bình thường khi link chưa được truy cập.
+  - `a:visited` : là trạng thái khi link đã được truy cập.
+  - `a:hover` : là trạng thái khi người dùng đưa chuột vào link.
+  - `a:active` : là trạng thái link người dùng click nhưng chưa thả chuột ra.
+- `cursor` : một số thuộc tính `cursor` https://www.w3schools.com/css/tryit.asp?filename=trycss_cursor
+
+#### CSS Lists:
+
+- **Unordered List** : Được đánh dấu bằng dấu bằng dấu đầu dòng.
+
+<img src="./imgs/5.png">
+
+- **Ordered Lists** : Danh sách các item được đánh dấu với số hoặc chữ cái.
+
+<img src="./imgs/6.png">
+
+`CSS list properties: `
+
+- cho phép list item đặt một hình ảnh làm điểm đánh dấu đầu dòng.
+
+ex: <img src="./imgs/4.png" >
+
+- `Position The List Item Markers`:
+
+  - `Outside`:
+
+   <img src="./imgs/7.png">
+
+  - `Inside`:
+
+   <img src="./imgs/8.png">
+
+#### CSS Table:
+
+##### `Table Border`:
+
+**border-collapse** là thuộc tính để set table có một border duy nhất
+
+ví dụ: <img src="./imgs/9.png">
+
+#### CSS Table:
