@@ -15,7 +15,7 @@
 
 ## 3. Sử dụng:
 
-### SELECTOR CƠ BẢN:
+### 3.1 SELECTOR CƠ BẢN:
 
 1. Id
 
@@ -46,7 +46,7 @@ Tà có thể style cho elms có class là `center`
    etc...
    ```
 
-### Một số SELECTOR nâng cao:
+### 3.2 Một số SELECTOR nâng cao:
 
 **Cú Pháp**
 
@@ -69,7 +69,7 @@ Tà có thể style cho elms có class là `center`
 
 `Ngoài những Selector này ra còn có nhiều selector khác mà ta có thể tham khảo thêm:` https://www.w3schools.com/cssref/css_selectors.asp
 
-### CSS UNITS:
+### 3.3 CSS UNITS:
 
 1. Đơn vị `Tuyệt Đối`:
    - Gồm có px, cm , mm ... px là đơn vị được dùng nhiều nhất
@@ -81,7 +81,7 @@ Tà có thể style cho elms có class là `center`
      - unit `vw` : view witdh độ rộng màn hình
      - unit `vh` : view height độ cao màn hình
 
-### CSS Box Model:
+### 3.4 CSS Box Model:
 
 - **Box model** được dùng khi thiết kế bố cục 1 trang web.
 - Bao bọc xung quanh mọi phần tử HTML. Bảo gồm: margin, borders, padding, và content.
@@ -93,7 +93,7 @@ Tà có thể style cho elms có class là `center`
 3. `Border` : Đường viền xung quanh padding.
 4. `Margin` : Lề bên ngoài border, khoảng cách giữa 2 box cùng 1 mặt phẳng.
 
-#### Margin:
+#### 3.4.1 Margin:
 
 `Được dùng để tạo khoảng cách xung quanh của một thành phần,`
 
@@ -137,11 +137,11 @@ Ví dụ:
 Dễ nhầm lẫn là khoảng cách giữa `h1` và `h2` là 70px nhưng thực ra là 50px. ( Thẻ `thẻ heading` có tính chất mặc định `display: block`)
 Nếu ta set css 1 trong 2 thẻ heading `display: inline-block` thì khoảng cách giữa `h1` và `h2` là 70px
 
-#### Padding:
+#### 3.4.2 Padding:
 
 Gần giống `margin`
 
-#### Border:
+#### 3.4.3 Border:
 
 **Thuộc Tính border cho phép style width, màu và nét đường viền của 1 thành phần**
 
@@ -164,18 +164,18 @@ ví dụ: <img src="./imgs/10.png">
 
 `Được sử dụng để bo góc các đường viền`
 
-#### OutLine
+#### 3.4.4 OutLine
 
 `Là một đường được vẽ bên ngoài đường viền của phần tử. `
 
 - Nó có cú pháp short hand giống border. Nó không có chỉ định hướng riêng lẻ
 - Nó có một thuộc tính khác `outline-offset` là khoảng trống giữa outline và border
 
-#### CSS Width/Height:
+#### 3.4.5 CSS Width/Height:
 
 1. set width và height để xác định chiều rộng và chiều cao của 1 elm
 
-#### CSS Fonts:
+### 3.5 CSS Fonts:
 
 1. font family:
    - Css dùng thuộc tính `font-family` chỉ định phông chữ văn bản.
@@ -203,11 +203,11 @@ tức là:
 - `font-size`: 12px/`line-height`: 24px
 - `font-family` là Georgia và font dự phòng là sans serif.
 
-### CSS Icons:
+### 3.6 CSS Icons:
 
 - Để thêm icon vào trong trang HTML, là thư viện icons như `Font Awesome`
 
-### Link:
+### 3.7 Link:
 
 - `Link` có thể được style những kiểu khác nhau phụ thuộc vào `trạng thái` của nó
   - `a:link` : là trạng thái bình thường khi link chưa được truy cập.
@@ -216,7 +216,7 @@ tức là:
   - `a:active` : là trạng thái link người dùng click nhưng chưa thả chuột ra.
 - `cursor` : một số thuộc tính `cursor` https://www.w3schools.com/css/tryit.asp?filename=trycss_cursor
 
-### CSS Lists:
+### 3.8 CSS Lists:
 
 - **Unordered List** : Được đánh dấu bằng dấu bằng dấu đầu dòng.
 
@@ -230,7 +230,7 @@ tức là:
 
 - cho phép list item đặt một hình ảnh làm điểm đánh dấu đầu dòng.
 
-ex: <img src="./imgs/4.png" >
+`ex:` <img src="./imgs/4.png" >
 
 - `Position The List Item Markers`:
 
@@ -238,21 +238,21 @@ ex: <img src="./imgs/4.png" >
 
   - `Inside`: <img src="./imgs/8.png">
 
-### CSS Table:
+### 3.9 CSS Table:
 
-#### `Table Border`:
+#### 3.9.1 Table Border:
 
 **border-collapse** là thuộc tính để set table có một border duy nhất
 
 ví dụ: <img src="./imgs/9.png">
 
-### CSS background:
+### 3.10 CSS background:
 
 - `Css background` là thuộc tính được dùng để thêm hiệu ứng backgrounds cho elms
 
   - `background-color` value của nó là **color name**, **HEX** và **RGB**
   - `background-image` là thuộc tính chỉ định 1 hình ảnh được dùng làm nền cho 1 thành phần.
-    ex: <img src="./imgs/14.png">
+    `ex:` <img src="./imgs/14.png">
 
   - `background-repeat` -`repeat-x`
 
@@ -282,7 +282,7 @@ ví dụ: <img src="./imgs/9.png">
 
     <img src="./imgs/17.png">
 
-#### CSS Position:
+### 3.11 CSS Position:
 
 - `Position` là thuộc tính chỉ định vị trí cho 1 element
 - Có 5 giá trị để định vị cho thuộc tính `position`: - `static` - `relative` - `fixed` - `absolute` - `sticky`.
@@ -298,7 +298,7 @@ ví dụ: <img src="./imgs/9.png">
 
     - Khi dùng thuộc tính này sẽ khiến elm đó bị điều chỉnh khỏi vị trí bình thường. Nhưng những elm cùng cấp ở phía sau sẽ không được điều chỉnh để phù hợp với khoảng trống mà do elm có `position: relative` để lại.
 
-ex:
+`ex:`
 
 <img src="./imgs/18.png">
 
@@ -317,11 +317,11 @@ ex:
 
    - 1 element với thuộc tính `position: sticky` được định vị dựa trên vị trí hành vi cuộn của. `Cuộn trái`, `Cuộn phải` or `Cuộn xuống`. Khi cuộn ngã nào thì elm có thuộc tính `position: sticky` nó sẽ được `fixed` ngược về phía hướng cuộn lại.
 
-   ex: Tự code
+   `ex:` Tự code
 
    https://www.w3schools.com/css/tryit.asp?filename=trycss_position_sticky
 
-#### CSS Overflow:
+### 3.12 CSS Overflow:
 
 - Là thuộc tính chỉ định có `ẩn nội dung` hay thêm `scroll bar` Khi nội dung của 1 element quá **lớn** để vừa với khu vực được chỉ định.
 - `Overflow` Có 4 giá trị:
@@ -338,43 +338,43 @@ ex:
 
      <img src="./imgs/21.png">
 
-#### CSS Pseudo:
+### 3.13 CSS Pseudo:
 
 1.  **Pseudo - Element:**
 
 **Một số lớp giả thông dụng**:
 
 - `::first-letter` Chỉ định chữ cái đầu tiên.
-  ex:
+  `ex:`
 
   <img src="./imgs/22.png">
 
 - `::first-line` Chỉ định dòng đầu tiên
 
-  ex:
+  `ex:`
 
   <img src="./imgs/23.png">
 
 - `::marker` chọn các element được đánh dấu của các mục trong 1 danh sách.
 
-  ex:
+  `ex:`
 
   <img src="./imgs/25.png">
 
 - `::selection` là phần được người dùng bôi lên text
 
-  ex:
+  `ex:`
 
    <img src="./imgs/26.png">
 
 - `:nth-child(n)` chọn phần tử thứ `n` của element nào đó . Tham số trong `:nth-child(param)` param có thể là `số` or even (phần tử con chẵn) or odd ( phần tử lẻ)
 
-  ex:
+  `ex:`
   <img src="./imgs/27.png">
 
 - `:nth-last-child(n)` phần tử con thứ hai của phần tử thứ `n` cha của nó, tính từ phần tử cuối cùng:
 
-  ex:
+  `ex:`
 
   <img src="./imgs/28.png">
 
@@ -385,15 +385,13 @@ ex:
 - Ngoài ra cũng có thể chèn hình ảnh cho nó.
 - Để sử dụng `::before` và `::after` thì thuộc tính bắt buộc là phải có `content`
 
-  ex:
+  `ex:`
 
   <img src= "./imgs/24.png">
 
 **Ngoài ra có thể tìm hiểu thêm:** https://www.w3schools.com/css/css_pseudo_elements.asp
 
-### CSS Advanced
-
-#### CSS Display cơ bản:
+### 3.14 CSS Display cơ bản:
 
 `Display` là thuộc tính quan trọng trong việc control layout
 
@@ -409,14 +407,14 @@ ex:
 - Mỗi phần tử có thuộc tính `display: inline` 1 thành phần inline không bắt đầu 1 dòng mới và chỉ chiếm độ dài bằng nội dung nó chứa. Nó không phải thành phần khối nên không thể xét `margin` và `padding` cho: `top` và `bottom`
 - Mỗi phần tử có thuộc tính `display: inline-block` 1 thành phần inline block không bắt đầu 1 dòng mới và chỉ có độ dài bằng với nội dung nó chứa
 
-ex:
+`ex:`
 
 <img src="./imgs/11.png">
 
-ex:
+`ex:`
 
 <img src="./imgs/12.png">
 
-ex:
+`ex:`
 
 <img src="./imgs/13.png">
