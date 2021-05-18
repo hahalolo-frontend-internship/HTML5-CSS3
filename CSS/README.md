@@ -507,6 +507,120 @@ ví dụ: <img src="./imgs/9.png">
 
 - Thuộc tính `box-sizing` cho phép ta xét phần tử khối bao gồm phần `padding` và `border` trong tổng chiều rộng và chiều cao của phần tử.
 
-Ví dụ:
+Ví dụ trường hợp k có box-sizing:
 
-  <img src="./imgs/33.png" style="border: 1px solid black">
+  <img src="./imgs/33.png">
+
+Ví dụ trường hợp có box-sizing:
+
+  <img src="./imgs/34.png">
+
+#### 3.16.5 Object-fit:
+
+- Css `object-fit` là thuộc tính được dùng để chỉ định `ảnh` hoặc `video` nên được thay đổi kích thước để fit vừa với cái hộp chứa
+- Thuộc tính này cho biết nội dung cần lắp đầy vùng chứa theo nhiều cách khác nhau. Như `giữ nguyên tỷ lệ khung hình` đó, chiếm nhiều không gian nhất có thể.
+- `object-fit` có 4 giá trị:
+  - `fill` default value, ảnh sẽ được thay đổi kích thước để đưa vào kích thước cho trước. Nhược điểm dễ gây hư ảnh
+  - `contain`: Ảnh được giữ nguyên tỉ lệ khung hình; nhược điểm dễ bị hổng ảnh theo chiều cao or chiều ngang
+  - `cover` : Hình ảnh giữ nguyên tỷ lệ zoom và lấp đầy kích thước đã cho. Hình ảnh sẽ bị cắt bớt phần thừa.
+  - `none` : Hình ảnh không được thay đổi kích thước.
+  - `scale-down` : Hình ảnh được thủ nhỏ để vừa với khung chứa.
+
+#### 3.16.6 Object-position:
+
+- Css `Object-position` là thuộc tính được dùng để chỉ định cách định vị `hình ảnh` hoặc `video` trong vùng chứa của nó.
+- `Object-position` giá trị của thuộc tính này được định vị bằng tọa độ x và y bên trong khung chứa.
+
+#### 3.16.7 Multi-Column Properties:
+
+- `Multi-column` là một cách trình bày layout. Ví dụ trong thực tế. Để ý ta sẽ thấy cách trình bày này thường xuất hiện trên báo.
+
+**Ví dụ:**
+
+<img src="./imgs/35.png">
+
+- `column-count` chỉ định số cột được chia khi nội dung văn bản lớn
+
+- `column-gap` Khoảng cách giữa các cột
+
+- `column-rule` là syntax short-hand của `column-rule-width`, `column-rule-style` (giá trị của nó giống như `border`) và `column-rule-color`.
+- `column-span` như kiểu là `tiêu đề` của bài viết. Giá trị của nó là số cột mà nội dung chính được chia.
+
+- Ngoài ra, thay vì chia cột nội dung bằng `column-count` ta cũng có thể chia cột bằng `column-width` giá trị của nó sẽ là mỗi cột chiếm bao nhiêu đó. Số cột phụ thuộc và độ rộng màn hình.
+
+#### 3.16.8 CSS Variables:
+
+- `var()` được sử dụng để chèn giá trị của một biến CSS.
+
+- Trọng một bản design web sẽ có nhiều nơi trong 1 trong sẽ bị trùng mã màu. Thay vì ta sao chép và dán các màu giống nhau lặp đi lặp lại. Ta có thể đặt chúng `vào một biến`. Và khi cần thay đổi thì ta chỉ cần thay đổi màu được định nghĩa ban đầu thì mọi vị trị có màu đó sẽ được thay đổi mà k cần tới từng nơi để sửa.
+
+**Cách sử dụng**:
+
+- Để tạo một biến có phạm vi toàn bộ bên trong root. `:root` là bộ chọn phần tử gốc của tài liệu mà trong HTML, `root` là html element
+
+- Tạo 1 biến với phạm vi toàn cục. Tên biến phải bắt đầu bằng `hai dấu gạch ngang (-)` và nó có phân biệt `chữ hoa` và `chữ thường`!
+
+Ex:
+
+  <img src="./imgs/36.png">
+
+### 3.17 Making Layout:
+
+#### 3.17.1 LayOut flex:
+
+- `Flex Box` giúp dễ dàng và linh hoạt trong việc thiết cấu trúc layout.
+
+- Để sử dụng `Flexbox` ta phải xác định được vùng chứa (element cha) những **item** ( tức là những phần tử con trực tiếp của vùng chứa cha).
+
+  <img src="./imgs/38.png">
+
+- Một số `property` của `flexbox`:
+
+  - `flex-direction`: Chỉ định hướng, có 4 value:
+
+    - `row`: Các item bên trong sẽ được xếp trên 1 dòng theo trục `main axis`. Từ trái sang phải.
+    - `row-reverse`: xếp trên 1 dòng từ phải qua trái.
+    - `column`: xếp trên 1 cột theo trục `cross axis`. Từ trên xuống dưới
+    - `column-reverse`: xếp trên 1 cột, Từ dưới lên trên
+
+      ví dụ:
+      https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox
+
+  - `flex-wrap` : Chỉ định liệu răng những `flex item` có được xuống hàng hay không. Nếu không xuống hàng thì nó sẽ bị co lại dần. Có 2 value:
+
+    - `wrap`: các `flex item` sẽ được xuống hàng.
+    - `nowrap`: các `flex item` vẫn sẽ nằm trên 1 hàng và làm thay đổi kích thước của những item đó.
+    - `wrap-reverse` : các hàng mà được xuống dòng được sẽ bị đảo ngược.
+
+  - `justify-content`: là thuộc tính được sử dụng để căn chỉnh các `flex item` theo trục `Main axis`. có 5 values:
+
+    - `flex-start`: default value.
+    - `center`: tất cả các item sẽ được căn giữa phần tử cha.
+    - `flex-end`: tất cả các item sẽ được căn phải trong phần tử cha.
+    - `space-around`: tất cả các item sẽ được trải đều trên 1 dòng của phần tử cha, nó sẽ chia đều vị trí cho từng item. Nhưng những item đầu và item cuối trong một hàng sẽ có khoảng hở.
+    - `space-between`: tất cả các item sẽ được trải đều trên 1 dòng của phần tử cha. Và những item đầu và item cuối trong một hàng đứng sát mép của phần tử cha.
+
+    Ví dụ minh họa: https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_justify-content_space-around
+
+  - `align-item`: là thuộc tính được sử dụng để căn chỉnh các `flex-items` theo trục `cross-axis`.
+
+    - `flex-start`: default value, các item sẽ được bắt đầu từ `cross start`.
+    - `center`: các item sẽ được bắt đầu từ giữa chiều cao `flex-container`.
+    - `flex-end`: các item sẽ được bắt đầu từ `cross end`.
+    - `strech` : các item sẽ được kéo dài và lắp đầy phần chứa `flex-container`.
+    - `baseline`: các `flex-items` được căn chỉnh theo đường cơ sở văn bản.
+
+  - `align-content`: là thuộc tính được sử dụng để căn chỉnh các `flex-items` theo trục `cross-axis`. Trong trường hợp `flex-container` có chiều cao lớn hơn so với `flex items` và có 4 values:
+
+    - `space-between`: theo trục `cross-axis` giá trị khoảng trắng giữa các dòng có khoảng cách bằng nhau. Như sát dòng đầu sẽ sát mép trên và dòng cuối sát mép dưới `flex-container`
+    - `space-around`: theo trục `cross-axis` giá trị khoảng trắng giữa các dòng có khoảng cách bằng nhau. ....
+    - `stretch` kéo giãn độ cao các dòng k còn khoảng trắng trong `flex-container`
+    - `center`: các `flex-item` có có kích thước nội dung như nó chứa và tất cả đều đều được hiển thị nằm giữa chiều cao của `flex-container`.
+    - `flex-start`: vô ví dụ
+    - `flex-end`: vô ví dụ
+
+      Ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_align-content_space-around
+
+  ##### Flex-Item.
+
+  
