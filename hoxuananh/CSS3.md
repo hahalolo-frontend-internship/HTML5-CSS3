@@ -4,7 +4,7 @@
 - Là ngôn ngữ tạo phong cách và định kiểu cho những yếu tố được viết dưới dạng ngôn ngữ đánh dấu như HTML
 # RULE CSS3
 ![Cú pháp CSS 3](./Rule.png)
-# 1. LOAD CSS3 
+# I. LOAD CSS3 
 ![Quá trình phân tích](./pas.png) 
 
 1. Đầu tiên Browser tải tệp HTML -> Parse HTML -> xây dựng nên DOM.
@@ -12,7 +12,7 @@
 3. Quá trình Parse CSS có hai giai đoạn : 
     1. Giải quyết các conflict giữa các định nghĩa CSS(tức là nếu 1 element được config/ kế thừa nhiều giá trị CSS khác nhau thì nên chọn cái nào để hiển thị)
     2. Tính toán các giá trị final value
-* ## 1. Resolve conflicting CSS declarations (Cascade)
+## 1. Resolve conflicting CSS declarations (Cascade)
 Các declarations có thể đến từ nhiều nguồn khác nhau: 
 - Author : Các CSS mà dev viết.
 - User : CSS mà người dùng thay đổi (như người dùng thay đổi font-size của trình duyệt -> declaration cho font size)
@@ -38,7 +38,7 @@ Khi mỗi source đều có CSS khác nhau cho 1 elemnt, browser sẽ chọn CSS
 - Khi các css declaration có cùng specificity, declarations cuối cùng trong code sẽ được chọn.
 
 - Nếu phải dùng css của bên thứ 3, bạn cần lưu ý để đặt author stylesheet cuối cùng.
-* ## 2. Process final CSS value
+## 2. Process final CSS value
 ### a. Process
 
 - Quá trình process css gồm 6 bước, được thể hiện bằng hình bên dưới
@@ -51,7 +51,7 @@ Khi mỗi source đều có CSS khác nhau cho 1 elemnt, browser sẽ chọn CSS
 - Used value: Tính toán, dựa trên layout để đưa ra giá trị thích hợp. (ví dụ: 66% thì quy ra px là bao nhiêu) -> phần này có thể cần used value của các phần tử parent.
 - Actual value: Làm tròn (phụ thuộc vào browser và device)
 
-### - Convert như thế nào ? 
+### b. Convert như thế nào ? 
 ![convert](https://i.imgur.com/owaoak9.png)
 - Default font-size của trình duyệt thường là 16px.
 - Các giá trị % hoặc relative(tương đối) đều sẽ được convert ra pixels.
@@ -61,17 +61,17 @@ Khi mỗi source đều có CSS khác nhau cho 1 elemnt, browser sẽ chọn CSS
 - em dùng để tính length (padding, ..) sẽ cần dựa trên current font-size.
 - rem luôn dựa vào document’s root font-size (nếu k có sẽ dùng default font-size của trình duyệt.
 - vh and vw được tính trên % của viewport height và width.
-### b. Inheritance
+### c. Inheritance
 - Kế thừa cho phép pass values từ phần tử cha cho phần tử con :v
 - 1 số properties được kế thừa: font-family, font-size, color,… (padding, margin sẽ không được kế thừa).
 - Computed value là giá trị sẽ được dùng để kế thừa, không phải declared value.
 - Chỉ lấy giá trị kế thừa nếu không có value nào được định nghĩa cho phần tử đó.
 - Để force việc kế thừa cho 1 gía trị, ta có thể dùng từ `inherit`. Để reset giá trị initial của 1 propety, ta dùng keywork `initial`.
 
-# RENDER TREE
+## 3. RENDER TREE
 ![TREE](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png)
 
-# WEBSITE RENDERING : THE VISUAL FORMATTING MODEL
+## 4. WEBSITE RENDERING : THE VISUAL FORMATTING MODEL
 - Thuật toán tính toán các hộp và xác định bố cục
 trong số các hộp chủ đề, cho mỗi phần tử trong cây kết xuất, để xác định
 bố cục cuối cùng của trang.
@@ -82,8 +82,8 @@ bố cục cuối cùng của trang.
 - Sơ đồ định vị [float, positioning]
 - Xếp chồng [z-index]
 
-## 1. BOX MODEL
-            
+### 4.1. BOX MODEL
+
 ![Box](./box.png)
 
 - Content : Nội dung trong hộp nơi hiển thị văn bản, hình ảnh.
@@ -93,16 +93,16 @@ bố cục cuối cùng của trang.
 
 ### Độ rộng thực tế sẽ là 
 **total width** = right border + right padding + specified width + left padding + left border
-
 **total height** = top border + top padding + specified height + bottom padding + bottom border
 
 ### Property Box-sizing: boder-box;
 **total width** = specified width 
 
 **total height** = specified height
+
 ![Box](./box-sizing.png)
 
-## 2. BOX TYPES
+### 4.2 BOX TYPES
 
 
 ### BLock-level boxes
@@ -128,7 +128,7 @@ bố cục cuối cùng của trang.
 
     >`display: inline`
 
-## 3. POSITIONING
+### 4.3 POSITIONING
 
 - Normal flow :
     - Sơ đồ định vị mặc định 
@@ -136,7 +136,7 @@ bố cục cuối cùng của trang.
     - Không được định vị tuyệt tối
     - Các yếu tố được bố trí theo thứ tự nguồn của họ 
     - Mặc định là : 
-    >`position: relative`
+    >`position: static`
 - Float: 
     > `float : left`
 
@@ -154,16 +154,16 @@ bố cục cuối cùng của trang.
     - Không ảnh hưởng đến nội dung, các yếu tố xung quanh .
     - Sử dụng top, left, bottom, right để điều chỉnh phần tử.
 
-## 4. STACKING
+### 4.4 STACKING
 - Xếp chồng các phần tử 
 
-![stacking](./stacking.png)
+    ![stacking](./stacking.png)
 
 
 
-# 2. PROPERTY
+# II. PROPERTY
 
-## COLOR
+## 1. COLOR
 - Màu sắc được chỉ định bằng cách sử dụng tên màu xác định trước hoặc giá trị RGB, HEX, HSL, RGBA, HSLA.
    >rgb(red, green, blue)
 
@@ -181,7 +181,7 @@ bố cục cuối cùng của trang.
     - saturation : Xác định độ bão hòa; 0% là màu xám và 100% là màu đầy đủ (độ bão hòa đầy đủ)
     - lignthness : Xác định độ đậm nhạt; 0% là màu đen, 50% là bình thường và 100% là màu trắng
     - alpha : Xác định độ mờ là một số trong khoảng từ 0,0 (hoàn toàn trong suốt) đến 1,0 (hoàn toàn không trong suốt)
-## BACKGROUND
+## 2. BACKGROUND
 
 >background-color: color|transparent|initial|inherit;
 
@@ -249,7 +249,7 @@ bố cục cuối cùng của trang.
 - color : chế độ hòa trộn màu sắc
 - luminosity: chế độ hòa trộn độ sáng
 
-## FLOAT
+## 3.FLOAT
 
 - Có tác dụng đẩy phần tử sang bên trái hoặc bên phải
 - Cú pháp
@@ -277,52 +277,36 @@ bố cục cuối cùng của trang.
 
     - Để khắc phục vấn đề này, ta thêm thuộc tính overflow:auto vào phần tử chứa nó.
 
-## MAX-WIDTH
-- Dùng để thiết lập chiều rộng tối đa cho phần nội dung phần tử.
-* Lưu ý: 
-     - Đối với phần tử sử dụng thuộc tính width, nếu chiều rộng phần nội dung của cha nó nhỏ hơn chiều rộng của nó thì nó sẽ bị tràn ra ngoài. 
-     - Còn đối với phần tử sử dụng thuộc tính max-width, nếu chiều rộng phần nội dung của cha nó nhỏ hơn chiều rộng của nó thì nó sẽ tự động thu hẹp lại để có thể nằm gọn bên trong phần nội dung của cha nó. 
-     - Khuyến khích nên sử dụng max-width.
-- Các giá trị:
-     - `none`: Không thiết lập chiều rộng tối đa
-     ```css
-      .test{
-            background-color:yellow;
-            max-width:none;
-        }
-     ```
-     - `length`: Thiết lập chiều rộng tối đa cho phần nội dung dựa theo một giá trị cụ thể (em,rem,px,..)
-     ```css
-      .test{
-            background-color:yellow;
-            max-width:none;
-        }
-     ```
-     - parcent : Thiết lập chiều rộng tối đa cho nội dung của phần tử dựa theo tỷ lệ phần trăm chiều rộng phần nội dung của phần tử chứa nó.
-        ```css
-        .test_03{
-            background-color:yellow;
-            max-width:25%;
-        }
-     - initial: Sử dụng giá trị mặc định của nó.
-        ```css
-        .test{
-            background-color:yellow;
-            max-width:initial;
-        }
-        ```
-     - inherit: Kế thừa giá trị thuộc tính max-width từ phần tử cha
-        ```css
-       .father{
-            max-width:50%;
-        }
-        .child{
-            background-color:yellow;
-            max-width:inherit;
-        }
-        ```
-
-# 3. PSEUDO ELEMENT
+## 4. BIẾN
+- Cú pháp: 
+    > --varidable_name: value;
+- Thường được khai báo bên trong pseudo:root (global)
+    ```css
+    :root{
+    --ten-bien: gia tri;
+    --background-main-color: #ffa400;
+    }
+    ```
+- Cách dùng:
+    - Chỉ cần viết như sau thì có thể gọi biến ra để dùng
+    > var(variable_name)
+    ```css
+    .box {
+    background-color: var(--background-main-color);
+    }
+    ```
+- Khai báo local
+    ```css
+    :root {
+    --red: red;
+    }
+    .other-box {
+    --red:pink;    
+    /* dùng biến --red ở bên trong để ghi đè ở :root*/
+    background-color: var(--red);
+    }
+    ```
+## 5. PSEUDO ELEMENT
 1. Syntax 
 
     `selector::pseudo-element {
@@ -366,7 +350,7 @@ bố cục cuối cùng của trang.
 ## `::selection`
 - Áp dụng kiểu cho các phần tử được người dùng đánh dấu (nhấp chuột hoặc kéo chuột qua văn bản)
 
-# 4. PSEUDO CLASS
+## 6. PSEUDO CLASS
 
 - Cú pháp:
 
@@ -419,7 +403,7 @@ selector:pseudo-class {
 
 
 
-# 5. ATTRIBUTE SELECTOR
+## 7. ATTRIBUTE SELECTOR
 
 - Vùng chọn `[attribute="value"]` được sử dụng để chọn tất cả các phần tử có thuộc tính `[attribute]` và giá trị value được chỉ định.
 ```css
@@ -459,44 +443,465 @@ selector:pseudo-class {
       color: cornflowerblue;
   } 
 ```
+
+  
+
+
+# III. FLEX BOX
+
+- Được W3 đề xuất sử dụng kể từ tháng 10/2017 nhằm hỗ trợ chia bố cục, căn chỉnh và phân phối giữa các mục trong một thùng chứa ngay cả khi chúng không xác định.
+
+- Bố cục flex được thiết lập từ một khung lớn đóng vai trò là khung linh hoạt và các thẻ con ngay trong nó đóng vai trò các mục nhỏ linh hoạt.
+
+- Các thành phần chính :
+
+    ![flexbox](https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg)
+
+- Các item sẽ được bố trí theo main axis (trục chính) (từ main start đến main end) hoặc trục vuông góc với trục chính - cross axis (từ cross start đến cross end).
+    - main axis : Trục chính của flex container là trục chính dọc, theo đó các flex item được đặt ra. Lưu ý, nó không nhất thiết phải nằm ngang. Nó được quy định dựa vào thuộc tính flex-direction.
+    - main start và main end: Các flex item được đặt trong container bắt đầu từ main-start và đến main-end.
+    - main size : chiều rộng của container
+    - cross axis : Trục vuông góc với trục chính được gọi là cross axis. Hướng của nó phụ thuộc vào hướng trục chính.
+    - cross start và cross end : Điểm bắt đầu và điểm kết thúc của flex item theo hướng cross axis.
+    - cross size : Phụ thuộc vào chiều rộng hoặc chiều cao của flex item.
+
+##  1. CÁC THUỘC TÍNH CỦA FLEXBOX    
+    
+* ### THUỘC TÍNH FLEX CHO CONTAINER
+![container](https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg)
+
+### a. display
+- Thuộc tính display được sử dụng để định nghĩa một flex container.
+- Nó cho phép tạo ra một bối cách flex để sắp xếp các item.
+    ```css
+    .container{
+        display:flex;
+    }
+    ```
+### b. flex-direction
+- Thiết lập trục chính (main-axis), do đó xác định hướng các flex-item sẽ được đặt trong flex container.
+![flex-direction](https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg)
+```css
+    .container{
+        flex-direction:row | row-reverse | column | column-reverse;
+    }
+```
+`row` : mặc định từ trái sang phải
+
+`row-reverse` : đảo ngược từ phải sang trái
+
+`column` : cột từ trên xuống dưới
+
+`column-reverse` : đảo ngược cột từ dưới lên trên
+
+
+### c. flex-wrap
+- Theo mặc định, tất cả các flex item sẽ cố gắng khớp với một dòng. Bạn có thể thay đổi điều đó và cho phép các item xuống hàng (tách hàng) khi cần thiết với thuộc tính flex-wrap.
+![wrap](https://css-tricks.com/wp-content/uploads/2018/10/flex-wrap.svg)
+
+```css
+.container {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+}
+```
+`nowrap `(mặc định): tất cả flex item sẽ được đặt trên một dòng
+
+`wrap`: flex item sẽ tự động tách dòng, từ trên xuống dưới.
+
+`wrap-reverse`: flex item sẽ tách thành nhiều dòng từ dưới lên trên
+
+### d. flex-flow 
+- Thuộc tính flex-flow là một cách viết tắt cho các thuộc tính flex-direction và flex-wrap.
+- Nó cùng nhau xác định main axis và cross axis của flex container. Giá trị mặc định là row nowrap.
+
+```css
+.container {
+    flex-wrap: direction wrap | wrap| direction | wrap direction;
+}
+```
+### e. justify-content
+- Thuộc tính justify-content xác định sự liên kết dọc theo trục chính.
+- Nó giúp điều chỉnh phần không gian trống còn lại khi tất cả các flex item cùng đặt trên một dòng.
+![justify-content](https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg)
+
+```css
+.container {
+    justify-content:
+    flex-start | flex-end |
+    center | space-between |
+    space-around | space-evenly |
+    start | end |
+    left | right |
+    + ... safe | unsafe;
+}
+```
+
+- flex-start (mặc định): Các item được đặt dồn về phía bắt đầu (theo hướng của flex-direction).
+- flex-end: các item được dồn về phía cuối của flex-direction.
+- start: các item được đặt về phía bắt đầu của hướng wirting-mode
+- end: các item được đặt về phía cuối của hướng wirting-mode
+- left: các item được đặt về phía trái, cạnh của container.
+- right: các item được đặt về phía phải, cạnh của container.
+- center: đặt các item dồn vào giữa.
+- space-between: các item được đặt cách đều nhau, item đầu và cuối đặt tại điểm bắt đầu và kết thúc.
+- space-around: Khoảng cách giữa các item đều nhau. Nhưng, item đầu tiên và cuối cùng có khoảng cách so với container chỉ bằng 1 nửa so với khoảng cách của các item với nhau.
+- space-evenly: Khoảng cách giữa các item và container là đều nhau.
+
+### f. align-items
+- Thuộc tính align-items xác định hành vi mặc định cho cách các flex item được đặt dọc theo cross axis trên dòng hiện tại.
+- Nó như là justify-content nhưng dành cho cross axis (vuông góc với trục chính).
+![align](https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg)
+
+```css
+.container {
+    align-items:
+    stretch | flex-start |
+    flex-end | center |
+    baseline | first baseline |
+    last baseline |
+    start | end |
+    self-start | self-end |
+    + ... safe | unsafe;
+}
+```
+
+- stretch (mặc định): kéo dài item để lấp đầy container 
+- flex-start : các item được đặt ở đầu cross axis. 
+- flex-end: các mục được đặt ở cuối cross axis.
+- center: các item được căn giữa trong cross axis
+- baseline: các item được căn chỉnh như căn chỉnh đường cơ sở của chúng
+
+### g. align-content
+- Phân phối khoảng trống giữa các hàng item, hàng item với cạnh container (theo trục cross axis)
+![content](https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg)
+```css
+.container {
+    align-content:
+    flex-start | flex-end | center |
+    space-between | space-around | space-evenly |
+    stretch | start | end |
+    baseline | first baseline | last baseline |
+    + ... safe | unsafe;
+}
  
-# 6. BIẾN
-- Cú pháp: 
-> --varidable_name: value;
-- Thường được khai báo bên trong pseudo:root (global)
+```
+- flex-start / start: các hàng item được đặt vào đầu container (theo trục cross axis). 
+- flex-end / end: các hàng item được đặt ở cuối container (theo trục cross axis). 
+- center: các hàng item nằm giữa container
+- space-between: các hàng item phân bố đều. Dòng đầu tiên ở đầu container trong khi dòng cuối cùng ở cuối container.
+- space-around: các hàng item được phân bổ đều với không gian bằng nhau xung quanh mỗi dòng. (Item đầu và cuối vẫn có khoảng cách tối thiểu với cạnh container)
+- space-evenly: các hàng item được phân bố đều với không gian bằng nhau xung quanh chúng. (cả với cạnh container)
+- stretch (mặc định): các hàng item được kéo dãn để lấp đầy khoảng trống (theo trục cross axis)
+* ### THUỘC TÍNH FLEX CHO ITEM
+
+![item](https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg)
+
+### a. order
+- Theo mặc định, các flex item được đặt theo thứ tự sắp xếp trong HTML. Tuy nhiên, thuộc tính order có thể kiểm soát thứ tự xuất hiện của chúng trong flex container.
+![order](https://css-tricks.com/wp-content/uploads/2018/10/order.svg)
+```css
+.item {
+    order: <integer>;
+    /* Mặc định là 0 */
+}
+```
+- Số dương thì nằm lui sau
+- Số âm thì nằm tới trước
+
+### b. flex-grow
+
+- Thuộc tính này nó cho các element giãn theo `width` của `container`.
+- Mặc định giá trị trong thuộc tính `flex-grow` là 0.
+- Công thức tính tỉ lệ `width` với điều kiện các item điều có flex-grow >= 1 của các element như sau: `width-item = (flex-grow của item hiện tại/Tổng flex-grow của các item)* width-container`.
+- Nếu áp dụng công thức ra bằng 0 thì width sẽ phụ thuộc vào nội dung bên trong element.
+
+![grow](https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg)
+```css
+.item {
+    flex-grow: <number>;
+    /* Mặc định là 0 */
+}
+```
+### c. flex-shrink
+- Thuộc tính này nó cho các element co lại theo width của container.
+- Mặc định giá trị trong thuộc tính flex-shrink là 1 nghĩa là cho phép element được co lại khi `width` của container giảm xuống.
+- Nếu giá trị `flex-shrink: 0` thì khi co lại element sẽ không bị thay đổi width
+
+```css
+.item {
+    flex-shrink: <number>;
+    /* Mặc định là 1 */
+}
+```
+
+### c. flex-basic
+- Dùng để set `width` hoặc `height` của element dựa vào `flex-direction` là `row` hay `column`.
+- Mặc định là `flex-direction: row` cho nên lúc này `flex-basis` sẽ tương ứng với thuộc tính `width` của element.
+- Khi `flex-direction: column` thì lúc này `flex-basis` sẽ là `height` của element.
+- `flex-basis` sẽ đè lên thuộc tính `width` hoặc `height` của element.
+
+```css
+.item {
+  flex-basis: <length> | auto; /* default auto */
+}
+```
+### d. flex
+- Thuộc tính flex là viết tắt cho sự kết hợp thuộc tính flex-grow, flex-shrink và flex-basis.
+
+```css
+.item {
+    flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>]
+}
+```
+
+### e. align-self
+
+- Tương tự như align-item nhưng chỉ định cho một item riêng.
+
+
+![self](https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg)
+
+```css
+.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+```
+
+## NOTE: float, clear, vertical-align không ảnh hưởng đến flex item
+
+
+# IV. GRID
+
+- Grid (lưới) là một hệ thống bố cục dựa trên lưới hai chiều với cả chiều dọc và chiều ngang, được sử dụng để định ví các khối trên một grid.
+
+## Thuật ngữ
+
+### 1. Grid line
+- Là các đường ngang và dọc tạo thành cấu trúc grid. Chúng được sử dụng để định vị các khối trên grid.
+
+![line](https://www.bravebits.co/wp-content/uploads/2017/12/grid-line.png)
+
+### 3. Grid Tracks and Cells
+- Grid Tracks là không gian giữa 2 grid line liền kề nhau. 
+- Grid Cell là khoảng không gian giữa 2 row liền kề của gird. Nó là những hàng và cột của grid.
+
+![line](https://www.bravebits.co/wp-content/uploads/2017/12/grid-tracks-cell.png)
+
+### 4. Grid areas
+- Là một hoặc nhiều ô lưới tạo thành một vùng hình chữ nhật trên lưới
+
+![areas](https://www.bravebits.co/wp-content/uploads/2017/12/grid-area.png)
+### 5. Gutters
+- Các khoảng cách giữa grid cells có thể được tạo ra bằng cách sử dụng grid-column-gap hoặc grid-row-gap điều thay cho việc chúng ta phải sử dụng padding hay margin.
+    - Màu xanh thể hiện grid-column-gap.
+    - Màu đỏ thể hiện grid-row-gap
+
+![gutters](https://www.bravebits.co/wp-content/uploads/2017/12/grid-gutters.png)
+
+## FRACTION UNIT (`fr`)
+- Đây là giá trị được dùng trong CSS GRID.
+- Giá trị này sẽ chiếm khoảng trống lớn nhất có thể.
+## THUỘC TÍNH CHO CONTAINER
+### a. grid-template-columns, grid-template-rows
+- grid-template-columns: Dùng để xác định số lượng cột trong grid layout và nó có thể xác định width của mỗi cột.
+- grid-template-rows: Dùng để xác định số lượng row trong grid layout và nó có thể xác định height của mỗi cột
+- Đơn vị ở đây có thể dùng là: px, %, em, rem, auto và fr.
+```css
+.container{
+    grid-template-columns:40px 50px auto 50px 40px; 
+}
+```
+`repeat` 
+- Dùng để lặp lại ví dụ bạn muốn row 1 và row 2 đều là 40px thì khai báo như sau: 
     ```css
-    :root{
-    --ten-bien: gia tri;
-    --background-main-color: #ffa400;
-    }
-    ```
-- Cách dùng:
-    - Chỉ cần viết như sau thì có thể gọi biến ra để dùng
-    > var(variable_name)
-    ```css
-    .box {
-    background-color: var(--background-main-color);
-    }
-    ```
-- Khai báo local
-    ```css
-    :root {
-    --red: red;
-    }
-    .other-box {
-    --red:pink;    
-    /* dùng biến --red ở bên trong để ghi đè ở :root*/
-    background-color: var(--red);
-    }
+        .container{
+        grid-template-rows: repeat(2,40px) 50px 40px; 
+        }
     ```
 
-  
+### b. grid-template-areas
+- Xác định mẫu lưới bằng cách tham chiếu tên của các vùng lưới được chỉ định với thuộc tính vùng lưới. 
+- Việc lặp lại tên của một vùng lưới làm cho nội dung kéo dài các ô đó. Dấu chấm biểu thị một ô trống.
+```css
+/* đặt tên cho các item trong container grid */
+   .item-1 {
+    grid-area: header;
+    background-color: lightseagreen;
+}
 
-  
+.item-2 {
+    background-color: rgb(90, 178, 32);
+
+    grid-area: main;
+}
+
+.item-3 {
+    background-color: rgb(163, 178, 32);
+
+    grid-area: sidebar;
+}
+
+.item-4 {
+    grid-area: footer;
+    background-color: rgb(178, 32, 32);
+
+}
+
+/* container grid  */
+.container {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px); */
+    grid-template-areas:
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer "
+    ;
+}
+```
+![areas](https://css-tricks.com/wp-content/uploads/2018/11/dddgrid-template-areas.svg)
+
+### c. grid-template
+- Là cách viết tắt để thiết lập grid-template-columns grid-template-rows gird-template-areas
+```css
+.container {
+    display: grid;
+    grid-template:
+     "header header" 50px 
+     "main sidebar" 100px 
+     "footer footer" 190px /1fr 1fr
+     ;
+}
+
+```
+
+### d. column-gap, row-gap, grid-column-gap, grid-row-gap
+- Thiết lập khoảng cách giữa các columns và rows
+```css
+.container {
+  /* standard */
+  column-gap: <line-size>;
+  row-gap: <line-size>;
+
+  /* old */
+  grid-column-gap: <line-size>;
+  grid-row-gap: <line-size>;
+}
+```
+
+### e. gap, grid-gap
+- Là cách viết tắt để thiết lập column-gap, row-gap.
+```css
+.container {
+  /* standard */
+  gap: <grid-row-gap> <grid-column-gap>;
+
+  /* old */
+  grid-gap: <grid-row-gap> <grid-column-gap>;
+}
+```
+### f. Justify-items
+- Căn chỉnh nội dung bên trong grid item theo trục dọc
+```css
+.container {
+  justify-items: start | end | center | stretch;
+}
+```
+## `start`
+![start](https://css-tricks.com/wp-content/uploads/2018/11/justify-items-start.svg)
+## `end`
+![end](https://css-tricks.com/wp-content/uploads/2018/11/justify-items-end.svg)
+## `center`
+![center](https://css-tricks.com/wp-content/uploads/2018/11/justify-items-center.svg)
+## `stretch`
+![stretch](https://css-tricks.com/wp-content/uploads/2018/11/justify-items-stretch.svg)
+
+### g. align-items
+- Căn chỉnh nội dung bên trong grid item theo trục ngang
+```css
+.container {
+  align-items: start | end | center | stretch;
+}
+```
+## `start`
+![start](https://css-tricks.com/wp-content/uploads/2018/11/align-items-start.svg)
+## `end`
+![end](https://css-tricks.com/wp-content/uploads/2018/11/align-items-end.svg)
+## `center`
+![center](https://css-tricks.com/wp-content/uploads/2018/11/align-items-center.svg)
+## `stretch`
+![stretch](https://css-tricks.com/wp-content/uploads/2018/11/align-items-stretch.svg)
+
+### h. justify-content
+- Đôi khi tổng kích thước của lưới của bạn có thể nhỏ hơn kích thước của vùng chứa lưới của nó. Điều này có thể xảy ra nếu tất cả các mục lưới của bạn có kích thước bằng các đơn vị không linh hoạt như px. Trong trường hợp này, bạn có thể đặt căn chỉnh của lưới trong vùng chứa lưới.
+- Căn theo trục dọc
+
+```css
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;    
+}
+```
+## `start`
+![start](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-start.svg)
+## `end`
+![end](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-end.svg)
+## `center`
+![center](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-center.svg)
+## `stretch`
+![stretch](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-stretch.svg) 
+## `around`
+![space-around](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-around.svg)
+## `space-between`
+![space-between](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-between.svg)
+## `space-evenly`
+![space-evenly](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-evenly.svg)
+
+### i. align-content
+- Căn theo trục ngang
+```css
+.container {
+  align-content: start | end | center | stretch | space-around | space-between | space-evenly;    
+}
+```
+
+## `start`
+![start](https://css-tricks.com/wp-content/uploads/2018/11/align-content-start.svg)
+## `end`
+![end](https://css-tricks.com/wp-content/uploads/2018/11/align-content-end.svg)
+## `center`
+![center](https://css-tricks.com/wp-content/uploads/2018/11/align-content-center.svg)
+## `stretch`
+![stretch](https://css-tricks.com/wp-content/uploads/2018/11/align-content-stretch.svg) 
+## `around`
+![space-around](https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-around.svg)
+## `space-between`
+![space-between](https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-between.svg)
+## `space-evenly`
+![space-evenly](https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-evenly.svg)
+
+### j. grid-auto-columns , grid-auto-rows
+### k. grid-auto-flow
+### l. grid
+
+## THUỘC TÍNH CHO ITEMS
 
 
+#  `NOTE`
+- float, display: inline-block, display: table-cell, vertical-align and column-* Không ảnh hưởng đến grid item
+### a. grid-column-start, grid-column-end, grid-row-start, grid-row-end
 
 
+```css
+.item {
+  grid-column-start: <number> | <name> | span <number> | span <name> | auto;
+  grid-column-end: <number> | <name> | span <number> | span <name> | auto;
+  grid-row-start: <number> | <name> | span <number> | span <name> | auto;
+  grid-row-end: <number> | <name> | span <number> | span <name> | auto;
+}
+```
+
+> span trước thì tính từ dòng line chiếm bao nhiêu span về trước
+> span sau thì tính từ dòng line chiến bao nhiêu span về sau
 
        
         
