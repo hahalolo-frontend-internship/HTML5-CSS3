@@ -26,5 +26,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 ### Các thuộc tính của thẻ meta
+```html
 <img src="loi.png">
+```
 
