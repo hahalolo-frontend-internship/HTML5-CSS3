@@ -27,6 +27,9 @@
 ```
 ### Các thuộc tính của thẻ meta
 ```html
-<img src="loi.png">
+ <meta
+      property="og:image"
+      content="loi.png"
+    />
 ```
 
