@@ -880,14 +880,56 @@ selector:pseudo-class {
 ![space-evenly](https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-evenly.svg)
 
 ### j. grid-auto-columns , grid-auto-rows
+- Dùng để tạo kích thước columns or rows được tạo ra bằng chính px mình mong muốn
+```css
+.container {
+  grid-auto-columns: <track-size> ...;
+  grid-auto-rows: <track-size> ...;
+}
+```
+
+- ex: 
+```css
+.container {
+  grid-template-columns: 60px 60px;
+  grid-template-rows: 90px 90px;
+}
+```
+![auto](https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-01.svg)
+```css
+.item-a {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.item-b {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+```
+![auto](https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-02.svg)
+```css
+.container {
+  grid-auto-columns: 60px;
+}
+```
+![auto](https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-03.svg)
 ### k. grid-auto-flow
+- Các grid item không được sắp xếp khi dùng thuộc tính này nó sẽ tự động sắp xếp cho mình theo row hoặc column
+```css
+.container {
+  grid-auto-flow: row | column | row dense | column dense;
+}
+```
 ### l. grid
+- Một cách viết tắt để thiết lập tất cả các thuộc tính sau trong một khai báo duy nhất: grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and grid-auto-flow.
+- Tự tìm hiểu thêm.
 
 ## THUỘC TÍNH CHO ITEMS
 
 
 #  `NOTE`
 - float, display: inline-block, display: table-cell, vertical-align and column-* Không ảnh hưởng đến grid item
+
 ### a. grid-column-start, grid-column-end, grid-row-start, grid-row-end
 
 
@@ -899,14 +941,73 @@ selector:pseudo-class {
   grid-row-end: <number> | <name> | span <number> | span <name> | auto;
 }
 ```
+- grid-column-start: grid item xuất phát từ cột line thứ mấy đó
+- grid-column-end : gird item kết thúc từ cột line thứ mấy đó
+- grid-row-start: grid item xuất phát từ cột line thứ mấy đó
+- grid-row-end : gird item kết thúc từ cột line thứ mấy đó
 
-> span trước thì tính từ dòng line chiếm bao nhiêu span về trước
-> span sau thì tính từ dòng line chiến bao nhiêu span về sau
+> grid-rows: start/end; viết tắt của gird-row-start vs grid-row-end
+> grid-columns:start /end;
+
+> span start thì tính từ dòng line chiếm bao nhiêu span về trước
+> span end thì tính từ dòng line chiếm bao nhiêu span về sau
 
        
-        
-    
+### b. justify-self
+
+- Căn chỉnh grid item bên trong một ô theo trục dọc
+```css
+.item {
+  justify-self: start | end | center | stretch;
+}
+```
+## `start`
+![start](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-start.svg)
+## `end`
+![end](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-end.svg)
+## `center`
+![center](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-center.svg)
+## `stretch`
+![stretch](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-stretch.svg)  
      
+
+### c. align-self
+
+- Căn chỉnh grid item bên trong một ô theo trục ngang
+```css
+.item {
+  align-self: start | end | center | stretch;
+}
+```
+## `start`
+![start](https://css-tricks.com/wp-content/uploads/2018/11/align-self-start.svg)
+## `end`
+![end](https://css-tricks.com/wp-content/uploads/2018/11/align-self-end.svg)
+## `center`
+![center](https://css-tricks.com/wp-content/uploads/2018/11/align-self-center.svg)
+## `stretch`
+![stretch](https://css-tricks.com/wp-content/uploads/2018/11/align-self-stretch.svg)  
+
+### d. place-sefl
+- Đặt cả thuộc tính align-self và justify-self trong một khai báo duy nhất.
+
+- Giá trị đầu tiên đặt align-self, giá trị thứ hai justify-self. Nếu giá trị thứ hai bị bỏ qua, giá trị đầu tiên được gán cho cả hai thuộc tính.
+
+```css
+.item-a {
+  place-self: center;
+}
+```
+![stretch](https://css-tricks.com/wp-content/uploads/2018/11/place-self-center.svg)  
+
+
+```css
+.item-a {
+  place-self: center stretch;
+}
+```
+![stretch](https://css-tricks.com/wp-content/uploads/2018/11/place-self-center-stretch.svg)  
+
 
 
 
