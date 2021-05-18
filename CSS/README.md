@@ -81,7 +81,41 @@ Tà có thể style cho elms có class là `center`
      - unit `vw` : view witdh độ rộng màn hình
      - unit `vh` : view height độ cao màn hình
 
-### 3.4 CSS Box Model:
+ex: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_units
+
+### 3.4 CSS Text:
+
+`Css có nhiều thuộc tính định dạng văn bản.`
+
+#### 3.4.1 Text Alignment:
+
+- `text-align` : Có 3 giá trị `center` , `left` or `right` or `justify` ( thuộc tính này đặc biệt là nó sẽ điều chỉnh chiều rộng mỗi dòng đều bằng nhau.)
+- `direction` : rtl or ltr là hướng chữ xuất phát từ trái hoặc phải.
+- `vertical-align` : `top`, `middle` or `bottom` ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss_vertical-align
+
+- `text-decoration` : `none`, `overline`, `line-through`, or `underline` ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration
+
+- `text-transform` : `uppercase`, `lowercase` or `capitalize` Ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform
+
+- `text-indent`: Dùng để thụt lề dòng đầu tiên trong 1 đoạn văn bản. Ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss_text-indent
+
+- `letter-spacing`: Chỉ định khoảng cách giữa các `chữ cái`.
+
+- `Line Height` : khoảng cách giữa các dòng. ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss_line-height
+
+- `word-spacing`: Khoảng cách giữa các `từ`
+
+- `white-space`: default `normal`, `pre` có thể custom `nowrap` ví dụ: https://www.w3schools.com/cssref/playit.asp?filename=playcss_white-space&preval=pre-wrap
+
+- `text-overflow`: thường dùng kết hợp với thuộc tính `overflow`: hidden và `white-space`: nowrap để thấy hiệu quả.
+
+  - `clip` văn bản bị cắt ngang.
+
+  - `ellipsis` nếu nội dung dài hơn khung chứa thì sẽ render ra (...) để đại diện thay cho những phần văn bản bị cắt
+
+- `text-shadow` : thuộc tính dùng để `thêm bóng` cho 1 đoạn text. Ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss3_text-shadow3
+
+### 3.6 CSS Box Model:
 
 - **Box model** được dùng khi thiết kế bố cục 1 trang web.
 - Bao bọc xung quanh mọi phần tử HTML. Bảo gồm: margin, borders, padding, và content.
@@ -93,7 +127,7 @@ Tà có thể style cho elms có class là `center`
 3. `Border` : Đường viền xung quanh padding.
 4. `Margin` : Lề bên ngoài border, khoảng cách giữa 2 box cùng 1 mặt phẳng.
 
-#### 3.4.1 Margin:
+#### 3.6.1 Margin:
 
 `Được dùng để tạo khoảng cách xung quanh của một thành phần,`
 
@@ -137,11 +171,11 @@ Ví dụ:
 Dễ nhầm lẫn là khoảng cách giữa `h1` và `h2` là 70px nhưng thực ra là 50px. ( Thẻ `thẻ heading` có tính chất mặc định `display: block`)
 Nếu ta set css 1 trong 2 thẻ heading `display: inline-block` thì khoảng cách giữa `h1` và `h2` là 70px
 
-#### 3.4.2 Padding:
+#### 3.6.2 Padding:
 
 Gần giống `margin`
 
-#### 3.4.3 Border:
+#### 3.6.3 Border:
 
 **Thuộc Tính border cho phép style width, màu và nét đường viền của 1 thành phần**
 
@@ -164,24 +198,28 @@ ví dụ: <img src="./imgs/10.png">
 
 `Được sử dụng để bo góc các đường viền`
 
-#### 3.4.4 OutLine
+#### 3.6.4 OutLine
 
 `Là một đường được vẽ bên ngoài đường viền của phần tử. `
 
 - Nó có cú pháp short hand giống border. Nó không có chỉ định hướng riêng lẻ
 - Nó có một thuộc tính khác `outline-offset` là khoảng trống giữa outline và border
 
-#### 3.4.5 CSS Width/Height:
+#### 3.6.5 CSS Width/Height:
 
 1. set width và height để xác định chiều rộng và chiều cao của 1 elm
 
-### 3.5 CSS Fonts:
+### 3.7 CSS Fonts:
 
 1. font family:
    - Css dùng thuộc tính `font-family` chỉ định phông chữ văn bản.
    - Ta nên dụng nhiều font dự phòng để nhỡ máy người khác không có font đo thì còn có font dự phòng.
-2. Font web an toàn: - font web là font được cài đặt phổ biến trên tất cả các trình duyệt và thiết bị. - Một số web font an toàn cho HTML và CSS: - Arial (sans-serif) - Verdana (sans-serif) - Helvetica (sans-serif) - v.v...
-   `Trước khi code ra web, ta nên kiểm tra thử coi font xuất hiện như thế trên mọi trình duyệt và thiết bị và ta dùng thêm font dự phòng. `
+2. Font web an toàn:
+
+- font web là font được cài đặt phổ biến trên tất cả các trình duyệt và thiết bị.
+- Một số web font an toàn cho HTML và CSS: - Arial (sans-serif) - Verdana (sans-serif) - Helvetica (sans-serif) - v.v...
+
+`Trước khi code ra web, ta nên kiểm tra thử coi font xuất hiện như thế trên mọi trình duyệt và thiết bị và ta dùng thêm font dự phòng. `
 
 3. font-style:
    - `font-style`: italic or là oblique (oblique ít được hỗ trợ) tác dụng in nghiêng chữ
@@ -207,7 +245,7 @@ tức là:
 
 - Để thêm icon vào trong trang HTML, là thư viện icons như `Font Awesome`
 
-### 3.7 Link:
+### 3.8 Link:
 
 - `Link` có thể được style những kiểu khác nhau phụ thuộc vào `trạng thái` của nó
   - `a:link` : là trạng thái bình thường khi link chưa được truy cập.
@@ -216,7 +254,7 @@ tức là:
   - `a:active` : là trạng thái link người dùng click nhưng chưa thả chuột ra.
 - `cursor` : một số thuộc tính `cursor` https://www.w3schools.com/css/tryit.asp?filename=trycss_cursor
 
-### 3.8 CSS Lists:
+### 3.9 CSS Lists:
 
 - **Unordered List** : Được đánh dấu bằng dấu bằng dấu đầu dòng.
 
@@ -238,15 +276,15 @@ tức là:
 
   - `Inside`: <img src="./imgs/8.png">
 
-### 3.9 CSS Table:
+### 3.10 CSS Table:
 
-#### 3.9.1 Table Border:
+#### 3.10.1 Table Border:
 
 **border-collapse** là thuộc tính để set table có một border duy nhất
 
 ví dụ: <img src="./imgs/9.png">
 
-### 3.10 CSS background:
+### 3.11 CSS background:
 
 - `Css background` là thuộc tính được dùng để thêm hiệu ứng backgrounds cho elms
 
@@ -282,7 +320,7 @@ ví dụ: <img src="./imgs/9.png">
 
     <img src="./imgs/17.png">
 
-### 3.11 CSS Position:
+### 3.12 CSS Position:
 
 - `Position` là thuộc tính chỉ định vị trí cho 1 element
 - Có 5 giá trị để định vị cho thuộc tính `position`: - `static` - `relative` - `fixed` - `absolute` - `sticky`.
@@ -321,7 +359,7 @@ ví dụ: <img src="./imgs/9.png">
 
    https://www.w3schools.com/css/tryit.asp?filename=trycss_position_sticky
 
-### 3.12 CSS Overflow:
+### 3.13 CSS Overflow:
 
 - Là thuộc tính chỉ định có `ẩn nội dung` hay thêm `scroll bar` Khi nội dung của 1 element quá **lớn** để vừa với khu vực được chỉ định.
 - `Overflow` Có 4 giá trị:
@@ -338,7 +376,7 @@ ví dụ: <img src="./imgs/9.png">
 
      <img src="./imgs/21.png">
 
-### 3.13 CSS Pseudo:
+### 3.14 CSS Pseudo:
 
 1.  **Pseudo - Element:**
 
@@ -391,7 +429,7 @@ ví dụ: <img src="./imgs/9.png">
 
 **Ngoài ra có thể tìm hiểu thêm:** https://www.w3schools.com/css/css_pseudo_elements.asp
 
-### 3.14 CSS Display cơ bản:
+### 3.15 CSS Display cơ bản:
 
 `Display` là thuộc tính quan trọng trong việc control layout
 
@@ -418,3 +456,57 @@ ví dụ: <img src="./imgs/9.png">
 `ex:`
 
 <img src="./imgs/13.png">
+
+### 3.16 CSS Advanced:
+
+- CSS Gradient cho phép ta hiển thị dài màu chuyển tiếp 1 cách smooth.
+
+  #### 3.16.1 Linear Gradients:
+
+  - Để tạo dải Linear Gradients tuyến tính, ta phải xác định 2 điểm màu cụ thể. Đặt hướng với hiệu ứng gradient
+
+  ex:
+
+  <img src="./imgs/29.png">
+
+  Ví dụ: này mặc định hướng là từ `top` đến `bottom`
+
+  - Để xét hướng chuyển màu có 2 cách.
+
+    - cách 1:
+
+      ex:
+
+      <img src="./imgs/30.png">
+
+    - cách 2:
+
+      ex:
+
+      <img src="./imgs/31.png">
+
+  Ta cũng có thể thêm nhiều màu vào hàm `linear-gradient(red, yellow, green, newParam...)`
+
+  #### 3.16.2 Radial Gradients:
+
+  - Radial gradient được xác định bởi tâm.
+
+  - Tạo radial gradient tương tự linear gradients.
+
+  - Mặc định dải màu trong radial gradient là `ellipse`. Ta có thể xét thành `circle`
+
+  #### 3.16.3 Box Shadow:
+
+  - Tương tự như text-shadow
+
+  ví dụ:
+
+  <img src="./imgs/32.png">
+
+#### 3.16.4 Box-sizing:
+
+- Thuộc tính `box-sizing` cho phép ta xét phần tử khối bao gồm phần `padding` và `border` trong tổng chiều rộng và chiều cao của phần tử.
+
+Ví dụ:
+
+  <img src="./imgs/33.png" style="border: 1px solid black">
