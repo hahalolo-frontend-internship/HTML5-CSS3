@@ -1200,3 +1200,5 @@ selector:pseudo-class {
 ### Mobile First:
   - Sử dụng min-width
   - Giao diện thay đổi khi độ rộng màn hình lớn hơn hoặc bằng break point
+  
+[demo responsive](https://codepen.io/Sadioho/pen/NWpbjQp)
