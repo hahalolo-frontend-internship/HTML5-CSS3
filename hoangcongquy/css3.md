@@ -674,4 +674,44 @@
       ![box-sizing==](anhcss/sizing.png)
    * Note: Chức năng điều hướng. Sử dụng float với danh sách các siêu liên kết để tạo menu ngang
    ![NavigationFloat](anhcss/NavigationFloat.png)
-      
+## PX-EM conventer   
+   - PX to EM Converter
+   + Đặt kích thước phông chữ mặc định (thường là 16px)
+   + Chuyển đổi giá trị pixel thành em, dựa trên kích thước mặc định or chuyển đổi giá trị em thành pixel, dựa trên kích thước mặc định
+   ```css
+      px	em	percent
+      5px	0.3125em	31.25%
+      .     .        .
+      15px	0.9375em	93.75%
+      16px	1.0000em	100.00%
+      17px	1.0625em	106.25%
+      .     .        .
+      25px	1.5625em	156.25%
+   ```
+   + Sự khác biệt giữa PX, EM và Phần trăm là gì?
+      + Pixel là phép đo tĩnh, trong khi phần trăm và EM là phép đo tương đối. 
+      + Phần trăm phụ thuộc vào kích thước phông chữ mẹ của nó. 
+      + EM là liên quan đến kích thước phông chữ hiện tại của phần tử 
+         +EX: (2em có nghĩa là 2 lần kích thước của phông chữ hiện tại). Kích thước phông chữ của body là 16 pixel, thì 150% sẽ là 24 pixel (1,5 * 16) 
+         ```css
+            <head>
+            <style>
+            h1 {
+               font-size: 1em;
+               color: red;
+            }
+            p {
+               font-size: 16px;
+               line-height: 50px;
+               color: red;
+            }
+            </style>
+            </head>
+            <body>
+            <h1>This is heading 1</h1>
+            <h2>This is heading 2</h2>
+            <p>This is a paragraph.</p>
+         </body>
+         ```
+         ![PX_EM](anhcss/px_em.png)
+## Transions
