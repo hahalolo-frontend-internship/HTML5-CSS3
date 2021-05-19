@@ -5,7 +5,7 @@
 # RULE CSS3
 ![Cú pháp CSS 3](./Rule.png)
 # I. LOAD CSS3 
-![Quá trình phân tích](./pas.png) 
+![Quá trình phân tích](./pas.png){:height="30px" width="30px"}.
 
 1. Đầu tiên Browser tải tệp HTML -> Parse HTML -> xây dựng nên DOM.
 2. Trong quá trình Parse HTML tìm thấy ở phần head có stylesheet và nó cũng bắt đầu tải chúng.
@@ -1010,6 +1010,193 @@ selector:pseudo-class {
 
 
 
+# V. TRANSITION 
+
+- Cách để dễ xác định trasition cho các trạng thái khác nhau là sử dụng `:hover`, `:focus`, `:active ` và `target`, `pseudo-class`.
+- Để tạo ra hiệu ứng chuyển đổi Transition, bạn phải xác định ít nhất 2 điều: 
+  - Thuộc tính CSS muốn thêm hiệu ứng vào
+  - Thời gian chuyển đổi diễn ra
+  - Nếu duration không được chỉ định thì giá trị mặc định bằng 0.
+- Transition có 4 thuộc tính:
+
+  `transition-property` :
+  - Xác định chính xác những thuộc tính nào sẽ được thay đổi cùng với các thuộc tính chuyển tiếp khác.
+  - Một số thuộc tính phổ biến :
+  
+    ![transition_property](transition_property.png)
+  `transition-duration`
+
+  - Thời gian diễn ra quá trình chuyển đổi bằng cách sử dụng thời gian s hoặc mili giây(ms)
+  
+  `transition-timing-function`
+  - Dùng để xác định tốc độ thay đổi khi chuyển đổi.
+  - Các giá trị có sẵn: 
+    - ease :tạo hiệu ứng chuyển đổi khi bắt đầu thì chậm sau đó nhanh dần và gần kết thúc lại chậm từ từ (giá trị mặc định)
+    - linear: tạo hiệu ứng chuyển đổi từ lúc bắt đầu với lúc kết thúc tốc độ là như nhau.
+    - ease-in: tạo hiệu ứng chuyển đổi chậm ở lúc bắt đầu.
+    - ease-out: tạo hiệu ứng chuyển đổi chậm ở lúc kết thúc.
+    - ease-in-out: tạo hiệu ứng chuyển đổi chậm ở lúc bắt đầu và lúc kết thúc.
+
+  `transition-delay`
+  - Sử dụng để xác định khoản thời gian trì hoẵn giữa thời gian một thuojc tính thay đổi và lúc chuyển tiếp thực sự bắt đầu.
+
+  `transition`: Viết tắt bao gồm các thuộc tính trên
+  `transition : property name | duration | easing function | delay` 
+  - Khi sử dụng cho 2 thuộc tính trở lên thì dùng , .
+
+[DEMO-TRANSITION](https://codepen.io/Sadioho/pen/WNpoxbE)
+
+# VI. ANIMATION
+
+- Cho phép tạo ra hiệu ứng chuyển động mà không cần sử dụng đến JS hay Flash
+- Animation là hiệu ứng chuyển động.
+- Để tạo ra một chuyển động Animation cần phải có các keyframe
+- Mỗi Keyframe được chạy ở 1 thời điểm xác định và trong keyframe đó nó quy định việc phần tử sẽ di chuyển ra sao
+- Ngoài ra Animation còn quy định một số thuộc tính quy định các chi tiết khá quan trọng :
+### `animation-name `
+- Khai báo tên Keyframe được sử dụng
+### `animation-duration `
+- Tương tự như trasition 
+### `animation-timing-function`
+- Tương tự như trasition 
+### `animation-delay`
+- Tương tự như trasition   
+### `animation-iteration-count`
+- Sử dụng để thiết lập số lần thực hiện một animation.
+- Giá trị thường là: 
+  - Một số lần nhất định 
+  - infinite: animation lặp lại liên tục vô hạn.
+### `aniamtion-direction`
+- Xác định chiều chạy của animation.
+- Các giá trị:
+  - `normal`: animation di chuyển bình thường tiến về phía trước (mặc định)
+  - `reverse`: animation di chuyển theo hướng ngược lại, lui về sau.
+  - `alternate`: animation di chuyển tiến về trước, sau đó lui theo hướng ngược lại
+  - `alternate-reverse`: animation di chuyển ngược lại trước, rồi đổi chiều tiến về trước.
+### `animation-fill-mode`
+- Sử dụng để thay đổi trạng thái của phần tử trước khi bắt đầu sau khi kết thúc Animation.
+  - Các thuộc tính: 
+    - `none`
+    - `forwards`
+    - `backwards`
+    - `both`
+
+### `animation-play-state`
+- `paused`  : Xác định chuyển động dừng lại
+- `running` : Xác định chuyển động chạy
+## Rule Keyframe
+  - Quy định phần tử sẽ chuyển động ra sao tại mỗi thời điểm nhất định
+  - Syntax: 
+    - Name: tên của animation bạn muốn tạo
+    - Code: Các đoạn code quy định tiến trình chuyển động. Có 2 dạng: 
+      - Sử dụng phần trăm từ **0% đến 100%**.
+      - **from...to**: thiết lập giá trị từ khởi đầu (from - tương đương với 0%) đến kết thúc (to - tương đương với 100%).
+  ```css
+  @keyframes Name { 
+  /*code*/
+  }
+  ```
+
+[DEMO-ANIMATION](https://codepen.io/Sadioho/pen/XWMNjXb)
+  
 
 
+# VII. RESPONSIVE
 
+- Responsive là kỹ thuật giúp website hiển htij tương thích với nhiều kích thước màng hình khác nhau.
+- Tối ưu trải nghiệm người dùng: 
+  - Hiển thị õ ràng các thành phần (hình xảnh, cỡ chữ, nút bấm)
+  - Ẩn / Hiện các thành phần phù hợp theo kích thước màn hình
+
+## View Port
+## @Mediaquery
+- Cú pháp
+```css
+  @media only|not Media-type and (Media-future and|or|not Media-future) {
+    tag {
+        property: value;
+    }
+}
+```
+- Media-type: 
+  - screen : Dành cho trang hiển thị
+  - print  : Dành cho bản in
+  - all    : Mặc định, dành cho trang hiển thị và vả bảng in.
+  - speech : Dành cho phiên bản hỗ trợ đọc thành tiếng
+- Media-future
+  - Có nhiều giá trị khác nhau nhưng phổ biến là :
+    - max-width: Chiều rộng lớn nhất màn hình của thiết bị, tức là những thiết bị có màn hình nhỏ hơn max-width sẽ bị ảnh hưởng source code.
+    - min-width: Chiều rộng nhỏ nhất màn hình của thiết bị, tức là những thiết bị có màn hình lớn hơn min-width sẽ bị ảnh hưởng source code.
+- And : kết hợp nhiều điều kiện
+- Or  : hoặc điều kiện này hoặc điều kiện kia (dùng với dấu ,)
+- Not : phủ định
+- Only : được dùng để ngăn chặn các browser cũ
+
+### CSS Breakpoint
+  - CSS Breakpoint là những điểm (phạm vi giới hạn) mà tại đó nội dung của website sẽ co dãn một cách linh hoạt phụ thuộc vào chiều rộng của thiết bị nhằm đem đến cho người xem một trải nghiệm tuyệt vời và hoàn hảo nhất.
+  - CSS Breakpoints còn được gọi là media query breakpoint, do chúng thường được sử dụng với media query.
+  - Cách để đặt breakpoint
+    - Cách thứ 1, đặt breakpoint dựa trên thiết bị, hiện nay có 3 độ rộng phổ biến nhất 
+      - **320px** (breakpoint thường dùng cho smartphone)
+      - **768px** (breakpoint thường dùng cho tablet)
+      - **1024px** (breakpoint thường dùng cho thiết bị màn hình lớn như laptop, PC, TV….). 
+```css
+      /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+ 
+          /* Portrait */
+          
+          @media only screen
+          
+          and (min-device-width: 375px)
+          
+          and (max-device-width: 667px)
+          
+          and (-webkit-min-device-pixel-ratio: 2)
+          
+          and (orientation: portrait) {
+          
+          }
+          
+          /* Landscape */
+          
+          @media only screen
+          
+          and (min-device-width: 375px)
+          
+          and (max-device-width: 667px)
+          
+          and (-webkit-min-device-pixel-ratio: 2)
+          
+          and (orientation: landscape) {
+          
+          }
+          
+```
+    - Cách thứ 2 đặt breakpoint dựa trên nội dung
+      - Việc đặt breakpoint theo cách này sẽ phụ thuộc vào nội dung của trang web mà bạn có, thay vì dựa vào độ rộng của thiết bị người dùng sở hữu.
+      - Phương pháp này cho phép bạn đơn giản hóa việc thêm breakpoint tại nơi mà một nội dung nào đó cần sự thay đổi layout. 
+      - Điều này sẽ giúp bạn hạn chế vấn đề phải làm việc với một danh sách các media query “siêu to khổng lồ” như cách đầu, cũng như giúp media query của bạn dễ quản lý và đơn giản hơn.
+
+```css
+      @media only screen and (min-width: 1024px){
+ 
+        ...
+        
+        }
+        <!-- Ngoài ra bạn cũng có thể dùng cách này để giới hạn lại phạm vi tốt hơn  -->
+        @media only screen and (min-width: 768px) and (max-width: 1024px){
+        
+        ...
+        
+        }
+```
+### Cách sử dụng min-width, max-width
+- Nếu bạn thiết kế giao diện với cách tiếp cận mobile-first, thì sử dụng breakpoint min-width (chiều rộng tối thiểu). Khi đó, style mặc định của bạn sẽ là những thiết bị nhỏ và code bạn vừa mới tạo ra sẽ dùng để điều chỉnh cho các thiết bị lớn hơn.
+- Nếu bạn thiết kế cho các thiết bị lớn với cách tiếp cận desktop-first, khi đó style mặc định của bạn sẽ là những thiết bị lớn và code bạn vừa mới tạo ra sẽ dùng để điều chỉnh cho các thiết bị nhỏ hơn với breakpoint max-width (chiều rộng tối đa) - tức là ta chỉ áp dụng những thứ bên trong dấu {} khi và chỉ khi màn hình nhỏ hơn hoặc bằng max-width.
+
+### Desktop First:
+  - Sử dụng max-width
+  - Giao diện thay đổi khi độ rộng màn hình nhỏ hơn hoặc bằng break point
+### Mobile First:
+  - Sử dụng min-width
+  - Giao diện thay đổi khi độ rộng màn hình lớn hơn hoặc bằng break point
