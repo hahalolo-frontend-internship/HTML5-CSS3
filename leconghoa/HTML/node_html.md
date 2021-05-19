@@ -36,9 +36,11 @@
 
 - `<html>` Chứa toàn bộ thông tin trang web `</html>`
   - `lang` : Khai báo ngôn ngữ chính mà trang web sử dụng, hỗ trợ công cụ tìm kiếm.
-    ```html
-    <html lang="en"></html>
-    ```
+
+```html
+<html lang="en"></html>
+```
+
 - `<head>` Là khung chứa siêu dữ liệu - metadata `</head>`
 - `<body>` Chứa tài liệu của HTML `</body>`
 
@@ -344,22 +346,11 @@ Có thể nhúng mã script hoặc liên kết file script bên ngoài.
       src="./img.png"
       alt="Hình ảnh trong HTML"
       width="200"
-      height="200"
-      border="3"
+      border="10"
       align="right"
     />
     ```
-    <img src="./img.png" alt="Hình ảnh trong HTML"  width="200" height="200" border="10"  align="right" style="border:10px solid grey" />
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <img src="./img.png" alt="Hình ảnh trong HTML"/>
 - `<audio>`:
 
   - Dùng để chèn file âm thanh vào website.
@@ -379,8 +370,7 @@ Có thể nhúng mã script hoặc liên kết file script bên ngoài.
     </audio>
     ```
 
-    <audio controls="controls" autoplay muted src="./amthanh.mp3">
-    </audio>
+    <img src="./audio.png" width="400">
 
 - `<video>`:
 
@@ -401,7 +391,7 @@ Có thể nhúng mã script hoặc liên kết file script bên ngoài.
     </video>
     ```
 
-    <video controls="controls" width="500" height="300" src="./video.mp4"></video>
+    <img src="./video.png" width="500">
 
 - `<iframe>`
 
