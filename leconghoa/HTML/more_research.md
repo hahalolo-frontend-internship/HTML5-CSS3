@@ -242,19 +242,19 @@ Khi một liên kết được gửi, một yêu cầu tài liệu được th�
 
 #### `Xây dựng DOM`
 
-    DOM là viết tắt của “Document Object Map/Bản đồ Đối tượng Tài liệu”. Về cơ bản, nó là một bản đồ nơi mọi thứ được hiển thị trên trang theo dạng thức HTML. DOM đại diện cho điều HTML đang nói bằng cách ánh xạ trang theo cách quan hệ (relational manner).
+> DOM là viết tắt của “Document Object Map/Bản đồ Đối tượng Tài liệu”. Về cơ bản, nó là một bản đồ nơi mọi thứ được hiển thị trên trang theo dạng thức HTML. DOM đại diện cho điều HTML đang nói bằng cách ánh xạ trang theo cách quan hệ (relational manner).
 
   <img src="./domhtml.png" width="500">
 
 #### `Xây dựng CSSOM`
 
-    CSSOM là viết tắt của cụm từ “CSS Object Map/Bản đồ Đối tượng CSS”. Nó về cơ bản là một bản đồ của các style/định dạng cụ thể nào phải được áp dụng vào các phần khác nhau của trang web theo dạng thức CSS. Bản đồ CSSOM vạch ra cách thức mọi thứ nên được hiển thị bằng cách sử dụng style.
+> CSSOM là viết tắt của cụm từ “CSS Object Map/Bản đồ Đối tượng CSS”. Nó về cơ bản là một bản đồ của các style/định dạng cụ thể nào phải được áp dụng vào các phần khác nhau của trang web theo dạng thức CSS. Bản đồ CSSOM vạch ra cách thức mọi thứ nên được hiển thị bằng cách sử dụng style.
 
   <img src="./CSS-DOM.png" width="500">
 
 #### `Xây dựng cây hiển thị (render tree)`
 
-    Cây hiển thị về cơ bản đưa DOM và CSSOM kết hợp lại với nhau để tạo ra bản đồ đầy đủ về cách trang sẽ thực sự được bố cục và định dạng.
+> Cây hiển thị về cơ bản đưa DOM và CSSOM kết hợp lại với nhau để tạo ra bản đồ đầy đủ về cách trang sẽ thực sự được bố cục và định dạng.
 
   <img src="./cay-render.png" width="500">
 

@@ -2,6 +2,8 @@
 
 > HTML là từ viết tắt của Hyper Text Markup Language (Ngôn ngữ đánh dấu siêu văn bản). HTML được dùng để mô tả cấu trúc của một trang web.
 
+> HTML5 là phiên bản thứ 5 và cũng là phiên bản mới nhất của HTML tính đến nay.
+
 ## DOM HTML
 
 - DOM là viết tắt của Document Object Model – Mô hình Đối tượng Tài liệu
