@@ -5,5 +5,5 @@
 [html_html5](html_html5.md)
 # CSS3
 [css3](css3.md)
-# Tìm hiều thêm
+# Tìm hiểu thêm
 [seach++](seach++.md)

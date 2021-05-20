@@ -299,7 +299,7 @@
       ```css
          animation-duration: time|initial|inherit;
       ```
-   + `animation-delay` (Thời gian trì hoản thực hiện hoạt động)
+   +   (Thời gian trì hoản thực hiện hoạt động)
    + `animation-iteration-count` (Quy định số lần chạy n)
       + infinite (vô hạn)
    + `animation-direction` ( Quy định hoạt ảnh đi theo kiểu nào)
@@ -714,4 +714,257 @@
          </body>
          ```
          ![PX_EM](anhcss/px_em.png)
+## Units
+   - Units (Đơn vị)
+      + Nhiều thuộc tính CSS có giá trị "length", chẳng hạn như width, margin, padding, font-sizevv
+      + Có hai loại đơn vị độ dài: 
+         - Tuyệt đối (Các đơn vị độ dài tuyệt đối là cố định và độ dài được biểu thị bằng bất kỳ đơn vị nào trong số này sẽ xuất hiện chính xác như kích thước đó.)
+            ```css
+            <head>
+               <style>
+               h1 {
+                  font-size: 60px|5cm|4mm|
+                  3in|2pt|1pc;
+               }
+               p {
+                  font-size: 25px;
+                  line-height: 50px;
+               }
+               </style>
+               </head>
+               <body>
+               <h1>This is heading 1</h1>
+               <h2>This is heading 2</h2>
+               <p>This is a paragraph.</p>
+               <p>This is another paragraph.</p>
+               </body>
+            ```
+            + cm:	centimeters
+            + mm:	millimeters
+            + in:	inches (1in = 96px = 2.54cm)
+            + px:	pixels (1px = 1/96th of 1in)
+            + pt:	points (1pt = 1/72 of 1in)
+            + pc:	picas (1pc = 12 pt)
+         - Tương đối (Chỉ định độ dài liên quan đến một thuộc tính độ dài khác)
+            + em	Liên quan đến kích thước phông chữ của phần tử (2em: gấp 2 lần kích thước phông chữ hiện tại)
+               ```css
+               <head>
+               <style>
+               p {
+                  font-size: 16px;
+                  line-height: 2em;
+               }
+               div {
+                  font-size: 30px;
+                  border: 1px solid black;
+               }
+               span {
+                  font-size: 0.5em; /*0.5 em = 30/2*/
+               }
+               </style>
+               </head>
+               <body>
+               <p>Các đoạn văn này có line-height: 2x16px = 32px.</p>
+               <div>Kích thước phông chữ của phần tử div được đặt thành 30px. <span>Phần tử span bên trong phần tử div có kích thước phông chữ là 0,5em, tương đương với 0,5x30 = 15px.</span> . </div>
+               </body>
+               ```
+               ![unitem](anhcss/unitem.png)
+            + ex	(Liên quan đến chiều cao x của phông chữ hiện tại - Hiếm sử dụng)
+            + ch (Tương đối với chiều rộng của "0")
+            + rem	(Liên quan đến kích thước phông chữ của phần tử gốc)
+               ```html
+                  <head>
+                  <style>
+                  html {
+                     font-size:16px;
+                  }
+                  div {
+                     font-size: 3rem; /* = 48px*/
+                     border: 1px solid black;
+                  }
+                  #top-div {
+                     font-size: 2rem; /* = 32px*/
+                     border: 1px solid red;
+                  }
+                  </style>
+                  </head>
+                  <body>
+                  <p>The font-size of this document is 16px.</p>
+                  <div id="top-div"> 
+                     Kích thước phông chữ của phần tử div này là 2rem, có nghĩa là 2 x kích thước phông chữ của trình duyệt.
+                     <div> Kích thước phông chữ của phần tử div này là 3rem. Nó cũng cho thấy rằng nó không kế thừa từ kích thước phông chữ phần tử mẹ của nó.
+                     </div>
+                  </div>
+                  <p>Đơn vị rem đặt kích thước phông chữ so với kích thước phông chữ cơ sở của trình duyệt và sẽ không kế thừa từ cha mẹ của nó.</p>
+                  </body>
+               ```
+               ![unitrem](anhcss/unitrem.png)
+            + vw (Tương đối với 1% chiều rộng của khung nhìn)   
+               ```html
+                  <head>
+                  <style>
+                     h1 {
+                     font-size: 20vw;
+                     }
+                  </style>
+                  </head>
+                  <body>
+                  <h1>Hello</h1>
+                  <p>Thay đổi kích thước chiều rộng của cửa sổ trình duyệt để xem kích thước phông chữ của h1 thay đổi như thế nào.                  </p>
+                  <p>1vw = 1% chiều rộng khung nhìn.</p> 
+                  <p>Đơn vị vw không được hỗ trợ trong IE8 trở về trước.</p>
+               ```
+               + Kéo theo chiều rộng cỡ chữ giãn ra theo 1% chiều rộng
+            ![unitvw](anhcss/unitvw.png)
+            + vh (Tương đối với 1% chiều cao của khung nhìn giống vw)
+            + vmin	
+               - Thay đổi kích thước cửa sổ trình duyệt (cả chiều rộng và chiều cao)
+               - 1vmin = 1vw hoặc 1vh, tùy theo giá trị nào nhỏ hơn.
+            + vmax
+               - Thay đổi kích thước cửa sổ trình duyệt (cả chiều rộng và chiều cao)
+               - 1vmax = 1vw hoặc 1vh, tùy theo giá trị nào lớn hơn.
+               - Đơn vị vmax không được hỗ trợ trong Edge 15 trở về trước, cũng như trong Safari 6.1 trở về trước.
+            + %	
+               ```html
+                  <head>
+                  <style>
+                  body {
+                     font-size:10px;
+                  }
+                  div {
+                     font-size: 150%;  /* 150%= 1.5x10= 15px*/
+                     border: 1px solid black;
+                  }
+                  </style>
+                  </head>
+                  <body>
+                     <p>Kích thước phông chữ của tài liệu này là 10px.. </p>
+                     <div>Kích thước phông chữ của phần tử div này là 150%. </div>
+                     <p>Đơn vị% đặt kích thước phông chữ so với kích thước phông chữ hiện tại.</p>
+                  </body>                 
+               ```
+            + Sự khác biệt giữa em và rem
+               - rem: là đơn vị tham chiếu tỷ lệ so với phần tử gốc của website ở đây là thẻ `<html>` dựa vào giá trị của thuộc tính font-size
+               - em: là đơn vị tham chiếu tỷ lệ so với phần tử cha trực tiếp chứa nó hoặc chính nó dựa vào giá trị của thuộc tính là font-size
+               ![em_rem](anhcss/em_rem.png)
 ## Transions
+- Chuyển tiếp CSS cho phép bạn thay đổi các giá trị thuộc tính một cách trơn tru, trong một khoảng thời gian nhất định.
+   + transition
+   ```html
+      <head>
+      <style> 
+      div {
+         width: 100px;
+         height: 100px;
+         background: red;
+         transition: width 2s; /* thuộc tính CSS && thời gian của hiệu ứng (mặc định 0)*/
+      }
+      div:hover {
+         width: 300px;
+      }
+      </style>
+      </head>
+      <body>
+      <h1>The transition Property</h1>
+      <p>Hover over the div element below, to see the transition effect:</p>
+      <div></div>
+      <p><b>Note:</b> This example does not work in Internet Explorer 9 and earlierversions.</p>
+      </body>
+   ```
+   + Có thể thêm hiệu ứng chuyển tiếp
+      ```css
+      div {
+         transition: width 2s, height 4s;
+      }
+      ```
+   + transition-delay (Thời gian trì hoản)
+      ```css
+         transition-delay: time;
+      ```
+   + transition-duration (Xác định thời gian hoạt động tổng mặc định 0s)
+      ```css
+         transition-duration: time;
+      ```
+   + transition-property (thuộc tính CSS hiệu ứng chuyển tiếp )
+      ```css
+         transition-property: none|all|property|initial|inherit;
+      ```
+      + none: Không có thuộc tính nào sẽ có hiệu ứng chuyển tiếp
+      + all: Giá trị mặc định. Tất cả các thuộc tính sẽ có hiệu ứng chuyển tiếp
+      + property: Xác định danh sách các tên thuộc tính CSS được phân tách bằng dấu phẩy mà hiệu ứng chuyển tiếp dành cho (width, height)
+   + transition-timing-function
+      + Quy định các đường cong tốc độ của hiệu ứng chuyển tiếp.
+         ```css
+         transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+         ```
+         + linear: Hiệu ứng chuyển tiếp với cùng tốc độ từ đầu đến cuối (<=> với bậc ba (0,0,1,1))
+         + ease: Giá trị mặc định. (chậm -> nhanh-> chậm (<=>(0,25,0.1,0.25,1))
+         + ease-in: Khởi động chậm (<=> (0,42,0,1 ,1))
+         + ease-out: Kết thúc chậm (<=> (0,0 ,0.58,1))
+         + ease-in-out: Đầu và cuối chậm (<=> (0,42,0,0.58,1))
+         + step-start: <=> (1,start)
+         + step-end: <=> (1,end)
+         + cubic-bezier(n,n,n,n): CHọn giá trị của riêng trong khối-bezier. (0<n<1)
+   +Demo
+      ```html
+         <head>
+         <style> 
+         div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition-property: width;
+            transition-duration: 5s;
+            transition-delay: 2s;
+         }
+         div:hover {
+            width: 300px;
+         }
+         </style>
+         </head>
+         <body>
+         <h1>Thuộc tính transition-delay Property</h1>
+         <p>Di chuột qua phần tử div bên dưới, để xem hiệu ứng chuyển tiếp (Lưu ý rằng hiệu ứng chuyển tiếp sẽ đợi 2 giây trước khi bắt đầu):</p>
+         <div></div>
+         <p><b>Lưu ý</b>Ví dụ này không hoạt động trong Internet Explorer 9 và các phiên bản cũ hơn.</p>
+         </body>
+      ```
+## !important
+- Giải quyết declarations xung đột
+   - Các declarations có thể đến từ nhiều nguồn khác nhau:
+      +  Author: Các CSS mà dev viết.
+      +  User: CSS mà người dùng thay đổi (như người dùng thay đổi font-size của trình duyệt -> declaration cho font size)
+      +  Browser: CSS mà trình duyệt định nghĩa sẵn (như thẻ a thì được in chữ màu xanh, có gạch chân)
+   - Khi mỗi source đều có CSS khác nhau cho 1 elemnt, browser sẽ chọn CSS theo quy tắc(rule)
+      ```css
+      Important > Specificity > Source Order
+      ```
+   - 1. Important ( phần tử mạnh nhất ghi đè tất cả các quy tắc tạo kiểu trước đó)
+      - Việc lạm dụng `!important` sẽ gây khó khăn cho việc bảo trì.
+      - Khi các rule có cùng mức độ quan trọng (importance), browser sẽ đi so sánh mức độ chi tiết (specificities).
+         ```css
+         h1{
+            color: red!important;
+            }
+         ```
+   - 2. Specificity
+      - Inline styles: (thiết lập các thuộc tính CSS trực tiếp bên trong một phần tử bằng thuộc tính style)
+         ```css
+         <h1 style="color: red"></h1>
+         ```
+      - ID (thiết lập các thuộc tính CSS cho một phần tử được định danh duy nhất trong một trang.)
+         ```css
+            #nav, #header
+         ```
+      - Classes, pseudo-classes, attributes: 
+         + `.menu, .header,... , attribute`( a[target] )
+         + pseudo-class ( `:hover`, `:focus`...)
+      - Elements, pseudo-elements
+         + Elements ( h1, h2, div, p...) 
+         + `pseudo-element` ( ::before, ::after, ::selection)
+      * Khi có nhiều rule cùng áp dụng cho 1 slide, browser sẽ tính toán 4 giá trị trên và đem ra so sánh, sau đó chọn rule nào có giá trị cao nhất để đem ra hiển thị.
+      * Inline luôn có độ ưu tiên cao hơn style được viết trong file.
+   - 3. Source order
+      - Khi các css declaration có cùng specificity, declarations cuối cùng trong code sẽ được chọn.
+      - Nếu phải dùng css của bên thứ 3, bạn cần lưu ý để đặt author stylesheet cuối cùng.
+
