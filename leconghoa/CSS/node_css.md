@@ -22,7 +22,7 @@ Có 3 cách nhúng CSS vào website:
 
 <img src="./nhungcss.jpg" width ="600">
 
-## 3. Cấu trúc và bố cục của 1 bộ CSS:
+## 3. Cấu trúc và Box Model của 1 bộ CSS:
 
 ---
 
@@ -32,9 +32,21 @@ Có 3 cách nhúng CSS vào website:
 
 Bố cục CSS thường chủ yếu dựa vào hình hộp và mỗi hộp đều chiếm những khoảng trống trên trang với các thuộc tính như:
 
+- `Content` - Nội dung của hộp, nơi văn bản và hình ảnh xuất hiện
 - `Padding`: Gồm không gian xung quanh nội dung (ví dụ: xung quanh đoạn văn bản).
 - `Border`: Là đường liền nằm ngay bên ngoài phần đệm.
 - `Margin`: Là khoảng cách xung quanh bên ngoài của phần tử.
+- Chiều rộng của phần tử: (Total width)
+
+  > TW = width + left padding + right padding + left border + right border + left margin + right margin
+
+- Chiều cao của phần tử: (Total height)
+
+  > TH = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+
+- `Box-sizing`: xác định kích cỡ của phần tử.
+  - `content-box`: mặc định. Cách tính bỏ qua `padding, margin, border`, chỉ tính `width, height` dựa trên `content`.
+  - `border-box`: Cách tính tất cả: `content, padding, border, margin`.
 
 ## 4. Giải quyết khai báo CSS xung đột (xếp tầng):
 
@@ -156,7 +168,8 @@ p#hola-id {
 
 a. `Pesudo Element`:
 
-- Syntax: `selector::pseudo-element { property: value; }`
+- Syntax:
+  > `selector::pseudo-element { property: value; }`
 - `:first-line`: Áp dụng cho element con đầu tiên trong element cha
 - `:first-letter`: Áp dụng cho chữ cái đầu tiên trong element
 - `::before`: Dùng để chèn một số nội dung vào trước nội dung của một element
@@ -166,7 +179,8 @@ a. `Pesudo Element`:
 
 b. `Pseudo Classes`:
 
-- Syntax: `selector:pseudo-class { property: value; }`
+- Syntax:
+  > `selector:pseudo-class { property: value; }`
 - `Anchor Pseudo-class`: các liên kết có thể được hiển thị theo nhiều cách khác nhau.
 
   - `:link`: Trạng thái hiện tại của thẻ (chỉ dùng cho thẻ `a`).
@@ -253,3 +267,232 @@ div[for*="ut"] {
   color: cyan;
 }
 ```
+
+## 8. CSS Layout - float và clear:
+
+### 8.1. FLOAT:
+
+- Thuộc tính `float` được sử dụng để định vị và định dạng nội dung, ví dụ: để một hình ảnh trôi sang trái với văn bản trong một vùng chứa..
+- Các giá trị:
+  - `none` - Phần tử không nổi (sẽ được hiển thị ngay tại nơi nó xuất hiện trong văn bản). Đây là mặc định
+  - `left` - Phần tử nổi ở bên trái vùng chứa của nó
+  - `right` - Phần tử nổi ở bên phải vùng chứa của nó
+  - `inherit` - Phần tử kế thừa giá trị float của phần tử cha của nó
+
+```css
+img {
+  float: right;
+}
+```
+
+<img src="./floatright.png">
+
+```css
+img {
+  float: none;
+}
+```
+
+<img src="./floatnone.png">
+
+### 8.2. CLEAR:
+
+- Thuộc tính `clear` chỉ định những phần tử nào có thể trôi nổi bên cạnh phần tử đã xóa và ở phía nào.
+- Các giá trị:
+
+  - `none` - Cho phép các phần tử nổi trên cả hai mặt. Đây là mặc định
+  - `left` - Không cho phép phần tử nổi ở phía bên trái
+  - `right`- Không cho phép các phần tử nổi ở phía bên phải
+  - `both` - Không cho phép phần tử nổi ở bên trái hoặc bên phải
+  - `inherit` - Phần tử kế thừa giá trị rõ ràng của phần tử gốc của nó
+
+<img src="./clear.png">
+
+- `overflow: auto;`: khắc phục phần tử "tràn" ra bên ngoài vùng chứa của nó.
+
+```css
+.clearfix {
+  overflow: auto;
+}
+```
+
+<img src="./overflow.png">
+
+## 9. Position:
+
+- Thuộc tính `Position` chỉ định loại phương pháp định vị được sử dụng cho một phần tử (static, relative, absolute, fixed, or sticky).
+- Syntax:
+  > `position: static|absolute|fixed|relative|sticky|initial|inherit;`
+- Các giá trị:
+
+  - `static`: Giá trị mặc định. Các phần tử hiển thị theo thứ tự, khi chúng xuất hiện trong luồng tài liệu
+  - `absolute`: Phần tử được định vị tương đối với phần tử cha được định vị đầu tiên (not static) của nó
+  - `fixed`: Phần tử được định vị liên quan đến cửa sổ trình duyệt
+  - `relative`: Phần tử được định vị so với vị trí bình thường của nó, thường đi kèm với `left, right, top, bottom` để xác định vị trí
+  - `sticky` Phần tử được định vị dựa trên vị trí cuộn của người dùng.
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Một phần tử `sticky` chuyển đổi giữa `relative` và `fixed`, tùy thuộc vào vị trí cuộn. Ban đầu nó là `relative` đến khi cuộn đến vị trí bù nhất định trong khung nhìn - nó sẽ chuyển sang `sticky` (như vị trí: fixed).
+
+  - `initial`: Đặt thuộc tính này thành giá trị mặc định của nó.
+  - `ỉnherit`: Kế thừa thuộc tính này từ phần tử mẹ của nó.
+
+  <img src="./position.jpg" width="500">
+
+## 10. Display:
+
+- Thuộc tính `Display` chỉ định hành vi hiển thị (kiểu hộp kết xuất) của một phần tử.
+- Các giá trị `flex` và `inline-flex` yêu cầu tiền tố `-webkit-` để hoạt động trong Safari.
+- Syntax:
+  > `display: value;`
+- Các giá trị:
+
+  - `inline`: Hiển thị một phần tử dưới dạng phần tử nội tuyến(như `<span>`). Mọi thuộc tính chiều cao và chiều rộng sẽ không có hiệu lực.
+  - `block`: Hiển thị một phần tử dưới dạng phần tử khối(như `<p>`). Nó bắt đầu trên một dòng mới và chiếm toàn bộ chiều rộng.
+  - `contents`: Làm cho vùng chứa biến mất, biến các phần tử con của phần tử lên cấp tiếp theo trong DOM
+  - `flex`: Hiển thị một phần tử dưới dạng vùng chứa linh hoạt cấp khối.
+  - `grid`: Hiển thị một phần tử dưới dạng vùng chứa lưới cấp khối.
+  - `inline-block`: Hiển thị một phần tử dưới dạng vùng chứa khối nội tuyến. Bản thân phần tử được định dạng là phần tử nội tuyến, nhưng bạn có thể áp dụng các giá trị chiều cao và chiều rộng
+  - `inline-flex`: Hiển thị một phần tử dưới dạng vùng chứa linh hoạt cấp nội tuyến.
+  - `inline-grid`: Hiển thị một phần tử dưới dạng một vùng chứa lưới cấp nội tuyến
+  - `inline-table`: Phần tử được hiển thị dưới dạng bảng nội tuyến
+  - `list-item`: làm cho phần tử hoạt động giống như một phần tử `<li>`.
+  - `run-in` Hiển thị một phần tử dưới dạng khối hoặc nội dòng, tùy thuộc vào ngữ cảnh.
+  - `table`: làm cho phần tử hoạt động giống như một phần tử `<table>`.
+  - `table-caption`: làm cho phần tử hoạt động giống như một phần tử `<caption>`.
+  - `table-column-group`: Để phần tử hoạt động giống như một phần tử `<colgroup>`.
+  - `table-header-group`: Để phần tử hoạt động giống như phần tử `<thead>`.
+  - `table-footer-group`: Để phần tử hoạt động giống như phần tử `<tfoot>`.
+  - `table-row-group`: Để phần tử hoạt động giống như phần tử `<tbody>`.
+  - `table-cell`: Để phần tử hoạt động giống như một phần tử `<td>`.
+  - `table-column`: Để phần tử hoạt động giống như một phần tử `<col>`.
+  - `table-row`: Để phần tử hoạt động giống như một phần tử `<tr>`.
+  - `none`: Phần tử bị loại bỏ hoàn toàn.
+  - `initial`: Đặt thuộc tính này thành giá trị mặc định của nó.
+  - `inherit`: Kế thừa thuộc tính này từ phần tử mẹ của nó.
+
+  [Link demo](https://www.w3schools.com/cssref/playit.asp?filename=playcss_display&preval=table-column-group)
+
+## 11. Grid Layout:
+
+- Mô-đun bố cục Lưới CSS cung cấp một hệ thống bố cục dựa trên lưới, với các hàng và cột, giúp thiết kế các trang web dễ dàng hơn mà không cần phải sử dụng float và position.
+
+### 11.1 Grid Elements:
+
+- Bố cục lưới bao gồm một phần tử mẹ, với một hoặc nhiều phần tử con.
+- Tất cả các con trực tiếp của vùng chứa lưới sẽ tự động trở thành các mục lưới.
+- Phần tử HTML trở thành vùng chứa lưới khi `display: grid or inline-grid`.
+- Các thuộc tính:
+
+  - `row-gap`: Chỉ định khoảng cách giữa các hàng lưới.
+  - `column-gap`: Chỉ định khoảng cách giữa các cột
+  - `gap`: Một thuộc tính viết tắt cho các thuộc tính `row-gap` và `column-gap`.
+  - `grid-row-gap`: Chỉ định kích thước của khoảng cách giữa các hàng.
+  - `grid-column-gap`: Chỉ định kích thước của khoảng cách giữa các cột.
+  - `grid-gap`: Một thuộc tính viết tắt cho các thuộc tính `grid-row-gap` và `grid-column-gap`.
+
+  ```css
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    <!-- Cách viết cũ -->
+    grid-gap: 20px 10px;
+    <!-- Cách viết mới -->
+    gap: 20px 10px;
+    background-color: #2196f3;
+  }
+  ```
+
+      <img src="./gap.png" width="600">
+
+  - `grid-template-areas`: Chỉ định cách hiển thị cột và hàng, sử dụng các mục lưới được đặt tên.
+  - `grid-template-columns`: Chỉ định kích thước của các cột và số lượng cột trong một bố cục lưới.
+  - `grid-template-rows`: Chỉ định kích thước của các hàng trong bố cục lưới.
+  - `grid-template` Một thuộc tính viết tắt cho các thuộc tính `grid-template-rows, grid-template-columns và grid-area`.
+  - `grid`: Thuộc tính viết tắt cho các thuộc tính `grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, và grid-auto-flow`.
+
+  ```css
+  #page {
+    display: grid;
+    width: 100%;
+    height: 250px;
+    grid-template-areas:
+      "head head"
+      "nav  main"
+      "nav  foot";
+    grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 150px 1fr;
+  }
+  ```
+
+    <img src="./grid_template.png" width="600">
+
+  - `grid-auto-columns`: Chỉ định kích thước cột mặc định.
+  - `grid-auto-rows`: Chỉ định kích thước hàng mặc định.
+
+  ```css
+  #grid {
+    display: grid;
+    grid-template-areas: "a b";
+    gap: 10px;
+    grid-auto-columns: 200px;
+    grid-auto-rows: 100px;
+  }
+  ```
+
+  <img src="./grid_auto.png" width="600">
+
+  - `grid-auto-flow`: Chỉ định cách các mục được đặt tự động được chèn vào lưới.
+
+  <img src="./auto_flow.png" width="600">
+
+  - `grid-column-end`: Chỉ định nơi kết thúc mục lưới.
+  - `grid-column-start`: Chỉ định nơi bắt đầu mục lưới.
+  - `grid-column`: thuộc tính viết tắt cho thuộc tính `grid-column-start` và `grid-column-end`.
+  - `grid-row-start`: Chỉ định nơi bắt đầu mục lưới.
+  - `grid-row-end`: Chỉ định nơi kết thúc mục lưới.
+  - `grid-area`: Chỉ định tên cho mục lưới hoặc thuộc tính này là thuộc tính viết tắt cho các thuộc tính `grid-row-start, grid-row-end, grid-column-start và grid-column-end`.
+  - `grid-row`: Một thuộc tính viết tắt cho thuộc tính `grid-row-start` và `grid-row-end`.
+
+  ```css
+  .box1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .box2 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-row-end: 5;
+  }
+  ```
+
+  <img src="./grid_start_end.png" width="600">
+
+[Xem thêm](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+- Một vài thuộc tính đi kèm:
+
+  - `justify-items`: Căn chỉnh nội dung bên trong grid item theo trục dọc. Các giá trị: `start, end, center, stretch`.
+  - `align-items`: Căn chỉnh nội dung bên trong grid item theo trục ngang. Các giá trị: `start, end, center, stretch`.
+  - `place-items`kết hợp 2 thuộc tính `align-items` và `justify-items` trong một khai báo.
+
+  <img src="./justify_item.png" width="350" align="left">&nbsp;
+  <img src="./align_item.png" width="350">
+
+  - `align-self`: Căn chỉnh một mục lưới bên trong một ô dọc theo trục khối (cột). Giá trị này áp dụng cho nội dung bên trong một mục lưới.Các giá trị: `start, end, center, stretch`.
+  - `justify-self` là thuộc tính sử dụng để căn chỉnh các item được chỉ định riêng. Các giá trị: `start, end, center, stretch`.
+  - `place-self`: kết hợp 2 thuộc tính `align-self` và `justify-self` trong một khai báo.
+  - `justify-content`: Căn chỉnh nội dung trong vùng chứa lưới, căn theo trục dọc. Các giá trị: `start | end | center | stretch | space-around | space-between | space-evenly`.
+  - `align-content`: Thuộc tính này căn chỉnh lưới dọc theo trục khối (cột) (trái ngược với justify-content căn chỉnh lưới dọc theo trục (hàng) nội tuyến).
+  - `place-content`: kết hợp 2 thuộc tính `align-content` và `justify-content` trong một khai báo.
+
+  <img src="./justify_content1.png" width="350" align="left">&nbsp;
+  <img src="./justify_content2.png" width="350"> <br><br><br><br><br><br>
+
+  <img src="./align_content1.png" width="350" align="left">&nbsp;
+  <img src="./align_content2.png" width="350"><br><br>
+
+  <img src="./align_content3.png" width="350" align="left">&nbsp;
+  <img src="./align_content4.png" width="350">
