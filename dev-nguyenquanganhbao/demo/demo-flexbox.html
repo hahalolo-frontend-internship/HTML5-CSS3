@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flex {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        .flex-container {
+            width: 40%;
+        }
+
+        .flex-item {
+            width: 60%;
+        }
+
+        .flex-form {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .flex-form label {
+            font-size: 25px;
+        }
+
+        .flex-form input,
+        .flex-form select,
+        .flex-form button {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        .demo {
+            display: flex;
+            background-color: DodgerBlue;
+            height: 500px;
+        }
+
+
+        .demo div {
+            background-color: #f1f1f1;
+            /* margin: 10px; */
+            padding: 20px;
+            font-size: 30px;
+            /* height: 34px;
+            width: 70px; */
+            text-align: center;
+        }
+
+        .demo div:nth-child(odd) {
+            background: rosybrown;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        th input,
+        td input {
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Display: flex</h1>
+
+        <div class="flex">
+            <div class="flex-container">
+                <h4 style="font-size: 25px;">Flex container</h4>
+                <div class="flex-form">
+                    <label for="check-flex-direction">flex-direction: </label>
+                    <select id="check-flex-direction">
+                        <option value="row" selected>row</option>
+                        <option value="column">column</option>
+                        <option value="row-reverse">row-reverse</option>
+                        <option value="column-reverse">column-reverse</option>
+                    </select>
+                    <!-- <button onclick="flexDirection()">Chọn</button> -->
+                </div>
+
+                <div class="flex-form">
+                    <label for="check-justify-content">justify-content: </label>
+                    <select id="check-justify-content">
+                        <option value="flex-start" selected>flex-start</option>
+                        <option value="center">center</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="space-between">space-between</option>
+                        <option value="space-around">space-around</option>
+                        <option value="space-evenly">space-evenly</option>
+                    </select>
+                    <!-- <button onclick="justifyContent()">Chọn</button> -->
+                </div>
+
+                <div class="flex-form">
+                    <label for="check-align-items">align-items: </label>
+                    <select id="check-align-items">
+                        <option value="stretch" selected>stretch</option>
+                        <option value="center">center</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="baseline">baseline</option>
+                    </select>
+                    <!-- <button onclick="alignItems()">Chọn</button> -->
+                </div>
+
+                <div class="flex-form">
+                    <label for="check-flex-wrap">flex-wrap: </label>
+                    <select id="check-flex-wrap">
+                        <option value="nowrap" selected>nowrap</option>
+                        <option value="wrap">wrap</option>
+                        <option value="wrap-reverse">wrap-reverse</option>
+                    </select>
+                    <!-- <button onclick="flexWrap()">Chọn</button> -->
+                </div>
+
+
+                <div class="flex-form">
+                    <label for="check-align-content">align-content: </label>
+                    <select id="check-align-content">
+                        <option value="stretch" selected>stretch</option>
+                        <option value="center">center</option>
+                        <option value="flex-start">flex-start</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="space-between">space-between</option>
+                        <option value="space-around">space-around</option>
+                        <option value="space-evenly">space-evenly</option>
+                    </select>
+                    <!-- <button onclick="alignContent()">Chọn</button> -->
+                </div>
+            </div>
+            <!-- end flex container -->
+
+            <div class="flex-item">
+                <h4 style="font-size: 25px;">Flex item</h4>
+
+                <table style="width:100%">
+                    <tr>
+                        <th>Item</th>
+                        <th>Order</th>
+                        <th>Basic</th>
+                        <th>Grow</th>
+                        <th>Shrink</th>
+                        <th>Align-self</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><input type="number" id="check-order" placeholder="order"></td>
+                        <td><input type="text" id="check-basis" placeholder="basis"></td>
+                        <td><input type="number" id="check-flex-grow" placeholder="Grow"></td>
+                        <td><input type="number" id="check-flex-shrink" placeholder="Shrink"></td>
+                        <td>
+                            <select id="check-align-self">
+                                <option value="unset" selected>unset</option>
+                                <option value="stretch">stretch</option>
+                                <option value="flex-start" >flex-start</option>
+                                <option value="center">center</option>
+                                <option value="flex-end">flex-end</option>
+                                <option value="baseline">baseline</option>
+                            </select>
+                        </td>
+                        <td><button onclick="item1()">Chọn</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><input type="number" id="check-order2" placeholder="order"></td>
+                        <td><input type="text" id="check-basis2" placeholder="basis"></td>
+                        <td><input type="number" id="check-flex-grow2" min="0" placeholder="Grow"></td>
+                        <td><input type="number" id="check-flex-shrink2" min="0" placeholder="Shrink"></td>
+                        <td>
+                            <select id="check-align-self2">
+                                <option value="unset" selected>unset</option>
+                                <option value="stretch">stretch</option>
+                                <option value="flex-start" >flex-start</option>
+                                <option value="center">center</option>
+                                <option value="flex-end">flex-end</option>
+                                <option value="baseline">baseline</option>
+                            </select>
+                        </td>
+                        <td><button onclick="item2()">Chọn</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><input type="number" id="check-order3" placeholder="order"></td>
+                        <td><input type="text" id="check-basis3" placeholder="basis"></td>
+                        <td><input type="number" id="check-flex-grow3" min="0" placeholder="Grow"></td>
+                        <td><input type="number" id="check-flex-shrink3" min="0" placeholder="Shrink"></td>
+                        <td>
+                            <select id="check-align-self3">
+                                <option value="unset" selected>unset</option>
+                                <option value="stretch">stretch</option>
+                                <option value="flex-start" >flex-start</option>
+                                <option value="center">center</option>
+                                <option value="flex-end">flex-end</option>
+                                <option value="baseline">baseline</option>
+                            </select>
+                        </td>
+                        <td><button onclick="item3()">Chọn</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><input type="number" id="check-order4" placeholder="order"></td>
+                        <td><input type="text" id="check-basis4" placeholder="basis"></td>
+                        <td><input type="number" id="check-flex-grow4" min="0" placeholder="Grow"></td>
+                        <td><input type="number" id="check-flex-shrink4" min="0" placeholder="Shrink"></td>
+                        <td>
+                            <select id="check-align-self4">
+                                <option value="unset" selected>unset</option>
+                                <option value="stretch">stretch</option>
+                                <option value="flex-start" >flex-start</option>
+                                <option value="center">center</option>
+                                <option value="flex-end">flex-end</option>
+                                <option value="baseline">baseline</option>
+                            </select>
+                        </td>
+                        <td><button onclick="item4()">Chọn</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td><input type="number" id="check-order5" placeholder="order"></td>
+                        <td><input type="text" id="check-basis5" placeholder="basis"></td>
+                        <td><input type="number" id="check-flex-grow5" min="0" placeholder="Grow"></td>
+                        <td><input type="number" id="check-flex-shrink5" min="0" placeholder="Shrink"></td>
+                        <td>
+                            <select id="check-align-self5">
+                                <option value="unset" selected>unset</option>
+                                <option value="stretch">stretch</option>
+                                <option value="flex-start" >flex-start</option>
+                                <option value="center">center</option>
+                                <option value="flex-end">flex-end</option>
+                                <option value="baseline">baseline</option>
+                            </select>
+                        </td>
+                        <td><button onclick="item5()">Chọn</button></td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div id="demo" class="demo">
+            <div id="demo1">1</div>
+            <div id="demo2">2</div>
+            <div id="demo3">3</div>
+            <div id="demo4">4</div>
+            <div id="demo5">5</div>
+        </div>
+    </div>
+
+
+    <script>
+
+        const articles = document.querySelectorAll('#demo');
+        const select_flex_direction = document.querySelector('#check-flex-direction');
+        const select_justify_content = document.querySelector('#check-justify-content');
+        const select_align_items = document.querySelector('#check-align-items');
+        const select_flex_wrap = document.querySelector('#check-flex-wrap');
+        const select_align_content = document.querySelector('#check-align-content');
+
+        function updateDisplay() {
+        articles.forEach((article) => {
+            article.style.flexDirection = select_flex_direction.value;
+            article.style.justifyContent = select_justify_content.value;
+            article.style.alignItems = select_align_items.value;
+            article.style.flexWrap = select_flex_wrap.value;
+            article.style.alignContent = select_align_content.value;
+        });
+        }
+        select_flex_direction.addEventListener('change', updateDisplay);
+        select_justify_content.addEventListener('change', updateDisplay);
+        select_align_items.addEventListener('change', updateDisplay);
+        select_flex_wrap.addEventListener('change', updateDisplay);
+        select_align_content.addEventListener('change', updateDisplay);
+
+        updateDisplay();
+
+
+        // function flexDirection() {
+        //     var value = document.getElementById("check-flex-direction").value;
+        //     document.getElementById("demo").style.flexDirection = value;
+        // }
+
+        // function justifyContent() {
+        //     var value = document.getElementById("check-justify-content").value;
+        //     document.getElementById("demo").style.justifyContent = value;
+        // }
+
+        // function alignItems() {
+        //     var value = document.getElementById("check-align-items").value;
+        //     document.getElementById("demo").style.alignItems = value;
+        // }
+
+        // function flexWrap() {
+        //     var value = document.getElementById("check-flex-wrap").value;
+        //     document.getElementById("demo").style.flexWrap = value;
+        // }
+
+
+        // function alignContent() {
+        //     var value = document.getElementById("check-align-content").value;
+        //     document.getElementById("demo").style.alignContent = value;
+        // }
+
+        function item1() {
+            var valueOrder = document.getElementById("check-order").value;
+            document.getElementById("demo1").style.order = valueOrder;
+            var valueBasis = document.getElementById("check-basis").value;
+            document.getElementById("demo1").style.flexBasis = valueBasis;
+            var valueGrow = document.getElementById("check-flex-grow").value;
+            document.getElementById("demo1").style.flexGrow = valueGrow;
+            var valueShrink = document.getElementById("check-flex-shrink").value;
+            document.getElementById("demo1").style.flexShrink = valueShrink;
+            var valueAlignSelf = document.getElementById("check-align-self").value;
+            document.getElementById("demo1").style.alignSelf = valueAlignSelf;
+        }
+
+        function item2() {
+            var valueOrder = document.getElementById("check-order2").value;
+            document.getElementById("demo2").style.order = valueOrder;
+            var valueBasis = document.getElementById("check-basis2").value;
+            document.getElementById("demo2").style.flexBasis = valueBasis;
+            var valueGrow = document.getElementById("check-flex-grow2").value;
+            document.getElementById("demo2").style.flexGrow = valueGrow;
+            var valueShrink = document.getElementById("check-flex-shrink2").value;
+            document.getElementById("demo2").style.flexShrink = valueShrink;
+            var valueAlignSelf = document.getElementById("check-align-self2").value;
+            document.getElementById("demo2").style.alignSelf = valueAlignSelf;
+        }
+
+        function item3() {
+            var valueOrder = document.getElementById("check-order3").value;
+            document.getElementById("demo3").style.order = valueOrder;
+            var valueBasis = document.getElementById("check-basis3").value;
+            document.getElementById("demo3").style.flexBasis = valueBasis;
+            var valueGrow = document.getElementById("check-flex-grow3").value;
+            document.getElementById("demo3").style.flexGrow = valueGrow;
+            var valueShrink = document.getElementById("check-flex-shrink3").value;
+            document.getElementById("demo3").style.flexShrink = valueShrink;
+            var valueAlignSelf = document.getElementById("check-align-self3").value;
+            document.getElementById("demo3").style.alignSelf = valueAlignSelf;
+        }
+
+        function item4() {
+            var valueOrder = document.getElementById("check-order4").value;
+            document.getElementById("demo4").style.order = valueOrder;
+            var valueBasis = document.getElementById("check-basis4").value;
+            document.getElementById("demo4").style.flexBasis = valueBasis;
+            var valueGrow = document.getElementById("check-flex-grow4").value;
+            document.getElementById("demo4").style.flexGrow = valueGrow;
+            var valueShrink = document.getElementById("check-flex-shrink4").value;
+            document.getElementById("demo4").style.flexShrink = valueShrink;
+            var valueAlignSelf = document.getElementById("check-align-self4").value;
+            document.getElementById("demo4").style.alignSelf = valueAlignSelf;
+        }
+
+        function item5() {
+            var valueOrder = document.getElementById("check-order5").value;
+            document.getElementById("demo5").style.order = valueOrder;
+            var valueBasis = document.getElementById("check-basis5").value;
+            document.getElementById("demo5").style.flexBasis = valueBasis;
+            var valueGrow = document.getElementById("check-flex-grow5").value;
+            document.getElementById("demo5").style.flexGrow = valueGrow;
+            var valueShrink = document.getElementById("check-flex-shrink5").value;
+            document.getElementById("demo5").style.flexShrink = valueShrink;
+            var valueAlignSelf = document.getElementById("check-align-self5").value;
+            document.getElementById("demo5").style.alignSelf = valueAlignSelf;
+        }
+    </script>
+
+</body>
+
+</html>

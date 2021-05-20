@@ -1,4 +1,4 @@
-# Bảng xếp hạng Specificity
+# CSS Specificity
 
 - Nếu có 2 hay nhiều CSS rule cùng nhắm vào một phần tử thì khi đó trình duyệt sẽ chỉ tuân theo một nguyên tắc, xem trong list CSS rule đâu là quy tắc cao nhất để chọn ra và apply vào phần tử.
 
@@ -22,6 +22,8 @@
     ```
 - Cách tính Specificity
     Tính toán giá trị của CSS Specificity để biết được rule nào được áp dụng vào phần tử, giúp chúng ta không bị mắc lỗi khi viết CSS.
+
+    ![specificity](../img/specificity.jpeg)
 
     Specificity được tính là những con số nguyên dương. Cụ thể như sau:
 
@@ -59,7 +61,7 @@
 </html>
 ```
 ## ! important
-- `!importantquy` sẽ ghi đè tất cả các quy tắc tạo kiểu trước đó cho thuộc tính cụ thể trên phần tử đó!
+- `!important` sẽ ghi đè tất cả các quy tắc tạo kiểu trước đó cho thuộc tính cụ thể trên phần tử đó!
 ```html
 <!DOCTYPE html>
 <html>

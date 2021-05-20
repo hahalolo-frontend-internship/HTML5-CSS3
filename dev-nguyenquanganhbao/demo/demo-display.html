@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                background-color: red;
+                justify-content: space-between;
+            }
+
+            .container span {
+                background-color: black;
+                color: white;
+                margin: 1px;
+            }
+
+            .container, span {
+                padding: 10px;
+                border-radius: 7px;
+            }
+
+            .container, div {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <span>First</span>
+            <span>Second</span>
+            <span>Third</span>
+        </div>
+          
+          
+        <div>
+            <label for="display">Choose a display value:</label>
+            <select class="bao" id="display">
+                <option selected>block</option>
+                <option>inline</option>
+                <option>inline-block</option>
+                <option>none</option>
+                <option>flex</option>
+                <option>inline-flex</option>
+                <option>grid</option>
+                <option>inline-grid</option>
+                <option>table</option>
+                <option>list-item</option>
+            </select>
+        </div>
+        <script>
+            const articles = document.querySelectorAll('.container');
+            const select = document.querySelector('.bao');
+
+            function updateDisplay() {
+            articles.forEach((article) => {
+                article.style.display = select.value;
+            });
+            }
+            select.addEventListener('change', updateDisplay);
+
+            updateDisplay();
+          </script>
+    </body>
+</html>

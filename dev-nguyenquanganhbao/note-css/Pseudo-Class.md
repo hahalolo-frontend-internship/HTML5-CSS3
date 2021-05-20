@@ -1,5 +1,5 @@
 # Pseudo-Class 
-Pseudo-Class trong CSS được sử dụng để thêm các hiệu ứng đặc biệt tới một số Selector mà không cần sử dụng đến JavaScript hoặc bất cứ ngôn ngữ Script nào.
+Pseudo-Class trong CSS được sử dụng để thêm các hiệu ứng đặc biệt tới một số Selector.
 - Cú pháp pseudo-class:
 
 `selector`:`pseudo-class` {
@@ -19,7 +19,7 @@ Các trạng thái tương đương với 4 Pseudo-Class của đường link:
     <head>
         <style>
             a:link {
-                color: blue;
+                color: yellow;
             }
 
             a:visited {
@@ -41,7 +41,7 @@ Các trạng thái tương đương với 4 Pseudo-Class của đường link:
 </html>
 ```
 2. Pseudo-class và CSS Class
-Các Pseudo-class có thể được kết hợp với các lớp trong CSS.
+Các `Pseudo-class` có thể được kết hợp với các `class` trong CSS.
 ```html
 <!DOCTYPE html>
 <html>

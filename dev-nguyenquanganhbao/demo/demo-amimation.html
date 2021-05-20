@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        @keyframes myAnimation{
+            form{
+                left: 0;
+            }
+    
+            to{
+                left: 1000px;
+            }
+        }
+        .container > .box{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+            position: relative;
+            left: 0;
+            animation-name: myAnimation;
+            animation-duration: 4s;
+            animation-iteration-count: 1;
+        }
+        .container > .box1{
+            animation-timing-function: ease;
+            animation-direction: normal;
+            
+        }
+        .box2{
+            animation-timing-function: linear;
+            animation-direction: reverse;
+        }
+        .box3{
+            animation-timing-function: ease-in;
+            animation-direction: alternate;
+        }
+        .box4{
+            animation-timing-function: ease-out;
+            animation-direction: alternate-reverse;
+        }
+        .box5{
+            animation-timing-function: ease-in-out;
+        }
+
+
+        @keyframes myAnimation2{
+            0%{
+                left: 0;
+                top: 0;
+            }
+    
+            50%{
+                left: 200px;
+                top: 0;
+            }
+            100%{
+                left: 200px;
+                top: 200px;
+            }
+        }
+        /* demo animation-fill-mode */
+        .container2 > .box{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            position: relative;
+            animation-name: myAnimation2;
+            animation-duration: 4s;
+            /* animation-fill-mode: forwards; */
+
+
+            /* animation-direction: reverse;
+            animation-delay: 2s; */
+            /* animation-fill-mode: backwards; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        animation-timing-function: ease;<br>
+        animation-direction: normal;
+        <div class="box box1"></div>
+        animation-timing-function: linear;<br>
+        animation-direction: reverse;
+        <div class="box box2"></div>
+        animation-timing-function: ease-in;<br>
+        animation-direction: alternate;
+        <div class="box box3"></div>
+        animation-timing-function: ease-out;<br>
+        animation-direction: alternate-reverse;
+        <div class="box box4"></div>
+        animation-timing-function: ease-in-out;<br>
+        <div class="box box5"></div>
+    </div> -->
+
+    <div class="container2">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

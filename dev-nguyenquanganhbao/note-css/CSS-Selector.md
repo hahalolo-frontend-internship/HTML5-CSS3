@@ -10,7 +10,7 @@ p {
 /* tất cả phần tử <p> sẽ được căn giữa và có màu đỏ */
 ```
 2. Id Selector
-- Chọn `id` của phần tử HTML. `id` của một phần tử trong trang phải là độc nhất nên `id Selector` dùng để chọn một phần tử duy nhất.
+- Chọn `id` của phần tử HTML.
 ```css
 #para1 {
   text-align: center;
@@ -28,7 +28,7 @@ p {
 /* tất cả phần tử có class="center" sẽ có màu đỏ và được căn giữa */
 ```
 4. Descendant combinator Selector
-- Chọn các phần tử con, cháu.
+- Chọn các phần tử con cháu.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +80,7 @@ p {
 </html>
 ```
 6. Adjacent sibling combinator
-- Chọn các phần tử cùng cấp liền kề.
+- Chọn các phần tử cùng cấp và liền kề.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +147,7 @@ h1, h2, p {
 /* tất cả phần tử h1, h2, p sẽ có màu đỏ và được căn giữa */
 ```
 9. Attribute selector
-- Attribute selector là cách chọn các phần tử bạn muốn định kiểu (style) trong tài liệu HTML dựa vào thuộc tính của một hay nhiều thẻ HTML nào đó. Attribute selector có thể chọn được các đối tượng mà không cần phải khai báo thêm các Class hoặc ID vào trong thẻ HTML và vẫn có thể hướng đến được các thành phần đó.
+- Attribute selector là chọn các phần tử dựa vào thuộc tính của phần tử đó.
 ```html
 <!DOCTYPE html>
 <html>
@@ -165,7 +165,7 @@ h1, h2, p {
     </body>
 </html>
 ```
-- `[attribute="value"]`: được sử dụng để chọn tất cả các phần tử có thuộc tính [attribute] và giá trị value được chỉ định.
+- `[attribute="value"]`: được sử dụng để chọn tất cả các phần tử có thuộc tính mà trong thuộc tính đó có duy nhất một giá trị bằng với giá trị được chỉ định.
 ```html
 <!DOCTYPE html>
 <html>
@@ -183,7 +183,7 @@ h1, h2, p {
     </body>
 </html>
 ```
-- `[attribute~="value"]`: được sử dụng để chọn tất cả các phần tử có thuộc tính [attribute] chứa giá trị value được chỉ định.
+- `[attribute~="value"]`: được sử dụng để chọn tất cả các phần tử có thuộc tính mà trong thuộc tính đó có giá trị bằng với giá trị được chỉ định.
 ```html
 <!DOCTYPE html>
 <html>
@@ -201,7 +201,7 @@ h1, h2, p {
     </body>
 </html>
 ```
-- [attribute|="value"] được sử dụng để chọn tất cả các phần tử có thuộc tính [attribute] bắt đầu bằng giá trị value được chỉ định.
+- [attribute|="value"] được sử dụng để chọn tất cả các phần tử có thuộc tính mà giá trị bắt đầu bằng giá trị được chỉ định.
 ```html
 <!DOCTYPE html>
     <html>
@@ -219,7 +219,7 @@ h1, h2, p {
     </body>
 </html>
 ```
-- [attribute^="value"] được sử dụng để chọn tất cả các phần tử có thuộc tính [attribute] bắt đầu bằng giá trị value được chỉ định, khác với [attribute|="value"] phía trên ở chỗ nó không có ngoại lệ và chọn tất cả các phần tử bắt đầu bằng value, kể cả những từ ở dạng liền kề với từ khác.
+- [attribute^="value"] được sử dụng để chọn tất cả các phần tử có thuộc tính mà giá trị bắt đầu bằng giá trị value được chỉ định, kể cả những từ ở dạng liền kề với từ khác.
 ```html
 <!DOCTYPE html>
     <html>
@@ -238,7 +238,7 @@ h1, h2, p {
     </body>
 </html>
 ```
-- [attribute$="value"] được sử dụng để chọn tất cả các phần tử có thuộc tính [attribute] kết thúc bằng giá trị value được chỉ định.
+- [attribute$="value"] được sử dụng để chọn tất cả các phần tử có thuộc tính mà giá trị kết thúc bằng giá trị được chỉ định, kể cả những từ ở dạng liền kề với từ khác.
 ```html
 <!DOCTYPE html>
 <html>
@@ -257,7 +257,7 @@ h1, h2, p {
     </body>
 </html>
 ```
-- [attribute*="value"] được sử dụng để chọn tất cả các phần tử có thuộc tính [attribute] chứa bằng giá trị value được chỉ định.
+- [attribute*="value"] được sử dụng để chọn tất cả các phần tử có thuộc tính mà giá trị có chứa các ký tự bằng giá trị được chỉ định.
 ```html
 <!DOCTYPE html>
     <html>
