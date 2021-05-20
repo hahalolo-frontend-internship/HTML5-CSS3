@@ -72,7 +72,6 @@
 
     ![og](baomoi.PNG)
 
-
     ```html
     <meta lang="en" />
     ```
@@ -85,7 +84,6 @@
     <meta name="geo.position" content="47.181759;19.506094" /> - Định vị
     <meta name="ICBM" content="47.181759, 19.506094" />
     ```
-
 
 ## Thẻ link
 
