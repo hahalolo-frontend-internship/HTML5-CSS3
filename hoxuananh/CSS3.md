@@ -5,10 +5,10 @@
 # RULE CSS3
 ![Cú pháp CSS 3](./Rule.png)
 # I. LOAD CSS3 
-![Quá trình phân tích](./pas.png){:height="30px" width="30px"}.
+![Quá trình phân tích](./pas.png)
 
 1. Đầu tiên Browser tải tệp HTML -> Parse HTML -> xây dựng nên DOM.
-2. Trong quá trình Parse HTML tìm thấy ở phần head có stylesheet và nó cũng bắt đầu tải chúng.
+2. Trong quá trình Parse HTML tìm thấy ở phần head có stylesheet và nó bắt đầu phân tích CSS.
 3. Quá trình Parse CSS có hai giai đoạn : 
     1. Giải quyết các conflict giữa các định nghĩa CSS(tức là nếu 1 element được config/ kế thừa nhiều giá trị CSS khác nhau thì nên chọn cái nào để hiển thị)
     2. Tính toán các giá trị final value
@@ -18,7 +18,7 @@ Các declarations có thể đến từ nhiều nguồn khác nhau:
 - User : CSS mà người dùng thay đổi (như người dùng thay đổi font-size của trình duyệt -> declaration cho font size)
 - Browser : CSS mà trình duyệt định nghĩa sẵn (như thẻ a thì được in chữ màu xanh, có gạch chân)
 
-Khi mỗi source đều có CSS khác nhau cho 1 elemnt, browser sẽ chọn CSS theo quy tắc(rule)
+Khi mỗi source đều có CSS khác nhau cho 1 element, browser sẽ chọn CSS theo quy tắc(rule)
 
 > *Important > Specificity > Source Order*
 
@@ -307,6 +307,7 @@ bố cục cuối cùng của trang.
     }
     ```
 ## 5. PSEUDO ELEMENT
+  - Phần tử giả cũng rất giống với lớp giả CSS nhưng chúng có một số điểm khác nhau. Phần tử giả đứng sau hai dấu (::). Từ khóa thể hiện phần tử giả được thêm vào cuối của selector để chỉ định một phần nhất định của một phần tử.
 1. Syntax 
 
     `selector::pseudo-element {
@@ -314,7 +315,7 @@ bố cục cuối cùng của trang.
     }`
 2. Pseudo
 
-  ## `:first-line`
+  ## `::first-line`
    - Áp dụng cho element con đầu tiên trong element cha.  
    - Các properties được áp dụng :
         - font properties
@@ -328,7 +329,7 @@ bố cục cuối cùng của trang.
         - line-height
         - clear
 
-   ## `:first-letter`
+   ## `::first-letter`
    - Áp dụng cho chữ cái đầu tiên trong element
    - Các properties được áp dụng :
         - Bao gồm các properties của first-line
@@ -352,6 +353,7 @@ bố cục cuối cùng của trang.
 
 ## 6. PSEUDO CLASS
 
+  - Một lớp giả CSS là một từ khóa được thêm vào phía cuối của selector và đứng sau một dấu  (:), nó được dùng để chỉ rõ bạn muốn định dạng cho phần tử được chọn nhưng chỉ khi nó ở trong một trạng thái nhất định.
 - Cú pháp:
 
 ```css
@@ -455,7 +457,8 @@ selector:pseudo-class {
 
 - Các thành phần chính :
 
-    ![flexbox](https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg" width=500>
+
 
 - Các item sẽ được bố trí theo main axis (trục chính) (từ main start đến main end) hoặc trục vuông góc với trục chính - cross axis (từ cross start đến cross end).
     - main axis : Trục chính của flex container là trục chính dọc, theo đó các flex item được đặt ra. Lưu ý, nó không nhất thiết phải nằm ngang. Nó được quy định dựa vào thuộc tính flex-direction.
@@ -468,7 +471,9 @@ selector:pseudo-class {
 ##  1. CÁC THUỘC TÍNH CỦA FLEXBOX    
     
 * ### THUỘC TÍNH FLEX CHO CONTAINER
-![container](https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg" width=500>
+
 
 ### a. display
 - Thuộc tính display được sử dụng để định nghĩa một flex container.
@@ -480,7 +485,8 @@ selector:pseudo-class {
     ```
 ### b. flex-direction
 - Thiết lập trục chính (main-axis), do đó xác định hướng các flex-item sẽ được đặt trong flex container.
-![flex-direction](https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg" width=500>
+
 ```css
     .container{
         flex-direction:row | row-reverse | column | column-reverse;
@@ -497,7 +503,8 @@ selector:pseudo-class {
 
 ### c. flex-wrap
 - Theo mặc định, tất cả các flex item sẽ cố gắng khớp với một dòng. Bạn có thể thay đổi điều đó và cho phép các item xuống hàng (tách hàng) khi cần thiết với thuộc tính flex-wrap.
-![wrap](https://css-tricks.com/wp-content/uploads/2018/10/flex-wrap.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-wrap.svg" width=500>
+
 
 ```css
 .container {
@@ -522,7 +529,9 @@ selector:pseudo-class {
 ### e. justify-content
 - Thuộc tính justify-content xác định sự liên kết dọc theo trục chính.
 - Nó giúp điều chỉnh phần không gian trống còn lại khi tất cả các flex item cùng đặt trên một dòng.
-![justify-content](https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg" width=500>
+
 
 ```css
 .container {
@@ -550,7 +559,9 @@ selector:pseudo-class {
 ### f. align-items
 - Thuộc tính align-items xác định hành vi mặc định cho cách các flex item được đặt dọc theo cross axis trên dòng hiện tại.
 - Nó như là justify-content nhưng dành cho cross axis (vuông góc với trục chính).
-![align](https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg" width=500>
+
 
 ```css
 .container {
@@ -573,7 +584,9 @@ selector:pseudo-class {
 
 ### g. align-content
 - Phân phối khoảng trống giữa các hàng item, hàng item với cạnh container (theo trục cross axis)
-![content](https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg" width=500>
+
 ```css
 .container {
     align-content:
@@ -594,11 +607,14 @@ selector:pseudo-class {
 - stretch (mặc định): các hàng item được kéo dãn để lấp đầy khoảng trống (theo trục cross axis)
 * ### THUỘC TÍNH FLEX CHO ITEM
 
-![item](https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg" width=500>
+
 
 ### a. order
 - Theo mặc định, các flex item được đặt theo thứ tự sắp xếp trong HTML. Tuy nhiên, thuộc tính order có thể kiểm soát thứ tự xuất hiện của chúng trong flex container.
-![order](https://css-tricks.com/wp-content/uploads/2018/10/order.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/order.svg" width=500>
+
 ```css
 .item {
     order: <integer>;
@@ -615,7 +631,8 @@ selector:pseudo-class {
 - Công thức tính tỉ lệ `width` với điều kiện các item điều có flex-grow >= 1 của các element như sau: `width-item = (flex-grow của item hiện tại/Tổng flex-grow của các item)* width-container`.
 - Nếu áp dụng công thức ra bằng 0 thì width sẽ phụ thuộc vào nội dung bên trong element.
 
-![grow](https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg" width=500>
+
 ```css
 .item {
     flex-grow: <number>;
@@ -659,7 +676,9 @@ selector:pseudo-class {
 - Tương tự như align-item nhưng chỉ định cho một item riêng.
 
 
-![self](https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg" width=500>
+
 
 ```css
 .item {
@@ -679,24 +698,26 @@ selector:pseudo-class {
 ### 1. Grid line
 - Là các đường ngang và dọc tạo thành cấu trúc grid. Chúng được sử dụng để định vị các khối trên grid.
 
-![line](https://www.bravebits.co/wp-content/uploads/2017/12/grid-line.png)
+<img src="https://www.bravebits.co/wp-content/uploads/2017/12/grid-line.png" width=500>
 
 ### 3. Grid Tracks and Cells
 - Grid Tracks là không gian giữa 2 grid line liền kề nhau. 
 - Grid Cell là khoảng không gian giữa 2 row liền kề của gird. Nó là những hàng và cột của grid.
 
-![line](https://www.bravebits.co/wp-content/uploads/2017/12/grid-tracks-cell.png)
+<img src="https://www.bravebits.co/wp-content/uploads/2017/12/grid-tracks-cell.png" width=500>
 
 ### 4. Grid areas
 - Là một hoặc nhiều ô lưới tạo thành một vùng hình chữ nhật trên lưới
 
-![areas](https://www.bravebits.co/wp-content/uploads/2017/12/grid-area.png)
+<img src="https://www.bravebits.co/wp-content/uploads/2017/12/grid-area.png" width=500>
+
 ### 5. Gutters
 - Các khoảng cách giữa grid cells có thể được tạo ra bằng cách sử dụng grid-column-gap hoặc grid-row-gap điều thay cho việc chúng ta phải sử dụng padding hay margin.
     - Màu xanh thể hiện grid-column-gap.
     - Màu đỏ thể hiện grid-row-gap
 
-![gutters](https://www.bravebits.co/wp-content/uploads/2017/12/grid-gutters.png)
+<img src="https://www.bravebits.co/wp-content/uploads/2017/12/grid-gutters.png" width=500>
+
 
 ## FRACTION UNIT (`fr`)
 - Đây là giá trị được dùng trong CSS GRID.
@@ -759,7 +780,8 @@ selector:pseudo-class {
     ;
 }
 ```
-![areas](https://css-tricks.com/wp-content/uploads/2018/11/dddgrid-template-areas.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/dddgrid-template-areas.svg" width=500>
+
 
 ### c. grid-template
 - Là cách viết tắt để thiết lập grid-template-columns grid-template-rows gird-template-areas
@@ -808,29 +830,45 @@ selector:pseudo-class {
 }
 ```
 ## `start`
-![start](https://css-tricks.com/wp-content/uploads/2018/11/justify-items-start.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-items-start.svg" width=500>
+
 ## `end`
-![end](https://css-tricks.com/wp-content/uploads/2018/11/justify-items-end.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-items-end.svg" width=500>
+
 ## `center`
-![center](https://css-tricks.com/wp-content/uploads/2018/11/justify-items-center.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-items-center.svg" width=500>
+
 ## `stretch`
-![stretch](https://css-tricks.com/wp-content/uploads/2018/11/justify-items-stretch.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-items-stretch.svg" width=500>
 
 ### g. align-items
+
 - Căn chỉnh nội dung bên trong grid item theo trục ngang
+
 ```css
 .container {
   align-items: start | end | center | stretch;
 }
 ```
 ## `start`
-![start](https://css-tricks.com/wp-content/uploads/2018/11/align-items-start.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-items-start.svg" width=500>
+
 ## `end`
-![end](https://css-tricks.com/wp-content/uploads/2018/11/align-items-end.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-items-end.svg" width=500>
+
 ## `center`
-![center](https://css-tricks.com/wp-content/uploads/2018/11/align-items-center.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-items-center.svg" width=500>
+
 ## `stretch`
-![stretch](https://css-tricks.com/wp-content/uploads/2018/11/align-items-stretch.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-items-stretch.svg" width=500>
 
 ### h. justify-content
 - Đôi khi tổng kích thước của lưới của bạn có thể nhỏ hơn kích thước của vùng chứa lưới của nó. Điều này có thể xảy ra nếu tất cả các mục lưới của bạn có kích thước bằng các đơn vị không linh hoạt như px. Trong trường hợp này, bạn có thể đặt căn chỉnh của lưới trong vùng chứa lưới.
@@ -842,19 +880,33 @@ selector:pseudo-class {
 }
 ```
 ## `start`
-![start](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-start.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-start.svg" width=500>
+
 ## `end`
-![end](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-end.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-end.svg" width=500>
+
 ## `center`
-![center](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-center.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-center.svg" width=500>
+
 ## `stretch`
-![stretch](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-stretch.svg) 
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-stretch.svg" width=500>
+
 ## `around`
-![space-around](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-around.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-around.svg" width=500>
+
 ## `space-between`
-![space-between](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-between.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-between.svg" width=500>
+
 ## `space-evenly`
-![space-evenly](https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-evenly.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-content-space-evenly.svg" width=500>
+
 
 ### i. align-content
 - Căn theo trục ngang
@@ -865,19 +917,36 @@ selector:pseudo-class {
 ```
 
 ## `start`
-![start](https://css-tricks.com/wp-content/uploads/2018/11/align-content-start.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-start.svg" width=500>
+
 ## `end`
-![end](https://css-tricks.com/wp-content/uploads/2018/11/align-content-end.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-end.svg" width=500>
+
 ## `center`
-![center](https://css-tricks.com/wp-content/uploads/2018/11/align-content-center.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-center.svg" width=500>
+
 ## `stretch`
-![stretch](https://css-tricks.com/wp-content/uploads/2018/11/align-content-stretch.svg) 
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-stretch.svg" width=500>
+
 ## `around`
-![space-around](https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-around.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-around.svg" width=500>
+
+
 ## `space-between`
-![space-between](https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-between.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-between.svg" width=500>
+
+
 ## `space-evenly`
-![space-evenly](https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-evenly.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-content-space-evenly.svg" width=500>
+
+
 
 ### j. grid-auto-columns , grid-auto-rows
 - Dùng để tạo kích thước columns or rows được tạo ra bằng chính px mình mong muốn
@@ -895,7 +964,9 @@ selector:pseudo-class {
   grid-template-rows: 90px 90px;
 }
 ```
-![auto](https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-01.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-01.svg" width=500>
+
 ```css
 .item-a {
   grid-column: 1 / 2;
@@ -906,13 +977,17 @@ selector:pseudo-class {
   grid-row: 2 / 3;
 }
 ```
-![auto](https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-02.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-02.svg" width=500>
+
+
 ```css
 .container {
   grid-auto-columns: 60px;
 }
 ```
-![auto](https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-03.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/grid-auto-columns-rows-03.svg" width=500>
+
 ### k. grid-auto-flow
 - Các grid item không được sắp xếp khi dùng thuộc tính này nó sẽ tự động sắp xếp cho mình theo row hoặc column
 ```css
@@ -927,7 +1002,7 @@ selector:pseudo-class {
 ## THUỘC TÍNH CHO ITEMS
 
 
-#  `NOTE`
+###  `NOTE`
 - float, display: inline-block, display: table-cell, vertical-align and column-* Không ảnh hưởng đến grid item
 
 ### a. grid-column-start, grid-column-end, grid-row-start, grid-row-end
@@ -962,13 +1037,20 @@ selector:pseudo-class {
 }
 ```
 ## `start`
-![start](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-start.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-self-start.svg" width=500>
+
 ## `end`
-![end](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-end.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-self-end.svg" width=500>
+
 ## `center`
-![center](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-center.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-self-center.svg" width=500>
+
 ## `stretch`
-![stretch](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-stretch.svg)  
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-self-stretch.svg" width=500>
+
      
 
 ### c. align-self
@@ -980,13 +1062,20 @@ selector:pseudo-class {
 }
 ```
 ## `start`
-![start](https://css-tricks.com/wp-content/uploads/2018/11/align-self-start.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-self-start.svg" width=500>
+
 ## `end`
-![end](https://css-tricks.com/wp-content/uploads/2018/11/align-self-end.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-self-end.svg" width=500>
+
 ## `center`
-![center](https://css-tricks.com/wp-content/uploads/2018/11/align-self-center.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-self-center.svg" width=500>
+
 ## `stretch`
-![stretch](https://css-tricks.com/wp-content/uploads/2018/11/align-self-stretch.svg)  
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-self-stretch.svg" width=500>
 
 ### d. place-sefl
 - Đặt cả thuộc tính align-self và justify-self trong một khai báo duy nhất.
@@ -998,92 +1087,27 @@ selector:pseudo-class {
   place-self: center;
 }
 ```
-![stretch](https://css-tricks.com/wp-content/uploads/2018/11/place-self-center.svg)  
 
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/place-self-center.svg" width=500>
 
 ```css
 .item-a {
   place-self: center stretch;
 }
 ```
-![stretch](https://css-tricks.com/wp-content/uploads/2018/11/place-self-center-stretch.svg)  
 
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/place-self-center-stretch.svg" width=500>
 
+# V. TRANSFORM
 
-# V. TRANSITION 
+`Syntax`
 
-- Cách để dễ xác định trasition cho các trạng thái khác nhau là sử dụng `:hover`, `:focus`, `:active ` và `target`, `pseudo-class`.
-- Để tạo ra hiệu ứng chuyển đổi Transition, bạn phải xác định ít nhất 2 điều: 
-  - Thuộc tính CSS muốn thêm hiệu ứng vào
-  - Thời gian chuyển đổi diễn ra
-  - Nếu duration không được chỉ định thì giá trị mặc định bằng 0.
-- Transition có 4 thuộc tính:
+```css
+transform: value;
+```
 
-  `transition-property` :
-  - Xác định chính xác những thuộc tính nào sẽ được thay đổi cùng với các thuộc tính chuyển tiếp khác.
-  - Một số thuộc tính phổ biến :
-  
-    ![transition_property](transition_property.png)
-  `transition-duration`
+- Một số value (method) của transform: `translate(), rotate(), scaleX(), scaleY(), scale(), skewX(), skewY(), skew()`
 
-  - Thời gian diễn ra quá trình chuyển đổi bằng cách sử dụng thời gian s hoặc mili giây(ms)
-  
-  `transition-timing-function`
-  - Dùng để xác định tốc độ thay đổi khi chuyển đổi.
-  - Các giá trị có sẵn: 
-    - ease :tạo hiệu ứng chuyển đổi khi bắt đầu thì chậm sau đó nhanh dần và gần kết thúc lại chậm từ từ (giá trị mặc định)
-    - linear: tạo hiệu ứng chuyển đổi từ lúc bắt đầu với lúc kết thúc tốc độ là như nhau.
-    - ease-in: tạo hiệu ứng chuyển đổi chậm ở lúc bắt đầu.
-    - ease-out: tạo hiệu ứng chuyển đổi chậm ở lúc kết thúc.
-    - ease-in-out: tạo hiệu ứng chuyển đổi chậm ở lúc bắt đầu và lúc kết thúc.
-
-  `transition-delay`
-  - Sử dụng để xác định khoản thời gian trì hoẵn giữa thời gian một thuojc tính thay đổi và lúc chuyển tiếp thực sự bắt đầu.
-
-  `transition`: Viết tắt bao gồm các thuộc tính trên
-  `transition : property name | duration | easing function | delay` 
-  - Khi sử dụng cho 2 thuộc tính trở lên thì dùng , .
-
-[DEMO-TRANSITION](https://codepen.io/Sadioho/pen/WNpoxbE)
-
-# VI. ANIMATION
-
-- Cho phép tạo ra hiệu ứng chuyển động mà không cần sử dụng đến JS hay Flash
-- Animation là hiệu ứng chuyển động.
-- Để tạo ra một chuyển động Animation cần phải có các keyframe
-- Mỗi Keyframe được chạy ở 1 thời điểm xác định và trong keyframe đó nó quy định việc phần tử sẽ di chuyển ra sao
-- Ngoài ra Animation còn quy định một số thuộc tính quy định các chi tiết khá quan trọng :
-### `animation-name `
-- Khai báo tên Keyframe được sử dụng
-### `animation-duration `
-- Tương tự như trasition 
-### `animation-timing-function`
-- Tương tự như trasition 
-### `animation-delay`
-- Tương tự như trasition   
-### `animation-iteration-count`
-- Sử dụng để thiết lập số lần thực hiện một animation.
-- Giá trị thường là: 
-  - Một số lần nhất định 
-  - infinite: animation lặp lại liên tục vô hạn.
-### `aniamtion-direction`
-- Xác định chiều chạy của animation.
-- Các giá trị:
-  - `normal`: animation di chuyển bình thường tiến về phía trước (mặc định)
-  - `reverse`: animation di chuyển theo hướng ngược lại, lui về sau.
-  - `alternate`: animation di chuyển tiến về trước, sau đó lui theo hướng ngược lại
-  - `alternate-reverse`: animation di chuyển ngược lại trước, rồi đổi chiều tiến về trước.
-### `animation-fill-mode`
-- Sử dụng để thay đổi trạng thái của phần tử trước khi bắt đầu sau khi kết thúc Animation.
-  - Các thuộc tính: 
-    - `none`
-    - `forwards`
-    - `backwards`
-    - `both`
-
-### `animation-play-state`
-- `paused`  : Xác định chuyển động dừng lại
-- `running` : Xác định chuyển động chạy
 ## Rule Keyframe
   - Quy định phần tử sẽ chuyển động ra sao tại mỗi thời điểm nhất định
   - Syntax: 
@@ -1097,19 +1121,273 @@ selector:pseudo-class {
   }
   ```
 
-[DEMO-ANIMATION](https://codepen.io/Sadioho/pen/XWMNjXb)
+### Transform 2D
+
+- Các phần tử có thể bị bóp méo hoặc bị biến đổi trên cả mặt phẳng hai chiều hoặc mặt phẳng ba chiều.
+
+#### `Rotate()`
+
+- `rotate` cung cấp khả năng xoay một `element` từ 0 đến 360 độ.
+- Sử dụng giá trị dương sẽ xoay `element` theo chiều kim đồng hồ và sử dụng giá trị âm sẽ xoay `element` ngược chiều kim đồng hồ.
+- Điểm xoay mặc định là tâm của `element`, 50% theo cả chiều ngang và chiều dọc.
+- Các `element` có thể xoay chỉ chiều x hoặc chỉ chiều y.
+
+[demo](https://codepen.io/cuong021099/pen/QWpGNPg)
+
+#### `Scale()`
+
+- Các `element` có thể thay đổi kích thước xuất hiện theo tỉ lệ.
+- Tỉ lệ mặc định là 1.
+- Bất kỳ giá trị nào từ 0,01 đến 0,99 đều làm cho một `element` có vẻ nhỏ hơn trong khi bất kỳ giá trị nào lớn hơn hoặc bằng 1,01 làm cho một `element` có vẻ lớn hơn.
+- Các `element` có thể thay đổi kích thước chỉ chiều x hoặc chỉ chiều y.
+
+[demo](https://codepen.io/cuong021099/pen/QWpGELM)
+
+#### `Translate()`
+
+- Dùng `Translate` để thay đổi vị trí của một `element` trên trục x và y.
+- Dùng translateX để thay đổi vị trí của `element` theo trục X, translateY để thay đổi vị trí của `element` theo trục Y.
+
+[demo](https://codepen.io/cuong021099/pen/oNZYLLN)
+
+#### `Skew()`
+
+- Được sử dụng để làm nghiêng các phần tử trên trục x, trục y hoặc cả hai.
+- Tính toán khoảng cách của giá trị `skew` được đo bằng đơn vị độ. Các phép đo độ dài, chẳng hạn như pixel hoặc tỷ lệ phần trăm, không áp dụng ở đây.
+
+[demo](https://codepen.io/cuong021099/pen/YzZpWrq)
+
+#### Kết hợp
+
+- Nhiều phép biến đổi có thể sử dụng cùng 1 lúc.
+
+[demo](https://codepen.io/cuong021099/pen/KKWNMxG)
+
+#### `Transform Origin`
+
+- Điểm biến đổi mặc định là tâm của `element`, 50% theo cả chiều ngang và chiều dọc.
+- Với `transform origin` chúng ta có thể thay đổi điểm biến đổi đó.
+
+[demo](https://codepen.io/cuong021099/pen/MWpbJbB)
+
+#### `Perspective` (Phối cảnh)
+
+- Thay đổi góc nhìn.
+
+[demo](https://codepen.io/cuong021099/pen/abJBmNN)
+
+#### `Perspective Origin`
+
+- Thay đổi gốc của góc nhìn
+
+[demo](https://codepen.io/cuong021099/pen/WNpoRzz)
+
+### Transform 3D
+
+- Tương tự transform 2D nhưng có thêm trục Z.
+
+#### `Rotate()`
+
+[demo](https://codepen.io/cuong021099/pen/NWpbdOM)
+
+#### `Scale()`
+
+[demo](https://codepen.io/cuong021099/pen/mdWOWbB)
+
+#### `Skew()`
+
+- Không thể biến đổi trên trục Z.
+
+#### `Translate()`
+
+[demo](https://codepen.io/cuong021099/pen/NWpbpxE)
+
+#### Transform Style
+
+- Đôi khi, các phép biến đổi ba chiều sẽ được áp dụng trên một phần tử được lồng trong một phần tử mẹ cũng đang được chuyển đổi.
+- Trong trường hợp này, các phần tử được lồng nhau, được biến đổi sẽ không xuất hiện trong không gian ba chiều của riêng chúng.
+- Để cho phép các phần tử lồng nhau biến đổi trong mặt phẳng ba chiều của riêng chúng, hãy sử dụng thuộc tính kiểu biến đổi với giá trị `preserve-3d`.
+- Cú pháp như sau:
+
+  `transform-style: preserve-3d`
+
+[demo](https://codepen.io/shayhowe/pen/jBhbk)
+
+#### `Backface Visibility`
+
+- Khi làm việc với các phép biến đổi ba chiều, các phần tử đôi khi sẽ được biến đổi theo cách khiến chúng quay mặt ra khỏi màn hình.
+- `backface-visibility`: cho phép chúng ta ẩn/ hiện nội dung khi bị quay mặt ra khỏi màn hình đó
+
+[demo](https://codepen.io/cuong021099/pen/PopbpjB)
+
+# VI. TRANSITION 
+
+- Cách để dễ xác định trasition cho các trạng thái khác nhau là sử dụng `:hover`, `:focus`, `:active ` và `target`, `pseudo-class`.
+- Để tạo ra hiệu ứng chuyển đổi Transition, bạn phải xác định ít nhất 2 điều: 
+  - Thuộc tính CSS muốn thêm hiệu ứng vào
+  - Thời gian chuyển đổi diễn ra
+  - Nếu duration không được chỉ định thì giá trị mặc định bằng 0.
+- Transition có 4 thuộc tính:
+
+  `transition-property` :
+  - Xác định chính xác những thuộc tính nào sẽ được thay đổi cùng với các thuộc tính chuyển tiếp khác. Như background, width, height,..
+
+[Link Tham Khảo](https://learn.shayhowe.com/advanced-html-css/transitions-animations/)
+
+  `transition-duration`
+
+  - Thời gian diễn ra quá trình chuyển đổi bằng cách sử dụng thời gian s hoặc mili giây(ms)
+  ```css
+    div{
+      width:100px;
+      height:100px;
+      background:purple;
+      transition-duration:2s;
+      transition-property:width;
+    }
+    div:hover{
+      width:300px;
+    }
+  ```
+  ![duration 2s](https://st.quantrimang.com/photos/image/2019/05/07/transition-css-2.gif)
+
+  `transition-timing-function`
+  - Dùng để xác định tốc độ thay đổi khi chuyển đổi.
+  - Các giá trị có sẵn: 
+    - ease :tạo hiệu ứng chuyển đổi khi bắt đầu thì chậm sau đó nhanh dần và gần kết thúc lại chậm từ từ (giá trị mặc định)
+    - linear: tạo hiệu ứng chuyển đổi từ lúc bắt đầu với lúc kết thúc tốc độ là như nhau.
+    - ease-in: tạo hiệu ứng chuyển đổi chậm ở lúc bắt đầu.
+    - ease-out: tạo hiệu ứng chuyển đổi chậm ở lúc kết thúc.
+    - ease-in-out: tạo hiệu ứng chuyển đổi chậm ở lúc bắt đầu và lúc kết thúc.
+![timing](https://miro.medium.com/max/2816/1*PQR9oa_BDoqBlXCa5E-1Aw.gif)
   
+  `transition-delay`
+  - Sử dụng để xác định khoản thời gian trì hoãn giữa thời gian một thuộc tính thay đổi và lúc chuyển tiếp thực sự bắt đầu.
+  ```css
+  div{
+  transition-delay:1s;
+  }
+  ```
+  ![delay](https://st.quantrimang.com/photos/image/2019/05/07/transition-css-9.gif)
+
+  `transition`: Viết tắt bao gồm các thuộc tính trên
+  `transition : property name | duration | easing function | delay` 
+  - Khi sử dụng cho 2 thuộc tính trở lên thì dùng , .
 
 
-# VII. RESPONSIVE
+# VII. ANIMATION
 
-- Responsive là kỹ thuật giúp website hiển htij tương thích với nhiều kích thước màng hình khác nhau.
+- Cho phép tạo ra hiệu ứng chuyển động mà không cần sử dụng đến JS hay Flash
+- Animation là hiệu ứng chuyển động.
+- Để tạo ra một chuyển động Animation cần phải có các keyframe
+- Mỗi Keyframe được chạy ở 1 thời điểm xác định và trong keyframe đó nó quy định việc phần tử sẽ di chuyển ra sao
+- Ngoài ra Animation còn quy định một số thuộc tính quy định các chi tiết khá quan trọng như dưới.
+```css
+/* Code animation */
+@keyframes example {
+  from {background-color: pink;}
+  to {background-color: purple;}
+}
+
+/* Áp dụng animation vào phần tử */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  animation-name: example;
+  animation-duration: 4s;
+}
+```
+
+![demo](https://st.quantrimang.com/photos/image/2019/05/08/hieu-ung-animation-2.gif)
+
+```css
+/* Code animation */
+@keyframes example {
+  0% {background-color:red; left:0px; top:0px;}
+  25% {background-color:yellow; left:200px; top:0px;}
+  50% {background-color:blue; left:200px; top:200px;}
+  75% {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Áp dụng animation vào phần tử */
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+```
+![demo2](https://st.quantrimang.com/photos/image/2019/05/08/hieu-ung-animation-4-1.gif)
+### `animation-name `
+- Khai báo tên Keyframe được sử dụng
+### `animation-duration `
+- Tương tự như trasition 
+### `animation-timing-function`
+- Tương tự như trasition 
+### `animation-delay`
+- Tương tự như trasition   
+### `animation-iteration-count`
+- Sử dụng để thiết lập số lần thực hiện một animation.
+- Giá trị thường là: 
+  - Một số lần nhất định 
+  - infinite: animation lặp lại liên tục vô hạn.
+  ```css
+  div{
+    animation-iteration-count: 3;
+  }
+  ```
+  ![so lan nhat dinh](https://st.quantrimang.com/photos/image/2019/05/08/hieu-ung-animation-7.gif)
+  ```css
+  div{
+    animation-iteration-count:infinite;
+  }
+  ```
+  ![vo han](https://st.quantrimang.com/photos/image/2019/05/08/hieu-ung-animation-8.gif)
+
+### `aniamtion-direction`
+- Xác định chiều chạy của animation.
+- Các giá trị:
+  - `normal`: animation di chuyển bình thường tiến về phía trước (mặc định)
+  - `reverse`: animation di chuyển theo hướng ngược lại, lui về sau.
+
+  ![vo han](https://st.quantrimang.com/photos/image/2019/05/08/hieu-ung-animation-9.gif)
+  
+  - `alternate`: animation di chuyển tiến về trước, sau đó lui theo hướng ngược lại
+  
+  ![vo han](https://st.quantrimang.com/photos/image/2019/05/08/hieu-ung-animation-10.gif)
+
+  - `alternate-reverse`: animation di chuyển ngược lại trước, rồi đổi chiều tiến về trước.
+
+  ![vo han](https://st.quantrimang.com/photos/image/2019/05/08/hieu-ung-animation-11.gif)
+
+### `animation-fill-mode`
+- Sử dụng để thay đổi trạng thái của phần tử trước khi bắt đầu sau khi kết thúc Animation.
+  - Các thuộc tính: 
+    - `none`
+    - `forwards`
+    - `backwards`
+    - `both`
+
+### `animation-play-state`
+- `paused`  : Xác định chuyển động dừng lại
+- `running` : Xác định chuyển động chạy
+
+
+# VIII. RESPONSIVE
+- Responsive Web Design được apply vào tháng 5/2010
+- Responsive là kỹ thuật giúp website hiển thị tương thích với nhiều kích thước màng hình khác nhau.
 - Tối ưu trải nghiệm người dùng: 
-  - Hiển thị õ ràng các thành phần (hình xảnh, cỡ chữ, nút bấm)
+  - Hiển thị rõ ràng các thành phần (hình ảnh, cỡ chữ, nút bấm)
   - Ẩn / Hiện các thành phần phù hợp theo kích thước màn hình
 
 ## View Port
-## @Mediaquery
+- Sự khác nhau khi sử dụng và không sử dụng meta viewport
+![viewport](https://hocban.vn/wp-content/uploads/2019/11/Viewport-la-gi-va-minh-hoa-giua-viec-co-va-khong-su-dung-Viewport-meta-tag.jpg)
+## @Media query
 - Cú pháp
 ```css
   @media only|not Media-type and (Media-future and|or|not Media-future) {
@@ -1135,70 +1413,13 @@ selector:pseudo-class {
 ### CSS Breakpoint
   - CSS Breakpoint là những điểm (phạm vi giới hạn) mà tại đó nội dung của website sẽ co dãn một cách linh hoạt phụ thuộc vào chiều rộng của thiết bị nhằm đem đến cho người xem một trải nghiệm tuyệt vời và hoàn hảo nhất.
   - CSS Breakpoints còn được gọi là media query breakpoint, do chúng thường được sử dụng với media query.
-  - Cách để đặt breakpoint
-    - Cách thứ 1, đặt breakpoint dựa trên thiết bị, hiện nay có 3 độ rộng phổ biến nhất 
-      - **320px** (breakpoint thường dùng cho smartphone)
-      - **768px** (breakpoint thường dùng cho tablet)
-      - **1024px** (breakpoint thường dùng cho thiết bị màn hình lớn như laptop, PC, TV….). 
-```css
-      /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
- 
-          /* Portrait */
-          
-          @media only screen
-          
-          and (min-device-width: 375px)
-          
-          and (max-device-width: 667px)
-          
-          and (-webkit-min-device-pixel-ratio: 2)
-          
-          and (orientation: portrait) {
-          
-          }
-          
-          /* Landscape */
-          
-          @media only screen
-          
-          and (min-device-width: 375px)
-          
-          and (max-device-width: 667px)
-          
-          and (-webkit-min-device-pixel-ratio: 2)
-          
-          and (orientation: landscape) {
-          
-          }
-          
-```
-    - Cách thứ 2 đặt breakpoint dựa trên nội dung
-      - Việc đặt breakpoint theo cách này sẽ phụ thuộc vào nội dung của trang web mà bạn có, thay vì dựa vào độ rộng của thiết bị người dùng sở hữu.
-      - Phương pháp này cho phép bạn đơn giản hóa việc thêm breakpoint tại nơi mà một nội dung nào đó cần sự thay đổi layout. 
-      - Điều này sẽ giúp bạn hạn chế vấn đề phải làm việc với một danh sách các media query “siêu to khổng lồ” như cách đầu, cũng như giúp media query của bạn dễ quản lý và đơn giản hơn.
 
-```css
-      @media only screen and (min-width: 1024px){
- 
-        ...
-        
-        }
-        <!-- Ngoài ra bạn cũng có thể dùng cách này để giới hạn lại phạm vi tốt hơn  -->
-        @media only screen and (min-width: 768px) and (max-width: 1024px){
-        
-        ...
-        
-        }
-```
+![Breakpoint](https://img.idesign.vn/2018/04/21/idesign-responsive-02.jpg)
+
 ### Cách sử dụng min-width, max-width
 - Nếu bạn thiết kế giao diện với cách tiếp cận mobile-first, thì sử dụng breakpoint min-width (chiều rộng tối thiểu). Khi đó, style mặc định của bạn sẽ là những thiết bị nhỏ và code bạn vừa mới tạo ra sẽ dùng để điều chỉnh cho các thiết bị lớn hơn.
 - Nếu bạn thiết kế cho các thiết bị lớn với cách tiếp cận desktop-first, khi đó style mặc định của bạn sẽ là những thiết bị lớn và code bạn vừa mới tạo ra sẽ dùng để điều chỉnh cho các thiết bị nhỏ hơn với breakpoint max-width (chiều rộng tối đa) - tức là ta chỉ áp dụng những thứ bên trong dấu {} khi và chỉ khi màn hình nhỏ hơn hoặc bằng max-width.
 
-### Desktop First:
-  - Sử dụng max-width
-  - Giao diện thay đổi khi độ rộng màn hình nhỏ hơn hoặc bằng break point
-### Mobile First:
-  - Sử dụng min-width
-  - Giao diện thay đổi khi độ rộng màn hình lớn hơn hoặc bằng break point
+![MBFIRST](https://img.idesign.vn/2018/04/21/idesign-responsive-03.jpg)
   
 [demo responsive](https://codepen.io/Sadioho/pen/NWpbjQp)
