@@ -623,4 +623,6 @@ Ex:
 
   ##### Flex-Item.
 
-  
+  **Là các elms con trực tiếp của flex-container**
+
+  - 
