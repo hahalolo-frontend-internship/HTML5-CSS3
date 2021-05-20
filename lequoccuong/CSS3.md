@@ -100,13 +100,13 @@ Cú pháp: `selector::pseudo-element { property: value; }`
 
 `before` và `after`: giống Pseudo Class
 
-`::mark`
+`:mark`
 
 - Sử dụng cho các điểm đánh dấu của các mục danh sách.
 
 ![marker](marker.PNG)
 
-`::selection`
+`:selection`
 
 - Áp dụng kiểu cho các `element` được người dùng đánh dấu (bôi đen)
 
@@ -668,7 +668,32 @@ Các trang web không nên bỏ đi thông tin để phù hợp với các thi�
 
     `h1, h2, div, p... và pseudo-element như là ::before, ::after, ::selection.`
 
-## 9. Transform
+## 9. Transition
+
+- Cách để dễ xác định trasition cho các trạng thái khác nhau là sử dụng :hover, :focus, :active và target, pseudo-class.
+
+- Để tạo ra hiệu ứng chuyển đổi Transition, ta phải xác định ít nhất :
+
+  - Thuộc tính CSS muốn thêm hiệu ứng vào
+  - Thời gian chuyển đổi diễn ra
+  - Nếu duration không được chỉ định thì giá trị mặc định bằng 0.
+
+- Transition có 4 giá trị:
+
+  - `transition-property`: Xác định chính xác những thuộc tính nào sẽ được thay đổi cùng với các thuộc tính chuyển tiếp khác. Một số thuộc tính phổ biến:
+    ![transition-property](https://github.com/hahalolo-frontend-internship/HTML5-CSS3/raw/dev-hoxuananh/hoxuananh/transition_property.png)
+  - `transition-duration`: Thời gian diễn ra quá trình chuyển đổi bằng cách sử dụng thời gian s hoặc mili giây(ms).
+  - `transition-timing-function`: Dùng để xác định tốc độ thay đổi khi chuyển đổi. Các giá trị có sẵn: ease, linear, ease-in, ease-out, ease-in-out.
+
+    ![transition-timing-function](https://habrastorage.org/getpro/habr/post_images/43e/ce0/5b9/43ece05b9c1ed26b950fd9bb98903398.gif)
+
+  - `transition-delay`: Sử dụng để xác định khoản thời gian trì hoẵn giữa thời gian một thuojc tính thay đổi và lúc chuyển tiếp thực sự bắt đầu.
+
+  - `transition`: Viết tắt bao gồm các thuộc tính trên transition : `property name | duration | easing function | delay`
+
+  [demo](https://codepen.io/Sadioho/pen/WNpoxbE)
+
+## 10. Transform
 
 `Syntax`
 
@@ -776,3 +801,103 @@ transform: value;
 - `backface-visibility`: cho phép chúng ta ẩn/ hiện nội dung khi bị quay mặt ra khỏi màn hình đó
 
 [demo](https://codepen.io/cuong021099/pen/PopbpjB)
+
+## 11. Animation
+
+- Cho phép tạo ra hiệu ứng chuyển động mà không cần sử dụng đến JS hay Flash.
+- Animation là hiệu ứng chuyển động.
+- Để tạo ra một chuyển động Animation cần phải có các keyframe.
+- Mỗi Keyframe được chạy ở 1 thời điểm xác định và trong keyframe đó nó quy định việc phần tử sẽ di chuyển ra sao.
+- Ngoài ra Animation còn quy định một số thuộc tính quy định các chi tiết khá quan trọng :
+  - `animation-name`: Khai báo tên Keyframe được sử dụng.
+  - `animation-duration`: Tương tự như transition.
+  - `animation-timing-function`:Tương tự như transition.
+  - `animation-delay`: Tương tự như transition.
+  - `animation-iteration-count`: Sử dụng để thiết lập số lần thực hiện một animation. Giá trị thường là 1 số nhất định hoặc là `infinite` lặp lại vô hạn.
+  - `aniamtion-direction`: Xác định chiều chạy của animation. Các giá trị:
+    - `normal`: animation di chuyển bình thường tiến về phía trước (mặc định)
+    - `reverse`: animation di chuyển theo hướng ngược lại, lui về sau.
+    - `alternate`: animation di chuyển tiến về trước, sau đó lui theo hướng ngược lại
+    - `alternate-reverse`: animation di chuyển ngược lại trước, rồi đổi chiều tiến về trước.
+  - `animation-play-state`:
+    - `paused` : Xác định chuyển động dừng lại
+    - `running` : Xác định chuyển động chạy
+
+`Rule Keyframe`
+
+- Quy định phần tử sẽ chuyển động ra sao tại mỗi thời điểm nhất định
+- Syntax:
+  - Name: tên của animation bạn muốn tạo
+  - Code: Các đoạn code quy định tiến trình chuyển động. Có 2 dạng:
+    - Sử dụng phần trăm từ 0% đến 100%.
+    - from...to: thiết lập giá trị từ khởi đầu (from - tương đương với 0%) đến kết thúc (to - tương đương với 100%).
+
+```css
+@keyframes Name {
+  /*code*/
+}
+```
+
+[demo](https://codepen.io/Sadioho/pen/XWMNjXb)
+
+## 12. Display
+
+- Thuộc tính display là đặc tính CSS quan trọng để kiểm soát layout cho trang web.
+
+`Block`
+
+Phần tử Block luôn bắt đầu bằng dòng mới và chiếm 100% chiều rộng trang web.
+
+`Inline`
+
+Phần tử Inline không bắt đầu trên dòng mới và chỉ chiếm độ rộng cần thiết. Inline không thể sử dụng được các thuộc tính width, height và margin-top, margin-bottom.
+
+`inline-block`
+
+Là cách hiển thị kết hợp cả hai cách trên, chuyển phần tử về hiển thị trên cùng một hàng nhưng nó vẫn thừa hưởng các đặc tính của block.
+
+`flex`
+
+Phần tử hoạt động giống như một phần tử khối và trình bày nội dung của nó theo mô hình `flexbox`.
+
+`inline-flex`
+
+Phần tử hoạt động giống như một phần tử `inline` và đưa ra nội dung của nó theo mô hình `flexbox`.
+
+`grid`
+
+Phần tử hoạt động giống như một phần tử khối và trình bày nội dung của nó theo mô hình `lưới`.
+
+`inline-grid`
+
+Phần tử hoạt động giống như một phần tử `inline` và trình bày nội dung của nó theo mô hình `lưới`.
+
+`table`
+
+Phần tử này hoạt động giống một phần tử `<table>`.
+
+`list-item`
+
+Phần tử hoạt động giống như một phần tử danh sách, mục. Do đó nó có thể sử dụng được thuộc tính `list-style-type` và `list-style-position`.
+
+## 13. FLOAT
+
+- Có tác dụng đẩy phần tử sang bên trái hoặc bên phải.
+
+### Nguyên lý hoạt động
+
+- Khi một phần tử được thiết lập thuộc tính `float`:
+  - Nó sẽ được bắt đầu ở hàng phía trên, nếu hàng phía trên còn đủ chỗ trống để chứa nó.
+  - Nó sẽ bắt đầu ở hàng mới, nếu hàng phía trên không đủ chỗ trống để chứa nó.
+  - Nếu một phần tử được thiết lập thuộc tính float nhưng phần tử đứng trước nó không được thiết lập thuộc tính float thì mặc định nó sẽ bắt đầu ở hàng mới.
+  - Khi trên một hàng có nhiều phần tử được thiết lập thuộc tính float và mỗi phần tử có chiều cao khác nhau, nếu hàng không đủ chỗ chứa phần tử thì phần tử sẽ bắt đầu bên cạnh phần tử có chiều cao thấp nhất và còn đủ khoảng trống để chứa nó.
+- Tắt sự ảnh hưởng của thuộc tính `float`
+
+  - Nếu một phần tử được thiết lập thuộc tính float trong khi các phần tử sau nó không được thiết lập float, thì khi đó phần tử nằm phía sau sẽ bị tác động xấu bởi thuộc tính float.
+  - Để khắc phục vấn để trên, chúng ta thêm thuộc tính clear vào phần tử phía sau theo cú pháp:
+
+    `clear: none| left | right | both | inherit`
+
+- Chống tràn phần tử
+  - Nếu một phần tử được thiết lập thuộc tính float và có kích thước lớn hơn phần tử chứa nó thì khi đó phần tử sẽ bị tràn ra khỏi phần tử chứa nó.
+  - Để khắc phục vấn đề này, ta thêm thuộc tính `overflow:auto` vào phần tử chứa nó.
