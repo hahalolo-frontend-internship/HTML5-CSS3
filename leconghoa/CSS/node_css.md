@@ -497,4 +497,4 @@ img {
   <img src="./align_content3.png" width="350" align="left">&nbsp;
   <img src="./align_content4.png" width="350">
 
-## 12. Flex Box:
+## 12. Flex Box
