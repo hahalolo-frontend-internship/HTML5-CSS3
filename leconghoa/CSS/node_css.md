@@ -641,3 +641,28 @@ img {
   ```
 
   <img src="./f_align_self.png" width="500">
+
+## 13. Responsive và Media Queries:
+
+- `Responsive Web Design` là cách sử dụng HTML và CSS để tự động thay đổi kích thước, ẩn, thu nhỏ hoặc phóng to một trang web để làm cho trang web trông đẹp mắt trên tất cả các thiết bị (máy tính để bàn, máy tính bảng và điện thoại).
+- `Media Query` là một trong những module mới được thêm vào trong CSS3. Nó là một sự cải thiện của Media Type đã có từ CSS2, bằng việc thêm vào những cú pháp query để ta có thể đáp ứng được cho nhiều device với nhiều kích cỡ màn hình khác nhau.
+- Để tạo một `Responsive Web`, thêm thẻ Meta Viewport:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+  <img src="./with_responsive.png" width="600">
+
+- Responsive Image:
+
+  - `width: 100%;`: khi thu phóng thì ảnh sẽ zoom theo, kích thước có thể lớn hơn ảnh gốc.
+  - `max-width:100%;` khi thu phóng thì ảnh sẽ zoom
+  - Thẻ `<picture>` cho phép bạn xác định các hình ảnh khác nhau cho các kích thước cửa sổ trình duyệt khác nhau.
+
+  <picture>
+      <source srcset="./img_smallflower.jpg" media="(max-width: 600px)">
+      <source srcset="./img_flowers.jpg" media="(max-width: 1000px)">
+      <source srcset="./flowers.jpg">
+      <img src="./img_flowers.jpg" alt="Flowers" style="width:auto;">
+  </picture>
