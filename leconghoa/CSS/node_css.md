@@ -554,7 +554,7 @@ img {
   }
   ```
 
-  <img src="./flex_justify.png" width="400">
+  <img src="./flex_justify.png" width="500">
 
   - `align-items`: xác định các mục được bố trí dọc theo trục phụ trên dòng hiện tại.
 
@@ -566,7 +566,7 @@ img {
   }
   ```
 
-  <img src="./flex_align.png" width="400">
+  <img src="./flex_align.png" width="500">
 
   - `align-content`: căn chỉnh các dòng của vùng chứa linh hoạt bên trong khi có thêm khoảng trống trong trục phụ.
 
@@ -578,4 +578,66 @@ img {
   }
   ```
 
-  <img src="./f_align_content.png" width="400">
+  <img src="./f_align_content.png" width="500">
+
+### 12.2 Flex Item:
+
+- Các thuộc tính:
+
+  - `order`: kiểm soát thứ tự mà chúng xuất hiện trong vùng chứa linh hoạt.
+
+  ```css
+  .item {
+    order: 5; /* default is 0 */
+  }
+  ```
+
+  <img src="./f_order.png" width="500">
+
+  - `flex-grow`: chỉ định tỷ lệ không gian mà các mục sẽ chiểm trong vùng chứa linh hoạt.
+
+  ```css
+  .item {
+    flex-grow: 2; /* default 0 */
+  }
+  ```
+
+  <img src="./f_grow.png" width="500">
+
+  - `flex-shrink`: xác định khả năng cho một mục có thể co lại nếu cần thiết.
+
+  ```css
+  .item {
+    flex-shrink: 3; /* default 1 */
+  }
+  ```
+
+      <img src="./f_shrink.png" width="500">
+
+  - `flex-basis`: chỉ định độ dài ban đầu của một mục linh hoạt.
+
+  ```css
+  .item {
+    flex-basis: number|auto|initial|inherit;
+  }
+  ```
+
+  <img src="./f_basis.png" width="500">
+
+  - `flex`: là thuộc tính kết hợp `flex-grow, flex-shrink, flex-basis`.
+
+  ```css
+  .item {
+    flex: none | [ < "flex-grow" > < "flex-shrink" >? || < "flex-basis" > ];
+  }
+  ```
+
+  - `align-self`: canh chỉnh cho các mục linh hoạt riêng lẻ (có thể ghi đè). Tương tự `align-content`.
+
+  ```css
+  .item {
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+  }
+  ```
+
+  <img src="./f_align_self.png" width="500">
