@@ -644,8 +644,9 @@ img {
 
 ## 13. Responsive và Media Queries:
 
+### `Responsive Web Design`:
+
 - `Responsive Web Design` là cách sử dụng HTML và CSS để tự động thay đổi kích thước, ẩn, thu nhỏ hoặc phóng to một trang web để làm cho trang web trông đẹp mắt trên tất cả các thiết bị (máy tính để bàn, máy tính bảng và điện thoại).
-- `Media Query` là một trong những module mới được thêm vào trong CSS3. Nó là một sự cải thiện của Media Type đã có từ CSS2, bằng việc thêm vào những cú pháp query để ta có thể đáp ứng được cho nhiều device với nhiều kích cỡ màn hình khác nhau.
 - Để tạo một `Responsive Web`, thêm thẻ Meta Viewport:
 
 ```html
@@ -660,9 +661,119 @@ img {
   - `max-width:100%;` khi thu phóng thì ảnh sẽ zoom
   - Thẻ `<picture>` cho phép bạn xác định các hình ảnh khác nhau cho các kích thước cửa sổ trình duyệt khác nhau.
 
+  ```html
   <picture>
-      <source srcset="./img_smallflower.jpg" media="(max-width: 600px)">
-      <source srcset="./img_flowers.jpg" media="(max-width: 1000px)">
-      <source srcset="./flowers.jpg">
-      <img src="./img_flowers.jpg" alt="Flowers" style="width:auto;">
+    <source srcset="./img_smallflower.jpg" media="(max-width: 500px)" />
+    <source srcset="./img_flowers.jpg" media="(max-width: 800px)" />
+    <source srcset="./flowers.jpg" />
+    <img src="./img_flowers.jpg" alt="Flowers" style="width:auto;" />
   </picture>
+  ```
+
+- Responsive Text Size:
+
+  - `Text Size`: có thể được đặt bằng đơn vị "vw", có nghĩa là "chiều rộng khung nhìn".
+
+### `Media Query`:
+
+- `Media Query`: là một trong những module mới được thêm vào trong CSS3. Nó là một sự cải thiện của Media Type đã có từ CSS2, bằng việc thêm vào những cú pháp query để ta có thể đáp ứng được cho nhiều device với nhiều kích cỡ màn hình khác nhau.
+- Các giá trị của Media Type:
+  - `All`: Dùng cho tất cả các loại Media Type
+  - `Aural`: Dùng cho speech and sound synthesizers
+  - `Braille`: Dùng cho các devices liên quan đến chữ nổi (braille)
+  - `Embossed`: Dùng cho các loại máy in các trang braille
+  - `Handheld`: Dùng cho các thiết bị nhỏ, thiết bị cầm tay
+  - `Print`: Dùng cho máy in
+  - `Projection`: Dùng cho các loại máy chiếu
+  - `Screen`: Dùng cho computer screen
+  - `Tty`: Dùng cho các thiết bị sử dụng fixed-pitch character grid
+  - `Tv`: Dùng cho các loại TV
+- Syntax:
+  > @media media_type {rules}
+- Biểu thức trong Media Type:
+  ```css
+  /*AND: cho phép thêm điều kiện bổ sung*/
+  @media all and (min-width: 800px) and (max-width: 1024px) {
+    ...;
+  }
+  /*NOT: phủ định truy vấn được xác định*/
+  @media not screen and (color) {
+    ...;
+  }
+  /*ONLY: áp dụng cho truy vấn thỏa mãn điều kiện*/
+  @media only screen and (orientation: portrait) {
+    ...;
+  }
+  ```
+- Media Features trong Media Queries:
+
+  - `Height & Width`: dùng để xác định chiều cao và chiều rộng cho viewport của thiết bị hoặc browser. Tiền tố min và max để xác định giới hạn màn hình.
+
+  ```css
+  @media all and (min-width: 320px) and (max-width: 780px) {
+    ...;
+  }
+  ```
+
+  - `Orientation: Portrait / Landscape`: dùng để xác định hướng của browser thiết bị, cho phép ta xác định thiết bị đang được xem nằm ở hướng dọc (portrait) hay ngang (landscape). Chủ yếu dùng trên các thiết bị di động.
+
+  ```css
+  @media all and (orientation: landscape) {
+    ...;
+  }
+  ```
+
+  - `Aspect Ratio`: chỉ định tỉ lệ chiều rộng\chiều cao của thiết bị mà truy vấn được áp dụng . Thường đi kèm với các tiền tố min và max.
+
+  ```css
+  @media all and (min-device-aspect-ratio: 16/9) {
+    ...;
+  }
+  ```
+
+  - `Resolution`: chỉ định độ phân giải của thiết bị đầu ra theo mật độ pixel, hay còn được gọi là điểm ảnh trên mỗi inch `(DPI - Dots Per Inch)` . Chúng sẽ đi kèm với số điểm ảnh trên mỗi pixel `dppx` và số điểm ảnh trên cm `dpcm`.
+
+  ```css
+  @media print and (min-resolution: 300dpi) {
+    ...;
+  }
+  ```
+
+### Hướng Responsive Desktop First và Mobile First:
+
+<img src="./mobile_desktop.png" width="800px">
+
+- `Mobile First`: nghĩa là bạn luôn thiết kế ứng dụng cho màn hình mobile trước rồi mới đến các màn hình lớn dần.
+
+```css
+/*Smart phone nhỏ*/
+@media screen and (min-width: 240px) {
+}
+/*Iphone(480 x 640)*/
+@media screen and (min-width: 320px) {
+}
+/*Tablet nhỏ(480 x 640)*/
+@media screen and (min-width: 480px) {
+}
+/*Ipad dọc(768 x 1024)*/
+@media screen and (min-width: 768px) {
+}
+/*Ipad ngang(1024 x 768)*/
+@media screen and (min-width: 1024px) {
+}
+```
+
+- `Desktop First`: nghĩa là bạn sẽ thiết kế ứng dụng cho màn hình desktop trước rồi mới tinh chỉnh về các màn hình nhỏ hơn.
+
+```css
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 320px) {
+}
+```
