@@ -402,7 +402,7 @@ img {
   }
   ```
 
-      <img src="./gap.png" width="600">
+    <img src="./gap.png" width="600">
 
   - `grid-template-areas`: Chỉ định cách hiển thị cột và hàng, sử dụng các mục lưới được đặt tên.
   - `grid-template-columns`: Chỉ định kích thước của các cột và số lượng cột trong một bố cục lưới.
@@ -443,7 +443,7 @@ img {
 
   - `grid-auto-flow`: Chỉ định cách các mục được đặt tự động được chèn vào lưới.
 
-  <img src="./auto_flow.png" width="600">
+  <img src="./auto_flow.png" width="1000">
 
   - `grid-column-end`: Chỉ định nơi kết thúc mục lưới.
   - `grid-column-start`: Chỉ định nơi bắt đầu mục lưới.
@@ -470,8 +470,6 @@ img {
 
   <img src="./grid_start_end.png" width="600">
 
-[Xem thêm](https://css-tricks.com/snippets/css/complete-guide-grid/)
-
 - Một vài thuộc tính đi kèm:
 
   - `justify-items`: Căn chỉnh nội dung bên trong grid item theo trục dọc. Các giá trị: `start, end, center, stretch`.
@@ -495,6 +493,8 @@ img {
   <img src="./align_content2.png" width="350"><br><br>
 
   <img src="./align_content3.png" width="350" align="left">&nbsp;
-  <img src="./align_content4.png" width="350">
+  <img src="./align_content4.png" width="350"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  [Xem thêm](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
 ## 12. Flex Box
