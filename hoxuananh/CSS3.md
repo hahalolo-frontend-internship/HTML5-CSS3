@@ -308,6 +308,7 @@ bố cục cuối cùng của trang.
     ```
 ## 5. PSEUDO ELEMENT
   - Phần tử giả cũng rất giống với lớp giả CSS nhưng chúng có một số điểm khác nhau. Phần tử giả đứng sau hai dấu (::). Từ khóa thể hiện phần tử giả được thêm vào cuối của selector để chỉ định một phần nhất định của một phần tử.
+
 1. Syntax 
 
     `selector::pseudo-element {
@@ -324,7 +325,6 @@ bố cục cuối cùng của trang.
         - word-spacing
         - letter-spacing
         - text-decoration
-        - vertical-align `[sắp xếp nội dung theo chiều dọc]`
         - text-transform
         - line-height
         - clear
@@ -340,7 +340,7 @@ bố cục cuối cùng của trang.
 
 `::before`    
 - Dùng để chèn một số nội dung vào trước nội dung của một element
-- Proptier content: thường dùng là none, text, url.
+- Property content: thường dùng là none, text, url.
 
 `::after`
 - Dùng để chèn một số nội dung vào sau nội dung của một element
@@ -353,7 +353,7 @@ bố cục cuối cùng của trang.
 
 ## 6. PSEUDO CLASS
 
-  - Một lớp giả CSS là một từ khóa được thêm vào phía cuối của selector và đứng sau một dấu  (:), nó được dùng để chỉ rõ bạn muốn định dạng cho phần tử được chọn nhưng chỉ khi nó ở trong một trạng thái nhất định.
+  - Một lớp giả CSS là một từ khóa được thêm vào phía cuối của selector và đứng sau một dấu  (:), nó được dùng để chỉ rõ bạn muốn định dạng cho phần tử được chọn nhưng chỉ khi nó ở trong một **trạng thái** nhất định.
 - Cú pháp:
 
 ```css
