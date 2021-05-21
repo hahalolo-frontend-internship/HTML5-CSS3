@@ -315,8 +315,8 @@ bố cục cuối cùng của trang.
     }`
 2. Pseudo
 
-  ## `::first-line`
-   - Áp dụng cho element con đầu tiên trong element cha.  
+  ### `::first-line`
+   - Áp dụng cho dòng đầu tiên  
    - Các properties được áp dụng :
         - font properties
         - color properties
@@ -329,8 +329,8 @@ bố cục cuối cùng của trang.
         - line-height
         - clear
 
-   ## `::first-letter`
-   - Áp dụng cho chữ cái đầu tiên trong element
+  `::first-letter`
+   - Áp dụng cho chữ cái đầu tiên 
    - Các properties được áp dụng :
         - Bao gồm các properties của first-line
         - margin properties
@@ -338,17 +338,17 @@ bố cục cuối cùng của trang.
         - border properties
         - float
 
-## `::before`    
+`::before`    
 - Dùng để chèn một số nội dung vào trước nội dung của một element
 - Proptier content: thường dùng là none, text, url.
 
-## `::after`
+`::after`
 - Dùng để chèn một số nội dung vào sau nội dung của một element
 
-## `::mark`
+ `::mark`
 - Sử dụng cho các điểm đánh dấu của các mục danh sách
 
-## `::selection`
+`::selection`
 - Áp dụng kiểu cho các phần tử được người dùng đánh dấu (nhấp chuột hoặc kéo chuột qua văn bản)
 
 ## 6. PSEUDO CLASS
@@ -383,11 +383,11 @@ selector:pseudo-class {
     - `:nth-last-of-type(n)`:Với mọi element là element con thứ n , của một kiểu cụ thể, của cha mẹ của nó, tính từ element cuối cùng.
     - `:nth-of-type(n)`:Với mọi element là element con thứ n , của một kiểu cụ thể, của element cha của nó.
     - `:only-of-type`: chọn element là con duy nhất của loại nó là con của element cha.
-    - `only-child`: trong element cha chỉ có duy nhất 1 element nếu có > 1 thì không được chọn.
+    - `:only-child`: trong element cha chỉ có duy nhất 1 element nếu có > 1 thì không được chọn.
     - `:checked `: Với mọi element `<input>` đã chọn (chỉ dành cho các type radio và checkbox) và element `<option>`.
     - `:disabled`: Với mọi element bị disable (chủ yếu được sử dụng trên các element biểu mẫu).
     - `:enabled`: Với mọi element enable (chủ yếu được sử dụng trên các element biểu mẫu).
-    - `:empty `: Với mọi element không có element con (bao gồm cả các nút văn bản).
+    - `:empty`: Với mọi element không có element con (bao gồm cả các nút văn bản).
     - `:focus`: dùng để chọn element được focus vào.
     - `:in-range`: chọn tất cả các element có giá trị nằm trong một phạm vi xác định.(trong vùng min - max).
     - `:out-of-range`: chọn tất cả các element có giá trị nằm trong một phạm vi xác định.(ngoài vùng min - max).
@@ -395,7 +395,7 @@ selector:pseudo-class {
     - `:valid`: chọn các form elements có giá trị xác thực theo cài đặt của element. (chỉ hoạt động cho các form elements có giới hạn, chẳng hạn như element đầu vào có thuộc tính tối thiểu và tối đa, trường email không có email hợp pháp hoặc trường số không có giá trị số, v.v.).
     - `:lang()`: chọn được sử dụng để chọn các element có attribute lang với giá trị được chỉ định. Giá trị của `lang="value"` thường là mã ngôn ngữ gồm 2 chữ cái.
     - `:not(selector)`: Mọi element KHÔNG phải là element / bộ chọn được chỉ định.
-    - :`optional`: Những input không có attribute `required` thì sẽ được chọn (chỉ dùng cho thẻ `input`, `select`, `textarea`)
+    - `:optional`: Những input không có attribute `required` thì sẽ được chọn (chỉ dùng cho thẻ `input`, `select`, `textarea`)
     - `:read-only`: Những form elements có attribute `readonly` sẽ được chọn
     - `:read-write`: Những form elements `có thể đọc` và `có thể ghi` sẽ được chọn (những element có attribute `readonly` và `disable` sẽ không được chọn).
     - `:required`: Những form elements có attribute `required` sẽ được chọn (chỉ áp dụng cho các thẻ `input`, và `textarea`.)
