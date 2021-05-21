@@ -564,7 +564,7 @@ Ex:
 
   <img src="./imgs/36.png">
 
-### 3.17 Making Layout:
+### 3.17 Making Layout With Flex:
 
 #### 3.17.1 LayOut flex:
 
@@ -621,8 +621,42 @@ Ex:
 
       Ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_align-content_space-around
 
-  ##### Flex-Item.
+  #### Flex-Item.
 
   **Là các elms con trực tiếp của flex-container**
 
-  - 
+  - `Flex-item` có các thuộc tính:
+
+    - `order` Chỉ định thứ tự của các flex-item
+
+      ví dụ: <img src="./imgs/39.png">
+
+    - `flex-grow` là thuộc tính chỉ định 1 flex-item sẽ chiếm bao nhiêu phần còn lại của các mục flex.
+
+      ví dụ: <img src="./imgs/40.png">
+
+    - `flex-shrink` là thuộc tính được dùng khi tổng chiều dài các flex-item lớn hơn chiều dài flex-container và những flex-items nào k có thuộc thuộc `flex-shrink` thì nó sẽ bị co lại. Ngược lại với `flex-grow` giá trị của nó mặc định là 1.
+
+      ví dụ: <img src="./imgs/41.png">
+
+    - `flex-basis` là Thuộc tính chỉ định độ dài ban đầu của một mục flex.
+
+      ví dụ: <img src="./imgs/42.png">
+
+    - `flex` là thuộc tính short-hand của `flex-grow`, `flex-shrink` và `flex-basis`.
+
+      ví dụ: <img src="./imgs/43.png">
+
+    - `align-self` : Có 3 giá trị. Khi chiều cao của `flex-container` lớn thì `flex-item` sẽ tự căn chỉnh theo trục `cross-axis`
+
+      - `flex-start`: `flex-item` có thuộc tính `align-self: flex-start` được căn chỉnh phía trên cùng của `flex-container`
+      - `center`: `flex-item` có thuộc tính `align-self: center` được căn chỉnh ở giữa của `flex-container`
+      - `flex-end`: `flex-item` có thuộc tính `align-self: flex-start` được căn chỉnh phía dưới cùng của `flex-container`
+
+        ví dụ: <img src="./imgs/44.png">
+
+#### Responsive Với Flex:
+
+1. Chia lưới:
+
+<img  src="./imgs/45.png">
