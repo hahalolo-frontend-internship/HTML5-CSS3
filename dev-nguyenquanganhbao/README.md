@@ -24,3 +24,6 @@ CSS (Cascading Style Sheet) là ngôn ngữ tạo phong cách cho trang web. Nó
 9. [CSS-Float](./note-css/CSS-Float.md)
 10. [CSS-Grid](./note-css/CSS-Grid.md)
 11. [CSS-Animation](./note-css/CSS-Animation.md)
+
+# Git
+[Git](./git.md)
