@@ -1,4 +1,8 @@
 
+* {
+  box-sizing: border-box;
+}
+
 .linkexample {
     color: red
 }
@@ -9,3 +13,291 @@
 a:active {
     color: blue;
   }
+
+/* DeMo Flex kết hợp responsive */
+
+/* Nếu không dùng Media query thì sẽ áp dụng cho mọi kích thước màn hình. */
+
+.grid {
+  width: 100%;
+  display: block;
+  padding: 0;
+}
+
+.grid__wide {
+  width: 1248px;
+  margin: 0 auto;
+  max-width: 100%;
+  background: #d7d7d7;
+  height: 400px;
+}
+
+.grid__row {
+  margin-left: -12px;
+  margin-right: -12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.pc-0 {
+  display: none;
+}
+.pc-1 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 8.3333%;
+  max-width: 8.3333%;
+}
+.pc-2 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+}
+.pc-3 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.pc-4 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+}
+.pc-5 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 41.6667%;
+  max-width: 41.6667%;
+}
+.pc-6 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.pc-7 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 58.3333%;
+  max-width: 58.3333%;
+}
+.pc-8 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 66.6667%;
+  max-width: 66.6667%;
+}
+.pc-9 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.pc-10 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 83.3333%;
+  max-width: 25%;
+}
+.pc-11 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 91.6667%;
+  max-width: 25%;
+}
+.pc-12 {
+  display: block;
+  border-right: 1px solid rgba(0,0,0, .3);
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+
+/* Chế độ khung nhìn cho tablet theo chiều ngang */
+@media (max-width: 1024px) { 
+  .grid__wide {
+    width: 780px;
+}
+.grid__row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.col {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.md-0 {
+  display: none;
+}
+.md-1 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 8.3333%;
+  max-width: 8.3333%;
+}
+.md-2 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+}
+.md-3 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.md-4 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+}
+.md-5 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 41.6667%;
+  max-width: 41.6667%;
+}
+.md-6 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.md-7 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 58.3333%;
+  max-width: 58.3333%;
+}
+.md-8 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 66.6667%;
+  max-width: 66.6667%;
+}
+.md-9 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.md-10 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 83.3333%;
+  max-width: 25%;
+}
+.md-11 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 91.6667%;
+  max-width: 25%;
+}
+.md-12 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+}
+/* Chế độ khung nhìn cho mobile theo chiều dọc */
+@media (max-width: 640px) { 
+.grid__wide {
+    width: 500px;
+}
+.grid__row {
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.col {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.mb-0 {
+  display: none;
+}
+.mb-1 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 8.3333%;
+  max-width: 8.3333%;
+}
+.mb-2 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+}
+.mb-3 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.mb-4 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+}
+.mb-5 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 41.6667%;
+  max-width: 41.6667%;
+}
+.mb-6 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.mb-7 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 58.3333%;
+  max-width: 58.3333%;
+}
+.mb-8 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 66.6667%;
+  max-width: 66.6667%;
+}
+.mb-9 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.mb-10 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 83.3333%;
+  max-width: 25%;
+}
+.mb-11 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 91.6667%;
+  max-width: 25%;
+}
+.mb-12 {
+  display: block;
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+}

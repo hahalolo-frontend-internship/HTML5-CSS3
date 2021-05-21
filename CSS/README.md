@@ -657,6 +657,11 @@ Ex:
 
 #### Responsive Với Flex:
 
-1. Chia lưới:
+1. Chia Grid:
 
-<img  src="./imgs/45.png">
+   **Grid có 2 đơn vị là row và column:**
+
+     <img  src="./imgs/45.png">
+
+- Lưới được chia 12 cột. Số 12 có các ước số là 1, 2, 3, 4, 6, 12. Nên 12 cột là con số hoàn hảo để chia cột cho công việc căn chỉnh layout. Ở đây ta sử dụng đơn vị % để responsive tốt nhất.
+- 
