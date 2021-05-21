@@ -315,7 +315,7 @@ bố cục cuối cùng của trang.
     }`
 2. Pseudo
 
-  ### `::first-line`
+ `::first-line`
    - Áp dụng cho dòng đầu tiên  
    - Các properties được áp dụng :
         - font properties
@@ -329,7 +329,7 @@ bố cục cuối cùng của trang.
         - line-height
         - clear
 
-  `::first-letter`
+ `::first-letter`
    - Áp dụng cho chữ cái đầu tiên 
    - Các properties được áp dụng :
         - Bao gồm các properties của first-line
