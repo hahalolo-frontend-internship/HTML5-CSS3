@@ -374,9 +374,9 @@ img {
 
 ## 11. Grid Layout:
 
-- Mô-đun bố cục Lưới CSS cung cấp một hệ thống bố cục dựa trên lưới, với các hàng và cột, giúp thiết kế các trang web dễ dàng hơn mà không cần phải sử dụng float và position.
+- `Grid Layout`: cung cấp một hệ thống bố cục dựa trên lưới, với các hàng và cột, giúp thiết kế các trang web dễ dàng hơn mà không cần phải sử dụng float và position.
 
-### 11.1 Grid Elements:
+### 11.1 Grid Container:
 
 - Bố cục lưới bao gồm một phần tử mẹ, với một hoặc nhiều phần tử con.
 - Tất cả các con trực tiếp của vùng chứa lưới sẽ tự động trở thành các mục lưới.
@@ -445,13 +445,39 @@ img {
 
   <img src="./auto_flow.png" width="1000">
 
+- Một vài thuộc tính đi kèm:
+
+  - `justify-items`: Căn chỉnh nội dung bên trong grid item theo trục dọc. Các giá trị: `start, end, center, stretch`.
+  - `align-items`: Căn chỉnh nội dung bên trong grid item theo trục ngang. Các giá trị: `start, end, center, stretch`.
+  - `place-items`kết hợp 2 thuộc tính `align-items` và `justify-items` trong một khai báo.
+
+  <img src="./justify_item.png" width="350" align="left">&nbsp;
+  <img src="./align_item.png" width="350">
+
+  - `justify-content`: Căn chỉnh nội dung trong vùng chứa lưới, căn theo trục dọc. Các giá trị: `start | end | center | stretch | space-around | space-between | space-evenly`.
+  - `align-content`: Thuộc tính này căn chỉnh lưới dọc theo trục khối (cột) (trái ngược với justify-content căn chỉnh lưới dọc theo trục (hàng) nội tuyến).
+  - `place-content`: kết hợp 2 thuộc tính `align-content` và `justify-content` trong một khai báo.
+
+  <img src="./justify_content1.png" width="350" align="left">&nbsp;
+  <img src="./justify_content2.png" width="350"> <br><br><br><br><br><br>
+
+  <img src="./align_content1.png" width="350" align="left">&nbsp;
+  <img src="./align_content2.png" width="350"><br><br>
+
+  <img src="./align_content3.png" width="350" align="left">&nbsp;
+  <img src="./align_content4.png" width="350"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### 11.2 Grid Item:
+
+- Thuộc tính dành cho các phần tử con trong Grid.
+
   - `grid-column-end`: Chỉ định nơi kết thúc mục lưới.
   - `grid-column-start`: Chỉ định nơi bắt đầu mục lưới.
   - `grid-column`: thuộc tính viết tắt cho thuộc tính `grid-column-start` và `grid-column-end`.
   - `grid-row-start`: Chỉ định nơi bắt đầu mục lưới.
   - `grid-row-end`: Chỉ định nơi kết thúc mục lưới.
-  - `grid-area`: Chỉ định tên cho mục lưới hoặc thuộc tính này là thuộc tính viết tắt cho các thuộc tính `grid-row-start, grid-row-end, grid-column-start và grid-column-end`.
   - `grid-row`: Một thuộc tính viết tắt cho thuộc tính `grid-row-start` và `grid-row-end`.
+  - `grid-area`: Chỉ định tên cho mục lưới hoặc thuộc tính này là thuộc tính viết tắt cho các thuộc tính `grid-row-start, grid-row-end, grid-column-start và grid-column-end`.
 
   ```css
   .box1 {
@@ -472,29 +498,84 @@ img {
 
 - Một vài thuộc tính đi kèm:
 
-  - `justify-items`: Căn chỉnh nội dung bên trong grid item theo trục dọc. Các giá trị: `start, end, center, stretch`.
-  - `align-items`: Căn chỉnh nội dung bên trong grid item theo trục ngang. Các giá trị: `start, end, center, stretch`.
-  - `place-items`kết hợp 2 thuộc tính `align-items` và `justify-items` trong một khai báo.
-
-  <img src="./justify_item.png" width="350" align="left">&nbsp;
-  <img src="./align_item.png" width="350">
-
   - `align-self`: Căn chỉnh một mục lưới bên trong một ô dọc theo trục khối (cột). Giá trị này áp dụng cho nội dung bên trong một mục lưới.Các giá trị: `start, end, center, stretch`.
   - `justify-self` là thuộc tính sử dụng để căn chỉnh các item được chỉ định riêng. Các giá trị: `start, end, center, stretch`.
   - `place-self`: kết hợp 2 thuộc tính `align-self` và `justify-self` trong một khai báo.
-  - `justify-content`: Căn chỉnh nội dung trong vùng chứa lưới, căn theo trục dọc. Các giá trị: `start | end | center | stretch | space-around | space-between | space-evenly`.
-  - `align-content`: Thuộc tính này căn chỉnh lưới dọc theo trục khối (cột) (trái ngược với justify-content căn chỉnh lưới dọc theo trục (hàng) nội tuyến).
-  - `place-content`: kết hợp 2 thuộc tính `align-content` và `justify-content` trong một khai báo.
-
-  <img src="./justify_content1.png" width="350" align="left">&nbsp;
-  <img src="./justify_content2.png" width="350"> <br><br><br><br><br><br>
-
-  <img src="./align_content1.png" width="350" align="left">&nbsp;
-  <img src="./align_content2.png" width="350"><br><br>
-
-  <img src="./align_content3.png" width="350" align="left">&nbsp;
-  <img src="./align_content4.png" width="350"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
   [Xem thêm](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-## 12. Flex Box
+## 12. Flex Box:
+
+- `Flex Box`: giúp dễ dàng thiết kế cấu trúc bố cục đáp ứng linh hoạt mà không cần sử dụng `float` hoặc `position`.
+- Bố cục `Flexbox` thích hợp nhất với các thành phần của ứng dụng và bố cục quy mô nhỏ, trong khi bố cục `Grid` dành cho các bố cục quy mô lớn hơn.
+
+  <img src="./flexbox.png" width="600">
+
+### 12.1 Flex Container:
+
+- Phần tử HTML trở thành vùng chứa flex khi dùng `display: flex or inline-flex;`
+- Các thuộc tính:
+
+  - `flex-direction`: xác định hướng các mục flex được đặt trong vùng chứa flex.
+
+  ```css
+  .container {
+    flex-direction: row | row-reverse | column | column-reverse;
+  }
+  ```
+
+  <img src="./flex_direction.png" width="600">
+
+  - `flex-wrap`: xác định các mục flex có được bọc lại hay không.
+
+  ```css
+  .container {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+  }
+  ```
+
+  <img src="./flex_wrap.png" width="600">
+
+  - `flex-flow`: là thuộc tính kết hợp cả `flex-direction` và `flex-flow`.
+
+  ```css
+  .container {
+    flex-flow: column wrap;
+  }
+  ```
+
+  - `justify-content`: phân phối các mục ra không gian trống còn lại theo trục chính. Nó cũng kiểm soát việc căn chỉnh của các mục khi chúng tràn dòng.
+
+  ```css
+  .container {
+    justify-content: flex-start | flex-end | center | space-between |
+      space-around | space-evenly | start | end | left | right... + safe |
+      unsafe;
+  }
+  ```
+
+  <img src="./flex_justify.png" width="400">
+
+  - `align-items`: xác định các mục được bố trí dọc theo trục phụ trên dòng hiện tại.
+
+  ```css
+  .container {
+    align-items: stretch | flex-start | flex-end | center | baseline | first
+      baseline | last baseline | start | end | self-start | self-end +... safe |
+      unsafe;
+  }
+  ```
+
+  <img src="./flex_align.png" width="400">
+
+  - `align-content`: căn chỉnh các dòng của vùng chứa linh hoạt bên trong khi có thêm khoảng trống trong trục phụ.
+
+  ```css
+  .container {
+    align-content: flex-start | flex-end | center | space-between | space-around
+      | space-evenly | stretch | start | end | baseline | first baseline | last
+      baseline +... safe | unsafe;
+  }
+  ```
+
+  <img src="./f_align_content.png" width="400">
