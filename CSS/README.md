@@ -661,7 +661,18 @@ Ex:
 
    **Grid có 2 đơn vị là row và column:**
 
-     <img  src="./imgs/45.png">
+Ví dụ: <img  src="./imgs/45.png">
+
+**Hình ảnh này được thiết kế cho web full page**
+
+Ví dụ: <img src="./imgs/47.png">
+
+**Hình ảnh này được thiết kế cho web có kích thước chiều rộng cố định**
 
 - Lưới được chia 12 cột. Số 12 có các ước số là 1, 2, 3, 4, 6, 12. Nên 12 cột là con số hoàn hảo để chia cột cho công việc căn chỉnh layout. Ở đây ta sử dụng đơn vị % để responsive tốt nhất.
-- 
+
+Một số ví dụ:
+
+- <img src="./imgs/46.png">
+
+- <img src="./imgs/48.png">
