@@ -657,9 +657,85 @@ Ex:
 
 #### Responsive Với Flex:
 
-1. Chia Grid:
+**Responsive**
 
-   **Grid có 2 đơn vị là row và column:**
+- Thiết kế web responsive giúp trang web giúp trải nghiệm tốt trên tất cả các màn hình thiết bị.
+
+Ví dụ:
+
+  <img src="./imgs/49.png">
+
+**Break Point & Media Queries**
+
+- Breakpoint có nghĩa là những phạm vi giới hạn (chiều rộng màn hình của thiết bị) ở giao diện được chuyển đổi cho phù hợp với các thiết bị hiện đại. Vị trí và cách hiển thị của các yếu tố trên giao diện sẽ được thay đổi khi chạm mốc giới hạn Breakpoint.
+
+1. **@media media_type**
+
+- `@media media_type` để css style cho những Elements phù hợp cho những kiểu màn hình khác nhau hay
+
+- Tất cả các giá trị của `Media Type` bao gồm:
+  - All: Dùng cho tất cả các loại Media Type
+  - Aural: Dùng cho speech and sound synthesizers
+  - Braille: Dùng cho các devices liên quan đến chữ nổi (braille)
+  - Embossed: Dùng cho các loại máy in các trang braille
+  - Handheld: Dùng cho các thiết bị nhỏ, thiết bị cầm tay
+  - Print: Dùng cho máy in
+  - Projection: Dùng cho các loại máy chiếu
+  - Screen: Dùng cho computer screen
+  - Tty: Dùng cho các thiết bị sử dụng fixed-pitch character grid
+  - Tv: Dùng cho các loại TV
+
+**Ta có thể sử dụng Media Type theo cú pháp sau:**
+
+`@media` **media_type** { code css ở đây }
+
+Sau khi ra HTML5 thì default value **Media_type** là `all`, thế nên mặc định thì css sẽ áp dụng cho tất cả các loại màn hình.
+
+2. **@Media query syntax**
+
+- Cú pháp của Media Query được mở rộng ra từ cú pháp của Media Type như sau:
+
+  `@media media_type (feature:value) { rules }`
+
+- Mặc định `media_type` sẽ là **all**, thế nên k cần đưa vô cũng được.
+- **_Một số Media Feature quan trọng_**
+
+  Ví dụ:
+
+  ```css
+  /*Áp dụng cho những browser có chiều rộng <= 900px*/
+  @media (max-width: 900px) { body {font-size: 16px;} }
+  /*Áp dụng cho những browser có chiều rộng >= 600px*/
+  @media (min-width: 600px) { body {font-size: 14px;} }
+  /*Áp dụng cho những browser có chiều rộng >= 800px*/
+  @media (min-width: 800px) { body {font-size: 15px;} }
+  /*Áp dụng cho những browser có chiều rộng <= 700px*/
+  @media (max-width: 700px) { body {font-size: 13px;} }
+  ```
+
+  Ví dụ khác:
+
+  ```css
+  /*Áp dụng cho browser có chiều rộng >=800px và <= 900px*/ @media (max-width:
+  900px) and (min-width: 800px) { body {font-size: 14px;} } /*Áp dụng cho màn
+  hình nằm ngang hoặc có chiều rộng >=1200px */ @media (orientation: landscape),
+  (device-min-width: 1200px) { body {font-size: 15px;} } /*Áp dụng cho màn hình
+  có tỉ lệ không phải là 4/3*/ @media not (device-aspect-ratio: 4/3) { body
+  {font-size: 15px;} }
+  ```
+
+- `orientation` là feature đánh giá dựa trên trạng thái của thiết bị đang nằm ngang hay dọc
+
+```css
+/*Áp dụng khi device để dọc*/
+@media (orientation: portrait) { body {font-size: 14px;} }
+/*Áp dụng khi device để ngang*/
+@media (orientation: landscape) { body {font-size: 15px;} }
+```
+
+**Grid:**
+
+**Grid có 2 đơn vị là row và column:**
 
 Ví dụ: <img  src="./imgs/45.png">
 
@@ -676,3 +752,5 @@ Một số ví dụ:
 - <img src="./imgs/46.png">
 
 - <img src="./imgs/48.png">
+
+Minh họa phân tích một số trang web bất kỳ.
