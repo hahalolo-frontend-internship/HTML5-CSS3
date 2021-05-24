@@ -83,6 +83,7 @@ Tà có thể style cho elms có class là `center`
 
 1. Đơn vị `Tuyệt Đối`:
    - Gồm có px, cm , mm ... px là đơn vị được dùng nhiều nhất
+   - px : đây là đơn vị thường thấy được sử dụng trên màn hình hiển thị, 1px tương đương với một điểm ảnh trên màn hình hiển thị.
 2. Đơn vị `Tương Đối`:
    - Những đơn vị được dùng phổ biến nhất là: %, rem, em, vw, vh
      - unit `%`: phụ thuộc vô thằng chứa: ví dụ thằng `<div>` parent có width = 500px `<div>` child có width = 50% thì `<div>` child có width là 250px
