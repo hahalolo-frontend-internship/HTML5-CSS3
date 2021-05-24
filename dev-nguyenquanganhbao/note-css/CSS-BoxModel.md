@@ -28,7 +28,7 @@ Về cơ bản mô hình hộp CSS là một chiếc hộp bao xung quanh phần
 </html>
 ```
 -   Chiều rộng và chiều cao của phần tử
-    + Chiều rộng bằng viền trái + padding trái + content + padding phải + viền phải.
-    + Chiều cao bằng viền trên + padding trên + content + padding dưới + viền dưới.
+    + Chiều rộng bằng margin trái + viền trái + padding trái + content + padding phải + viền phải + margin phải.
+    + Chiều cao bằng margin trên + viền trên + padding trên + content + padding dưới + viền dưới margin dưới.
 
-- Để phần tử hiển thị đúng như width height như đã set ban đầu thì `box-sizing: border-box;`.
+- Để phần tử hiển thị đúng như width height như đã set ban đầu thì sử dụng thêm `box-sizing: border-box;`.

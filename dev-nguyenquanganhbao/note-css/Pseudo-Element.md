@@ -76,7 +76,7 @@ Pseudo-Element trong CSS được sử dụng để thêm các định dạng đ
 <html>
     <head>
         <style>
-            h1::after {
+            h1::before {
                 content: "Before";
                 color: red;
                 margin-right: 20px;
@@ -96,7 +96,7 @@ Pseudo-Element trong CSS được sử dụng để thêm các định dạng đ
     <head>
         <style>
             h1::after {
-                content: "Before";
+                content: "After";
                 color: red;
                 margin-left: 20px;
             }
