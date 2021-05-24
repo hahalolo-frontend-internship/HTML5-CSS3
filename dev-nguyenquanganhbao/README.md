@@ -12,8 +12,10 @@ HTML (viết tắt của từ Hypertext Markup Language, hay là "Ngôn ngữ Đ
 # CSS
 ## CSS là gì?
 CSS (Cascading Style Sheet) là ngôn ngữ tạo phong cách cho trang web. Nó dùng để tạo phong cách và định kiểu cho những yếu tố được viết dưới dạng ngôn ngữ đánh dấu, như là HTML. Nó có thể điều khiển định dạng của nhiều trang web cùng lúc để tiết kiệm công sức cho người viết web. Nó phân biệt cách hiển thị của trang web với nội dung chính của trang bằng cách điều khiển bố cục, màu sắc, và font chữ.
+![cuphap](./img/Rule.png)
 
-1. [CSS-Specifictity](./note-css/CSS-Specificity.md)
+
+1. [CSS-Specificity](./note-css/CSS-Specificity.md)
 2. [CSS-Selector](./note-css/CSS-Selector.md)
 3. [Pseudo-Class](./note-css/Pseudo-Class.md)
 4. [Pseudo-Element](./note-css/Pseudo-Element.md)
