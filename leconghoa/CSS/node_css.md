@@ -644,7 +644,7 @@ img {
 
 ## 13. Responsive và Media Queries:
 
-### `Responsive Web Design`:
+### 13.1. `Responsive Web Design`:
 
 - `Responsive Web Design` là cách sử dụng HTML và CSS để tự động thay đổi kích thước, ẩn, thu nhỏ hoặc phóng to một trang web để làm cho trang web trông đẹp mắt trên tất cả các thiết bị (máy tính để bàn, máy tính bảng và điện thoại).
 - Để tạo một `Responsive Web`, thêm thẻ Meta Viewport:
@@ -674,7 +674,7 @@ img {
 
   - `Text Size`: có thể được đặt bằng đơn vị "vw", có nghĩa là "chiều rộng khung nhìn".
 
-### `Media Query`:
+### 13.2. `Media Query`:
 
 - `Media Query`: là một trong những module mới được thêm vào trong CSS3. Nó là một sự cải thiện của Media Type đã có từ CSS2, bằng việc thêm vào những cú pháp query để ta có thể đáp ứng được cho nhiều device với nhiều kích cỡ màn hình khác nhau.
 - Các giá trị của Media Type:
@@ -708,6 +708,7 @@ img {
 - Media Features trong Media Queries:
 
   - `Height & Width`: dùng để xác định chiều cao và chiều rộng cho viewport của thiết bị hoặc browser. Tiền tố min và max để xác định giới hạn màn hình.
+  - `min-width, max-width` được gọi là `breakpoint`. Đó là những điểm giới hạn khung nhìn mà tại đó chúng ta sẽ thiết lập CSS cho khung nhìn đó.
 
   ```css
   @media all and (min-width: 320px) and (max-width: 780px) {
@@ -739,9 +740,11 @@ img {
   }
   ```
 
-### Hướng Responsive Desktop First và Mobile First:
+### 13.3. Hướng Responsive Desktop First và Mobile First:
 
 <img src="./mobile_desktop.png" width="800px">
+
+-
 
 - `Mobile First`: nghĩa là bạn luôn thiết kế ứng dụng cho màn hình mobile trước rồi mới đến các màn hình lớn dần.
 
@@ -777,3 +780,116 @@ img {
 @media screen and (max-width: 320px) {
 }
 ```
+
+## 14. Transition:
+
+- Transition CSS cho phép bạn thay đổi các giá trị thuộc tính một cách trơn tru, trong một khoảng thời gian nhất định.
+- Các thuộc tính:
+  - `transition-delay`: Chỉ định độ trễ (tính bằng giây) cho hiệu ứng chuyển tiếp.
+  - `transition-duration`: Chỉ định bao nhiêu giây hoặc mili giây để hoàn thành một hiệu ứng chuyển tiếp.
+  - `transition-property`: Chỉ định tên của thuộc tính CSS áp dụng hiệu ứng chuyển tiếp. Ví dụ: height, width, transform...
+  - `transition-timing-function`: Chỉ định đường cong tốc độ của hiệu ứng chuyển tiếp.
+  - `transition`: Thuộc tính viết tắt để đặt bốn thuộc tính chuyển tiếp thành một thuộc tính duy nhất.
+- Các giá trị của `transition-timing-function`:
+
+  - `ease`: chỉ định hiệu ứng chuyển tiếp với bắt đầu chậm, sau đó nhanh, sau đó kết thúc chậm (đây là mặc định).
+
+    <img src="./transition-ease.gif">
+
+  - `linear`: chỉ định một hiệu ứng chuyển tiếp với cùng tốc độ từ đầu đến cuối.
+
+    <img src="./transition-linear.gif">
+
+  - `ease-in`: chỉ định hiệu ứng chuyển tiếp với khởi động chậm.
+
+    <img src="./transition-ease-in.gif">
+
+  - `ease-out`: chỉ định hiệu ứng chuyển tiếp với kết thúc chậm.
+
+    <img src="./transition-ease-out.gif">
+
+  - `ease-in-out`: chỉ định một hiệu ứng chuyển tiếp với bắt đầu và kết thúc chậm.
+
+    <img src="./transition-ease-in-out.gif">
+
+  - `cubic-bezier(n,n,n,n)`: cho phép bạn xác định các giá trị của riêng mình trong một hàm khối-bezier.
+
+## 15. Animation:
+
+- Animation CSS cho phép tạo hiệu ứng động cho các phần tử HTML.
+- Để sử dụng Animation CSS, cần khai báo `@keyframes` để thiết lập các style ở từng thời điểm cụ thể. Có thể viết theo `From,To` hoặc theo `%`.
+
+```css
+/* Code animation */
+@keyframes example {
+  from {
+    background-color: pink;
+  }
+  to {
+    background-color: purple;
+  }
+  /* hoặc theo phần trăm
+  0% {
+    background-color: pink;
+  }
+  100% {
+    background-color: purple;
+  }
+  */
+}
+
+/* Áp dụng animation vào phần tử */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: crimson;
+  animation-name: example;
+  animation-duration: 4s;
+}
+```
+
+<img src="./animation_percennt.gif">
+
+- Các thuộc tính:
+
+- `animation-name`: Chỉ định tên của @keyframes animation
+- `animation-duration`: Chỉ định thời gian animation phải mất để hoàn thành một chu kỳ. Mặc định là 0s.
+- `animation-delay`: Chỉ định thời gian trễ để bắt đầu animation
+- `animation-iteration-count`: Chỉ định số lần một animation sẽ được chạy. Có thể giới hạn số lần bằng số hoặc vô hạn bằng `infinite`.
+- `animation-direction`: Chỉ định xem một animation sẽ được phát tới, lùi hay theo các chu kỳ thay thế
+- `animation-timing-function`: Chỉ định đường cong tốc độ của animation
+- `animation-fill-mode`: Chỉ định kiểu cho phần tử khi animation không chạy (trước khi bắt đầu, sau khi kết thúc hoặc cả hai)
+- `animation-play-state`: Chỉ định animation đang chạy hay bị tạm dừng
+- `animation`: Thuộc tính viết tắt để thiết lập tất cả các thuộc tính animation
+
+- Các giá trị của `animation-direction`:
+
+  - `normal` - Mặc định. Animation được phát như bình thường.
+
+    <img src="./animation_normal.gif">
+
+  - `reverse` - Animation được phát theo hướng ngược lại
+
+    <img src="./animation_reverse.gif">
+
+  - `alternate` - Animation được phát về phía trước, sau đó được phát ngược lại
+
+    <img src="./animation_alter.gif">
+
+  - `alternate-reverse` - Animation được phát ngược trước, sau đó đổi hướng
+
+    <img src="./animation_alter_rever.gif">
+
+- Các giá trị của `animation-timing-function`:
+  - `ease`: chỉ định hiệu ứng animation với bắt đầu chậm, sau đó nhanh, sau đó kết thúc chậm (đây là mặc định).
+  - `linear`: chỉ định một hiệu ứng animation với cùng tốc độ từ đầu đến cuối.
+  - `ease-in`: chỉ định hiệu ứng animation với khởi động chậm.
+  - `ease-out`: chỉ định hiệu ứng animation với kết thúc chậm.
+  - `ease-in-out`: chỉ định một hiệu ứng animation với bắt đầu và kết thúc chậm.
+  - `cubic-bezier(n,n,n,n)`: cho phép bạn xác định các giá trị của riêng mình trong một hàm khối-bezier.
+    <img src="./animation.gif">
+- Các giá trị của `animation-fill-mode`:
+  - `none` - Mặc định. Animation sẽ không áp dụng bất kỳ kiểu nào cho phần tử trước hoặc sau khi phần tử đang thực thi
+  - `forwards` - Phần tử sẽ giữ lại các giá trị kiểu được đặt bởi khung hình chính cuối cùng (phụ thuộc vào hướng Animation và số lần lặp lại Animation)
+  - `backwards` - Phần tử sẽ nhận các giá trị kiểu được đặt bởi khung hình chính đầu tiên (phụ thuộc vào hướng Animation) và giữ lại giá trị này trong khoảng thời gian trễ Animation
+  - `both` - Animation sẽ tuân theo các quy tắc cho cả tiến và lùi, mở rộng các thuộc tính Animation theo cả hai hướng
