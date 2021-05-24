@@ -1,7 +1,7 @@
 # CSS3
 - Viết tắt của Cascading Style Sheets
 
-- Là ngôn ngữ tạo phong cách và định kiểu cho những yếu tố được viết dưới dạng ngôn ngữ đánh dấu như HTML
+- Là ngôn ngữ tạo phong cách và định kiểu cho những yếu tố được viết dưới dạng ngôn ngữ đánh dấu như HTML.
 # RULE CSS3
 ![Cú pháp CSS 3](./Rule.png)
 # I. LOAD CSS3 
@@ -15,7 +15,7 @@
 ## 1. Resolve conflicting CSS declarations (Cascade)
 Các declarations có thể đến từ nhiều nguồn khác nhau: 
 - Author : Các CSS mà dev viết.
-- User : CSS mà người dùng thay đổi (như người dùng thay đổi font-size của trình duyệt -> declaration cho font size)
+- User : CSS mà người dùng thay đổi (như người dùng thay đổi font-size của trình duyệt -> declaration(khai báo) cho font size)
 - Browser : CSS mà trình duyệt định nghĩa sẵn (như thẻ a thì được in chữ màu xanh, có gạch chân)
 
 Khi mỗi source đều có CSS khác nhau cho 1 element, browser sẽ chọn CSS theo quy tắc(rule)
@@ -25,14 +25,15 @@ Khi mỗi source đều có CSS khác nhau cho 1 element, browser sẽ chọn CS
 ### a. Important
 - Định nghĩa CSS mà có `!important` sẽ được ưu tiên nhất. Tuy nhiên việc làm dụng `!important` sẽ gây khó khăn cho việc bảo trì.
 - Khi các rule có cùng mức độ quan trọng (importance), browser sẽ đi so sánh mức độ chi tiết (specificities).
-### b. Specificity
+### b. Specificity (đặc tính)
 - Inline styles
 - IDs.
 - Classes, pseudo-classes, attributes
 - Elements, pseudo-elements
-* Khi có nhiều rule cùng áp dụng cho 1 slide, browser sẽ tính toán 4 giá trị trên và đem ra so sánh, sau đó chọn rule nào có giá trị cao nhất để đem ra hiển thị.
+* Khi có nhiều rule cùng áp dụng cho 1 slide (bộ phận), browser sẽ tính toán 4 giá trị trên và đem ra so sánh, sau đó chọn rule nào có giá trị cao nhất để đem ra hiển thị.
 * Inline luôn có độ ưu tiên cao hơn style được viết trong file.
 
+![speci](https://raw.githubusercontent.com/hahalolo-frontend-internship/HTML5-CSS3/dev-nguyenquanganhbao/dev-nguyenquanganhbao/img/specificity.jpeg)
 
 ### c. Source order
 - Khi các css declaration có cùng specificity, declarations cuối cùng trong code sẽ được chọn.
@@ -59,14 +60,14 @@ Khi mỗi source đều có CSS khác nhau cho 1 element, browser sẽ chọn CS
 - Nếu dùng width(padding, margin, ...): x% -> giá trị sẽ được tính dựa vào parent length.
 - em dùng cho font-size sẽ được tính bằng parent font-size.
 - em dùng để tính length (padding, ..) sẽ cần dựa trên current font-size.
-- rem luôn dựa vào document’s root font-size (nếu k có sẽ dùng default font-size của trình duyệt.
+- rem luôn dựa vào document root font-size (nếu k có sẽ dùng default font-size của trình duyệt.
 - vh and vw được tính trên % của viewport height và width.
 ### c. Inheritance
 - Kế thừa cho phép pass values từ phần tử cha cho phần tử con :v
 - 1 số properties được kế thừa: font-family, font-size, color,… (padding, margin sẽ không được kế thừa).
 - Computed value là giá trị sẽ được dùng để kế thừa, không phải declared value.
 - Chỉ lấy giá trị kế thừa nếu không có value nào được định nghĩa cho phần tử đó.
-- Để force việc kế thừa cho 1 gía trị, ta có thể dùng từ `inherit`. Để reset giá trị initial của 1 propety, ta dùng keywork `initial`.
+- Để giữ việc kế thừa cho 1 gía trị, ta có thể dùng từ `inherit`. Để reset giá trị initial của 1 propety, ta dùng keywork `initial`.
 
 ## 3. RENDER TREE
 ![TREE](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/images/render-tree-construction.png)
@@ -93,6 +94,7 @@ bố cục cuối cùng của trang.
 
 ### Độ rộng thực tế sẽ là 
 **total width** = right border + right padding + specified width + left padding + left border
+
 **total height** = top border + top padding + specified height + bottom padding + bottom border
 
 ### Property Box-sizing: boder-box;
@@ -258,7 +260,7 @@ bố cục cuối cùng của trang.
 - right: đẩy phần tử sang bên phải
 ### Nguyên lý hoạt động
 - Khi một phần tử được thiết lập thuộc tính float:
-    - Nó sẽ được bắt đầu ở hàng phái trên, nếu hàng phía trên còn đủ chỗ trống để chứa nó
+    - Nó sẽ được bắt đầu ở hàng phiá trên, nếu hàng phía trên còn đủ chỗ trống để chứa nó
     - Nó sẽ bằng đầu ở hàng mới, nếu hàng phía trên không đủ chỗ trống để chứa nó
     - Nếu một phần tử được thiết lập float mà trong khi phần tử đứng trước nó không được thiết lập float thì mặc định nó được bắt đầu ở hàng mới.
     - Khi trên một hàng có nhiều phần tử được thiết lập thuộc tính float và mỗi phần tử có chiều cao khác nhau, nếu hàng không đủ chỗ chứa phần tử thì phần tử sẽ bắt đầu bên cạnh phần tử có chiều cao thấp nhất và còn đủ khoảng trống để chứa nó
@@ -628,7 +630,7 @@ selector:pseudo-class {
 
 - Thuộc tính này nó cho các element giãn theo `width` của `container`.
 - Mặc định giá trị trong thuộc tính `flex-grow` là 0.
-- Công thức tính tỉ lệ `width` với điều kiện các item điều có flex-grow >= 1 của các element như sau: `width-item = (flex-grow của item hiện tại/Tổng flex-grow của các item)* width-container`.
+
 - Nếu áp dụng công thức ra bằng 0 thì width sẽ phụ thuộc vào nội dung bên trong element.
 
 <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg" width=500>
@@ -1408,7 +1410,7 @@ div {
 - And : kết hợp nhiều điều kiện
 - Or  : hoặc điều kiện này hoặc điều kiện kia (dùng với dấu ,)
 - Not : phủ định
-- Only : được dùng để ngăn chặn các browser cũ
+- Only : duy nhất
 
 ### CSS Breakpoint
   - CSS Breakpoint là những điểm (phạm vi giới hạn) mà tại đó nội dung của website sẽ co dãn một cách linh hoạt phụ thuộc vào chiều rộng của thiết bị nhằm đem đến cho người xem một trải nghiệm tuyệt vời và hoàn hảo nhất.

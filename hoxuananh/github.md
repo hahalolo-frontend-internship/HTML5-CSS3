@@ -29,7 +29,6 @@
 
 - Là repository dùng để chia sẻ giữa nhiều người và bố trí trên server chuyên dụng.
 
-
 ## CÁC LỆNH GIT CƠ BẢN
 
 1. Git config
@@ -67,7 +66,7 @@
 - Cách dùng: git stash trong thư mục làm việc của bạn.
 
 11. git merge
-- Tác dụng: Merge 2 branch lại với nahu.
+- Tác dụng: Merge 2 branch lại với nhau.
 - Cách dùng: Chuyển tới branch bạn muốn merge rồi  dùng `git merge <:branch_ban_muon_merge:>`
 
 12. git remote
@@ -89,7 +88,7 @@
 - Các môi tường devlopment, staging và production tách biệt giúp quá trình kiểm thử (Quality Assurance = Đảm bảo chất lượng), trả lại feedback(phản hồi) và xử lý các issue được gọn gàng và thống nhất.
 ## Ý tưởng
 - Duy trì các nhánh branch không đổi, tức không xóa trong suốt dòng đời sản phẩm. 
-- Branch master sẽ luôn là branch chính áp dụng cho prodution, trong khi các branch hotfix, features hay develop cung cấp các bản để phục vụ QA và hoàn thiện trước khi được đẩy lên master.
+- Branch master sẽ luôn là branch chính áp dụng cho prodution (sản xuất), trong khi các branch hotfix, features hay develop cung cấp các bản để phục vụ QA( Quality Assurance) và hoàn thiện trước khi được đẩy lên master.
 - Khác với cách thông thường tạo ra nhiều vấn đề xảy ra ngay trên production. Git Flow đẩy quá trình QA vào một phần bắt buộc cho cả developer và team QA yêu cầu sự hoàn thiện cao hơn về chất lượng đầu ra.
 
 ## Các nhánh trong git-flow
@@ -121,8 +120,8 @@
 - Merge vào develop và master
 - Đặt tên : hotfix-*
 
-- Khi release sản phẩm đôi khi phát hiện những bug rất nghiêm trọng. Những lúc như này ta sẽ ngắt ra branch hotfix trực tiếp từ branch master để tiến hành sửa, sau khi sửa xong sẽ merge vào master và develop và ghi release tag. Sau đó sẽ xáo branch hotfix đi.
-- Ưu điểm của việc tách nhành này ở chỗ các team members khác có thể tiếp tục công việc ở develop trong khi những người khách có thể tập trung vào fix bug của prodution.
+- Khi release sản phẩm đôi khi phát hiện những bug rất nghiêm trọng. Những lúc như này ta sẽ ngắt ra branch hotfix trực tiếp từ branch master để tiến hành sửa, sau khi sửa xong sẽ merge vào master và develop và ghi release tag. Sau đó sẽ xoá branch hotfix đi.
+- Ưu điểm của việc tách nhánh này ở chỗ các team members khác có thể tiếp tục công việc ở develop trong khi những người khách có thể tập trung vào fix bug của prodution.
 
 ### 5. Nhánh Feature
 
