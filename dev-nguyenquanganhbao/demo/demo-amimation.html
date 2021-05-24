@@ -25,27 +25,20 @@
             left: 0;
             animation-name: myAnimation;
             animation-duration: 4s;
-            animation-iteration-count: 1;
+            animation-iteration-count: infinite;
         }
         .container > .box1{
-            animation-timing-function: ease;
             animation-direction: normal;
             
         }
         .box2{
-            animation-timing-function: linear;
             animation-direction: reverse;
         }
         .box3{
-            animation-timing-function: ease-in;
             animation-direction: alternate;
         }
         .box4{
-            animation-timing-function: ease-out;
             animation-direction: alternate-reverse;
-        }
-        .box5{
-            animation-timing-function: ease-in-out;
         }
 
 
@@ -75,32 +68,30 @@
             /* animation-fill-mode: forwards; */
 
 
-            /* animation-direction: reverse;
-            animation-delay: 2s; */
-            /* animation-fill-mode: backwards; */
+            animation-direction: reverse;
+            animation-delay: 2s; 
+            animation-fill-mode: backwards;
         }
     </style>
 </head>
 <body>
-    <!-- <div class="container">
-        animation-timing-function: ease;<br>
+    <div class="container">
         animation-direction: normal;
         <div class="box box1"></div>
-        animation-timing-function: linear;<br>
+    
         animation-direction: reverse;
         <div class="box box2"></div>
-        animation-timing-function: ease-in;<br>
+    
         animation-direction: alternate;
         <div class="box box3"></div>
-        animation-timing-function: ease-out;<br>
+    
         animation-direction: alternate-reverse;
         <div class="box box4"></div>
-        animation-timing-function: ease-in-out;<br>
-        <div class="box box5"></div>
-    </div> -->
-
-    <div class="container2">
-        <div class="box"></div>
+      
     </div>
+
+    <!-- <div class="container2">
+        <div class="box"></div>
+    </div> -->
 </body>
 </html>

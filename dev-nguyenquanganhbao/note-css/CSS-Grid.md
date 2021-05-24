@@ -37,7 +37,7 @@ Ví dụ trên có thể hiểu được là column đầu tiên thì có width 
 ```css
 .wrapper {
     display: grid;
-    grid-column-gap: 50px 25px;
+    grid-gap: 50px 25px;
 }
 ```
 4. justify-content

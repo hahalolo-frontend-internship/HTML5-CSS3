@@ -17,8 +17,8 @@
 + `animation-name`: xác định phần tử sẽ thực thi animation nào.
 + `animation-duration`:  là khoảng thời gian diễn ra hiệu ứng. Nếu phần `animation-duration` không được chỉ định sẽ không xảy ra hiệu ứng vì giá trị mặc định bằng 0s.
 + `animation-timing-function` dùng để xác định tốc độ thay đổi khi hiệu ứng di chuyển. 
-    * `ease`: tạo hiệu ứng chuyển đổi khi bắt đầu thì chậm sau đó nhanh dần và gần kết thúc lại chậm dần (giá trị mặc định).
     * `linear`: tạo hiệu ứng chuyển đổi từ lúc bắt đầu với lúc kết thúc tốc độ là như nhau.
+    * `ease`: tạo hiệu ứng chuyển đổi khi bắt đầu thì chậm sau đó nhanh dần và gần kết thúc lại chậm dần (giá trị mặc định).
     * `ease-in`: tạo hiệu ứng chuyển đổi chậm lúc bắt đầu.
     * `ease-out`: tạo hiệu ứng chuyển đổi chậm lúc kết thúc.
     * `ease-in-out`: tạo hiệu ứng chuyển đổi chậm cả lúc bắt đầu và kết thúc.

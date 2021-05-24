@@ -1,5 +1,5 @@
 # Display
-Thuộc tính display là đặc tính CSS quan trọng để kiểm soát layout cho trang web. 
+Thuộc tính display là thuộc tính CSS quan trọng để kiểm soát layout cho trang web. 
 1. Block
 - Phần tử Block luôn bắt đầu bằng dòng mới và chiếm 100% chiều rộng trang web.
 - Các thẻ block
@@ -18,7 +18,6 @@ Thuộc tính display là đặc tính CSS quan trọng để kiểm soát layou
 ```html
 <span>
 <a>
-<img>
 ```
 3. Display: none;
 - display: none; thường được dùng để ẩn một phần tử mà không xóa nó.
