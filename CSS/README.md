@@ -5,6 +5,16 @@
 - CSS là ngôn ngữ Chúng ta dùng để style cho 1 trang web
 - Được dùng để xác định kiểu cho các trang web, bao gồm thiết kế, bố cục hiển thị trên các thiết bị và kích thước màn hình khác nhau.
 
+  **Những nội dung cần trình bày**
+
+  1. **Cách thêm CSS.**
+  2. **Selector.**
+  3. **Units.**
+  4. **Box model.**
+  5. **Making layout by flex.**
+  6. **Responsive.**
+  7. **Animation**
+
 ## 2. Cách thêm CSS:
 
 - Có 3 cách:
@@ -687,7 +697,9 @@ Ví dụ:
 
 **Ta có thể sử dụng Media Type theo cú pháp sau:**
 
-`@media` **media_type** { code css ở đây }
+```css
+@media **media_type** { code css ở đây }
+```
 
 Sau khi ra HTML5 thì default value **Media_type** là `all`, thế nên mặc định thì css sẽ áp dụng cho tất cả các loại màn hình.
 
@@ -695,7 +707,9 @@ Sau khi ra HTML5 thì default value **Media_type** là `all`, thế nên mặc �
 
 - Cú pháp của Media Query được mở rộng ra từ cú pháp của Media Type như sau:
 
-  `@media media_type (feature:value) { rules }`
+  ```css
+  @media media_type (feature:value) { rules }
+  ```
 
 - Mặc định `media_type` sẽ là **all**, thế nên k cần đưa vô cũng được.
 - **_Một số Media Feature quan trọng_**
@@ -704,33 +718,69 @@ Sau khi ra HTML5 thì default value **Media_type** là `all`, thế nên mặc �
 
   ```css
   /*Áp dụng cho những browser có chiều rộng <= 900px*/
-  @media (max-width: 900px) { body {font-size: 16px;} }
+  @media (max-width: 900px) {
+    body {
+      font-size: 16px;
+    }
+  }
   /*Áp dụng cho những browser có chiều rộng >= 600px*/
-  @media (min-width: 600px) { body {font-size: 14px;} }
+  @media (min-width: 600px) {
+    body {
+      font-size: 14px;
+    }
+  }
   /*Áp dụng cho những browser có chiều rộng >= 800px*/
-  @media (min-width: 800px) { body {font-size: 15px;} }
+  @media (min-width: 800px) {
+    body {
+      font-size: 15px;
+    }
+  }
   /*Áp dụng cho những browser có chiều rộng <= 700px*/
-  @media (max-width: 700px) { body {font-size: 13px;} }
+  @media (max-width: 700px) {
+    body {
+      font-size: 13px;
+    }
+  }
   ```
 
   Ví dụ khác:
 
   ```css
-  /*Áp dụng cho browser có chiều rộng >=800px và <= 900px*/ @media (max-width:
-  900px) and (min-width: 800px) { body {font-size: 14px;} } /*Áp dụng cho màn
-  hình nằm ngang hoặc có chiều rộng >=1200px */ @media (orientation: landscape),
-  (device-min-width: 1200px) { body {font-size: 15px;} } /*Áp dụng cho màn hình
-  có tỉ lệ không phải là 4/3*/ @media not (device-aspect-ratio: 4/3) { body
-  {font-size: 15px;} }
+  /*Áp dụng cho browser có chiều rộng >=800px và <= 900px*/
+  @media (max-width: 900px) and (min-width: 800px) {
+    body {
+      font-size: 14px;
+    }
+  } /*Áp dụng cho màn
+  hình nằm ngang hoặc có chiều rộng >=1200px */
+  @media (orientation: landscape), (device-min-width: 1200px) {
+    body {
+      font-size: 15px;
+    }
+  } /*Áp dụng cho màn hình
+  có tỉ lệ không phải là 4/3*/
+  @media not (device-aspect-ratio: 4/3) {
+    body {
+      font-size: 15px;
+    }
+  }
   ```
 
 - `orientation` là feature đánh giá dựa trên trạng thái của thiết bị đang nằm ngang hay dọc
 
 ```css
 /*Áp dụng khi device để dọc*/
-@media (orientation: portrait) { body {font-size: 14px;} }
+@media (orientation: portrait) {
+  body {
+    font-size: 14px;
+  }
+}
 /*Áp dụng khi device để ngang*/
-@media (orientation: landscape) { body {font-size: 15px;} }
+@media (orientation: landscape) {
+  body {
+    font-size: 15px;
+  }
+}
 ```
 
 **Grid:**
@@ -754,3 +804,122 @@ Một số ví dụ:
 - <img src="./imgs/48.png">
 
 Minh họa phân tích một số trang web bất kỳ.
+
+Tự định nghĩa ra thư viện Responsive gần giống với Boostrap: https://codepen.io/thongnhat/pen/MWpmyZy
+
+#### **Transform 2D & 3D:**
+
+1. Transform 2D:
+
+- CSS Transform cho phép bạn di chuyển, xoay, chia tỷ lệ và làm nghiêng các phần tử.
+
+- transform là thuộc tính cho phép ta dùng các phương thức chuyển đổi 2D:
+
+  - `transform: translateX()` : Tham số đại diện cho trục x mà elements đó sẽ dịch chuyển.
+  - `transform: translateY()` : Tham số đại diện cho trục y mà elements đó sẽ dịch chuyển.
+  - `transform: translate()` : Có 2 tham số tham số đại diện cho trục x,y mà elements đó sẽ dịch chuyển. Là short hand của 2 cái trên.
+
+  - `transform: rotate()` : quay một phần tử (đơn vị phải có deg) theo trục x hoặc y;
+  - `transform: scale()` : giống `translate` cho phép zoom to tỉ lệ elms theo trục x or y hoặc cả 2
+  - `transform: skew`: như `translate` cho phép zoom to tỉ lệ elms theo trục x or y hoặc cả 2
+  - `transform: matrix`: là short hand tướng ứng với **matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())**
+
+  2. Transform 3D:
+
+- `transform: translate()` có 3 giá trị
+- `transform: rotate()`
+- `transform: rotate()`
+
+**transform Origin**
+
+- Mặc định của 1 element gốc của nó nằm ở trung tâm.
+- thuộc tính này cho phép ta thay đổi vị trí element sẽ biến đổi
+
+syntax:
+
+```css
+transform-origin: x-axis y-axis z-axis;
+```
+
+- `transform-orgin` có 3 cặp value:
+
+  - `x-axis` ứng với những giá trị:
+    - left
+    - center
+    - right
+    - px
+    - %
+  - `y-axis` ứng với những giá trị:
+    - left
+    - center
+    - right
+    - px
+    - %
+  - `z-axis` ứng với những giá trị:
+    - px.
+
+ví dụ: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_transform-origin
+
+#### **Transition & Animation:**
+
+1. **Transition:**
+
+- Css transitions cho phép ta thay đổi thuộc tính giá trị một cách smooth. Trong khoảng time nhất định.
+- Thuộc tính transition có những thuộc tính sau:
+
+  - `transition-delay`: chỉ định sau khoảng thời gian bao lâu bắt đầu chuyển tiếp.
+  - `transition-duration` : Chỉ định khoảng thời gian chuyển tiếp.
+  - `transition-property` : Chỉ định tên thuộc tính mà CSS sẽ chuyển tiếp.
+
+    - Ví dụ: https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_transform
+
+  - `transition-timing-function`: Chỉ định kiểu chuyển động. Một số kiểu chuyển động của thuộc tính này là:
+
+    - `linear` : Chuyển động đều.
+    - `ease` : hiệu ứng chuyển tiếp với bắt đầu chậm, sau đó nhanh, sau đó kết thúc chậm. ( chậm nhanh chậm)
+    - `ease-in` : Chỉ định hiệu ứng chuyển tiếp với khởi động chậm. (Ban đầu chậm và sau đó nhanh đều)
+    - `ease-out` : Chỉ định hiệu ứng chuyển tiếp với kết thúc chậm. ( Nhanh đều và gần kết thúc sẽ chậm )
+    - `ease-in-out` : Chỉ định hiệu ứng chuyển tiếp với phần bắt đầu và kết thúc chậm ( bắt đầu chậm và kết thúc chậm )
+    - `cubic-bezier` : Dùng để custom các kiểu chuyển động
+
+  - `transition` : là thuộc tính short-hand.
+
+- Để tạo CSS transition, ta phải chỉ định 2 thứ:
+  - Thuộc tính Css muốn thêm vào hiệu ứng.
+  - Thời gian hiệu ứng làm công việc đó. ( Nếu k có thời gian thì `transition` mặc định sẽ la 0s sẽ vẫn có hiệu ứng nhưng k được smooth)
+
+2. **Animate**
+
+- Animation cho phép 1 phần tử dần dần thay đổi từ kiểu này sang kiểu khác.
+- Ta có thể thay đổi nhiều thuộc tính Css.
+- Để dùng CSS animation, Đầu tiên ta phải định nghĩa ra `@keyframe` cho animation.
+- `@keyframe` chỉ định kiểu css trong khối code `@keyframe`. Thì animation sẽ thay đổi dần dần từ kiểu hiện tại sang kiểu mới tại những thởi điểm khác nhau.
+- Những thuộc tính của animations:
+
+  - `@keyframe` : Định nghĩa ra `tên` 1 animation.
+  - `animation-delay`: Chỉ định thời gian sau bao lâu bắt đầu 1 animation.
+  - `animation-duration` : Chỉ định 1 animation sẽ mất bao lâu thời gian
+  - `animation-direction` : Chỉ định 1 animation sẽ được phát tới, lùi theo các chu kỳ. Value của nó là:
+
+    - `normal`: Chuyển động bình thường, từ điểm đầu tới điểm cuối.
+    - `reverse` : Chuyển động từ đích tới điểm ban đầu của 1 element.
+    - `alternate`: Chuyển động từ điểm đầu đến điểm cuối và từ điểm cuối trở lại về đầu.
+    - `alternate-reverse`: Chuyển động từ điểm cuối đến điểm đầu và từ điểm đầu trở lại về cuối.
+      Ví dụ: https://www.w3schools.com/cssref/playit.asp?filename=playcss_animation-direction&preval=normal
+
+  - `animation-fill-mode`: Chỉ định kiểu cho phần tử khi animation chưa được phát. ( Trước khi nó phát, sau khi phát xong, hoặc cả 2). Value của nó là:
+    - `none`: mặc định.
+    - `forwards` : Phần tử sẽ giữ lại cái style cuối cùng sau khi kết thúc 1 animation.
+    - `backwards` : Phần tử sẽ trở lại trạng thái ban đầu sau khi kết thúc 1 animation.
+    - `both` : Phần tử sẽ ở lại vị trí cuối cùng của animate nhưng style là trạng thái ban đầu.
+      Ví dụ: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_animation-fill-mode2
+  - `animation-iteration-count`: Chỉ định số lần một `animation` sẽ phát. Value của nó là:
+    - `number` có thể là 1, 2 or ... any number integer
+    - `infinity` nghĩa là vô số
+  - `animation-name` : Chỉ định tên của `@keyframe`
+  - `animation-play-state` : Chỉ định `animation` đang chạy hay bị dừng. Value của nó là:
+
+    - `pause` : dừng.
+    - `running` : default value.
+
+  - `animation-timing-function`

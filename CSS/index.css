@@ -1,18 +1,67 @@
+:root {
 
+  --text-color: #333
+
+}
 * {
   box-sizing: border-box;
 }
 
-.linkexample {
-    color: red
+
+.notify {
+    margin-top: 20px;
+    padding: 0 10px;    
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+   }
+   .notify--item {
+     cursor: pointer;
+     position: relative;
+   }
+
+.notify--item__show {
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 120%;
+    right: 10px;
+    background: rgb(255, 221, 221);
+    box-shadow: 0 3px 3px #c3c3c3;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 3px;
+    display:none;
+    animation-name: appearslowly;
+    /* will-change: opacity, transform; */
+    transform-origin: calc(100% - 35px) top;
+    animation-duration: 1s;
 }
 
-.linkexample:visited {
-    color: green;
+.notify--item {
+  transition: font-size 0.2s;
+  font-size: 20px;
+}
+
+.notify--item:hover { 
+    color: blueviolet;
+    font-size: 26px
+ }
+
+.notify--item:hover .notify--item__show{
+  display:block;
+}
+
+@keyframes appearslowly {
+  from {
+      opacity: 0;
+      transform: scale(0, 0);
   }
-a:active {
-    color: blue;
+  to {
+      opacity: 1;
+      transform: scale(1, 1);
   }
+}
 
 /* DeMo Flex kết hợp responsive */
 
