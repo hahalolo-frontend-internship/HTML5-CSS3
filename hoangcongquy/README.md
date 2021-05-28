@@ -7,3 +7,5 @@
 [css3](css3.md)
 # Tìm hiểu thêm
 [seach++](seach++.md)
+# JavaScript ES6
+[javascripts](javascripts.md)

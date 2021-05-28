@@ -46,6 +46,7 @@
          background-attachment: fixed; /* kéo thanh trang thì ảnh nó cố định bên góc ko mất ảnh*/
       }
       ```
+      + Demo: [attachment](https://www.w3schools.com/css/tryit.asp?filename=trycss_background-image_attachment)
    - `background-position` (tài sản được sử dụng để xác định vị trí của các hình nền)
       ```css
          body {
@@ -71,6 +72,7 @@
             /*nằm mép trong background - nằm mép ngoài background - nằm sát cái bộ khung nội dung - đặt giá trị này thành giá trị mặc định*/
          }
       ```
+      + Demo: [clip](https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_background-clip)
    - `background-origin ` (xử lí vị trí xử lí hình nền)
       ```css
          <style>
@@ -93,6 +95,7 @@
             </div>
          <body>
       ```
+       + Demo: [origin](https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_background-origin)
    - `CSS background-size` (kích thước nền)
       ```css
          div {
@@ -106,7 +109,7 @@
       + `cover`: Thay đổi kích thước hình nền để bao phủ toàn bộ vùng chứa (bể ảnh).
       + `contain`: Thay đổi kích thước hình nền để đảm bảo hình ảnh hiển thị đầy đủ(không bể)
 ## Overflow 
-   - Demo (Phần tràn)
+   - Overflow (Phần tràn)
       ```css
       div {
          width: 200px;
@@ -116,8 +119,11 @@
       }
       ```
       + visible- Mặc định. Phần tràn không được cắt bớt. Nội dung hiển thị bên ngoài hộp của phần tử
+      ![visible](anhcss/visible.png)
       + hidden - Phần tràn bị cắt bớt và phần còn lại của nội dung sẽ không hiển thị
+      ![hidden](anhcss/hidden.png)
       + scroll - Phần tràn được cắt bớt và một thanh cuộn được thêm vào để xem phần còn lại của nội dung
+      ![scroll](anhcss/scroll)
       + auto- Tương tự như scroll, nhưng nó chỉ thêm thanh cuộn khi cần thiết
       + `overflow-x` và `overflow-y`
          ```css
@@ -130,7 +136,9 @@
             overflow-y: scroll;/*làm việc trên/dưới*/
          }
          ```
-## Display
+## Display Flex 
+- Hiển thị một phần tử dưới dạng vùng chứa linh hoạt cấp khối
+- Chiếm 100% chiều rộng ( còn có `display: block`, `display: table`)
 - Flex 
       ```css
       #main div {
@@ -141,6 +149,7 @@
       }
       ```
    + `flex-grow`
+   * Khối chia theo: Phần tử lớn = Số lần * 1 phần của phần tử nhỏ nhất (Một số chỉ định mục sẽ tăng bao nhiêu so với phần còn lại của các mục linh hoạt)
       ```html
       <head>
          <style>
@@ -162,7 +171,6 @@
          </div>
       </body>
       ```
-   * Khối chia theo: Phần tử lớn = Số lần * 1 phần của phần tử nhỏ nhất (Một số chỉ định mục sẽ tăng bao nhiêu so với phần còn lại của các mục linh hoạt)
    + `flex-shrink`
       ```html
       <style> 
@@ -217,48 +225,37 @@
          <div style="background-color:lightblue;">100px</div>
       </div>
       ```
-   + `flex-direction`
-      ```css
-      div {
-         display: flex;
-        flex-direction: row|row-reverse|column|column-reverse|initial|inherit;
-      }
-      ```
-      + row: hàng ngang gắn góc trái trên
-      + row-reverse: hàng ngang gắn góc phải trên
-      + column: hàng dọc góc trái trên
-      + column-reverse: hàng dọc góc trái dưới
-      + initial: kế thừa thuộc tính mẹ 
    + `flex-flow`
       ```css
          div {
          display: flex;
-         flex-flow: /*flex-direction flex-wrap|initial|inherit;*/
+         flex-flow: flex-direction flex-wrap|initial|inherit;
          }
       ```
-      + row nowrap: trên 1 dòng trái sang phải ko xuống dòng
-      + row-reverse nowrap: ngược lại
-      + column nowrap: trên 1 cột bên trái trên xuống
-      + column-reverse nowrap: ngược lại
-      + row wrap: trên dòng 1 3 5 ....trái sang phải
-      + row-reverse wrap: ngược lại
-      + column wrap: trên cột 1 3 5....trên xuống
-      + column-reverse wrap: ngược lại
-      + row wrap-reverse: trên dòng 1 3 5... dưới lên
-      + row-reverse wrap-reverse: ngược lại
-      + column wrap-reverse: trên xuống 1 3 5.. từ trái qua phải 
-      + column-reverse wrap-reverse: ngược lại
-      +initial: giá trị ban đầu thằng mẹ
-   + `fllex-wrap`
+      - `flex-wrap`
+         ```css
+         div{
+            display: flex;   
+            flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;
+         }
+         ```
+         + nowrap : Các hoạt động linh hoạt sẽ không được bọc
+         + wrap : Các hoạt động linh hoạt sẽ được bọc lại nếu cần
+         + wrap-reverse: Các hoạt động linh hoạt sẽ được bọc lại, nếu cần, ngược lại thứ tự.
+         + Demo: [flow](https://www.w3schools.com/cssref/playit.asp?filename=playcss_flex-flow)
+      - `flex-direction` (Định hướng các mặt)
       ```css
-      div{
-         display: flex;   
-         flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;
-      }
-      ```
-      + nowrap : Các hoạt động linh hoạt sẽ không được bọc
-      + wrap : Các hoạt động linh hoạt sẽ được bọc lại nếu cần
-      + wrap-reverse: Các hoạt động linh hoạt sẽ được bọc lại, nếu cần, ngược lại thứ tự.
+         div {
+            display: flex;
+         flex-direction: row|row-reverse|column|column-reverse|initial|inherit;
+         }
+         ```
+         + row: hàng ngang gắn góc trái trên
+         + row-reverse: hàng ngang gắn góc phải trên
+         + column: hàng dọc góc trái trên
+         + column-reverse: hàng dọc góc trái dưới
+         + initial: kế thừa thuộc tính mẹ 
+         + Demo: [flex](https://www.w3schools.com/cssref/playit.asp?filename=playcss_flex-direction&preval=row)
    * _Note: Internet Explorer 10 and earlier versions do not support the property._
 - Grid
 ## Animations
@@ -291,13 +288,13 @@
       ![animation](anhcss/keyframes.png)
    + `animation-name` ( gọi đến tên animation cần xử lí)
       ```css
-      animation-name: keyframename|none|initial|inherit;
+      animation-name: keyframename|none;
       ```
       + keyframename: Chỉ định tên của khung hình chính mà bạn muốn liên kết với bộ chọn
       + none: Chỉ định rằng sẽ không có hoạt ảnh
    + `animation-duration` ( Xác định thời gian hoạt động tổng mặc định 0s)
       ```css
-         animation-duration: time|initial|inherit;
+         animation-duration: time;
       ```
    +   (Thời gian trì hoản thực hiện hoạt động)
    + `animation-iteration-count` (Quy định số lần chạy n)
@@ -361,16 +358,17 @@
          /* chỉ định dựng bất kì lúc nào / chỉ định chạy lại khi dừng bất kì */
       }
       ```
+      + Demo: [play-state](https://www.w3schools.com/cssref/playit.asp?filename=playcss_animation-play-state&preval=paused)
 ## Position
-   -  static: Các phần tử HTML được định vị tĩnh theo mặc định.
+   - static: Các phần tử HTML được định vị tĩnh theo mặc định.
    - relative: Được định vị so với vị trí bình thường của nó.
        ![relative](anhcss/relative.png)
    - fixed: được định vị so với chế độ xem nằm mặc định trên chế độ xem bất kì vị trí nào
        ![fixed](anhcss/fixed.png)
    - absolute 
-      
       + Được định vị tương đối với tổ tiên được định vị gần nhất
       + Nếu một phần tử được định vị tuyệt đối không có tổ tiên được định vị, nó sẽ sử dụng phần thân tài liệu và _di chuyển cùng với việc cuộn trang_.
+      + Sử dụng top, left, bottom, right để điều chỉnh phần tử.
    ![absolute](anhcss/absolute.png)
    - sticky: được định vị dựa trên vị trí cuộn của người dùng.
       ![sticky](anhcss/sticky.png)
@@ -382,7 +380,7 @@
       CSS-Code;
       }
       ```
-   + only: chỉ sử dụng cái mình gọi (nếu dùng only thì dùng hết /*thuộc tinh mặc định*/)
+   + only: chỉ sử dụng cái mình gọi (nếu dùng only thì dùng hết /*thuộc tính mặc định*/)
    + not: áp dụng cho tất cả
    + mediatype: chế độ chọn
       - Có thể có các bảng định kiểu khác nhau cho các phương tiện khác nhau:
@@ -432,9 +430,9 @@
       + Thiết kế web đáp ứng không phải là một chương trình hay một JavaScript.
    - Viewport
       - Thêm <meta>phần tử khung nhìn sau trong tất cả các trang web của mình:
-      ```html
+         ```html
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      ```
+         ```
          + Thẻ <meta> viewport thiết lập cho trang web hiển thị tương ứng với kích thước của từng thiết bị khác nhau.
          + `width=device-width` đặt chiều rộng của trang tuân theo chiều rộng màn hình của thiết bị (sẽ thay đổi tùy theo thiết bị).
          + `initial-scale=1.0` đặt mức thu phóng ban đầu khi trang được tải lần đầu tiên bởi trình duyệt.
@@ -473,6 +471,7 @@
          ```
          + portrait: Chế độ xem theo hướng dọc, tức là chiều cao lớn hơn hoặc bằng chiều rộng.
          + landscape: Chế độ xem theo hướng ngang, tức là chiều rộng lớn hơn chiều cao.
+         + Demo: [por_land](https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mediaquery_orientation)
          
       - Hide Elements (Ẩn các phần tử trên các phương tiện khác nhau)
          ```css
@@ -484,6 +483,7 @@
          }
          ```
          ![hide](anhcss/hide.png)
+         + Demo: [elenments](https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_hide)
       - Thay đổi font-size trong khoảng
          ```css
          /* If the screen size is 601px or more, set the font-size of <div> to 80px */
@@ -688,11 +688,11 @@
       .     .        .
       25px	1.5625em	156.25%
    ```
-   + Sự khác biệt giữa PX, EM và Phần trăm là gì?
+   + Sự khác biệt giữa PX, EM và %.
       + Pixel là phép đo tĩnh, trong khi phần trăm và EM là phép đo tương đối. 
       + Phần trăm phụ thuộc vào kích thước phông chữ mẹ của nó. 
       + EM là liên quan đến kích thước phông chữ hiện tại của phần tử 
-         +EX: (2em có nghĩa là 2 lần kích thước của phông chữ hiện tại). Kích thước phông chữ của body là 16 pixel, thì 150% sẽ là 24 pixel (1,5 * 16) 
+         + EX: 2em = 2 lần kích thước của phông chữ hiện tại. Kích thước phông chữ của body là 16 pixel, thì 150% sẽ là 24 pixel (1,5 * 16) 
          ```css
             <head>
             <style>
@@ -850,7 +850,7 @@
 ## Transions
 - Chuyển tiếp CSS cho phép bạn thay đổi các giá trị thuộc tính một cách trơn tru, trong một khoảng thời gian nhất định.
    + transition
-   ```html
+      ```html
       <head>
       <style> 
       div {
@@ -870,7 +870,7 @@
       <div></div>
       <p><b>Note:</b> This example does not work in Internet Explorer 9 and earlierversions.</p>
       </body>
-   ```
+      ```
    + Có thể thêm hiệu ứng chuyển tiếp
       ```css
       div {
@@ -905,30 +905,7 @@
          + step-start: <=> (1,start)
          + step-end: <=> (1,end)
          + cubic-bezier(n,n,n,n): CHọn giá trị của riêng trong khối-bezier. (0<n<1)
-   +Demo
-      ```html
-         <head>
-         <style> 
-         div {
-            width: 100px;
-            height: 100px;
-            background: red;
-            transition-property: width;
-            transition-duration: 5s;
-            transition-delay: 2s;
-         }
-         div:hover {
-            width: 300px;
-         }
-         </style>
-         </head>
-         <body>
-         <h1>Thuộc tính transition-delay Property</h1>
-         <p>Di chuột qua phần tử div bên dưới, để xem hiệu ứng chuyển tiếp (Lưu ý rằng hiệu ứng chuyển tiếp sẽ đợi 2 giây trước khi bắt đầu):</p>
-         <div></div>
-         <p><b>Lưu ý</b>Ví dụ này không hoạt động trong Internet Explorer 9 và các phiên bản cũ hơn.</p>
-         </body>
-      ```
+   + Demo: [transition](https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition4)
 ## !important
 - Giải quyết declarations xung đột
    - Các declarations có thể đến từ nhiều nguồn khác nhau:
