@@ -148,103 +148,103 @@
 
     - Các phương thức
         + Phương thức `length` xác định độ dài của chuỗi.
-        ```js
+            ```js
             var str = "Hello";
             console.log(str.length); //5
-        ```
+            ```
         + Phương thức `indexOf()` tìm kiếm từ trong chuỗi, xác định vị trí của từ cần tìm nếu tìm thấy trả về vị trí nếu không có trả về giá trị -1.
-        ```js
+            ```js
             var str = "Hello"
             console.log(str.indexOf("e")); //1
             console.log(str.indexOf("b")); //-1
-        ```
+            ```
         + Phương thức `replace()` thay thế chuỗi. String.replace("từ_cần_thay_thế", "từ_thay_thế");
-        ```js
+            ```js
             var str = "Hello Bảo"
             console.log(str.replace("Hello", "Hi"));  // Hi Bảo
-        ```
+            ```
         + Phương thức `slice()` trích xuất một phần chuỗi và trả về phần đã trích xuất trong một chuỗi mới. Phương thức có 2 tham số: chỉ số bắt đầu (vị trí), và chỉ số kết thúc (vị trí).
-        ```js
+            ```js
             var str = "Apple, Banana, Kiwi";
             console.log(str.slice(7,13)); //Banana
-        ```
+            ```
         + Phương thức `substring()` tương tự `slice()`.
-        ```js
+            ```js
             var str = "Apple, Banana, Kiwi";
             console.log(str.substring(7, 13)); //Banana
-        ```
+            ```
         + Phương thức `toUpperCase()` chuyển thành chữ viết HOA.
-        ```js
+            ```js
             var str = "Banana";
             console.log(str.toUpperCase()); //BANANA
-        ```
+            ```
         + Phương thức `toLowerCase()` chuyển thành chữ thường.
-        ```js
+            ```js
             var str = "BANANA";
             console.log(str.toLowerCase()); //banana
-        ```
+            ```
         + Phương thức `concat()` nối hai hoặc nhiều chuỗi.
-        ```js
+            ```js
             var text1 = "Việt";
             var text2 = "Nam";
             console.log(text1.concat(" ",text2)); //Việt Nam
-        ```
+            ```
         + Phương thức `trim()` xóa bỏ khoảng trắng thừa ở 2 đầu.
-        ```js
+            ```js
             var str = "      Hello     ";
             console.log(str.trim());//Hello
-        ```
+            ```
         
 
 8. Array
     - Mảng dùng để lưu nhiều giá trị trong một biến đơn. Độ dài tối đa được cho phép với một mảng là 4.294.967.295. Mảng sử dụng chỉ số để truy cập vào các phần tử của nó.
-    ```js
-    var cars = ["Saab", "Volvo", "BMW"];
-    ```
+        ```js
+        var cars = ["Saab", "Volvo", "BMW"];
+        ```
     - Các phương thức của mảng:
         + Phương thức `push` được sử dụng để thêm phần tử vào cuối mảng và trả về tổng số phần tử của mảng sau khi thêm phần tử mới.
-        ```js
+            ```js
             var arr = ["a", "b", "c"];
             console.log(arr.push("d"));// 4 (tổng số phần tử của mảng "arr")
             console.log(arr); // ["a", "b", "c", "d"]
-        ```
+            ```
         + Phương thức `pop` được dùng để xoá đi phần tử cuối cùng của mảng. Phương thức `pop` trả về giá trị của phần tử cuối cùng bị xoá khỏi mảng và đồng thời làm thay đổi mảng ban đầu.
-        ```js
+            ```js
             var arr = ["a", "b", "c", "d"];
             console.log(arr.pop()); // d (trả về phần tự bị xoá)
             console.log(arr); // ["a", "b", "c"]
-        ```
+            ```
         + Phương thức `shift` xoá phần tử đầu tiên trong mảng. Phương thức `shiftt` trả về giá trị của phần tử đầu tiên bị xoá khỏi mảng và đồng thời làm thay đổi mảng ban đầu.
-        ```js
+            ```js
             var arr = ["a", "b", "c"];
             console.log(arr.shift()); // a (trả về phần tự bị xoá)
             console.log(arr); // ["b", "c"]
-        ```
+            ```
         + Phương thức `unshift` thêm 1 phần tử vào vị trí đầu tiên của mảng và trả về tổng số phần tử của mảng sau khi thêm phần tử mới.
-        ```js
+            ```js
             var arr = ["a", "b", "c"];
             console.log(arr.unshift("d")); // 4 (tổng số phần tử của mảng "arr")
             console.log(arr); // ["d", "a", "b", "c"]
-        ```
+            ```
         + Phương thức `concat` nối 2 mảng với nhau. Phương thức này không làm thay đổi mảng ban đầu.
-        ```js
+            ```js
             var arrOne = ["a", "b"];
             var arrTwo = ["c", "d"];
             console.log(arrOne.concat(arrTwo)); // ["a", "b", "c", "d"]
-        ```
+            ```
         + Phương thức `join` nối các phần tử trong mảng để tạo thành một chuỗi. Phương thức này không làm thay đổi mảng ban đầu.
-        ```js
+            ```js
             var arr = ["a", "b", "c", "d"];
             console.log(arr.join("")); // abcd
-        ```
+            ```
         + Phương thức `slice` cắt từ mảng đầu ra 1 mảng con của nó. Phương thức `slice` chấp nhận 2 đối số truyền vào là vị trí của phần tử trong mảng ban đầu được lấy ra đầu tiên và vị trí của phần tử mảng ban đầu được lấy ra cuối để tạo ra mảng con. Phương thức này không làm thay đổi mảng ban đầu.
-        ```js
+            ```js
             var arr = ["a", "b", "c"];
             console.log(arr.slice(1,2)); // ["b"]
             console.log(arr); // ["a", "b", "c"] 
-        ```
+            ```
         + Phương thức `splice` được dùng để thêm hoặc xoá phần tử ra khỏi mảng. Phương thức `splice` yêu cầu ít nhất phải có 2 đối số truyền vào. Đối số đầu tiên dùng để đánh dấu vị vị trí của phần tử trong mảng ban đầu và, sử dụng đối số thứ 2 để xác định xem sẽ xoá bao nhiêu phần tử bắt đầu từ phần tử vừa được đánh dấu. Nếu đối số thứ 2 là 0 thì sẽ không có phần tử nào bị xoá.
-        ```js
+            ```js
             var arr = ["a", "b", "c"];
             console.log(arr.splice(1, 2)); // ["b", "c"] (trả về mảng bị xoá gồm 2 phần tử "b" và "c")
             console.log(arr); // ["a"] (thay đổi mảng đầu tiên)
@@ -252,33 +252,33 @@
             var fruitArr = ["a", "b", "c"];
             console.log(fruitArr.splice(1, 0, "d")); // [] (không phần tử nào bị xoá)
             console.log(fruitArr); // ["a", "d", "b", "c"]  (thêm phần tử "d" vào mảng)
-        ```
+            ```
         + Phương thức `reverse` được dùng để đảo ngược vị trí các phần tử trong mảng. 
-        ```js
+            ```js
             var arr = ["a", "b", "c", "d"];
             console.log(arr.reverse()); // ["d", "c", "b", "a"] 
-        ```
+            ```
         + Phương thức `sort` dùng để sắp xếp các phần tử trong mảng.
-        ```js
+            ```js
             var arr = ["d", "b", "c", "a"];
             console.log(arr.sort()); // ["a", "b", "c", "d"] (trả về mảng đã được sắp xếp)
-        ```
+            ```
 
         + Phương thức `forEach()` dùng để duyệt qua các phần tử của mảng.
-        ```js
+            ```js
             var arr = [1, 2, 3, 4, 5];
             arr.forEach(function (item) {
                 console.log(item);
             });
-        ```
+            ```
         + Phương thức `every()` dùng để duyệt qua các phần tử của mảng và kiểm trả tất cả các phần tử đó có thoả mãn một điều kiện gì đó hay không. Nếu tất cả phẩn tử thoả mãn điều kiện thì trả về true.
-        ```js
+            ```js
             var arr = [1, 2, 3, 4, 5];
             var check = arr.every(function (item) {
                 return item < 6;
             });
             console.log(check);
-        ```
+            ```
         + Phương thức `some()` dùng để duyệt qua các phần tử của mảng và kiểm tra các phần tử có thoả mãn một điều kiện gì đó hay không. Nếu có một phần tử thoả mãn điều kiện thì dừng lại và trả về true.
             ```js
             var arr = [1, 2, 3, 4, 5];
@@ -315,7 +315,7 @@
         + Những cái tên lưu trữ các giá trị đơn thuần như chuỗi, số, .... thì được gọi là `thuộc tính`.
         + Những cái tên lưu trữ giá trị là một hàm thì được gọi là `phương thức`.
     
-    ```js
+        ```js
         var person = {
             name: 'bảo',
             age: '22',
@@ -324,9 +324,9 @@
             }
         }
         console.log(person.name +' sinh năm '+ person.year());
-    ```
+        ```
     - Object constructor là một cấu trúc khởi tạo các thuộc tính của mỗi đối tượng.
-    ```js
+        ```js
         function Person(firstName, lastName) {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -337,19 +337,19 @@
         var user = new Person('Nguyễn', 'Bảo');
         user.address = 'Huế';
         console.log(user);
-    ```
+        ```
     - Object Prototype dùng để thêm thêm thuộc tính hay phương thức cho Object Constructor.
-    ```js
-    function Person(firstName, lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.getFullName = function () {
-                return `${this.firstName} ${this.lastName}`;
-            };
-        }
-        var user = new Person("Nguyễn", "Bảo");
-        Person.prototype.address = 'Huế';
-        console.log(user);
+        ```js
+        function Person(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.getFullName = function () {
+                    return `${this.firstName} ${this.lastName}`;
+                };
+            }
+            var user = new Person("Nguyễn", "Bảo");
+            Person.prototype.address = 'Huế';
+            console.log(user);
 
     ```
 # JavaScript Event
@@ -369,39 +369,39 @@
 
 3. Hàm addEventListener() trong Javascript
     - Hàm addEventListener() có tác dụng thêm sự kiện cho đối tượng HTML, sử dụng với cú pháp.
-    ```js
-        element.addEventListener('eventName', function(e){
-            // do something
-        });
-    ```
+        ```js
+            element.addEventListener('eventName', function(e){
+                // do something
+            });
+        ```
     - Trong đó:
         + `element` là các đối tượng HTML.
         + `eventName` là tên của sự kiện bỏ đi chữ on, ví dụ click, change, ...
         + `function` là hàm sẽ được chạy khi sự kiện eventName được kích hoạt. 
 4. Hàm removeEventListener() trong Javascript
     - Trái lại với hàm `addEventListener()` thì hàm `removeEventListener()` lại có tác dụng là xóa bỏ đi các sự kiện, sử dụng với cú pháp:
-    ```js
-        element.removeEventListener('eventName', functionName(e){
-            // do something
-        });
-    ```
+        ```js
+            element.removeEventListener('eventName', functionName(e){
+                // do something
+            });
+        ```
     - Để có thể xóa sự kiện, hàm xử lý sự kiện được truyền vào phương thức `addEventListener()` phải được định nghĩa ở bên ngoài phương thức `addEventListener()`.
 
-    ```js
-        <input type="text" id="txt-val"/>
-        <div id="result"></div>
-        <script language="javascript">
-            var input = document.getElementById("txt-val");
-            
-            function myFunction(){
-                document.getElementById('result').innerHTML = input.value;
-            }
-            
-            // Thêm sự kiện cho đối tượng
-            input.addEventListener('keyup', myFunction);
-            
-            // Xoá sự kiện cho đối tượng
-            input.removeEventListener('keyup', myFunction);
-        </script>
-    ```
+        ```js
+            <input type="text" id="txt-val"/>
+            <div id="result"></div>
+            <script language="javascript">
+                var input = document.getElementById("txt-val");
+                
+                function myFunction(){
+                    document.getElementById('result').innerHTML = input.value;
+                }
+                
+                // Thêm sự kiện cho đối tượng
+                input.addEventListener('keyup', myFunction);
+                
+                // Xoá sự kiện cho đối tượng
+                input.removeEventListener('keyup', myFunction);
+            </script>
+        ```
     
