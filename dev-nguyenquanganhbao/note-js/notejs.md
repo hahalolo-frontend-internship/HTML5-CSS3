@@ -1,12 +1,13 @@
 # JavaScript Basic
+JavaScript là một ngôn ngữ lập trình thông dịch.
+Javascript được sử dụng rất phổ biến để tích hợp vào các trang web, chạy ngay trong trình duyệt phía client giúp cho Website có được cách tương tác linh hoạt hơn với người dùng.
+Javascript được ứng dụng rộng rãi trên nhiều môi trường khác nhau, nó tạo ra các ứng dụng chạy phía Server (NodeJS), các ứng dụng di động (React),... 
 
 1. Biến
-   - Giống như nhiều ngôn ngữ lập trình khác, JavaScript có các biến. Biến có thể được xem là một nơi chứa được đặt tên. Có thể đặt dữ liệu vào trong nơi chứa này và sau đó tham chiếu đến dữ liệu này một cách đơn giản là đặt tên cho nơi chứa.
+   - Biến trong Javascript được sử dụng để lưu trữ dữ liệu trong suốt quá trình chương trình chạy.
    - Biến được khai báo với từ khóa `var` như sau:
     ```html
-    <script type="text/javascript">
-        var name;
-    </script>
+    var name;
     ```
     - JavaScript là ngôn ngữ `untyped`. Nghĩa là một biến JavaScript có thể giữ một giá trị của bất kỳ kiểu dữ liệu nào.
     - Đặt tên biến:
@@ -86,7 +87,7 @@
         }
     ```
     - Trong câu lệnh `switch case`, nếu bạn bỏ qua từ khóa `break`, chương trình sẽ tiếp tục thực thi câu lệnh tiếp theo, cho dù case đó không thoả điều kiện.
-5. Vòng lặp
+4. Vòng lặp
     - While
         + Cú pháp:
         ```js
@@ -135,68 +136,77 @@
             console.log(i);
         }
         ```
-6. Function
+5. Function
     - Hàm là một tập hợp gồm nhiều câu lệnh, các câu lệnh này được sắp xếp theo một thứ tự xác định để xây dựng thành một chức năng cụ thể. Mỗi hàm sẽ có một cái tên và hàm chỉ thực thi khi nó được gọi.
-    ```js
-    function tinhTong(a, b){
-        console.log( a+b);
-    }
-    tinhTong(2, 4);
-    ```
-7. String
+        ```js
+        function name_of_function(var1, var2, var3, ...)
+        {
+            // Some code
+        }
+        ```    
+    - Hàm có tham số truyền vào
+    - Hàm có tham số mặc định
+        ```js
+        function tinhTong(a= 2, b= 4){
+            return  a + b;
+        }
+        console.log(tinhTong());
+        ```
 
-
-    - Các phương thức
-        + Phương thức `length` xác định độ dài của chuỗi.
+    - Hàm có return và hàm không có return:
+        + Hàm có return là hàm có sử dụng từ khóa return đặt ở cuối hàm với mục đích trả kết quả về để sử dụng tiếp ở những đoạn code bên ngoài.
             ```js
-            var str = "Hello";
-            console.log(str.length); //5
+            function tinhTong(a, b){
+                return  a + b;
+            }
+            tinhTong(2, 4);
             ```
-        + Phương thức `indexOf()` tìm kiếm từ trong chuỗi, xác định vị trí của từ cần tìm nếu tìm thấy trả về vị trí nếu không có trả về giá trị -1.
+        + Hàm không có return là hàm không có sử dụng từ khóa return đặt trong hàm.
             ```js
-            var str = "Hello"
-            console.log(str.indexOf("e")); //1
-            console.log(str.indexOf("b")); //-1
+            function tinhTong(a, b){
+                console.log( a+b);
+            }
+            tinhTong(2, 4);
             ```
-        + Phương thức `replace()` thay thế chuỗi. String.replace("từ_cần_thay_thế", "từ_thay_thế");
-            ```js
-            var str = "Hello Bảo"
-            console.log(str.replace("Hello", "Hi"));  // Hi Bảo
-            ```
-        + Phương thức `slice()` trích xuất một phần chuỗi và trả về phần đã trích xuất trong một chuỗi mới. Phương thức có 2 tham số: chỉ số bắt đầu (vị trí), và chỉ số kết thúc (vị trí).
-            ```js
-            var str = "Apple, Banana, Kiwi";
-            console.log(str.slice(7,13)); //Banana
-            ```
-        + Phương thức `substring()` tương tự `slice()`.
-            ```js
-            var str = "Apple, Banana, Kiwi";
-            console.log(str.substring(7, 13)); //Banana
-            ```
-        + Phương thức `toUpperCase()` chuyển thành chữ viết HOA.
-            ```js
-            var str = "Banana";
-            console.log(str.toUpperCase()); //BANANA
-            ```
-        + Phương thức `toLowerCase()` chuyển thành chữ thường.
-            ```js
-            var str = "BANANA";
-            console.log(str.toLowerCase()); //banana
-            ```
-        + Phương thức `concat()` nối hai hoặc nhiều chuỗi.
-            ```js
-            var text1 = "Việt";
-            var text2 = "Nam";
-            console.log(text1.concat(" ",text2)); //Việt Nam
-            ```
-        + Phương thức `trim()` xóa bỏ khoảng trắng thừa ở 2 đầu.
-            ```js
-            var str = "      Hello     ";
-            console.log(str.trim());//Hello
-            ```
-        
-
-8. Array
+6. Các phương thức của String
+    - Phương thức `indexOf()` tìm kiếm từ trong chuỗi, xác định vị trí của từ cần tìm nếu tìm thấy trả về vị trí nếu không có trả về giá trị -1.
+        ```js
+        var str = "Hello"s
+        console.log(str.indexOf("e")); //1
+        console.log(str.indexOf("b")); //-1
+        ```
+    - Phương thức `replace()` thay thế chuỗi. String.replace("từ_cần_thay_thế", "từ_thay_thế");
+        ```js
+        var str = "Hello Bảo"
+        console.log(str.replace("Hello", "Hi"));  // Hi Bảo
+        ```
+    - Phương thức `slice()` trích xuất một phần chuỗi và trả về phần đã trích xuất trong một chuỗi mới. Phương thức có 2 tham số: chỉ số bắt đầu (vị trí), và chỉ số kết thúc (vị trí).
+        ```js
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.slice(7,13)); //Banana
+        ```
+    - Phương thức `toUpperCase()` chuyển thành chữ viết HOA.
+        ```js
+        var str = "Banana";
+        console.log(str.toUpperCase()); //BANANA
+        ```
+    - Phương thức `toLowerCase()` chuyển thành chữ thường.
+        ```js
+        var str = "BANANA";
+        console.log(str.toLowerCase()); //banana
+        ```
+    - Phương thức `concat()` nối hai hoặc nhiều chuỗi.
+        ```js
+        var text1 = "Việt";
+        var text2 = "Nam";
+        console.log(text1.concat(" ",text2)); //Việt Nam
+        ```
+    - Phương thức `trim()` xóa bỏ khoảng trắng thừa ở 2 đầu.
+        ```js
+        var str = "      Hello     ";
+        console.log(str.trim());//Hello
+        ```
+7. Array
     - Mảng dùng để lưu nhiều giá trị trong một biến đơn. Độ dài tối đa được cho phép với một mảng là 4.294.967.295. Mảng sử dụng chỉ số để truy cập vào các phần tử của nó.
         ```js
         var cars = ["Saab", "Volvo", "BMW"];
@@ -277,7 +287,7 @@
             var check = arr.every(function (item) {
                 return item < 6;
             });
-            console.log(check);
+            console.log(check); //true
             ```
         + Phương thức `some()` dùng để duyệt qua các phần tử của mảng và kiểm tra các phần tử có thoả mãn một điều kiện gì đó hay không. Nếu có một phần tử thoả mãn điều kiện thì dừng lại và trả về true.
             ```js
@@ -286,9 +296,9 @@
                 console.log(item);
                 return item > 3;
             });
-            console.log(check);
+            console.log(check); //true
             ```
-        + Phương thức `find()` dùng để duyệt qua các phần tử của mảng và tìm kiếm các phần tử thoả mãn điều kiền gì đó. Nếu tìm kiếm thấy một phần tử thoả mãn điều kiện thì dừng lại và trả về phàn tử đó.
+        + Phương thức `find()` dùng để duyệt qua các phần tử của mảng và tìm kiếm các phần tử thoả mãn điều kiền gì đó. Nếu tìm kiếm thấy một phần tử thoả mãn điều kiện thì dừng lại và trả về phần tử đó.
             ```js
             var arr = [1, 2, 3, 4, 3];
             var check = arr.find(function (item) {
@@ -296,9 +306,9 @@
                 return item === 3;
             });
             console.log('--------');
-            console.log(check);
+            console.log(check); //3
             ```
-        + Phương thức `filter()` dùng để duyệt qua các phần tử của mảng và tìm kiếm các phần tử thoả mãn điều kiền gì đó. Nếu tìm kiếm thấy các phần tử thoả mãn điều kiện thì trả về các phàn tử đó.
+        + Phương thức `filter()` dùng để duyệt qua các phần tử của mảng và tìm kiếm các phần tử thoả mãn điều kiền gì đó. Nếu tìm kiếm thấy các phần tử thoả mãn điều kiện thì trả về các phần tử đó.
             ```js
             var arr = [1, 2, 3, 4, 3];
             var check = arr.filter(function (item) {
@@ -306,14 +316,41 @@
                 return item === 3;
             });
             console.log('--------');
+            console.log(check); //3, 3
+            ```
+        + Phương thức `map()` dùng để xử lý từng phần tử trong mảng theo cùng 1 cách, trả về các giá trị sau xử lý (số lượng đúng bằng số lượng phần tử ban đầu của mảng).
+            ```js
+            var arr = [1, 2, 3, 4, 5];
+            var check = arr.map(function (item) {
+                return item * item;
+            });
             console.log(check);
             ```
-        + 
-
+        + Phương thước `reduce()` là một phương thức sẵn có được sử dụng để thực thi một hàm lên các phần tử của mảng (từ trái sang phải) với một biến tích lũy để thu về một giá trị duy nhất.
+        Cú pháp:
+        ```js
+        arr.reduce(callback( accumulator, currentValue, index, array) {
+            // return result from executing something for accumulator or currentValue
+        }, initialValue)
+        ```
+        `Trong đó:`
+        + `accumulator` biến tích lũy, được trả về sau mỗi lần gọi hàm callback.
+        + `currentValue` phần tử của mảng đang được xử lý.
+        + `index` (Optional) chỉ số của phần tử trong mảng đang được xử lý.
+        + `array` (Optional) mảng hiện tại gọi hàm reduce().
+        + `initialValue` là giá trị cho tham số thứ nhất (accumulator) của hàm callback trong lần gọi hàm đầu tiên. Nếu giá trị này không được cung cấp thì giá trị phần tử đầu tiên của mảng sẽ được sử dụng.
+        + Giá trị trả về chính là giá trị của `accumulator` sau lần gọi hàm callback cuối cùng.
+            ```js
+            var arr = [1, 2, 3, 4, 5];
+            var sum = arr.reduce(function(accumulator, currentValue){
+                return accumulator + currentValue;
+            }, 0)
+            console.log(sum);
+            ```
 8. Object
-    - Trong Javascript đối tượng là một loại biến đặc biệt, nó có thể lưu trữ nhiều giá trị đồng thời. Mỗi giá trị của đối tượng được viết theo dạng cặp `tên: giá trị`. Giá trị được lưu trong tên không chỉ đơn thuần là chuỗi, số, .... mà nó còn có thể là một hàm. 
-        + Những cái tên lưu trữ các giá trị đơn thuần như chuỗi, số, .... thì được gọi là `thuộc tính`.
-        + Những cái tên lưu trữ giá trị là một hàm thì được gọi là `phương thức`.
+    - Trong Javascript `Object` là một loại biến đặc biệt, nó có thể lưu trữ nhiều giá trị đồng thời. Mỗi giá trị của `Object` được viết theo dạng cặp `key: value`. Giá trị được lưu trong key không chỉ đơn thuần là chuỗi, số, .... mà nó còn có thể là một hàm. 
+        + Những key lưu trữ các giá trị đơn thuần như chuỗi, số, .... thì được gọi là `thuộc tính`.
+        + Những key lưu trữ giá trị là một hàm thì được gọi là `phương thức`.
     
         ```js
         var person = {
@@ -363,7 +400,7 @@
     - `onload`: Xẩy ra khi đối tượng đã được tải xong.
     - `onkeydown`: Xảy ra khi gõ một phím bất kì vào ô input.
     - `onkeyup`: Xảy ra khi bạn gõ phím nhưng lúc bạn nhã phím ra sẽ được kích hoạt
-    
+    ...
 
     [link tham khảo](https://webvn.com/su-kien-onafterprint/)
 
