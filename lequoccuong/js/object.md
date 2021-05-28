@@ -31,7 +31,7 @@ console.log(myInfo.name);
 console.log(myInfo["name"]);
 ```
 
-- Xóa 1 key và value
+- Xóa 1 key và value và trả về object đã được xóa
 
 ```js
 let myInfo = {
@@ -39,7 +39,7 @@ let myInfo = {
   age: 18,
 };
 delete myInfo.age;
-console.log(myInfo);
+console.log(myInfo); // {name: "Cuong"}
 ```
 
 - Value là 1 function
@@ -84,9 +84,18 @@ function User(firstName, lastName) {
   // mô tả những thuộc tính, phương thức sẽ có trong object khi khởi tạo object constructor
   this.firstName = firstName;
   this.lastName = lastName;
+  // mỗi lần tạo sẽ tạo ra những vùng nhớ khác nhau
+  // this.getName = function(){
+  //   console.log(this.firstName);
+  // }
 }
-User.prototype.age = 18;
-let author = new User("cuong", "le");
-console.log(author.age);
+// ưu điểm của phương pháp này là sẽ chỉ tạo ra 1 vùng nhớ để gọi đến
+User.prototype.getName = function(){
+  console.log(this.firstName);
+};
+let author = new User("Cuong", "Le");
+let user = new User("Anh", "Ho");
+console.log(author.getName ===  user.getName);
 ```
+
 

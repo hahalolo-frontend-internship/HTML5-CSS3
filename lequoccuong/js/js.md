@@ -9,3 +9,4 @@
 ## 4. [Một số thuộc tính và phương thức của string](string.md)
 ## 5. [Một số thuộc tính và phương thức của array](array.md)
 ## 6. [Object](object.md)
+## 7. [HTML DOM](./HTML_DOM/readme.md)
