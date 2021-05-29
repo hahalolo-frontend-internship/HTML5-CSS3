@@ -63,8 +63,7 @@ let form=document.forms['nameid'];
 
 ## Thêm attribute vào node element
 
-- Chỉ thêm được với `quertSelector`.
-
+- Chỉ thêm được với `querySelector`.
 - Bước 1: Selector element muốn thêm `attribute`.
 
 ```js
