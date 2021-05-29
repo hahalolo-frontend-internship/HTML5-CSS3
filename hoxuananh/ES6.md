@@ -390,11 +390,13 @@
     console.log(course); // { name: 'PHP', price: 1000 }
 ```
 ## 9. For of
-- Vòng lặp for of mới được thiết kế cho phép chúng ta lặp qua mảng hoặc lặp qua đối tượng có thể lặp khác rất dễ dàng.
+- Vòng lặp này được sử dụng để duyệt từng phần tử của đối tượng duyệt. Số lượng lặp bằng với số phần tử của đối tượng.
 ```js
+- Syntax: `for(let i of array){}`
+    - i : khai báo biến chạy
+    - array :một Array, String (không có Object)
 // Lặp qua mảng
     let letters = ["a", "b", "c", "d", "e", "f"];
-
     for (let letter of letters) {
         console.log(letter);
     }
@@ -407,8 +409,8 @@
     // f
 
     // Lặp qua chuỗi
+    
     let greet = "Hế lô";
-
     for (character of greet) {
         console.log(character);
     }
