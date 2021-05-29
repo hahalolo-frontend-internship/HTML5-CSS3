@@ -3,8 +3,8 @@
 ### 4.1 Thuộc tính Display: Flex
 
 - Để sử dụng flex trong css thì chúng ta chỉ cần sử dụng thuộc tính `display: flex`.
-  ![no-flex](no-flex.PNG)
-  ![display-flex](dflex.PNG)
+  ![no-flex](./imgHTML/no-flex.PNG)
+  ![display-flex](./imgHTML/dflex.PNG)
 
 ### 4.2 Flex-direction
 
@@ -12,13 +12,13 @@
 - Mặc định những `item` trog flexbox được sắp xếp theo trục x từ trái qua phải.
 - Trong `flex-direction` có 4 giá trị là: `row, row-reverse, column, column-reverse`
 - Với giá trị là `row` là giá trị mặc định.
-  ![row](dflex.PNG)
+  ![row](./imgHTML/dflex.PNG)
 - Với giá trị là `row-reverse` thì các element sẽ được sắp xếp từ phải sang trái.
-  ![row-reverse](row-reverse.PNG)
+  ![row-reverse](./imgHTML/row-reverse.PNG)
 - Với giá trị là `column` thì các element sẽ được sắp xếp từ trên xuống dưới.
-  ![column](flex-column.PNG)
+  ![column](./imgHTML/flex-column.PNG)
 - Với giá trị là `column-reverse` thì các element sẽ được sắp xếp từ dưới lên trên.
-  ![column-reverse](column-reverse.PNG)
+  ![column-reverse](./imgHTML/column-reverse.PNG)
 
 ### 4.3 Flex-wrap
 
@@ -28,20 +28,20 @@
 #### a. nowrap
 
 - Khi resize trình duyệt thì các `item` sẽ co lại chứ không có rớt xuống.
-  ![no-wrap](no-wrap.PNG)
-  ![no-wrap](no-wrap1.PNG)
+  ![no-wrap](./imgHTML/no-wrap.PNG)
+  ![no-wrap](./imgHTML/no-wrap1.PNG)
 
 #### b. wrap
 
 - Khi resize trình duyệt thì các `item` sẽ nhảy xuống khi thay đổi kích thước `container`.
-  ![wrap](wrap.PNG)
-  ![wrap](wrap1.PNG)
+  ![wrap](./imgHTML/wrap.PNG)
+  ![wrap](./imgHTML/wrap1.PNG)
 
 #### c. wrap-reverse
 
 - Tương tự `wrap` nhưng thay vì rớt xuống thì nó rớt lên.
-  ![wrap](wrap.PNG)
-  ![wrap-reverse](wrap-reverse.PNG)
+  ![wrap](./imgHTML/wrap.PNG)
+  ![wrap-reverse](./imgHTML/wrap-reverse.PNG)
 
 ### 4.4 flex-flow
 
@@ -52,8 +52,8 @@ flex-flow: row wrap;
 ```
 
 \
-![no-flex](no-wrap.PNG)
-![flex-flow](flex-flow.PNG)
+![no-flex](./imgHTML/no-wrap.PNG)
+![flex-flow](./imgHTML/flex-flow.PNG)
 
 ### 4.5 Justify-content
 
@@ -61,18 +61,18 @@ flex-flow: row wrap;
 
 - Trong justify-content có 5 giá trị đó là:`flex-start, flex-end, center, space-between, space-evenly và space-around`.
 - Flex-start
-  ![flex-start](flex-start.PNG)
+  ![flex-start](./imgHTML/flex-start.PNG)
 - Flex-end
-  ![flex-end](flex-end.PNG)
+  ![flex-end](./imgHTML/flex-end.PNG)
 - center
-  ![Center](center.PNG)
+  ![Center](./imgHTML/center.PNG)
 - space-between
-  ![space-between](space-between.PNG)
+  ![space-between](./imgHTML/space-between.PNG)
 - space-evenly
-  ![space-evenly](space-evenly.PNG)
+  ![space-evenly](./imgHTML/space-evenly.PNG)
 - space-around
 
-  ![space-around](space-around.PNG)
+  ![space-around](./imgHTML/space-around.PNG)
 
 ### 4.6 Align-items
 
@@ -81,29 +81,29 @@ flex-flow: row wrap;
 - Tuy nhiên nếu đổi flex-direction sang column thì align-items sẽ canh theo chiều ngang.
 - `align-items: center`
 
-  ![align-items-center](align-items-center.PNG)
+  ![align-items-center](./imgHTML/align-items-center.PNG)
 
 - `align-items: baseline`
 
-  ![align-items-baseline](align-items-baseline.PNG)
+  ![align-items-baseline](./imgHTML/align-items-baseline.PNG)
 
 - `align-items: stretch`
 
-  ![align-items-stretch](align-items-stretch.PNG)
+  ![align-items-stretch](./imgHTML/align-items-stretch.PNG)
 
 ### 4.7 Align-self
 
 - Thuộc tính này tương tự với thuộc tính align-items, nhưng khác ở chỗ là áp dụng riêng lẻ cho các phần tử mà bạn muốn thay đổi giá trị của nó.
 
-  ![align-self-center](align-self-center.PNG)
+  ![align-self-center](./imgHTML/align-self-center.PNG)
 
 ### 4.8 align content
 
 - Dùng để căn chỉnh các dòng flex.
 - `align-content:flex-end`
-  ![align-content-flex-end](align-content-flex-end.PNG)
+  ![align-content-flex-end](./imgHTML/align-content-flex-end.PNG)
 - `align-content:space-around`
-  ![align-content-space-around](align-content-space-around.PNG)
+  ![align-content-space-around](./imgHTML/align-content-space-around.PNG)
 - Nếu trong 1 hàng gồm 10 item thì `height` của tất cả `item` sẽ bằng với `height` lớn nhất trong 10 `item` đó.
 
 ### 4.9 Order
@@ -120,7 +120,7 @@ flex-flow: row wrap;
 </div>
 ```
 
-![order](order.PNG)
+![order](./imgHTML/order.PNG)
 
 ### 4.10 Flex-basis
 
@@ -138,18 +138,18 @@ flex-flow: row wrap;
 </div>
 ```
 
-![flex-basis](flex-basis.PNG)
+![flex-basis](./imgHTML/flex-basis.PNG)
 
 ### 4.11 Flex-grow
 
 - Thuộc tính này nó cho các `element` giãn theo `width` của `container`.
 - Mặc định giá trị trong thuộc tính `flex-grow` là 0.
 
-![flex-grow](flex-grow.PNG)
+![flex-grow](./imgHTML/flex-grow.PNG)
 
-![flex-grow1](flex-grow1.PNG)
+![flex-grow1](./imgHTML/flex-grow1.PNG)
 
-![flex-grow2](flex-grow2.PNG)
+![flex-grow2](./imgHTML/flex-grow2.PNG)
 
 ### 4.12 Flex-shrink
 

@@ -183,3 +183,77 @@ document.querySelectorAll(".heading");
 [Demo classList](classList.html)
 
 ## 5. EVENT
+
+- Một trang web với các thao tác như click chuột, hay di chuột,... Đây được xem là các sự kiện và JavaScript có thể bắt các sự kiện này thông qua HTML DOM.
+- Các sự kiện này được cụ thể bằng các thuộc tính HMTL như: `onclick` (click chuột), `onmouseover` (di chuột qua),...
+- Và bằng cách lắng nghe các sự kiện và người dùng tương tác, ta gửi trả phản hồi lại tương ứng đó gọi là xử lý sự kiện.
+
+![Example](https://s1.o7planning.com/en/12271/images/34328284.gif)
+
+- Cú pháp:
+
+```js
+element.eventName = function () {
+  //code
+};
+```
+
+- Trong đó
+  - element là các đối tượng HTML (được gọi bằng các phương thức getElement...).
+  - eventName là tên các sự kiện như onclick,onmouseover,...
+
+[Example](https://codepen.io/cuong021099/pen/RwpLZpO)
+
+- Danh sách một số sự kiện
+  ![Danh sách](https://scontent.fpnh22-2.fna.fbcdn.net/v/t1.15752-9/189781646_744037136293257_4781535067765412841_n.png?_nc_cat=111&ccb=1-3&_nc_sid=ae9488&_nc_ohc=Ae-VNg1DNGEAX9MpITp&_nc_ht=scontent.fpnh22-2.fna&oh=78bcd2d51955dd11bed58e3dc925847e&oe=60D7F5E4)
+
+- Một ví dụ khác
+
+  [Example](https://codepen.io/cuong021099/pen/dyvVzda)
+
+## 6. EVENT với phương thức addEvenListener()
+
+- Phương thức này cũng cho phép ta gán sự kiện cho một phần tử HTML DOM.
+- Điểm khác các phương thức trên là có thể gán một hoặc nhiều events vào một phần tử HTML mà không xóa đi các sự kiện khác.
+- Còn sử dụng `addEvenListener()` có thể xóa sự kiện bằng phương thức `removeEvenListenner()`.
+- Cú pháp:
+
+```js
+element.addEventListener(event, function, useCapture);
+```
+
+- Trong đó:
+
+  - `element`: Là các đối tượng HTML (được gọi bằng các phương thức getElement...).
+  - `event`: Là tên sự kiện.
+  - `function`: Là hàm ta muốn thực thi khi sự kiện kích hoạt.
+  - `useCapture`: Là một giá trị `boolean value` cho hai lựa chọn: `event bubbling` hoặc `event capturing` sự kiện nào xử lý trước(mặc định là false).
+  `https://niithanoi.edu.vn/xu-ly-su-kien-cua-dom-trong-javascript.html#:~:text=h%E1%BB%8Dc%20v%E1%BB%81%20n%C3%B3.-,1.,di%20chu%E1%BB%99t%20qua)%2C%20%E2%80%A6.`
+
+
+---
+
+- Xóa một sự kiện với `removeEventListener()`
+- Cú pháp:
+
+```js
+element.removeEventListener(event, function);
+```
+
+- Trong đó:
+  - `element`: Là các đối tượng HTML (được gọi bằng các phương thức getElement...).
+  - event: Là sự kiện cần xóa
+  - function: Là hàm thực thi cùng với sự kiện.
+
+---
+- Xóa sự kiện nổi bọt
+```js
+e.stopPropagation();
+```
+[Example](https://codepen.io/cuong021099/pen/zYZEJBd?editors=1111)
+
+- Xóa sự kiện mặc định
+```js
+e.preventDefault();
+```
+[Example](https://codepen.io/cuong021099/pen/poeWOPN?editors=1010)

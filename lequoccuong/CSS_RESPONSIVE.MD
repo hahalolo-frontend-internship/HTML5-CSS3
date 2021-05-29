@@ -18,7 +18,7 @@ Các trang web không nên bỏ đi thông tin để phù hợp với các thi�
 
 - Nhiều trang web dựa trên chế độ xem lưới, có nghĩa là trang được chia thành các cột.
 - Chế độ xem lưới thường có 12 cột và có tổng chiều rộng là 100% và sẽ thu nhỏ và mở rộng khi thay đổi kích thước cửa sổ trình duyệt.
-  ![grid-view](Grid-View.png)
+  ![grid-view](./imgHTML/Grid-View.png)
 
 ### 7.3 Media Queries
 
@@ -40,7 +40,7 @@ Các trang web không nên bỏ đi thông tin để phù hợp với các thi�
 
 - Là những điểm (chiều rộng màn hình của thiết bị) mà ở đó giao diện được chuyển đổi cho phù hợp với thiết bị hiện tại
 
-![breakpoint](breakpoint.gif)
+![breakpoint](./imgHTML/breakpoint.gif)
 
 #### Mobile First
 

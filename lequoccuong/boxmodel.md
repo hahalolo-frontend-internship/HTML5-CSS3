@@ -2,7 +2,7 @@
 
 - CSS box model là một hộp bao quanh mọi phần tử HTML.
 - Nó bao gồm: `margins`, `borders`, `padding`, và `Content `.
-  ![boxmodel](boxmodel.PNG)
+  ![boxmodel](./imgHTML/boxmodel.PNG)
 
 ### 5.1 Content
 
@@ -33,8 +33,8 @@ Margin collapse
 </div>
 ```
 
-![margin](margin.PNG)
-![margin](margin1.PNG)
+![margin](./imgHTML/margin.PNG)
+![margin](./imgHTML/margin1.PNG)
 
 - Dễ hiểu nhầm là khoảng cách giữa 2 thẻ `p` là `100px` nhưng thực ra là `50px`. Để `margin` được `100px` thì ta set 1 trong 2 thẻ `p` là `display:inline-block;`
 
@@ -62,7 +62,7 @@ ShortHand
 
 - `border: width style color`
 - Ví dụ: `border: 10px solid red`
-  ![border](border.PNG)
+  ![border](./imgHTML/border.PNG)
 
 Border-radius
 
@@ -75,4 +75,4 @@ Outline
 - Nó có thuộc tính `outline-offset` là khoảng trống giữa `outline` và `border`.
 
 - `outline: 10px solid green; outline-offset: 5px;`
-  ![outline](outline.PNG)
+  ![outline](./imgHTML/outline.PNG)

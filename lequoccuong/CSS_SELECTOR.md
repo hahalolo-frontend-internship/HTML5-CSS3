@@ -82,13 +82,13 @@ Cú pháp: `selector::pseudo-element { property: value; }`
 
 - Áp dụng cho `element` con dòng đầu tiên trong `element container`.
 
-![firstline](firstline.PNG)
+![firstline](./imgHTML/firstline.PNG)
 
 `:first-letter`
 
 - Áp dụng cho chữ cái đầu tiên trong element.
 
-![firstletter](firstletter.PNG)
+![firstletter](./imgHTML/firstletter.PNG)
 
 `before` và `after`: giống Pseudo Class
 
@@ -96,10 +96,10 @@ Cú pháp: `selector::pseudo-element { property: value; }`
 
 - Sử dụng cho các điểm đánh dấu của các mục danh sách.
 
-![marker](marker.PNG)
+![marker](./imgHTML/marker.PNG)
 
 `:selection`
 
 - Áp dụng kiểu cho các `element` được người dùng đánh dấu (bôi đen)
 
-![selection](selection.PNG)
+![selection](./imgHTML/selection.PNG)

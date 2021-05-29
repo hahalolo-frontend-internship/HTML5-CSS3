@@ -70,7 +70,7 @@
 
     ` lang`: Dùng để khai báo về ngôn ngữ mà trang web đang sử dụng, để công cụ tìm kiếm có định hướng tốt hơn cho người dùng.
 
-    ![og](baomoi.PNG)
+    ![og](./imgHTML/baomoi.PNG)
 
     ```html
     <meta lang="en" />
@@ -134,16 +134,16 @@
   - `type`: chỉ định loại
   - `async`: cho phép việc thực hiện (execute) các scripts bất đồng bộ.
     - Các file sẽ được tải xuống một cách bất đồng bộ và được thực thi sau khi nó vừa được tải xuống (cùng lúc).
-    - ![async](./async.PNG)
+    - ![async](./imgHTML/async.PNG)
   - `Defer`: cho phép việc thực hiện (execute) chỉ sau khi toàn bộ Document đã được Parse.
 
     - Các file sẽ được tải xuống một cách bất đồng bộ và được thực thi sau khi document được Parse.
-    - ![defer](./defer.PNG)
+    - ![defer](./imgHTML/defer.PNG)
 
   - Nếu đặt thẻ `script` không chứa `async` và `defer` ở thẻ head thì sẽ diễn ra quá trình như sau: phân tích HTML -> Lấy mã `script` -> thực thi `script` (nếu gặp lỗi sẽ dừng lại) -> tiếp tục phân tích HTML -> hiển thị giao diện.
-    ![defer](./no-defer.PNG)
+    ![defer](./imgHTML/no-defer.PNG)
   - Nếu đặt thẻ `script` không chứa `async` và `defer` ở thẻ body thì sẽ diễn ra quá trình như sau: phân tích HTML -> hiển thị -> Lấy mã `script` -> thực thi `script`.
-    ![defer](./no-async.PNG)
+    ![defer](./imgHTML/no-async.PNG)
 
 ## Các thẻ có ý nghĩa trong HTML
 

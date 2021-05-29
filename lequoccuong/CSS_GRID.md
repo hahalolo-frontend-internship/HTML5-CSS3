@@ -6,12 +6,12 @@
 - Bố cục lưới bao gồm một element container, với 1 hoặc nhiều element item.
 - Tất cả các item trực tiếp của `grid container` sẽ tự động trở thành các `grid items`.
 - `grid columns`: Các đường thẳng đứng của các `grid items` được gọi là `cột`.
-  ![Column](grid_columns.png)
+  ![Column](./imgHTML/grid_columns.png)
 - `grid rows`: Các đường ngang của các `grid items` được gọi là `hàng`.
-  ![Row](grid_rows.png)
+  ![Row](./imgHTML/grid_rows.png)
 - `Grid Gaps`: Khoảng cách giữ mỗi `cột` / `hàng` gọi là `gaps`.
 - Chúng ta sẽ dùng thuộc tính `grid-gap = value` để set khoảng cách.
-  ![Gaps](grid_gaps.png)
+  ![Gaps](./imgHTML/grid_gaps.png)
 
 - `Grid Lines`
 
@@ -19,7 +19,7 @@
   - Các line giữa các hàng được gọi là `row lines`.
 
   - Cách tính lines như sau: `row lines = số hàng+ 1`, và `column lines = số cột+ 1`
-    ![Lines](grid_lines.png)
+    ![Lines](./imgHTML/grid_lines.png)
 
 ### 3.2 grid-template-columns
 
@@ -35,7 +35,7 @@
 }
 ```
 
-![grid_teamplate_column](vidu_grid_teamplate_column.PNG)
+![grid_teamplate_column](./imgHTML/vidu_grid_teamplate_column.PNG)
 
 ### 3.3 grid-template-rows
 
@@ -49,7 +49,7 @@
 }
 ```
 
-![grid_teamplate_column](grid_teamplate_row.PNG)
+![grid_teamplate_column](./imgHTML/grid_teamplate_row.PNG)
 
 ### 3.4 fraction-unit (`fr`)
 
@@ -57,7 +57,7 @@
 - Giá trị này sẽ chiếm khoảng trống lớn nhất có thể.
 - ví dụ:
   `css grid-template-columns: 15% 1fr 25% 15%;`
-  ![fr](grid_fr.PNG)
+  ![fr](./imgHTML/grid_fr.PNG)
 
 ### 3.5 grid-auto-flow
 
@@ -71,7 +71,7 @@
 }
 ```
 
-![fr](auto-flow-row.PNG)
+![fr](./imgHTML/auto-flow-row.PNG)
 
 - Về column thì tương tự như row
 
@@ -85,7 +85,7 @@
 }
 ```
 
-![fr](auto-flow-column.PNG)
+![fr](./imgHTML/auto-flow-column.PNG)
 
 ### 3.6 repeat()
 
@@ -97,7 +97,7 @@
 grid-template-columns: 10% repeat(4, 20%) 10%;
 ```
 
-![fr](repeat.PNG)
+![fr](./imgHTML/repeat.PNG)
 
 ### 3.7 grid-column
 
@@ -127,7 +127,7 @@ grid-column: grid-column-start / grid-column-end.;
 }
 ```
 
-![fr](column.PNG)
+![fr](./imgHTML/column.PNG)
 
 ### 3.8 grid-row
 
@@ -143,7 +143,7 @@ grid-column: grid-column-start / grid-column-end.;
 grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end;
 ```
 
-![grid_area](grid-area.PNG)
+![grid_area](./imgHTML/grid-area.PNG)
 
 - Cú pháp gán tên cho `grid item`:
 
@@ -170,7 +170,7 @@ grid-area: myItem1;
 }
 ```
 
-![grid_template_areas](template-areas.PNG)
+![grid_template_areas](./imgHTML/template-areas.PNG)
 
 ### 3.11 minmax
 
@@ -189,8 +189,8 @@ grid-area: myItem1;
 }
 ```
 
-![minmax](min-max.PNG)
-![minmax](minmax1.PNG)
+![minmax](./imgHTML/min-max.PNG)
+![minmax](./imgHTML/minmax1.PNG)
 
 ### 3.12 grid-auto-flow: dense
 
@@ -208,12 +208,12 @@ grid-area: myItem1;
 - Dùng để căn chỉnh toàn bộ `grid item` bên trong `container` theo chiều ngang.
 - Tổng chiều rộng của `grid` phải nhỏ hơn `width` của `container` để thuộc tính `justify-content` có hiệu lực.
 - Ví dụ dưới đây dùng `justify-content: space-around;`
-  ![justify-content](justify-content.PNG)
+  ![justify-content](./imgHTML/justify-content.PNG)
 
 #### b. align-content
 
 - Dùng để căn chỉnh toàn bộ `grid item` bên trong `container` theo chiều dọc.
-  ![align-content](align-content.PNG)
+  ![align-content](./imgHTML/align-content.PNG)
 
 #### c. Các giá trị của align-content và justify-content thường dùng
 
