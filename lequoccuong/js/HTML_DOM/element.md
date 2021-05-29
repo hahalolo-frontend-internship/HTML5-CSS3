@@ -228,8 +228,6 @@ element.addEventListener(event, function, useCapture);
   - `event`: Là tên sự kiện.
   - `function`: Là hàm ta muốn thực thi khi sự kiện kích hoạt.
   - `useCapture`: Là một giá trị `boolean value` cho hai lựa chọn: `event bubbling` hoặc `event capturing` sự kiện nào xử lý trước(mặc định là false).
-  `https://niithanoi.edu.vn/xu-ly-su-kien-cua-dom-trong-javascript.html#:~:text=h%E1%BB%8Dc%20v%E1%BB%81%20n%C3%B3.-,1.,di%20chu%E1%BB%99t%20qua)%2C%20%E2%80%A6.`
-
 
 ---
 
