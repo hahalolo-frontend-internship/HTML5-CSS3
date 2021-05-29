@@ -3,7 +3,7 @@
 - ES6 do hiệp hội các nhà sản xuất máy tính Châu Âu đề xuất làm tiêu chuẩn ngôn ngữ JS
 ## 1. Let, Const
 - Dùng để định nghĩa biến;
-- Function Scope các biến sẽ có tác dụng trong phạm vi của một `function` ma fnos được khai báo bên trong. Nếu khai báo không nằm trong một hàm nào thì sẽ trở thành `global variable` 
+- Function Scope các biến sẽ có tác dụng trong phạm vi của một `function` mà nó được khai báo bên trong. Nếu khai báo không nằm trong một hàm nào thì sẽ trở thành `global variable` 
 - Block là đoạn code bên trong cặp dấu ngoặc nhọn
 ### `var`
 - `var` thuộc `function scope`
