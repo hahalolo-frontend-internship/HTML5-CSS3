@@ -38,7 +38,7 @@
 ### Khác nhau giữa var và let
 - Các biến được khai báo với từ khóa var có phạm vi trong hàm (function scope) và hành vi hoisting trong JavaScript xảy ra (nâng phần khai báo lên trên cùng trong phạm vi của nó).
 
-- Trong khi các biến được khai báo với từ khóa let là phạm vi khối { } (block scope). Bạn bắt buộc phải khai báo rõ ràng trước khi sử dụng chúng. Và không có hoisting ở đây.
+- Trong khi các biến được khai báo với từ khóa let là phạm vi khối { } (block scope). Bạn bắt buộc phải khai báo rõ ràng trước khi sử dụng chúng.
 ### `const`
 
 - Nó như `let` nhưng giá trị của biến sẽ không thể thay đổi. Ta không thể gán một giá trị mới cho biến được khai báo bằng `const`
