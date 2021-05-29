@@ -70,7 +70,7 @@
 
     ` lang`: Dùng để khai báo về ngôn ngữ mà trang web đang sử dụng, để công cụ tìm kiếm có định hướng tốt hơn cho người dùng.
 
-    ![og](./imgHTML/baomoi.PNG)
+    ![og](.//imgHTML/baomoi.PNG)
 
     ```html
     <meta lang="en" />
