@@ -755,7 +755,7 @@ for (var i = 1; i <= 10; i++) {
 }
 ```
 
-# Events
+# III. Events
 
 ## 1. Sự kiện (Event) trong Javascript:
 
@@ -985,4 +985,426 @@ window.onload = function () {
   alert(3);
 };
 alert(2);
+```
+
+## 5. Hàm addEventListener():
+
+Hàm `addEventListener()` để thêm một sự kiện vào đối tượng HTML.
+
+### 5.1 Giới thiệu:
+
+- Syntax:
+
+```js
+elementObject.addEventListener("eventName", function (e) {
+  // do something
+});
+```
+
+- Trong đó:
+  - `eventName` là tên của sự kiện bỏ đi chữ on, ví dụ click, change, ...
+  - `function` là hàm sẽ được chạy khi sự kiện eventName được kích hoạt.
+
+```html
+<body>
+  <input type="text" id="txt-val" value="" />
+  <div id="result"></div>
+  <script language="javascript">
+    // Lấy đối tượng
+    var input = document.getElementById("txt-val");
+
+    // Thêm sự kiện cho đối tượng
+    input.addEventListener("keyup", function () {
+      // Gán giá trị vào div
+      document.getElementById("result").innerHTML = input.value;
+    });
+  </script>
+</body>
+```
+
+<img src="./addEvent.png" width="500">
+
+- Thêm sự kiện cho đối tượng Window:
+
+```html
+<body>
+  <h4>Bạn hãy zoom trình duyệt</h4>
+  <div id="result"></div>
+  <script language="javascript">
+    window.addEventListener("resize", function () {
+      document.getElementById("result").innerHTML = "Bạn vừa zoom Browser";
+    });
+  </script>
+</body>
+```
+
+### 5.2 Truyền tham số vào Event trong hàm addEventListener():
+
+Để truyền tham số vào thì bắt buộc phải tạo một hàm khác rồi gọi nó từ hàm addEventListener().
+
+```html
+<body>
+  <button id="btn">BTN</button>
+  <script language="javascript">
+    // Lấy đối tượng
+    var button = document.getElementById("btn");
+
+    // Thêm sự kiện cho đối tượng
+    button.addEventListener("click", function () {
+      do_something(2, 3);
+    });
+
+    function do_something(a, b) {
+      alert(a + b);
+    }
+  </script>
+</body>
+```
+
+## 6. Hàm removeEventListener() trong Javascript
+
+Hàm `removeEventListener()` sẽ xóa đi một hành động đã được gán cho một sự kiện.
+
+- Syntax:
+
+```js
+object.removeEventListener("eventName", some_action);
+```
+
+- Trong đó:
+  - `eventName` là tên của sự kiện bỏ đi chữ on, ví dụ click, change, ...
+  - `function` là hàm muốn gỡ bỏ khi sự kiện eventName được kích hoạt.
+- Ví dụ:
+
+```html
+<body>
+  <div id="result"></div>
+  <input type="button" value="Stop Random" id="stop_random" />
+
+  <script language="javascript">
+    // Bước 1: Lấy các đối tượng
+    var result = document.getElementById("result");
+    var button = document.getElementById("stop_random");
+    var html = document.getElementsByTagName("html")[0];
+
+    // Bước 2: Định nghĩa hành động hiển thị dãy số random
+    function do_random() {
+      var randomString = Math.random();
+      result.innerHTML = randomString;
+    }
+
+    // Bước 3: Thêm hành động do_random cho sự kiện mousemove thẻ <html>,
+    html.addEventListener("mousemove", do_random);
+
+    // Bước 4: Thêm sự kiện click cho button
+    button.addEventListener("click", function () {
+      // Xóa hành động do_random khỏi sự kiện mousemove
+      html.removeEventListener("mousemove", do_random);
+    });
+  </script>
+</body>
+```
+
+## IV. DOM:
+
+### 1. Giới thiệu:
+
+<img src="../HTML/DOM_TREE.jpg">
+
+Mỗi thẻ HTML có những thuộc tính (Properties) và có phân cấp cha - con với các thẻ HTML khác. Sự phân cấp này được gọi là `selector` và DOM có nhiệm vụ xử lý các vấn đề như đổi thuộc tính của thẻ, đổi cấu trúc HTML của thẻ,...
+
+=> Để thao tác với các thẻ HTML ta phải thông qua đối tượng `document`.
+
+### 2. DOM Element trong javascript:
+
+`DOM Element` dùng để truy xuất đến một thẻ HTML bất kì thông qua các thuộc tính như id, class, name hay thậm chí là tên của thẻ HTML và cú pháp CSS Selector .
+
+- Tìm thẻ HTML theo ID
+
+```js
+var element = document.getElementById("idname");
+```
+
+- Tìm thẻ HTML theo class
+
+```js
+var element = document.getElementsByClassName("input");
+```
+
+- Tìm thẻ HTML theo tên thẻ
+
+```js
+var element = document.getElementsByTagName("tagname");
+```
+
+- Tìm thẻ HTML theo selector
+
+```js
+var element = document.querySelectorAll("selector.css");
+```
+
+### 3. DOM HTML trong Javascript
+
+- Thay đổi và lấy nội dung bên trong thẻ HTML
+
+```js
+// SYNTAX:
+// Lấy nội dung
+var html = document.getElementById("content").innerHTML;
+// Thay đổi nội dung
+var html = (document.getElementById("content").innerHTML = "<h1>Nội dung</h1>");
+```
+
+- Thay đổi và lấy giá trị thuộc tính thẻ HTML bằng Javascript
+
+```js
+//SYNTAX
+// Lấy giá trị thuộc tính
+var value = document.getElementById("element").attributeName;
+// Thay đổi giá trị thuộc tính
+document.getElementById("element").attributeName = "new value";
+```
+
+### 4. DOM CSS trong Javascript
+
+`Style` bản chất nó cũng là một thuộc tính của các thẻ HTML nhưng không thể sử dụng DOM HTML để thiết lập hay xóa bỏ CSS được mà phải thông qua một đối tượng biệt khác đó là `style`.
+
+```js
+// Lấy giá trị CSS
+var value = document.getElementById("object").style.cssName;
+//Thiết lập CSS
+document.getElementById("object").style.cssName = "something";
+```
+
+### 5. DOM Nodes trong Javascript
+
+`DOM Nodes` chính là các đối tượng trả về khi sử dụng DOM Element để truy vấn.
+
+- DOM Node - document.createElement(): để tạo một node mới.
+
+```js
+var p = document.createElement("p");
+```
+
+- DOM Node - document.createTextNode(): để tạo ra 1 chuỗi string.
+
+```js
+var text = document.createTextNode("Nội dung");
+```
+
+- Phương thức appendChild(): bổ sung vào vị trí cuối của đối tượng HTML.
+
+```js
+p.appendChild(text);
+```
+
+- Phương thức insertBefore(): để thêm một Node vào đằng trước một node con nào đó.
+
+```js
+element.insertBefore(node_insert, node_child);
+// node_insert: node bạn muốn thêm vào
+// node_child: node con mà bạn muốn thêm vào đằng trước nó.
+```
+
+- Phương thức removeChild(): để xóa một node con ra khỏi node hiện tại.
+
+```js
+document.getElementById("content").removeChild(need_remove);
+```
+
+- Phương thức replaceChild(): để replace (thay thế) một node con nào đó bằng một node khác mới hoàn toàn.
+
+```js
+document.getElementById("content").replaceChild(p, replace);
+```
+
+### 6. Đối tượng this trong Javascript
+
+> Đối tượng `this` chính là đối tượng hiện tại đang được sử dụng hoặc đang truy cập tới.
+
+Ví dụ khi bạn viết một hành động cho sự kiện click thì nếu trong hành động đó có sử dụng this lúc này this chính là thẻ HTML mà ta click.
+
+```js
+//Đối tượng this trong event
+//===========================
+
+var button = document.getElementById("btn");
+button.addEventListener("click", function () {
+  // 'this' chính là button có id="btn"
+  alert(this.type);
+});
+```
+
+```html
+<!-- Truyền đối tượng this trong HTML -->
+<!-- ================================ -->
+<script language="javascript">
+  function show_type(obj) {
+    alert(obj.type);
+  }
+</script>
+<input type="button" onclick="show_type(this)" value="Check" />
+<!-- 'this' chính là thẻ input -->
+```
+
+# V. Data Types
+
+- Hàm typeof được dùng để kiểm tra kiểu dữ liệu của một biến nào đó (hoặc một giá trị nào đó).
+
+```js
+var x = typeof value;
+// Kết quả trả về gồm
+//  - number
+//  - string
+//  - object
+//  - undefined
+```
+
+## 1. Chuỗi (string) trong Javascript
+
+> Chuỗi là một đoạn text có thể có một hoặc nhiều ký tự, được lưu trữ vào một biến có kiểu dữ liệu là String.
+
+```js
+var website = "Chuỗi trong dấu nhát kép";
+var email = \'Chuỗi trong dấu nhát đơn';
+```
+
+- Muốn sử dụng dấu `"",''` trong chuỗi phải kết hợp dấu `\`. Một ký hiệu đi kèm với `\`:
+
+  <img src="./string.png">
+
+Một số hàm xử lý chuỗi phổ biến:
+
+- Tìm kiếm chuỗi con:
+  - `indexOf()`: trả về vị trí xuất hiện đầu tiên(bắt đầu: 0, ko tìm thấy: -1).
+  - `lastIndexOf()`: giống indexOf() nhưng trả về vị trí tìm thấy cuối cùng.
+  - `search()`: giống như indexOf().
+- Cắt chuỗi con:
+  - `slice(start, end)`:truyền số âm thì sẽ tính ngược lại.
+  - `substring(start, end)`: không truyền được số âm.
+  - `substr(start, length)`: start có thể truyền số âm, length phải là số dương.
+- Tìm kiếm và lặp chuỗi:
+  - `replace(str_find, str_replace)`: tr_find là chuỗi cần tìm và str_replace là chuỗi thay thế.
+- Chuyển thành chữ hoa và chữ thường:
+  - `toUpperCase()`: chuyển chuỗi thành chữ hoa
+  - `toLowerCase()`: chuyển chuỗi thành chữ thường
+- Nối thêm chuỗi
+  - toán tử `+`
+  - `concat(str1,str2)`
+- Tìm ký tự hoặc mã ASCII của một ký tự:
+  - `charAt(index)`: xem ký tự của một vị trí nào đó
+  - `charCodeAt(index)`: xem mã ASCII của một vị trí nào đó
+- Chuyển đổi chuỗi sang mảng:
+  - `split(...)`: Để chuyển một chuỗi sang mảng với tham số truyền vào là ký tự ngăn cách giữa các phần tử.
+
+## 2. Mảng trong Javascript:
+
+> Mảng là một tập hợp các phần tử lại và mỗi phần tử sẽ được đánh dấu một vị trí trong tập hợp đó.
+
+```js
+var name_array = new Array();
+// Hoặc
+var name_array = [];
+```
+
+- Các hàm xử lý mảng
+  <img src="./mang.png">
+
+[Link tham khảo](https://freetuts.net/cac-ham-xu-ly-mang-trong-javascript-289.html)
+
+## 3. Number trong Javascript:
+
+Javascript có hai giá trị lưu trữ kiểu `Number` đó là số có dấu chấm động và không có dấu chấm động.
+
+```js
+var x = 12; // không có dấu chấm động
+var y = 12.5; // có dấu chấm động
+```
+
+Xử lý Number:
+
+- Chuyển Number sang String:
+  - `number.toString(type)`:type chính là kiểu dữ liệu mà ban muốn chuyển về. Ví dự: nhị phân(2),thập phân(10)...
+- Số Infinity:
+  - `Infinity` cũng là một kiểu dữ liệu Number và khi một biến có giá trị là Infinity thì tức là nó đã vượt mức lưu trữ cho phép nên theo mặc định nó sẽ chuyển về dạng đó.
+- NaN - Not a Number:
+  - Khi thực hiện một phép toán liên quan đến Number nhưng vi phạm quy tắc tính toán thì kết quả sẽ trả về một giá trị gọi là `NaN (Not a Number)`.
+  ```js
+  var x = 2 / "freetuts.net"; // NaN
+  ```
+- Numbers - Objects:
+  - Có thể gán biến kiểu số thông qua đối tượng Object Number.
+  ```js
+  var x = 123; // number
+  var y = new Number(123); // object
+  ```
+
+Các hàm xử lý Number:
+
+<img src="./number.png">
+
+[Link tham khảo](https://freetuts.net/ham-xu-ly-number-trong-javascript-399.html)
+
+## 4. Date trong Javascript:
+
+> Date là đối tượng liên quan đến thời gian
+
+```js
+var timeObj = new Date();
+```
+
+- Các cách khai báo:
+
+```js
+// Thời gian hiện tại
+new Date();
+
+// Tham số truyền vào là mili giây
+new Date(milliseconds);
+
+// Tham số truyền vào là chuỗi ngày tháng
+new Date(dateString);
+
+// Tham số truyền vào gồm
+//  - year:         năm
+//  - month:        tháng
+//  - day:          ngày
+//  - hours:        giờ
+//  - minutes:      phút
+//  - seconds:      giây
+//  - milliseconds: mini giây
+new Date(year, month, day, hours, minutes, seconds, milliseconds);
+```
+
+Các định dạng Date:
+
+- Định dạng ISO:
+  - (ISO 8601) là (YYYY-MM-DD) hoặc (YYYY-MM) hoặc (YYYY).
+  ```js
+  var ISO_1 = new Date("2014-11-20");
+  ```
+- Định dạng Long:
+  - Truyền vào với tên của tháng là ba chữ cái đầu tiên ghi bằng tiếng Anh.
+  ```js
+  var LONG_1 = new Date("Mar 25 2015");
+  ```
+- Định dạng Short:
+  - Lưu trữ dưới dạng MM/DD/YYYY hoặc YYYY/MM/DD hoặc MM-DD-YYYY
+  ```js
+  var SHORT_1 = new Date("03-25-2015");
+  ```
+- Các hàm Get Date:
+  <img src="./getdate.png">
+- Các hàm Set Date:
+  <img src="./setdate.png">
+
+## 5. Object trong Javascript:
+
+> `Object` là một khái niệm trừu tượng thể hiện cho một đối tượng cụ thể và nó có sẵn một số đối tượng như Date, Number.
+
+- Khai báo:
+
+```js
+var Comment = new Object();
+var Comment = {};
 ```
