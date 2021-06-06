@@ -1,0 +1,89 @@
+.footer {
+  padding: 14rem 0;
+  background-color: $color-green-light;
+  margin-top: 7.5rem;
+  position: relative;
+  text-align: center;
+  @include respond(tab-land) {
+    text-align: unset;
+  }
+
+  &__leaves {
+    &-1 {
+    display: none;
+      
+      position: absolute;
+      top: 20%;
+      left: 2%;
+      transform: translate(-50%, -50%);
+      @include respond(tab-land){
+        display: block;
+      }
+    }
+    &-2 {
+    display: none;
+      position: absolute;
+      top: 30%;
+      right: 10%;
+      transform: translate(-50%, -50%);
+      @include respond(tab-land){
+        display: block;
+      }
+    }
+  }
+
+  &__logo {
+    &-text {
+      margin: 2.8rem 0;
+      font-family: $font-family-josefin;
+      font-size: 2.3rem;
+      line-height: 3.6rem;
+      color: $color-grey-light-2;
+    }
+    &-icon {
+      display: flex;
+      justify-content: center;
+      @include respond(tab-land) {
+        justify-content: unset;
+      }
+
+      &-1 {
+        padding: 0.9rem 1.1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        background: linear-gradient(
+          180deg,
+          rgba(140, 181, 96, 1) 0%,
+          rgba(99, 157, 43, 1) 100%
+        );
+
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  &__menu {
+    margin-top: 5rem;
+    @include respond(tab-land) {
+      margin-top: 1rem;
+    }
+
+    &-list {
+      list-style: none;
+      margin-top: 4.5rem;
+      li {
+        &:not(:last-child) {
+          padding-bottom: 3.5rem;
+        }
+        a {
+          text-decoration: none;
+          color: $color-grey-light-2;
+        }
+      }
+    }
+  }
+}

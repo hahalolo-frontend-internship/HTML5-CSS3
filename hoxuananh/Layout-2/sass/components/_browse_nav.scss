@@ -1,0 +1,40 @@
+.browse__nav {
+  text-align: start;
+  display: none;
+  @include respond(tab-port) {
+    display: block;
+  }
+  &-list {
+    list-style: none;
+    @include respond(tab-port) {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 2rem 0;
+    }
+    @include respond(tab-land) {
+      display: unset;
+      margin: unset;
+    }
+    a {
+      text-decoration: none;
+      color: $color-grey-light-1;
+      display: block;
+      border-bottom: 3px solid $color-grey-light-1;
+      padding: 1.2rem 2rem;
+      font-weight: 600;
+      @include respond(tab-land) {
+        border-left: 3px solid $color-grey-light-1;
+        border-bottom: unset;
+      }
+    }
+    .active_a {
+      color: $color-yellow;
+      border-bottom: 3px solid $color-yellow;
+      @include respond(tab-land) {
+        border-left: 3px solid $color-yellow;
+
+        border-bottom: unset;
+      }
+    }
+  }
+}

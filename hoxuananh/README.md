@@ -1,8 +1,8 @@
-# [HTML5](./HTML5.md)
+# [HTML5](./HTML-CSS-JS-BASIC/HTML5.md)
 
-# [CSS3](./CSS3.md)
+# [CSS3](./HTML-CSS-JS-BASIC/CSS3.md)
 
-# [GIT](./github.md)
+# [GIT](./HTML-CSS-JS-BASIC/github.md)
 
-# [JavaScript](./JS.md)
-# [ES6](./ES6.md)
+# [JavaScript](./HTML-CSS-JS-BASIC/JS.md)
+# [ES6](./HTML-CSS-JS-BASIC/ES6.md)
