@@ -22,40 +22,52 @@ Là bộ API nằm trong Web API có mặt trên những môi trường hỗ tr�
 
 ![Node](https://scontent-xsp1-1.xx.fbcdn.net/v/t1.15752-9/191787888_143168817859661_2409022883826680417_n.png?_nc_cat=105&ccb=1-3&_nc_sid=ae9488&_nc_ohc=xOCdYyg2j6AAX8Lu6aA&_nc_ht=scontent-xsp1-1.xx&oh=9bf72d22bda94bcb98115e453f238ab0&oe=60D4BEEB)
 
-
 # GET ELEMENT METHODS
 
 ### 1. ID
+
 - Trả về một `element` có `id` xác định, nếu không tìm thấy trả về `null`.
+
 ```js
-    var myVariable = document.getElementById('my_squad');
+var myVariable = document.getElementById("my_squad");
 ```
+
 ### 2. CLASS, TAG
+
 -Tìm theo tên `class` hoặc `tag name`. Khác với tìm theo ID chỉ trả về một `element`, hai method này trả về một mảng (thực ra chỉ hơi giống chứ không phải mảng 'HTML COLECTION'). Do đó, có thể truy cập từng element cụ thể tương tự như truy cập các phần tử của mảng.
+
 ```js
-    let boxes = document.getElementsByClassName("box");
-    let links = document.getElementsByTagName("a");
+let boxes = document.getElementsByClassName("box");
+let links = document.getElementsByTagName("a");
 ```
 
 ### 3. CSS SELECTOR
+
 - Trả về `element` đầu tiên tìm được, là một `Node object` khớp với chuỗi `selector`. Nếu không tìm được `method` trả về `null`.
+
 ```js
 let first_box = document.querySelector("div.box");
 
 let boxes = document.querySelectorAll("div.box");
 ```
+
 - Trả về một `NodeList` các `element` tìm thấy. Cấu trúc `NodeList` dùng tương tự mảng. Hai `method` trên ném ra lỗi `SYNTAX_ERR` nếu chuỗi `selector` sai.
+
 ### 4. HTML COLLECTION
+
 - name trong thẻ `a`, trả về một mảng HTMLCollection
+
 ```js
-let text=document.anchors;
+let text = document.anchors;
 ```
+
 - id trong form trả về một `element` có `id` xác định, nếu không tìm thấy trả về `null`.
 
 ```js
 let text = document.form.nameid;
-let form=document.forms['nameid'];
+let form = document.forms["nameid"];
 ```
+
 # Node Attribute
 
 - Được lấy ra từ `node element`
@@ -87,21 +99,19 @@ headingElement.setAttribute("title", "Đây là thẻ h1");
 
 - Có 2 cách lấy giá trị của attribute
 
-    - cách 1: chỉ lấy được những attribute mà thẻ đó thực tế sẽ có
+  - cách 1: chỉ lấy được những attribute mà thẻ đó thực tế sẽ có
 
-    ```js
-    let headingElement = document.querySelector("h1");
-    console.log(headingElement.title);
-    ```
+  ```js
+  let headingElement = document.querySelector("h1");
+  console.log(headingElement.title);
+  ```
 
-    - Cách 2: Lấy được tất cả attribute.
+  - Cách 2: Lấy được tất cả attribute.
 
-    ```js
-    let headingElement = document.querySelector("h1");
-    console.log(headingElement.getAttribute("title"));
-    ```
-
-
+  ```js
+  let headingElement = document.querySelector("h1");
+  console.log(headingElement.getAttribute("title"));
+  ```
 
 # Node Text
 
@@ -133,8 +143,10 @@ headingElement.setAttribute("title", "Đây là thẻ h1");
 ## Sự khác biệt giữa `innerText` và `textContent`
 
 ### 1. Khi lấy node text
+
 - innerText chỉ lấy nội dung mà trình duyệt hiển thị bỏ qua các thẻ.
 - textContent sẽ lấy những gì chúng ta viết và bỏ qua các thẻ.
+
 ```html
 <div>
   Đây là thẻ div
@@ -152,11 +164,13 @@ headingElement.setAttribute("title", "Đây là thẻ h1");
   console.log(divElement.textContent);
 </script>
 ```
+
 ![kết quả](https://scontent-xsp1-3.xx.fbcdn.net/v/t1.15752-9/190180041_316272710129072_2195593478683622793_n.png?_nc_cat=107&ccb=1-3&_nc_sid=ae9488&_nc_ohc=8VWjxYQwOI0AX_eoWzv&_nc_ht=scontent-xsp1-3.xx&oh=e849b9c2e27a9870683c2a113e0d4104&oe=60D6C0DF)
 
 ### 2. Khi thay đổi node text
 
 - Đối với `innerText`: Nếu chúng ta gõ enter xuống dòng thì sẽ được chuyển đổi thành thẻ `<br>` vì thế khi hiển thị cũng sẽ được xuống dòng.
+
 ```html
 <div>
   Đây là thẻ div
@@ -170,15 +184,35 @@ headingElement.setAttribute("title", "Đây là thẻ h1");
 </div>
 <script>
   let divElement = document.querySelector("div");
-  console.log(divElement.innerText = `
+  console.log(
+    (divElement.innerText = `
       
    nội dung thay đổi tại đây
 
-      `);
+      `)
+  );
 </script>
 ```
+
 ![kết quả](https://scontent.fdad2-1.fna.fbcdn.net/v/t1.15752-9/192098687_825183751745637_3313670949930825002_n.png?_nc_cat=100&ccb=1-3&_nc_sid=ae9488&_nc_ohc=0MeUnr9BhH4AX95HA39&tn=aPJlnR-rezZbCgJA&_nc_ht=scontent.fdad2-1.fna&oh=bbbc2b7e0e079feae617acf861db6c78&oe=60D7C47E)
 
 - Đối với `textContent`: Khi chúng ta gõ enter xuống dòng thì không được chuyển đổi thành thẻ `<br>` vì thế khi hiển thị sẽ không xuống dòng.
 
 ![Kết quả](https://scontent-xsp1-1.xx.fbcdn.net/v/t1.15752-9/190108203_4113576148677584_8803995630447234079_n.png?_nc_cat=103&ccb=1-3&_nc_sid=ae9488&_nc_ohc=w0C3oa5JLWgAX8gUiIj&_nc_ht=scontent-xsp1-1.xx&oh=ba235ee9d811caff04287f1d05eb36c3&oe=60D5E5BE)
+
+## InnerHTML và OuterHTML
+
+- Propery của element node
+- Thêm element node và text node thì dùng innerHTML
+
+```html
+<div class="box"></div>
+```
+
+```js
+let box = document.querySelector(".box");
+console.log(box);
+box.innerHTML = "<h1>HELLO DANNY</h1>";
+```
+
+- outerHTML: Ghi đè element cha
