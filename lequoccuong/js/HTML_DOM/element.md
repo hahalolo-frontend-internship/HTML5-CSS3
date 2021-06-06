@@ -205,6 +205,7 @@ element.eventName = function () {
 [Example](https://codepen.io/cuong021099/pen/RwpLZpO)
 
 - Danh sách một số sự kiện
+
   ![Danh sách](https://scontent.fpnh22-2.fna.fbcdn.net/v/t1.15752-9/189781646_744037136293257_4781535067765412841_n.png?_nc_cat=111&ccb=1-3&_nc_sid=ae9488&_nc_ohc=Ae-VNg1DNGEAX9MpITp&_nc_ht=scontent.fpnh22-2.fna&oh=78bcd2d51955dd11bed58e3dc925847e&oe=60D7F5E4)
 
 - Một ví dụ khác
