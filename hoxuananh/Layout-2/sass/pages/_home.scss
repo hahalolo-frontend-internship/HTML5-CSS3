@@ -22,10 +22,7 @@
     }
   }
   &__leaves {
-    position: absolute;
-    top: 60%;
-    left: 8%;
-    z-index: -100;
+    @include leaves(60%, 8%);
   }
   &__img {
     @include respond(tab-land) {
@@ -115,12 +112,10 @@
     }
   }
   &__leaves {
-    position: absolute;
-    left: 9%;
-    top: -10rem;
-    z-index: -100;
+    @include leaves(-10rem, 9%);
   }
   &__img {
+    padding: 2rem 0;
     img {
       width: 100%;
       @include respond(tab-port) {
@@ -141,8 +136,8 @@
   }
   &__leaves {
     position: absolute;
-    right: 10%;
     top: 25%;
+    right: 10%;
     z-index: -100;
   }
 }
@@ -150,10 +145,7 @@
 .sub {
   position: relative;
   &__leaves-1 {
-    position: absolute;
-    top: 15%;
-    left: 20%;
-    z-index: -100;
+    @include leaves(15%, 20%);
   }
   &__leaves-2 {
     position: absolute;
@@ -162,97 +154,173 @@
   }
 }
 
+//Custom slick
 
+.slick-dots li button:before {
+  width: 100% !important;
+}
+.slick-dots {
+  display: none !important;
+  justify-content: space-around;
+  top: -7rem;
+  @include respond(tab-port) {
+    display: flex !important;
+  }
+  @include respond(tab-land) {
+    flex-direction: column;
+    justify-content: start;
+    width: 100px !important;
+    left: -28rem;
+    top: 0;
+  }
+}
+.slick-dots li {
+  width: 100% !important;
+  height: 3rem !important;
+  border-bottom: 3px solid $color-grey-light-1;
+  @include respond(tab-land) {
+    border-left: 3px solid $color-grey-light-1;
+    border-bottom: unset;
+    padding: 2.9rem 0 !important;
+  }
+}
+.slick-dots li button {
+  width: 100% !important;
+  position: relative !important;
+}
+.slick-dots li button::before {
+  font-family: $font-family-poppins !important;
+  font-weight: bold !important;
+  font-size: 1.5rem !important;
+}
+.slick-dots .slick-active {
+  border-bottom: 0.4rem solid $color-yellow;
+  @include respond(tab-land) {
+    border-left: 3px solid $color-yellow;
+    border-bottom: unset;
+  }
+}
 
-// //slick 
-// .slick-dots {
-//   // display: flex !important;
-//   display: none !important;
-//   justify-content: space-around;
-//   top: -7rem;
-//   @include respond(tab-port){
-//     display: flex !important;
-//   }
-//   @include respond(tab-land){
-//     display: none !important;
-//   }
- 
-// }
-// .slick-dots li{
-//   width: 100% !important;
-//   height: 3rem !important;
-//   border-bottom: 3px solid $color-grey-light-1;
-// }
-// .slick-dots li button{
-//   width: 100% !important;
-//   position:  relative !important;
-  
-  
-// }
-// .slick-dots li button::before{
-//   font-family: $font-family-poppins !important;
-//   font-weight: bold !important;
-//   font-size: 1.5rem !important;
+.slick-dots .slick-active button::before {
+  color: $color-yellow !important;
+}
+.slick-dots button[role="tab"]::before {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+button#slick-slide-control00::before {
+  content: "\0042 \0072 \0065 \0061 \006B \0066 \0061 \0073 \0074" !important;
+}
 
+button#slick-slide-control01::before {
+  content: "\004C \0075 \006E \0063 \0068 " !important;
+}
 
+button#slick-slide-control02::before {
+  content: "\0044 \0069 \006E \006E \0065 \0072 " !important;
+}
 
+button#slick-slide-control03::before {
+  content: "\0044 \0065 \0073 \0065 \0072 \0074" !important;
+}
 
-// }
-// .slick-dots .slick-active{
-//   border-bottom: .4rem solid $color-yellow;
-// }
+button#slick-slide-control04::before {
+  content: "\0053 \006F \0075 \0070 \0073" !important;
+}
 
+button#slick-slide-control05::before {
+  content: "\0044 \0072 \0069 \006E \006B \0073" !important;
+}
 
-// .slick-dots .slick-active button::before{
-//   color: $color-yellow !important;
-  
-// }
-// .slick-dots button[role="tab"]::before{
-//   position: absolute !important;
-//   top: 50%;
-//   left: 30%;
-//   transform: translate(-50%,-50%);
-// }
-// button#slick-slide-control00::before{
-//   content: "\0042 \0072 \0065 \0061 \006B \0066 \0061 \0073 \0074" !important;
+.slick-button {
+  width: 5rem !important;
+  height: 5rem !important;
+  position: absolute !important;
+  top: 120% !important;
+  transform: translate(-50%, -50%) !important;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+  margin-right: 1rem;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+}
 
-// }
+.slick-prev {
+  @extend .slick-button;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  left: 40% !important;
+  background-color: $color-white;
+  color: $color-grey-light-2;
+  transition: all 0.6s;
 
-// button#slick-slide-control01::before{
-//   content: "\004C \0075 \006E \0063 \0068 " !important;
-// }
-
-// button#slick-slide-control02::before{
-//   content: "\0044 \0069 \006E \006E \0065 \0072 " !important;
-// }
-
-// button#slick-slide-control03::before{
-//   content: "\0044 \0065 \0073 \0065 \0072 \0074" !important;
-// }
-
-// button#slick-slide-control04::before{
-//   content: "\0053 \006F \0075 \0070 \0073" !important;
-// }
-
-// button#slick-slide-control05::before{
-//   content: "\0044 \0072 \0069 \006E \006B \0073" !important;
-// }
-
-// .slick-prev{
-//   background-color: violet !important;
-//   width: 5rem !important;
-//   height: 5rem !important;
-//   position: absolute !important;
-//   bottom: 0 !important;
-// }
-// .slick-next{
-//   background-color: violet !important;
-//   width: 5rem !important;
-//   height: 5rem !important;
-//   position: absolute !important;
-//   bottom: 0 !important;
-//   top: -29rem;
-// }
-// .slick-initialized {
-//   position:  relative !important;
+  @include respond(tab-port) {
+    top: 120% !important;
+    left: 46% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  @include respond(big-desktop) {
+    top: 47rem !important;
+    left: 75rem !important;
+  }
+  &::before {
+    content: "\279C" !important;
+    font-size: 3.1rem !important;
+    opacity: unset !important;
+    color: $color-grey-light !important;
+    transform: rotateY(180deg) !important;
+    display: block;
+    margin-bottom: 0.3rem;
+    transition: all 0.6s;
+  }
+  &:hover {
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.178);
+    background-color: $color-green !important;
+    &::before {
+      color: $color-white !important;
+    }
+  }
+}
+.slick-next {
+  @extend .slick-button;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  left: 60% !important;
+  background-color: $color-white !important;
+  transition: all 0.6s;
+  @include respond(tab-port) {
+    top: 120% !important;
+    left: 53% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  @include respond(big-desktop) {
+    top: 47rem !important;
+    left: 81rem !important;
+  }
+  &::before {
+    content: "\279C" !important;
+    font-size: 3rem !important;
+    opacity: unset !important;
+    color: $color-grey-light !important;
+    transition: all 0.6s;
+    display: block !important;
+    margin-bottom: 4px !important;
+  }
+  &:hover {
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.178);
+    background-color: $color-green !important;
+    &::before {
+      color: $color-white !important;
+    }
+  }
+}
+.slick-initialized {
+  position: relative !important;
+}
+// .slick-prev:before,
+// .slick-next:before {
+//   line-height: 1.2rem !important;
 // }

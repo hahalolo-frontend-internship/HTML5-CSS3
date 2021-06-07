@@ -17,11 +17,8 @@
       opacity: 0;
     }
     &-item {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       display: flex;
+      @include position-center;
       &-1,&-2 {
         margin: 0.2rem;
         width: 40px;
@@ -36,10 +33,7 @@
           color: $color-white;
         }
         svg {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          @include position-center;
         }
 
       }

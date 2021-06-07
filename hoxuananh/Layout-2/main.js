@@ -29,10 +29,8 @@ var parallaxInstances8 = new Parallax(scene8);
 var scene9 = document.getElementById("scene-9");
 var parallaxInstances9 = new Parallax(scene9);
 
-
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
-
     if (scroll >= 10) {
         $(".header__top").addClass("sticky");
     }else{
@@ -41,15 +39,13 @@ $(window).scroll(function() {
     }
 }); 
 
-
 $(document).ready(function () {
     $('.your-class').slick({
-      infinite: true,
       speed: 300,
-      slidesToShow: 1,
       centerMode: true,
       variableWidth: true,
       navigation:true,
+      dots:true,
 
     });
   });

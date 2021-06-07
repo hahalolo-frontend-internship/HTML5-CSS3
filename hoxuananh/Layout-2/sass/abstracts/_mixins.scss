@@ -1,15 +1,35 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (min-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+}
 
-@mixin respond($breakpoint) { 
-    @if $breakpoint == phone {
-        @media only screen and (min-width: 576px) { @content };   
-    }
-    @if $breakpoint == tab-port {
-        @media only screen and (min-width: 768px) { @content };     
-    }
-    @if $breakpoint == tab-land {
-        @media only screen and (min-width: 992px) { @content };    
-    }
-    @if $breakpoint == big-desktop {
-        @media only screen and (min-width: 1200px) { @content };    
-    }
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin leaves($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  z-index: -100;
 }

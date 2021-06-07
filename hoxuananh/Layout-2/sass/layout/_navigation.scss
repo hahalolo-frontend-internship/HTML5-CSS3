@@ -1,5 +1,5 @@
 .navigation {
-  @include respond(tab-port){
+  @include respond(tab-port) {
     display: none;
   }
   &__checkbox {
@@ -28,7 +28,6 @@
     background-image: radial-gradient($color-green, $color-green-dark);
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(0.37, 0.49, 0.58, 0.84);
-
     // transform: scale(80);
   }
   &__nav {
