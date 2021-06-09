@@ -6,7 +6,7 @@ Javascript được ứng dụng rộng rãi trên nhiều môi trường khác 
 1. Biến
    - Biến trong Javascript được sử dụng để lưu trữ dữ liệu trong suốt quá trình chương trình chạy.
    - Biến được khai báo với từ khóa `var` như sau:
-    ```html
+    ```js
     var name;
     ```
     - JavaScript là ngôn ngữ `untyped`. Nghĩa là một biến JavaScript có thể giữ một giá trị của bất kỳ kiểu dữ liệu nào.
@@ -19,7 +19,7 @@ Javascript được ứng dụng rộng rãi trên nhiều môi trường khác 
     - Phạm vi biến:
         + `Biến Global`: một biến Global có phạm vi chung, nghĩa là nó có thể được định nghĩa bất cứ đâu trong code JavaScript.
         + `Biến Local`: một biến Local sẽ chỉ nhìn thấy trong một hàm, nơi nó được định nghĩa. Các tham số hàm luôn luôn là nội bộ cho hàm đó.
-    ```html
+    ```js
     <script>
         var tong = 0;
         function myFunction(a, b){
