@@ -6,3 +6,5 @@
 
 # [JavaScript](./HTML-CSS-JS-BASIC/JS.md)
 # [ES6](./HTML-CSS-JS-BASIC/ES6.md)
+
+# [Layout2](https://sadioho.github.io/Layout-2/)
