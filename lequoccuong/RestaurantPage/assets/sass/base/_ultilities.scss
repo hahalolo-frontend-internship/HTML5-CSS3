@@ -12,9 +12,17 @@
 }
 .no_pad-left {
   padding-left: 0;
+  @include respond(tablet_phone){
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 .no_pad-right {
   padding-right: 0;
+  @include respond(tablet_phone){
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 .no_pad-lr {
   padding-left: 0;

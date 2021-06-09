@@ -46,6 +46,11 @@
         }
 
         li {
+          @include respond(tablet_phone) {
+            &:last-child {
+              padding-right: 0;
+            }
+          }
           @include respond(tablet) {
             padding: 0 1.9rem;
           }
@@ -73,8 +78,7 @@
       padding-bottom: 21.5rem;
       background-image: $bg-img;
 
-      @include respond(tablet_phone
-      ) {
+      @include respond(tablet_phone) {
         background-image: none;
         padding-bottom: 10rem;
       }
@@ -109,13 +113,13 @@
           form {
             height: 6rem;
             width: 53.6rem;
-             @include respond(phone_small) {
-               width: 100%;
+            @include respond(phone_small) {
+              width: 100%;
               height: 12rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-              }
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
             input {
               display: inline-block;
               border: none;
@@ -229,7 +233,7 @@
       .title {
         font-family: $title-font;
         padding: 3.6rem 0;
-        @include respond(tablet_phone){
+        @include respond(tablet_phone) {
           padding: 3rem 0;
         }
       }
@@ -237,11 +241,12 @@
         position: relative;
         overflow: hidden;
         background-color: $light-color;
-        padding: 4.6rem 3.4rem;
+        max-width: 37rem;
+        padding: 4.6rem 3rem;
         border-radius: 10px;
         transition: all ease 0.3s;
         @include respond(tablet_phone) {
-          margin: 1rem 0;
+          margin: 1rem auto;
         }
         img {
           display: inline-block;
@@ -250,7 +255,7 @@
           font-family: $title-font;
           font-size: 2.4rem;
           line-height: 2.6rem;
-        font-weight: 400;
+          font-weight: 400;
           padding: 1.8rem 0;
         }
         &-desc {
@@ -297,7 +302,7 @@
       .title {
         font-family: $title-font;
         padding: 3.6rem 0;
-        @include respond(tablet_phone){
+        @include respond(tablet_phone) {
           padding: 3rem 0;
         }
       }
@@ -318,11 +323,12 @@
               border-left: 2px solid $orange-color;
             }
             @include respond(tablet_phone) {
-              .active{
+              .active {
                 border-left: none;
                 border-bottom: 2px solid $orange-color;
               }
-              .active, a:hover {
+              .active,
+              a:hover {
                 color: $orange-color;
                 border-left: none;
                 border-bottom: 2px solid $orange-color;
@@ -409,12 +415,12 @@
                 margin: 0 5px;
                 background: $white-color;
                 color: $black-color;
-               
+
                 align-items: center;
                 width: 4rem;
                 height: 4rem;
                 border-radius: 5px;
-                transition: all ease .3s;
+                transition: all ease 0.3s;
                 svg:last-child {
                   width: 1.8rem;
                   height: 1.6rem;
@@ -448,7 +454,7 @@
       &__arrow {
         margin-top: 5rem;
         margin-left: 8.5rem;
-        @include respond(tablet_phone){
+        @include respond(tablet_phone) {
           margin: 0;
         }
         &-btn {
@@ -532,7 +538,7 @@
       .title {
         font-family: $title-font;
         padding: 3.6rem 0;
-        @include respond(tablet_phone){
+        @include respond(tablet_phone) {
           padding: 3rem 0;
         }
       }
@@ -553,7 +559,7 @@
         font-family: $text-font;
         font-size: 1.4rem;
         line-height: 2.2rem;
-        width: 36rem;
+        max-width: 36rem;
         padding: 2rem 1.9rem 2rem 2.5rem;
         position: relative;
         &::after {
@@ -627,16 +633,33 @@
     }
     .news {
       .row {
+        :first-child {
+          @include respond(tablet_phone) {
+            padding-left: 1rem;
+          }
+          @include respond(phone) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
         :nth-child(2) {
           @include respond(tablet_phone) {
-            padding-right: 0;
+            padding-right: 3rem;
+          }
+          @include respond(phone) {
+            padding-left: 1rem;
+            padding-right: 1rem;
           }
         }
         :last-child {
           @include respond(tablet_phone) {
-            padding-left: 0;
+            padding-left: 3rem;
             margin: 0 auto;
             margin-top: 2rem;
+          }
+          @include respond(phone) {
+            padding-left: 1rem;
+            padding-right: 1rem;
           }
         }
       }
@@ -644,7 +667,7 @@
       .title {
         font-family: $title-font;
         padding: 3.6rem 0;
-        @include respond(tablet_phone){
+        @include respond(tablet_phone) {
           padding: 3rem 0;
         }
       }
@@ -715,7 +738,7 @@
       .title {
         font-family: $title-font;
         padding: 3.6rem 0;
-        @include respond(tablet_phone){
+        @include respond(tablet_phone) {
           padding: 3rem 0;
         }
       }
@@ -737,7 +760,7 @@
             padding: 2rem 4rem;
             font-size: 1.8rem;
             @include respond(phone_small) {
-              padding: 2rem 2.5rem ;
+              padding: 2rem 2.5rem;
             }
           }
           button {
@@ -813,21 +836,20 @@
           display: inline-block;
           margin-right: 3rem;
           margin-top: 4rem;
-          @include respond(tablet_phone){
+          @include respond(tablet_phone) {
             margin: 1rem;
-           
           }
-          a{
+          a {
             background-color: $primary-color;
             color: $white-color;
             align-items: center;
             width: 4rem;
             height: 4rem;
             border-radius: 5px;
-            &:hover{
+            &:hover {
               background-color: $secondary-color;
             }
-            svg{
+            svg {
               width: 1.8rem;
               height: 1.6rem;
             }
