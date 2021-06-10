@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout1</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/responsive.css" />
+
+    <link rel="stylesheet" href="./src/slick/slick/slick.css" />
+    <link rel="stylesheet" href="./src/slick/slick/slick-theme.css" />
+  </head>
+
+  <body id="body">
+    <div onclick="Close()" id="overlay-nav-menu" class="overlay-nav-menu"></div>
+    <div id="nav-menu" class="nav-menu">
+      <ul class="nav-menu__list header-right__navmenu-list">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Buy Products</a></li>
+        <li><a href="#">Promote Your Brand</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">SELL NOW</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li class="li-cover"><a href="#">SIGN UP</a></li>
+        <li class="li-cover"><a href="#">LOG IN</a></li>
+
+        <!-- <i class="fas fa-times btn-close" onclick="Close()"></i> -->
+      </ul>
+    </div>
+
+    <section class="top-main">
+      <div id="sticky" class="sticky">
+        <div class="container">
+          <header class="header" id="header">
+            <div class="header-left">
+              <h1 class="header-left__logo">BRAND</h1>
+            </div>
+            <div class="header-right">
+              <ul class="header-right__navmenu-list">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Buy Products</a></li>
+                <li><a href="#">Promote Your Brand</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">SELL NOW</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+              <div class="header-right__sell">
+                <a href="#" class="btn">SELL NOW</a>
+              </div>
+              <div class="header-right__login">
+                <div class="btn btn-cover">
+                  <i class="far fa-user-circle"></i>
+                  <a href="#">SIGN UP</a>
+                  <span>|</span>
+                  <a href="#">LOG IN</a>
+                </div>
+              </div>
+            </div>
+            <button onclick="Open()" class="btn btn-menu">
+              <i class="fas fa-bars"></i>
+            </button>
+          </header>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="banner">
+          <div class="banner-left">
+            <h3 class="banner-left__title">
+              Push Your Brand To A Whole New Level!
+            </h3>
+            <p class="banner-left__desc">
+              This is an experimental text to test the shape and size of texts
+              and the way they are displayed in this place and the size and
+              color of the font, where this text is controlled.
+            </p>
+            <a href="#" class="btn btn-cover">Browse</a>
+          </div>
+          <!-- <div class="banner-right">
+                    <img src="./src/img/banner.png" alt="anh banner">
+                </div> -->
+          <div class="banner-search">
+            <form action="#">
+              <input type="text" placeholder="Search for Categories" />
+              <select name="" id="">
+                <option value="All Categories" selected>All Categories</option>
+                <option value="1">All Categories 2</option>
+                <option value="2">All Categories 3</option>
+              </select>
+              <button class="btn">
+                <i class="fas fa-search"></i>
+                <span>SEARCH</span>
+              </button>
+            </form>
+          </div>
+          <div class="banner-category">
+            <ul class="banner-category__list btn">
+              <li>
+                <a href="#">
+                  <img src="./src/img/catogory1.png" alt="anh catogory1" />
+                  <span>Motors</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./src/img/catogory2.png" alt="anh catogory2" />
+                  <span>Motors</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./src/img/catogory3.png" alt="anh catogory2" />
+                  <span>Motors</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./src/img/catogory4.png" alt="anh catogory4" />
+                  <span>Motors</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact-container">
+      <div class="container">
+        <div class="contact">
+          <div class="contact-list">
+            <div class="contact-items">
+              <img src="./src/img/headphones.png" alt="headphones" />
+              <h4 class="contact-items__title">24/7 SUPPORT</h4>
+              <p class="contact-items__desc">Support every time</p>
+              <p class="contact-items__content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+            <div class="contact-items">
+              <img src="./src/img/credit-card.png" alt="credit-card" />
+              <h4 class="contact-items__title">ACCEPT PAYMENT</h4>
+              <p class="contact-items__desc">Visa, Paypal, Master</p>
+              <p class="contact-items__content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+            <div class="contact-items">
+              <img src="./src/img/verified.png" alt="verified" />
+              <h4 class="contact-items__title">SECURED PAYMENT</h4>
+              <p class="contact-items__desc">100% secured</p>
+              <p class="contact-items__content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+            <div class="contact-items">
+              <img src="./src/img/shipped.png" alt="shipped" />
+              <h4 class="contact-items__title">FREE SHIPPING</h4>
+              <p class="contact-items__desc">Order over $100</p>
+              <p class="contact-items__content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="brand">
+          <div class="brand-top">
+            <div><img src="./src/img/acer.png" alt="acer" /></div>
+            <div><img src="./src/img/mis.png" alt="msi" /></div>
+            <div><img src="./src/img/samsung.png" alt="samsung" /></div>
+            <div><img src="./src/img/sony.png" alt="sony" /></div>
+            <div><img src="./src/img/asus.png" alt="asus" /></div>
+            <div><img src="./src/img/apple.png" alt="apple" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="container">
+        <div class="benefits">
+          <div class="benefits-items">
+            <div class="benefits-items__content about">
+              <h3 class="benefits-items__content-title">
+                Buy New & Used Products
+              </h3>
+              <div class="about-list" id="coverabout-list">
+                <div class="about-items active">
+                  <p>Private Users</p>
+                </div>
+                <div class="about-items">
+                  <p>Businesses</p>
+                </div>
+              </div>
+              <p class="benefits-items__content-desc">
+                Private users can easily purchase new and used products at
+                Brand. Just search for your desired product, enter the necessary
+                filters if needed and make an offer.
+              </p>
+              <h6 class="benefits-items__content-benefit">Benefits:</h6>
+              <ul class="benefits-items__content-benefit__list">
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Buy products from private users
+                    or businesses
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Buy products from private users
+                    or businesses
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Targeted search with the
+                    appropriate filters for each category
+                  </p>
+                </li>
+              </ul>
+              <div class="product" id="cover-product">
+                <a class="product-buy__btn" href="#"> Explore Products</a>
+              </div>
+            </div>
+            <!-- <div class="benefits-items__img">
+                        <img src="./src/img/benefit1.png" alt="Buy product">
+                    </div> -->
+          </div>
+
+          <div class="benefits-items">
+            <!-- <div class="benefits-items__img benefits-items__imgcover">
+                        <img src="./src/img/sale.png" alt="Sell Products">
+                    </div> -->
+            <div class="benefits-items__content about">
+              <h3 class="benefits-items__content-title">
+                Sell Products Easily
+              </h3>
+              <div class="about-list" id="coverabout-list">
+                <div class="about-items active">
+                  <p>Private Users</p>
+                </div>
+                <div class="about-items">
+                  <p>Businesses</p>
+                </div>
+              </div>
+              <p class="benefits-items__content-desc">
+                Trade in your new and used products for cash. Receive individual
+                offers from different potential buyers and decide for yourself.
+              </p>
+              <h6 class="benefits-items__content-benefit">Benefits:</h6>
+              <ul class="benefits-items__content-benefit__list">
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Place an ad for your product and
+                    promote it for faster sales
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Buy products from private users
+                    or businesses
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Fast sales thanks to simplified
+                    search for your customers
+                  </p>
+                </li>
+              </ul>
+              <div class="product" id="cover-product">
+                <a class="product-buy__btn" href="#">Sell Products</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="benefits-items">
+            <div class="benefits-items__content about">
+              <h3 class="benefits-items__content-title">
+                Get Your Brand Known
+              </h3>
+              <p class="benefits-items__content-desc">
+                Trade in your new and used products for cash. Receive individual
+                offers from different potential buyers and decide for yourself.
+              </p>
+              <h6 class="benefits-items__content-benefit">Benefits:</h6>
+              <ul class="benefits-items__content-benefit__list">
+                <li>
+                  <p><i class="far fa-star"></i> Offer content on Brand</p>
+                </li>
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Increase your reach on external
+                    social media platforms with influencers
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Gain high engagement and get
+                    your products promoted in Explore & Swipe feature
+                  </p>
+                </li>
+              </ul>
+              <div class="product" id="cover-product">
+                <a class="product-buy__btn" href="#">Increase Your Reach</a>
+              </div>
+            </div>
+            <!-- <div class="benefits-items__img">
+                        <img src="./src/img/getbranch.png" alt="Get Your Brand Known">
+                    </div> -->
+          </div>
+
+          <div class="benefits-items">
+            <!-- <div class="benefits-items__img">
+                        <img src="./src/img/Illustration.png" alt="Illustration">
+                    </div> -->
+            <div class="benefits-items__content about">
+              <h3 class="benefits-items__content-title">
+                Find Products Based On Your Interest
+              </h3>
+              <p class="benefits-items__content-desc">
+                If you ever don’t know what to buy, either for yourself or as a
+                gift, or you would just like to know what products are on the
+                market, we also have the perfect feature for you. With the
+                Explore & Swipe feature you can find the right products. Based
+                on your interests!
+              </p>
+              <h6 class="benefits-items__content-benefit">Benefits:</h6>
+              <ul class="benefits-items__content-benefit__list">
+                <li>
+                  <p><i class="far fa-star"></i> Browse through products</p>
+                </li>
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Find products based on your
+                    personal interests
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i class="far fa-star"></i> Find the perfect gift for your
+                    partner and acquaintances
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="statistical">
+          <div class="statistical-list">
+            <div class="statistical-items">
+              <div class="statistical-items__img">
+                <img src="./src/img/person.png" alt="person" />
+              </div>
+              <p class="statistical-items__count">78,204</p>
+              <p class="statistical-items__name">Users</p>
+            </div>
+            <div class="statistical-items">
+              <div class="statistical-items__img">
+                <img src="./src/img/shopping-bag.png" alt="shopping-bag" />
+              </div>
+              <p class="statistical-items__count">10,241</p>
+              <p class="statistical-items__name">Business Shops</p>
+            </div>
+            <div class="statistical-items">
+              <div class="statistical-items__img">
+                <img src="./src/img/surface1.png" alt="Sold-Products" />
+              </div>
+              <p class="statistical-items__count">114,547</p>
+              <p class="statistical-items__name">Sold Products</p>
+            </div>
+            <div class="statistical-items">
+              <div class="statistical-items__img">
+                <img src="./src/img/new-product.png" alt="new-product" />
+              </div>
+              <p class="statistical-items__count">10,241</p>
+              <p class="statistical-items__name">Items For Sale</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="product-buy">
+            <div class="product-buy__name">
+              <img src="./src/img/buy.png" alt="buy-product" />
+              <p>Buy Products</p>
+            </div>
+            <img
+              class="product-buy__img"
+              src="./src/img/undraw_web_shopping_dd4l.png"
+              alt="undraw_web_shopping"
+              width="160"
+            />
+            <div class="product-buy__list">
+              <div class="line"></div>
+              <div class="product-buy__items">
+                <div class="product-buy__items-circle">
+                  <p class="product-buy__items-number">1</p>
+                </div>
+                <p class="product-buy__items-text">Sign Up</p>
+              </div>
+              <div class="product-buy__items">
+                <div class="product-buy__items-circle">
+                  <p class="product-buy__items-number">2</p>
+                </div>
+                <p class="product-buy__items-text">Find Product</p>
+              </div>
+              <div class="product-buy__items">
+                <div class="product-buy__items-circle">
+                  <p class="product-buy__items-number">3</p>
+                </div>
+                <p class="product-buy__items-text">Make Offer</p>
+              </div>
+              <div class="product-buy__items">
+                <div class="product-buy__items-circle">
+                  <p class="product-buy__items-number">4</p>
+                </div>
+                <p class="product-buy__items-text">Get Product</p>
+              </div>
+            </div>
+
+            <a class="product-buy__btn" href="#">EXPLORE MARKETPLACE</a>
+          </div>
+
+          <div class="product-buy">
+            <div class="product-buy__name">
+              <img src="./src/img/productSell.png" alt="sell-product" />
+              <p>Sell Products</p>
+            </div>
+            <img
+              class="product-buy__img"
+              src="./src/img/undraw_transfer_money_rywa.png"
+              alt="undraw_transfer_money"
+              width="160"
+            />
+            <div class="product-buy__list">
+              <div class="line"></div>
+              <div class="product-buy__items">
+                <div class="product-buy__items-circle">
+                  <p class="product-buy__items-number">1</p>
+                </div>
+                <p class="product-buy__items-text">Sign Up</p>
+              </div>
+              <div class="product-buy__items">
+                <div class="product-buy__items-circle">
+                  <p class="product-buy__items-number">2</p>
+                </div>
+                <p class="product-buy__items-text">Create Ad</p>
+              </div>
+              <div class="product-buy__items">
+                <div class="product-buy__items-circle">
+                  <p class="product-buy__items-number">3</p>
+                </div>
+                <p class="product-buy__items-text">Get Offers</p>
+              </div>
+              <div class="product-buy__items">
+                <div class="product-buy__items-circle">
+                  <p class="product-buy__items-number">4</p>
+                </div>
+                <p class="product-buy__items-text">Accept & Deliver</p>
+              </div>
+            </div>
+
+            <a class="product-buy__btn product-buy__btnSell" href="#"
+              >SIGN UP</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="about-img">
+          <img src="./src/img/about.png" alt="about" />
+        </div>
+        <h2 class="about-title">What People Say About Brand</h2>
+        <div class="about-list">
+          <div class="about-items active">
+            <p>User Reviews</p>
+          </div>
+          <div class="about-items">
+            <p>Media Quotes</p>
+          </div>
+        </div>
+        <div class="variable-width">
+          <div class="about-user">
+            <div class="about-user__info">
+              <img src="./src/img/user2.png" alt="user" />
+              <h4 class="about-user__info-name">Salah Khattab</h4>
+              <p class="about-user__info-job">UX/UI DESIGNER</p>
+            </div>
+            <div class="about-user__comment">
+              <div class="about-user__comment-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="about-user__comment-text">
+                <span>"</span>
+                <p>
+                  This is an experimental text to test the shape and size of
+                  texts and the way they are displayed in this place and the
+                  size and color of the font, where this text is controlled and
+                  the possibility of changing it at any time by the site
+                  administration This text is added as a preview text.
+                </p>
+                <span>"</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-user">
+            <div class="about-user__info">
+              <img src="./src/img/user2.png" alt="user" />
+              <h4 class="about-user__info-name">Salah Khattab</h4>
+              <p class="about-user__info-job">UX/UI DESIGNER</p>
+            </div>
+            <div class="about-user__comment">
+              <div class="about-user__comment-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="about-user__comment-text">
+                <span>"</span>
+                <p>
+                  This is an experimental text to test the shape and size of
+                  texts and the way they are displayed in this place and the
+                  size and color of the font, where this text is controlled and
+                  the possibility of changing it at any time by the site
+                  administration This text is added as a preview text.
+                </p>
+                <span>"</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-user">
+            <div class="about-user__info">
+              <img src="./src/img/user2.png" alt="user" />
+              <h4 class="about-user__info-name">Salah Khattab</h4>
+              <p class="about-user__info-job">UX/UI DESIGNER</p>
+            </div>
+            <div class="about-user__comment">
+              <div class="about-user__comment-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="about-user__comment-text">
+                <span>"</span>
+                <p>
+                  This is an experimental text to test the shape and size of
+                  texts and the way they are displayed in this place and the
+                  size and color of the font, where this text is controlled and
+                  the possibility of changing it at any time by the site
+                  administration This text is added as a preview text.
+                </p>
+                <span>"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="about-star container">
+            <p class="about-star__text">
+              Over 10,000 people trust Brand and have already sold items
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="seting-app">
+          <h2 class="seting-app__title">GET THE APP</h2>
+          <p class="seting-app__desc">
+            Download the free Brand app and buy & sell things from anywhere with
+            your phone!
+          </p>
+          <div class="seting-app__img">
+            <a href="#"
+              ><img
+                class="appstore"
+                src="./src/img/appstore.png"
+                alt="appstore"
+            /></a>
+            <a href="#"
+              ><img
+                class="google"
+                src="./src/img/googlePlay.png"
+                alt="googlePlay"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-main">
+          <div class="container">
+            <div class="footer-main__top">
+              <div class="footer-main__top-content">
+                <h3 class="footer-main__top-content__title">BRAND</h3>
+                <p class="footer-main__top-content__desc">
+                  This is an experimental text to test the shape and size of
+                  texts and the way they are displayed in this place and the
+                  size and color of the font, where this text is controlled and
+                  the possibility of changing it at any time by the site
+                  administration This text is added as a preview text.
+                </p>
+              </div>
+              <div class="footer-main__top-card">
+                <ul class="footer-main__top-card__list">
+                  <li><img src="./src/img/visa.png" alt="visa" /></li>
+                  <li><img src="./src/img/paypal.png" alt="paypal" /></li>
+                  <li><img src="./src/img/discover.png" alt="discover" /></li>
+                  <li><img src="./src/img/maestro.png" alt="maestro" /></li>
+                  <li>
+                    <img src="./src/img/mastercard.png" alt="mastercard" />
+                  </li>
+                  <li><img src="./src/img/america.png" alt="america" /></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-main__bot">
+              <div class="footer-main__bot-col">
+                <h4 class="footer-main__bot-col__title">Brand</h4>
+                <ul class="footer-main__bot-col__list">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Career</a></li>
+                  <li><a href="#">Bug Bounty</a></li>
+                  <li><a href="#">News & Press</a></li>
+                  <li><a href="#">Affiliate</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-main__bot-col">
+                <h4 class="footer-main__bot-col__title">Information</h4>
+                <ul class="footer-main__bot-col__list">
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Terms & Conditions</a></li>
+                  <li><a href="#">Buyer Protection</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Cookie Policy</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-main__bot-col">
+                <h4 class="footer-main__bot-col__title">For Businesses</h4>
+                <ul class="footer-main__bot-col__list">
+                  <li><a href="#">Register your Shop</a></li>
+                  <li><a href="#">Advertising on Brand</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-main__bot-col">
+                <h4 class="footer-main__bot-col__title">Social Media</h4>
+                <ul
+                  class="
+                    footer-main__bot-col__list footer-main__bot-col__listcover
+                  "
+                >
+                  <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-pinterest-p"></i> Pinterest</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="footer-main__bot-col">
+                <h4
+                  class="
+                    footer-main__bot-col__title footer-main__bot-col__titlecover
+                  "
+                >
+                  GET THE APP
+                </h4>
+                <ul
+                  class="
+                    footer-main__bot-col__list footer-main__bot-col__listcover
+                  "
+                >
+                  <li>
+                    <a href="#"
+                      ><img src="./src/img/f-app.png" alt="app google play"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><img src="./src/img/f-app2.png" alt="app store"
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-sub">
+          <p>Copyright © 2021 , Brand</p>
+        </div>
+      </footer>
+    </main>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./src/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+  </body>
+</html>
