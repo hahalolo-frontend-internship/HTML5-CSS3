@@ -373,14 +373,14 @@ html {
       line-height: 2.2rem;
       color: #b7b7b7; }
     .testimonial-card__text::after {
-      content: "";
-      width: 2rem;
-      height: 3rem;
-      background-color: #fff;
-      display: block;
       position: absolute;
-      bottom: -1rem;
-      transform: rotate(45deg); }
+      content: "";
+      bottom: -1.3rem;
+      left: 10%;
+      transform: translateX(-50%);
+      border-left: 1.5rem solid transparent;
+      border-right: 2rem solid transparent;
+      border-top: 1.4rem solid #fff; }
   .testimonial-card__content {
     display: flex;
     align-items: center;
