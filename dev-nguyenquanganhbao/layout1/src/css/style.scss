@@ -33,6 +33,24 @@ $white: #ffffff;
 $black: #000000;
 $main-color: #007f1e;
 
+.btn-scroll-ontop {
+    font-size: 35px;
+    z-index: 200;
+    position: fixed;
+    bottom: 50px;
+    right: 5%;
+    color: $main-color;
+    background-color: $white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.7s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 @mixin formatText($fFamily: unset, $fSize: unset, $fWeight: unset, $color: unset, $tTransform: unset) {
     font-family: $fFamily;
     font-size: $fSize;

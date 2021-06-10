@@ -37,6 +37,27 @@
   src: url(../sf-compact/Medium.ttf);
 }
 
+.btn-scroll-ontop {
+  font-size: 35px;
+  z-index: 200;
+  position: fixed;
+  bottom: 50px;
+  right: 5%;
+  color: #007f1e;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.btn-scroll-ontop:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 * {
   padding: 0;
   margin: 0;
