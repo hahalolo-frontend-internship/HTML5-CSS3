@@ -29,6 +29,8 @@ var parallaxInstances8 = new Parallax(scene8);
 var scene9 = document.getElementById("scene-9");
 var parallaxInstances9 = new Parallax(scene9);
 
+
+// khi scroll màn hình xuống lớn hơn 10 thì add class sticky vào ở element chứa class header__top ngược lại thì remove class
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
     if (scroll >= 10) {
@@ -39,12 +41,19 @@ $(window).scroll(function() {
     }
 }); 
 
+
+/**
+ * Speed tốc độ di chuyển slide
+ * Hiển thị slide ở trung tâm, bao gồm các slide trước và tiếp theo.
+ * VariableWidth Vô hiệu hóa vùng nhìn của slide
+ * Dấu chấm định danh địa chỉ đên cho mỗi item show
+ */
+
 $(document).ready(function () {
     $('.your-class').slick({
       speed: 300,
       centerMode: true,
       variableWidth: true,
-      navigation:true,
       dots:true,
 
     });
