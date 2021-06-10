@@ -344,7 +344,7 @@ body{
     width: 9em;
 }
 .results_right{
-    background-image: url('/anh/Mask\ Group\ 2.png');
+    background-image: url('../anh/MaskGroup2.png');
     background-size: cover;
     padding: 6em 11em 6em 11em;
 }
@@ -389,7 +389,7 @@ body{
     position: relative;
 }
 .section_four_right {
-    background-image: url('/anh/Mask\ Group\ 4.png');
+    background-image: url("../anh/MaskGroup4.png");
     height: 22rem;
     background-size: cover;
     position: relative;
@@ -441,7 +441,7 @@ body{
     margin-bottom: 7em;
 }
 .feature_camp{
-    background-image: url('/anh/01.png');
+    background-image: url('../anh/01.png');
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -485,7 +485,7 @@ body{
     padding-left: 0.2em;
 }
 .feature_tea{
-    background-image: url('/anh/img.png');
+    background-image: url('../anh/img.png');
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -544,7 +544,7 @@ body{
 .footer{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    background-image: url('/anh/footer.png');
+    background-image: url('../anh/footer.png');
     background-size: cover;
     height: 13em;
     margin-bottom: 7em;
@@ -724,6 +724,11 @@ body{
 }
 .results_left_reponse span{
     color: #E4003B;
+}
+@media (min-width: 1201px) and (max-width: 1316px){
+    .results_right{
+        font-size: 80%;
+    }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
     .logo {
@@ -1027,6 +1032,9 @@ body{
         .banner_final{
             display: none;
         }
+        .section_four_right_list{
+            display: none;
+        }
         /*section1*/
         .section_two {
             margin-top: 0.5em;
@@ -1221,7 +1229,7 @@ body{
         display: grid;
         grid-template-columns: 100%;
      }
-    .banner_final{
+     .banner_final_list{
         display: none;
     }
     /*section1*/
@@ -1302,10 +1310,6 @@ body{
     .results_right{
         padding: 2em 4em 2em 4em;
     }
-
-    /* .results_right_boder{
-        border: 4px solid#E4003B;
-    }  */
      .results_right_boder_content{
         padding: 6em 1em 1em 1em;
     }
@@ -1394,7 +1398,6 @@ body{
 }
 
 @media all and (min-width: 320px ) and (max-width: 375px){
-
     .container{
         margin: 0;
     }
@@ -1417,7 +1420,7 @@ body{
         display: grid;
         grid-template-columns: 100%;
      }
-    .banner_final{
+    .section_four_right_list{
         display: none;
     }
     /*section1*/
