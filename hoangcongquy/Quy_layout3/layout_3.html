@@ -64,9 +64,11 @@
                     <li class="header__menu_item">
                         <a href="" class="header__menu_icon"><i class="fas fa-user-circle"></i></a>
                     </li>
-                    <li class="header__menu_item">
-                        <a class="icon_seach"><i class="fas fa-search"></i></a>
+                    <li class="header__menu_item icon_find">
+                        <input class="header__menu_find" type="text" value="" placeholder="Nhập tìm kiếm vào đây">
+                        <a href="" class="icon_seach"><i class="fas fa-search"></i></a>
                     </li>
+
                 </ul>
             </nav>
         </div>
@@ -97,16 +99,15 @@
                     <div class="snow"><img src="anh/snow.png" alt="tuyết"></div>
                 </div>
                 <div class="banner_mid">
-                    <div>
-                        <img src="anh/Mask Group 3.png" alt="nuituyet">
+                    <div class="imageContainer">
+                        <img src="anh/Mask Group 3.png" alt="nuituyet" id="imgBanner" height="">
                     </div>
-                    
                     <div class="banner_mid_nav">
-                        <div class="banner_mid_nav_right">
-                            <a href=""><i class="fas fa-arrow-right"></i></a>
+                        <div class="banner_mid_nav_right" id="next" onclick="nxt()">
+                            <button><i class="fas fa-arrow-right"></i></button>
                         </div>
-                        <div class="banner_mid_nav_left">
-                            <a href=""><i class="fas fa-arrow-left"></i></a>
+                        <div class="banner_mid_nav_left" id="previous" onclick="prvs()">
+                            <button><i class="fas fa-arrow-left"></i></button>
                         </div>
                     </div>
                 </div>
@@ -275,10 +276,10 @@
                         </ul>
                     </div>
                     <div class="section_four_right_directional">
-                        <div class="banner_mid_nav_right">
+                        <div class="directional_right">
                             <a href=""><i class="fas fa-arrow-right"></i></a>
                         </div>
-                        <div class="banner_mid_nav_left">
+                        <div class="directional_left">
                             <a href=""><i class="fas fa-arrow-left"></i></a>
                         </div>
                     </div>
@@ -335,67 +336,135 @@
                 <div class="footer_logo">
                     <img src="anh/logo_ft.png" alt="logo" class="logo_footer">
                 </div>
-                <div class="footer_challenges">
-                    <div>
-                        <h2>CHALLENGES</h2>
+                <div class="footer_cfg">
+                    <div class="footer_challenges">
+                        <div>
+                            <h2>CHALLENGES</h2>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href="">Endurance</a></li>
+                                <li><a href="">Survival</a></li>
+                                <li><a href="">Key skills</a></li>
+                                <li><a href="">Survival kit</a></li>
+                                <li><a href="">Shelter making</a></li>
+                                <li><a href=""> Food challenges</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="social_footer">
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank"><i
+                                            class="fab fab-two fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/" target="_blank"><i
+                                            class="fab fab-two fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <ul>
-                            <li><a href="">Endurance</a></li>
-                            <li><a href="">Survival</a></li>
-                            <li><a href="">Key skills</a></li>
-                            <li><a href="">Survival kit</a></li>
-                            <li><a href="">Shelter making</a></li>
-                            <li><a href=""> Food challenges</a></li>
-                        </ul>
+                    <div class="footer_advice">
+                        <div>
+                            <h2>ADVICE</h2>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a> Mountain survival</a></li>
+                                <li><a>Forest challenges</a></li>
+                                <li><a>How to make your shelter</a></li>
+                                <li><a>What to eat in forest</a></li>
+                                <li><a>How to stay safe</a></li>
+                                <li><a>What to wear</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <ul class="social_footer">
-                            <li>
-                                <a href="https://www.facebook.com/" target="_blank"><i
-                                        class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/" target="_blank"><i
-                                        class="fab fab-two fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/" target="_blank"><i
-                                        class="fab fab-two fa-youtube"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer_advice">
-                    <div>
-                        <h2>ADVICE</h2>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href=""> Mountain survival</a></li>
-                            <li><a href="">Forest challenges</a></li>
-                            <li><a href="">How to make your shelter</a></li>
-                            <li><a href="">What to eat in forest</a></li>
-                            <li><a href="">How to stay safe</a></li>
-                            <li><a href="">What to wear</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer_gallery">
-                    <div>
-                        <h2>GALLERY</h2>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="">Endurance</a></li>
-                            <li><a href="">Survival</a></li>
-                        </ul>
+                    <div class="footer_gallery">
+                        <div>
+                            <h2>GALLERY</h2>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a>Endurance</a></li>
+                                <li><a>Survival</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
             </footer>
+            <div class="Go_to_all" id="btn_Scroll" onmouseover="showBtn(this)" onmouseout="hidenBtn(this)" >
+                <button id="go_to_x" onclick="closeBtn()">x</button>
+                <div>
+                    <button onclick="topFunction()"
+                        id="btn_topScroll" title="Go to Top"><i class="fas fa-chevron-up"></i></button>
+                </div>
+                <div>
+                    <button onclick="bottomFunction()" id="btn_bottomScroll" title="Go to Bottom"><i
+                            class="fas fa-chevron-down"></i></button>
+                </div>
+            </div>
     </div>
-    </div>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+                document.getElementById("btn_Scroll").style.visibility = "unset";
+            } else {
+                document.getElementById("btn_Scroll").style.visibility = "hidden";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        function bottomFunction() {
+            document.body.scrollTop = 10000;
+            document.documentElement.scrollTop = 10000;
+        }
+        
+        function showBtn() {
+            document.getElementById("go_to_x").style.display = "block";
+        }
+        function hidenBtn() {
+            document.getElementById("go_to_x").style.display = "none";
+        }
+
+        function closeBtn(){
+            document.getElementById("btn_Scroll").style.display = "none";
+        }
+        /**/
+
+        var img = new Array("anh/fire.png", "anh/Mask Group 3.png");
+
+        var imgElement = document.getElementById("imgBanner");
+        var i = 0;
+        var imgLen = img.length;
+
+        function nxt() {
+            if (i < imgLen - 1) {
+                i++;
+            }
+            else {
+                i = 0;
+            }
+            imgElement.src = img[i];
+        }
+
+        function prvs() {
+            if (i > 0) {
+                i--;
+            }
+            else {
+                i = imgLen - 1;
+            }
+            imgElement.src = img[i];
+        }
+    </script>
 </body>
 
 </html>
