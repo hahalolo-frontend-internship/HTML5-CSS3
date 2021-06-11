@@ -9,6 +9,10 @@ function Close() {
     document.getElementById("body").style.overflowY = "unset";
 }
 
+function scrolltop(){
+    window.scroll(0, 0);
+}
+
 
 //scroll
 window.onscroll = function () { scrollFunction() };

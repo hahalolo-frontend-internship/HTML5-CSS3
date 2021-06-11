@@ -231,6 +231,9 @@ $main-color: #007f1e;
         }
 
         .about {
+            &-title {
+                font-size: 3.5rem;
+            }
             &-user {
                 width: 550px;
             }
