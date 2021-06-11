@@ -601,7 +601,7 @@ body{
     display: grid;
     grid-template-columns: 30% 70%;
     background-image: url('../anh/footer.png');
-    background-size: cover;
+    
     max-height: 13em;
     position: relative;
     z-index: 1;
@@ -1568,13 +1568,13 @@ body{
         font-size: 1.5em;
     }
     #endu{
-        font-size: 8em;
+        font-size: 7em;
     }
     #panc{
-        font-size: 8em;
+        font-size: 7em;
     } 
     #challenges{
-        font-size: 5em;
+        font-size: 4em;
     }
     .popular_left_top{
         padding: 1em;
@@ -1584,7 +1584,7 @@ body{
     }
     .popular_left_top_mission{
         padding: 1em;
-       bottom: -15em;
+       bottom: -16em;
     }
     /*section2*/
     .results{
@@ -1606,8 +1606,8 @@ body{
     }
     /*right*/
     .results_left_reponse {
-        margin-top: 9em;
-        font-size: 1.5em;
+        margin-top: 14em;
+        font-size: 1em;
         margin-bottom: 1em;
         text-indent: 20px;
     }
@@ -1619,13 +1619,13 @@ body{
     }
     .results_right_boder_content h2{
         margin-top: 0.1em;
-        font-size: 1.5em;
+        font-size: 1em;
     }
     .results_right_boder_content p{
-        font-size: 1em;
+        font-size: 0.5em;
     }
      .results_right_boder_content_span p{
-        font-size: 1em;
+        font-size: 0.5em;
     }
     /*section 3*/
     .section_four{
