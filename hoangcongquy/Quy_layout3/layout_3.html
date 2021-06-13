@@ -397,11 +397,11 @@
                 </div>
             </div>
             </footer>
-            <div class="Go_to_all" id="btn_Scroll" onmouseover="showBtn(this)" onmouseout="hidenBtn(this)" >
+            <div class="Go_to_all" id="btn_Scroll" onmouseover="showBtn(this)" onmouseout="hidenBtn(this)">
                 <button id="go_to_x" onclick="closeBtn()">x</button>
                 <div>
-                    <button onclick="topFunction()"
-                        id="btn_topScroll" title="Go to Top"><i class="fas fa-chevron-up"></i></button>
+                    <button onclick="topFunction()" id="btn_topScroll" title="Go to Top"><i
+                            class="fas fa-chevron-up"></i></button>
                 </div>
                 <div>
                     <button onclick="bottomFunction()" id="btn_bottomScroll" title="Go to Bottom"><i
@@ -426,7 +426,7 @@
             document.body.scrollTop = 10000;
             document.documentElement.scrollTop = 10000;
         }
-        
+
         function showBtn() {
             document.getElementById("go_to_x").style.display = "block";
         }
@@ -434,7 +434,7 @@
             document.getElementById("go_to_x").style.display = "none";
         }
 
-        function closeBtn(){
+        function closeBtn() {
             document.getElementById("btn_Scroll").style.display = "none";
         }
         /**/
