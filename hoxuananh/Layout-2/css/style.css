@@ -1161,7 +1161,8 @@ html {
 .slick-dots {
   display: none !important;
   justify-content: space-around;
-  top: -7rem; }
+  top: -7rem;
+  bottom: unset !important; }
   @media only screen and (min-width: 768px) {
     .slick-dots {
       display: flex !important; } }
