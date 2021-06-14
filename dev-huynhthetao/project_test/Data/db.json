@@ -1,0 +1,168 @@
+{
+    "question": [
+        {
+            "id": 1,
+            "test": "It took us almost four hour to ... too London.",
+            "answers": [
+                {"answer": "reach", "result": "false"},
+                {"answer": "arrive", "result": "false"},
+                {"answer": "get", "result": "true"},
+                {"answer": "approach", "result": "false"}
+            ]    
+        },
+
+        {
+            "id": 2,
+            "test": "Some medicines are only available on ... ",
+            "answer": [
+                {"answer": "description", "result": "false"},
+                {"answer": "instruction", "result": "false"},
+                {"answer": "inscription", "result": "false"},
+                {"answer": "prescription", "result": "true"}
+            ]
+        },
+
+        {
+            "id": 3,
+            "test": "She hasd to pay th adult ... on the bus because she was 18.",
+            "answer": [
+                {"answer": "reach", "result": "true"},
+                {"answer": "arrive", "result": "false"},
+                {"answer": "get", "result": "false"},
+                {"answer": "approach", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 4,
+            "test": "If you're on a diet, you should ... honey for sugar in you tea.",
+            "answer": [
+                {"answer": "change", "result": "false"},
+                {"answer": "replace", "result": "false"},
+                {"answer": "substitute", "result": "true"},
+                {"answer": "convert", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 5,
+            "test": "Be ..., you can't expect to learn a language in a week.",
+            "answer": [
+                {"answer": "just", "result": "false"},
+                {"answer": "same", "result": "false"},
+                {"answer": "fair", "result": "false"},
+                {"answer": "reasonable", "result": "true"}
+            ]
+        },
+
+        {
+            "id": 6,
+            "test": "It's difficult to ... the difference between margarine and butter.",
+            "answer": [
+                {"answer": "speak", "result": "false"},
+                {"answer": "tell", "result": "true"},
+                {"answer": "say", "result": "false"},
+                {"answer": "falookir", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 7,
+            "test": "Without her ... help they would never have survived the terrible ordeal.",
+            "answer": [
+                {"answer": "priceless", "result": "false"},
+                {"answer": "worthy", "result": "false"},
+                {"answer": "invaluable", "result": "true"},
+                {"answer": "treasured", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 8,
+            "test": "I remember seeing him on one other ... with his wife.",
+            "answer": [
+                {"answer": "incident", "result": "false"},
+                {"answer": "moment", "result": "false"},
+                {"answer": "occasion", "result": "true"},
+                {"answer": "celebration", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 9,
+            "test": "The two small companies are going to ... all the end of the year.",
+            "answer": [
+                {"answer": "mix", "result": "false"},
+                {"answer": "blend", "result": "false"},
+                {"answer": "merge", "result": "true"},
+                {"answer": "meet", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 10,
+            "test": "Be careful not to ... your finger with tha needle.",
+            "answer": [
+                {"answer": "bite", "result": "false"},
+                {"answer": "search", "result": "false"},
+                {"answer": "prick", "result": "true"},
+                {"answer": "sting", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 11,
+            "test": "After you're eaten those sweets, make sure you throw the ... in the bin.",
+            "answer": [
+                {"answer": "waste", "result": "false"},
+                {"answer": "junk", "result": "false"},
+                {"answer": "litter", "result": "true"},
+                {"answer": "debris", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 12,
+            "test": "How can I ... you of her inncence?",
+            "answer": [
+                {"answer": "convince", "result": "true"},
+                {"answer": "influence", "result": "false"},
+                {"answer": "assume", "result": "false"},
+                {"answer": "prove", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 13,
+            "test": "May birds ... wouth during the winter months.",
+            "answer": [
+                {"answer": "emigrate", "result": "false"},
+                {"answer": "originate", "result": "false"},
+                {"answer": "immigrate", "result": "false"},
+                {"answer": "migrate", "result": "true"}
+            ]
+        },
+
+        {
+            "id": 14,
+            "test": "Certain medicines can now help to ... life.",
+            "answer": [
+                {"answer": "delay", "result": "false"},
+                {"answer": "prolong", "result": "true"},
+                {"answer": "stretch", "result": "false"},
+                {"answer": "expand", "result": "false"}
+            ]
+        },
+
+        {
+            "id": 15,
+            "test": "Worker are paid money for their ...",
+            "answer": [
+                {"answer": "labour", "result": "true"},
+                {"answer": "duty", "result": "false"},
+                {"answer": "job", "result": "false"},
+                {"answer": "career", "result": "false"}
+            ]
+        }
+    ]    
+}
