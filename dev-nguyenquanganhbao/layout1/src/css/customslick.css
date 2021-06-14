@@ -1,0 +1,17 @@
+.slick-initialized .slick-slide {
+    display: flex !important;
+}
+.slick-prev:before,
+.slick-next:before {
+    color: #4f4e4e !important;
+}
+.slick-prev,
+.slick-next {
+    z-index: 70 !important;
+}
+.slick-prev {
+    left: calc((100% - 870px) / 2 - 40px) !important;
+}
+.slick-next {
+    right: calc((100% - 870px) / 2 - 40px) !important;
+}
