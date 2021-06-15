@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css">
+    <!--[if lte IE 11]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <title>Trang chủ</title>
 </head>
 
@@ -30,36 +33,39 @@
                             <a><i class="fas fa-times"></i></a>
                         </label>
                         <ul class="nav_mobile_list">
+                            <div class="nav_mobile_logo">
+                                <img src="anh/logo_ft.png" alt="logo">
+                            </div>
                             <li>
-                                <h2 class="nav_mobile_link nav_mobile_link-menu">MENU</h2>
+                                <h2 class="nav_mobile_link nav_mobile_link-survival">SURVIVAL</h2>
                             </li>
                             <li>
-                                <a href="" class="nav_mobile_link">OUR COMPETITERS</a>
+                                <a href="#competiters" class="nav_mobile_link">OUR COMPETITERS</a>
                             </li>
                             <li>
-                                <a href="" class="nav_mobile_link">FOR PROFESSIONALS</a>
+                                <a href="#professionals" class="nav_mobile_link">FOR PROFESSIONALS</a>
                             </li>
                             <li>
-                                <a href="" class="nav_mobile_link">CONTACT</a>
+                                <a href="#contact" class="nav_mobile_link">CONTACT</a>
                             </li>
                             <li>
-                                <a href="" class="nav_mobile_link">ENG</a>
+                                <a href="#eng" class="nav_mobile_link">ENG</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
                 <ul class="header__menu__list row">
                     <li class="header__menu_item">
-                        <a href="" class="header__menu_OUR">OUR COMPETITERS </a>
+                        <a href="#competiters" class="header__menu_OUR">OUR COMPETITERS </a>
                     </li>
                     <li class="header__menu_item">
-                        <a href="" class="">FOR PROFESSIONALS </a>
+                        <a href="#professionals" class="">FOR PROFESSIONALS </a>
                     </li>
                     <li class="header__menu_item">
-                        <a href="" class="header__menu_contact">CONTACT</a>
+                        <a href="#contact" class="header__menu_contact">CONTACT</a>
                     </li>
                     <li class="header__menu_item">
-                        <a href="" class="header__menu_eng">ENG </a>
+                        <a href="#eng" class="header__menu_eng">ENG </a>
                     </li>
                     <li class="header__menu_item">
                         <a href="" class="header__menu_icon"><i class="fas fa-user-circle"></i></a>
@@ -76,11 +82,11 @@
     <div class="container">
         <section class="section_one">
             <div class="banner row">
-                <div class="banner_first">
-                    <div class="inner">
+                <div class="banner_title">
+                    <div class="banner_title-inner">
                         <h4>Find out if you</h4>
                     </div>
-                    <ul class="social">
+                    <ul class="banner_title-contact">
                         <li>
                             <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </li>
@@ -92,11 +98,11 @@
                         </li>
                     </ul>
                 </div>
-                <div class="banner_second">
+                <div class="banner_content">
                     <h2>SURVIVE</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti,
                         consequuntur ducimus voluptates.</p>
-                    <div class="snow"><img src="anh/snow.png" alt="tuyết"></div>
+                    <div class="banner_content-snow"><img src="anh/snow.png" alt="tuyết"></div>
                 </div>
                 <div class="banner_mid">
                     <div class="imageContainer">
@@ -120,50 +126,50 @@
                 </div>
             </div>
         </section>
-        <section class="section_two">
+        <section id="competiters" class="section_two">
             <div class="popular row">
-                <div class="popular_right">
+                <div class="popular_left">
                     <h3>Popular challenges</h3>
-                    <div class="popular_right_title">
+                    <div class="popular_left_title">
                         <img src="anh/fire.png" alt="">
-                        <div class="popular_right_left">
+                        <div class="popular_left-content">
                             <a href="">KEY SKILLS</a>
                             <h3>Friction-Based Fire</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam cum natus earum nobis velit
                                 dolorum.
                             </p>
-                            <p><span class="x"></span>FIND OUT MORE</p>
+                            <p><i class="fas fa-times"></i>FIND OUT MORE</p>
                         </div>
                     </div>
-                    <div class="popular_right_title">
+                    <div class="popular_left_title">
                         <img src="anh/img_fire.png" alt="">
-                        <div class="popular_right_left">
+                        <div class="popular_left-content">
                             <a href="">KEY SKILLS</a>
                             <h3>Friction-Based Fire</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam cum natus earum nobis velit
                                 dolorum.
                             </p>
-                            <p><span class="x"></span>FIND OUT MORE</p>
+                            <p><i class="fas fa-times"></i>FIND OUT MORE</p>
                         </div>
                     </div>
-                    <div class="popular_right_title">
+                    <div class="popular_left_title">
                         <img src="anh/Mask Group 1.png" alt="Mask Group">
-                        <div class="popular_right_left">
+                        <div class="popular_left-content">
                             <a href="">KEY SKILLS</a>
                             <h3>Friction-Based Fire</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam cum natus earum nobis velit
                                 dolorum.
                             </p>
-                            <p><span class="x"></span>FIND OUT MORE</p>
+                            <p><i class="fas fa-times"></i>FIND OUT MORE</p>
                         </div>
                     </div>
                 </div>
-                <div class="popular_left">
-                    <div class="popular_left_top">
-                        <div class="popular_left_top_number">
+                <div class="popular_right">
+                    <div class="popular_right_target">
+                        <div class="popular_right_target_number">
                             <h1>01</h1>
                         </div>
-                        <div class="popular_left_top_list">
+                        <div class="popular_right_target_list">
                             <div>
                                 <a id="endu">ENDU</a>
                             </div>
@@ -173,11 +179,11 @@
                             <div>
                                 <p id="challenges">challenges</p>
                             </div>
-                            <div>
-                                <img src="anh/shoes.png" alt="shoes" class="img_shoes">
+                            <div class="img_shoes">
+                                <img src="anh/shoes.png" alt="shoes">
                             </div>
                         </div>
-                        <div class="popular_left_top_mission">
+                        <div class="popular_right_target_mission">
                             <div>
                                 <h2>MISSION</h2>
                             </div>
@@ -192,14 +198,14 @@
                                     debitis officiis. Cumque incidunt adipisci neque!</p>
                             </div>
                             <div>
-                                <p><span class="x"></span>FIND OUT MORE</p>
+                                <p><i class="fas fa-times"></i>FIND OUT MORE</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section_thre">
+        <section id="professionals" class="section_thre">
             <div class="results row">
                 <div class="results_left">
                     <div class="results_left_reponse">
@@ -222,13 +228,13 @@
                             </div>
                         </div>
                         <div class="results_left_title_span">
-                            <p><span class="x"></span>SEE MORE</p>
+                            <p><i class="fas fa-times"></i>SEE MORE</p>
                         </div>
                     </div>
-                    <div class="results_left_your_sesults">
+                    <div class="results_left-your_sesults">
                         <h1>YOUR RESULTS</h1>
                     </div>
-                    <div class="results_left_your_img">
+                    <div class="results_left_img">
                         <img src="anh/ico_art.png" alt="">
                     </div>
                 </div>
@@ -242,14 +248,14 @@
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore similique. </p>
                             </div>
                             <div class="results_right_boder_content_span">
-                                <p><span class="x"></span>SEE RESULTS FROM YOUR FRIENDS</p>
+                                <p><i class="fas fa-times"></i>SEE RESULTS FROM YOUR FRIENDS</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="">
+        <section id="eng">
             <div class="row section_four">
                 <div class="section_four_left">
                     <div class="adice">
@@ -266,7 +272,7 @@
                                 iusto ipsum autem officiis laudantium mollitia. </p>
                         </div>
                         <div>
-                            <p><span class="x"></span>MO</p>
+                            <p><i class="fas fa-times"></i>MO</p>
                         </div>
                     </div>
                     <div class="section_four_right_list">
@@ -323,7 +329,7 @@
                             amet, eum sunt, voluptatem harum!?</p>
                     </div>
                     <div class="feature_gallery_more">
-                        <p><span class="x"></span>MORE</p>
+                        <p><i class="fas fa-times"></i>MORE</p>
                     </div>
                 </div>
                 <div class="feature_icon">
@@ -342,7 +348,7 @@
                             <h2>CHALLENGES</h2>
                         </div>
                         <div>
-                            <ul>
+                            <ul class="footer_challenges-list">
                                 <li><a href="">Endurance</a></li>
                                 <li><a href="">Survival</a></li>
                                 <li><a href="">Key skills</a></li>
@@ -352,7 +358,7 @@
                             </ul>
                         </div>
                         <div>
-                            <ul class="social_footer">
+                            <ul id="contact" class="social_footer">
                                 <li>
                                     <a href="https://www.facebook.com/" target="_blank"><i
                                             class="fab fa-facebook-f"></i></a>
@@ -365,7 +371,7 @@
                                     <a href="https://www.youtube.com/" target="_blank"><i
                                             class="fab fab-two fa-youtube"></i></a>
                                 </li>
-                            </ul>
+                            </ul>   
                         </div>
                     </div>
                     <div class="footer_advice">
