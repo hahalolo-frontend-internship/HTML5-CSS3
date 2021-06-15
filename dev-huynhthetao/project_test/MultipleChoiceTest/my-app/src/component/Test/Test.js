@@ -24,13 +24,9 @@ function Test(props) {
         } 
     });
 
-    function handleFormSubmit(formAnswers) {
-        console.log(formAnswers);
-    }
-
     return (
         <div>
-            <Question questions={questions} onSubmit={handleFormSubmit} />
+            <Question questions={questions} />
         </div>   
     );
 }
