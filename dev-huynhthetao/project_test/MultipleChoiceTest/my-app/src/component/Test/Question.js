@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 Question.propTypes = {
     questions: PropTypes.array,
-    onSubmit: PropTypes.func,
 };
 
 Question.propsDefault = {
     questions: [],
-    onSubmit: null,
 };
 
 function Question(props) {
@@ -28,7 +26,8 @@ function Question(props) {
                 return (  
                     <>
                         <p key={question.id}>{question.test}</p>   
-                        {/* {
+                        {
+                            answers && 
                             answers.map(answer => {
                                 return(
                                     <div className="block_answer">
@@ -37,7 +36,7 @@ function Question(props) {
                                     </div>  
                                 )
                             })
-                        } */}
+                        }
                     </>               
                 )  
             })
