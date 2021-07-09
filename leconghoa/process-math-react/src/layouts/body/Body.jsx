@@ -2,18 +2,30 @@ import React, { useEffect, useState } from "react";
 import "./Body.scss";
 import icon_check from "../../img/icon-check.svg";
 import icon_user from "../../img/user-solid.svg";
-import ListQuestion from "../../components/ListQuestion";
-import Tutorial from "../../components/Tutorial";
-import ItemQuestion from "../../components/ItemQuestion";
+import ListQuestion from "../../components/ListQuestion/ListQuestion";
+import Tutorial from "../../components/Tutorial/Tutorial";
+import ItemQuestion from "../../components/ItemQuestion/ItemQuestion";
+import FinishExam from "../../components/FinishExam/FinishExam";
+import TopRank from "../../components/TopRank/TopRank";
 
 function Body() {
-  const [tutorial, setTutorial] = useState(false);
   //toogle
+  const [tutorial, setTutorial] = useState(false);
   const [detailQuestion, setDetailQuestion] = useState(false);
-  const [listQuestion, setListQuestion] = useState([]);
+  const [finish, setFinish] = useState(false);
   // result
+  const [listQuestion, setListQuestion] = useState([]);
   const [listAnswer, setListAnswer] = useState(null);
-
+  const [time, setTime] = useState(0);
+  function getTime(data) {
+    setTime(data);
+  }
+  console.log(listQuestion);
+  console.log(listAnswer);
+  function toogleFinish() {
+    setFinish(!finish);
+    setDetailQuestion(false);
+  }
   function toogleStart() {
     setTutorial(!tutorial);
     setDetailQuestion(true);
@@ -37,13 +49,20 @@ function Body() {
     }
     fetchQuestions();
   }, []);
+
   return (
     <div className="main">
       <div className="grid wide">
         <div className="row no-gutters">
           {!tutorial && detailQuestion ? (
             <div className="c-9 main-question">
-              <ItemQuestion data={listQuestion} result={resultAnswer} />
+              <ItemQuestion
+                data={listQuestion}
+                result={resultAnswer}
+                finish={toogleFinish}
+                getTime={getTime}
+                time={time}
+              />
             </div>
           ) : (
             <div className="c-9 main-question">
@@ -66,27 +85,30 @@ function Body() {
                   <span>45 phút</span>
                 </div>
               </div>
-              {tutorial ? <Tutorial /> : <ListQuestion data={listQuestion} />}
-
-              <div className="align_center">
-                <button className="btn btn-start" onClick={toogleStart}>
-                  Bắt đầu
-                </button>
-              </div>
+              {tutorial ? (
+                <Tutorial onClick={toogleStart} />
+              ) : finish ? (
+                <FinishExam
+                  listAnswer={listAnswer}
+                  listQuestion={listQuestion}
+                  time={time}
+                />
+              ) : (
+                <ListQuestion data={listQuestion} onClick={toogleStart} />
+              )}
             </div>
           )}
-
           <div className="sidebar-right align_center">
-            {listAnswer !== null ? (
-              <div className="result">
-                Kết quả:
-                {listAnswer + "/" + listQuestion.length}
-              </div>
+            {finish && <TopRank />}
+            {!tutorial && detailQuestion ? null : !finish ? (
+              <>
+                <p className="">Bạn có muốn chinh phục đề thi này</p>
+                <button className="btn btn-already" onClick={toogleStart}>
+                  Có, tôi muốn!
+                </button>
+                <button className="btn btn-share">Chia sẻ Facebook</button>
+              </>
             ) : null}
-
-            <p className="">Bạn có muốn chinh phục đề thi này</p>
-            <button className="btn btn-already">Có, tôi muốn!</button>
-            <button className="btn btn-share">Chia sẻ Facebook</button>
           </div>
         </div>
       </div>

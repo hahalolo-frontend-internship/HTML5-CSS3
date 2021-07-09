@@ -31,10 +31,12 @@
     outline: none;
     cursor: pointer;
     border-radius: 22px;
+    position: relative;
     .user-name {
       font-weight: 700;
       color: #065592;
       padding: 0 10px 0 20px;
+      cursor: pointer;
     }
     .user-icon {
       justify-content: center;
@@ -42,6 +44,27 @@
       height: 37px;
       border-radius: 50%;
       background: #065592;
+    }
+    #signin {
+      display: none;
+    }
+    #signin:checked ~ .option_signin {
+      display: flex;
+      position: absolute;
+      background: #fff;
+      top: calc(100% + 15px);
+      left: 0;
+      width: 100%;
+      border: 1px solid #d9d9d9;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    .option_signin {
+      display: none;
+    }
+    img {
+      width: 20px;
+      height: 20px;
     }
   }
 }

@@ -1,13 +1,34 @@
-import React, { useEffect, useState } from "react";
-import next from "../img/next-question-icon.png";
-import back from "../img/back-question-icon.png";
-import three_dot from "../img/3-dotted.png";
-import clock from "../img/clock-regular.svg";
+import React, { useState } from "react";
+import next from "../../img/next-question-icon.png";
+import back from "../../img/back-question-icon.png";
+import three_dot from "../../img/3-dotted.png";
+import clock from "../../img/clock-regular.svg";
+import PopupFinish from "../../components/PopupFinish/PopupFinish";
+import "./ItemQuestion.scss";
+import Clock from "../Clock/Clock";
 function ItemQuestion(props) {
   const [curQuestion, setCurQuestion] = useState(0);
   const [listAnswer, setListAnswer] = useState([]);
   const [listReview, setListReview] = useState([]);
   const [toogleQuestionTable, setToogleQuestionTable] = useState(false);
+  const [popup, setPopup] = useState(false);
+
+  const [timer, setTimer] = useState(0);
+
+  const getTimeDown = (data) => {
+    setTimer(data);
+  };
+  const seconds_to = (sec) => {
+    var hours = Math.floor(sec / 3600);
+    hours >= 1 ? (sec = sec - hours * 3600) : (hours = "00");
+    var min = Math.floor(sec / 60);
+    min >= 1 ? (sec = sec - min * 60) : (min = "00");
+    sec < 1 ? (sec = "00") : void 0;
+    min.toString().length === 1 ? (min = "0" + min) : void 0;
+    sec.toString().length === 1 ? (sec = "0" + sec) : void 0;
+    return hours + ":" + min + ":" + sec;
+  };
+
   const item = props.data[curQuestion];
   function handleQuestion(number) {
     number < 0
@@ -45,6 +66,12 @@ function ItemQuestion(props) {
   }
   function finishExercise() {
     props.result(listAnswer);
+    props.finish();
+    props.getTime(seconds_to(2700 - props.time));
+  }
+  function finishSoon() {
+    setPopup(!popup);
+    props.getTime(timer);
   }
   function resultClass(arr1, arr2, item) {
     return (
@@ -69,11 +96,11 @@ function ItemQuestion(props) {
       <div className="list-answer">
         {item.results.map((ele) => (
           <div
-            className="item-question_answer flex-items-center"
+            className="item-question_answer flex-items-center radio_item"
             key={item.id + ele.name_answer}
           >
             <input
-              checked={checked(listAnswer, ele)}
+              defaultChecked={checked(listAnswer, ele)}
               type="radio"
               name={item.id}
               value={ele.result_answer}
@@ -86,12 +113,17 @@ function ItemQuestion(props) {
           </div>
         ))}
       </div>
+
       <div className="controls item-question_answer">
         <div className="exercise-controls flex-items-center">
           <div className=" exercise-controls_flex">
             <div className="countdown exercise-controls_flex">
               <img src={clock} alt="Đồng hồ" className="clock" />
-              <span>45:00</span>
+              <Clock
+                getTimeDown={getTimeDown}
+                seconds_to={seconds_to}
+                finish={finishExercise}
+              />
             </div>
             <div className="exercise-controls_flex">
               <input
@@ -131,8 +163,9 @@ function ItemQuestion(props) {
           <div className="question-table">
             <div className="question-table_top exercise-controls_flex">
               <span>Bấm vào câu muốn trả lời</span>
-              <button className="btn btn-finish" onClick={finishExercise}>
-                {curQuestion === props.data.length - 1
+
+              <button className="btn btn-finish" onClick={finishSoon}>
+                {listAnswer.length === props.data.length
                   ? "Nộp bài"
                   : "Nộp bài sớm"}
               </button>
@@ -154,6 +187,13 @@ function ItemQuestion(props) {
           </div>
         ) : null}
       </div>
+      {popup && (
+        <PopupFinish
+          onOK={finishExercise}
+          onClose={() => setPopup(!popup)}
+          time={seconds_to(props.time)}
+        />
+      )}
     </div>
   );
 }
