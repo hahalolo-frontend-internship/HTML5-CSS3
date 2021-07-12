@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "confirmPassword": "1234",
+      "password": "1234",
+      "email": "hoxuananh9.3@gmail.com",
+      "lastName": "Hồ",
+      "firstName": "Anh23",
+      "id": 1
+    },
+    {
+      "firstName": "Nguyễn",
+      "lastName": "Bảo",
+      "email": "hoasdasd@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 2
+    },
+    {
+      "firstName": "Anh",
+      "lastName": "Hồ",
+      "email": "hoxuananh9.3333@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 3
+    },
+    {
+      "firstName": "Anh",
+      "lastName": "Hồ",
+      "email": "hoxuananh93.3@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 4
+    }
+  ]
+}
