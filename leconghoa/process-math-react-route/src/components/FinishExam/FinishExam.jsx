@@ -28,7 +28,7 @@ function FinishExam(props) {
             Chúc mừng bạn hoàn thành tốt bài thi!
           </span>
         ) : (
-          <span className="txt_danger">Bạn cần cố gắng hơn nữa!</span>
+          <span className="txt_danger">Bạn cần cố gắng thêm nữa!</span>
         )}
       </h3>
     </div>

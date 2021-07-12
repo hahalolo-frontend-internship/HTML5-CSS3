@@ -7,28 +7,37 @@ import Tutorial from "../../components/Tutorial/Tutorial";
 import ItemQuestion from "../../components/ItemQuestion/ItemQuestion";
 import FinishExam from "../../components/FinishExam/FinishExam";
 import TopRank from "../../components/TopRank/TopRank";
+import { useHistory } from "react-router-dom";
 
-function Body() {
+function Body(props) {
+  const history = useHistory();
   //toogle
   const [tutorial, setTutorial] = useState(false);
   const [detailQuestion, setDetailQuestion] = useState(false);
   const [finish, setFinish] = useState(false);
   // result
   const [listQuestion, setListQuestion] = useState([]);
+  const [answersTrue, setAnswersTrue] = useState(null);
   const [listAnswer, setListAnswer] = useState(null);
   const [time, setTime] = useState(0);
+  console.log(listAnswer);
   function getTime(data) {
     setTime(data);
   }
-  console.log(listQuestion);
-  console.log(listAnswer);
   function toogleFinish() {
     setFinish(!finish);
     setDetailQuestion(false);
   }
   function toogleStart() {
-    setTutorial(!tutorial);
-    setDetailQuestion(true);
+    if (
+      localStorage.getItem("isSignIn") === null ||
+      localStorage.getItem("isSignIn") === undefined
+    ) {
+      history.push("/login");
+    } else {
+      setTutorial(!tutorial);
+      setDetailQuestion(true);
+    }
   }
 
   function resultAnswer(data) {
@@ -38,7 +47,8 @@ function Body() {
         e.id === item.id && e.result_true === item.answer ? (answer += 1) : null
       )
     );
-    setListAnswer(answer);
+    setAnswersTrue(answer);
+    setListAnswer(data);
   }
   useEffect(() => {
     async function fetchQuestions() {
@@ -89,7 +99,7 @@ function Body() {
                 <Tutorial onClick={toogleStart} />
               ) : finish ? (
                 <FinishExam
-                  listAnswer={listAnswer}
+                  answer={answersTrue}
                   listQuestion={listQuestion}
                   time={time}
                 />
