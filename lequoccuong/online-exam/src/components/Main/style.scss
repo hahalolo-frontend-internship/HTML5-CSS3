@@ -1,0 +1,30 @@
+main {
+  width: 100%;
+  padding: 40px 0;
+  height: 100%;
+  min-height: 100vh;
+  background-color: rgb(246, 244, 244);
+  .main {
+    max-width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    
+    
+  }
+}
+
+@keyframes upAndDown {
+  0% {
+    top: 116px;
+    // background-color: red;
+  }
+  50% {
+    top: 120px;
+    // background-color: rgb(34, 240, 6);
+  }
+  100% {
+    top: 116px;
+    // background-color: rgb(24, 9, 241);
+  }
+}

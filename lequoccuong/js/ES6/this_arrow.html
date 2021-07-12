@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box open">This is a box</div>
+    <script>
+      // const box = document.querySelector(".box");
+
+      // box.addEventListener("click", function () {
+      //   this.classList.toggle("opening");
+      //   setTimeout(function () {
+      //     this.classList.toggle("opening");
+      //   }, 500);
+      // });
+      // khi onclick sex ra lỗi
+      //Uncaught TypeError: cannot read property "toggle" of undefined
+      // bởi vì this ở trong callback của Event Click sẽ được gán thành biến box, tuy nhiên this ở setTimeout thì sẽ là Window ==> classList sẽ là undefined.
+      // thay vào đó chúng ta sẽ sử dụng arrow function
+      const box = document.querySelector(".box");
+
+      box.addEventListener("click", function () {
+        this.classList.toggle("opening");
+        setTimeout(() => {
+          this.classList.toggle("opening");
+        }, 500);
+      });
+
+      //Lúc này, this của hàm setTimeout sẽ được thừa hưởng từ scope cha (event click) và sẽ được gán với box. Lúc này đoạn code của chúng ta sẽ hoạt động đúng.
+    </script>
+  </body>
+</html>
