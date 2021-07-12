@@ -1,0 +1,53 @@
+
+.main-content_banner{
+   margin-bottom: 200px;
+ }
+ .banner {
+   background: url(./minion.jpg);
+   text-align: center;
+   height: 700px;
+   background-size: cover;
+ }
+ .banner-content {
+   position: absolute;
+   right: 0;
+   left: 0;
+   top: 15em;
+   background: white;
+   width: 500px;
+   margin: auto;
+   padding: 25px;
+   border-radius: 10px;
+   margin: ai;
+   box-shadow: 0px 0px 17px 8px;
+ }
+ .banner-content h4 {
+  margin-top: 5px;
+  color: saddlebrown;
+ }
+ .banner-option {
+   display: flex;
+   width: 65%;
+   margin: auto;
+   position: absolute;
+   top: 37em;
+   right: 0;
+   left: 0;
+   text-align: center;
+ }
+ .content {
+   background: white;
+   margin-right: 20px;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px 3px;
+ }
+ .content p{
+   margin: 25px 0;
+  
+ }
+ .content a:hover{
+   background: rgb(15, 12, 219);
+   color: gold;
+ }
+ 

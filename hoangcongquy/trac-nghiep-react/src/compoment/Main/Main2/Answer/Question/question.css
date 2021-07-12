@@ -1,0 +1,8 @@
+.advertisement-clock{
+   display: flex;
+   font-weight: 500;
+}
+.advertisement-clock i{
+   margin-left: 10px;
+   color: yellow;
+}

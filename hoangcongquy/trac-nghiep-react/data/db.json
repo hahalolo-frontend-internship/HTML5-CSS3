@@ -1,0 +1,543 @@
+{
+  "question": [
+    {
+      
+      "id_typedata": 1,"id_charts": 1,
+      "id_question": 1,
+      "content": "It took us almost four hour to ... too London.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "reach",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "arrive",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "get",
+          "result": "true"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "approach",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 2,
+      "id_question": 2,
+      "content": "Some medicines are only available on ... ",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "description",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "instruction",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "inscription",
+          "result": "false"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "prescription",
+          "result": "true"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 3,
+      "id_question": 3,
+      "content": "She hasd to pay th adult ... on the bus because she was 18.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "reach",
+          "result": "true"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "arrive",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "get",
+          "result": "false"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "approach",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 4,
+      "id_question": 4,
+      "content": "If you're on a diet, you should ... honey for sugar in you tea.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "change",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "replace",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "substitute",
+          "result": "true"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "convert",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 5,
+      "id_question": 5,
+      "content": "Be ..., you can't expect to learn a language in a week.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "just",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "same",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "fair",
+          "result": "false"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "reasonable",
+          "result": "true"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 6,
+      "id_question": 6,
+      "content": "It's difficult to ... the difference between margarine and butter.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "speak",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "tell",
+          "result": "true"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "say",
+          "result": "false"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "falookir",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      "id_charts": 7,
+      "idr": 7,
+      "content": "Without her ... help they would never have survived the terrible ordeal.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "priceless",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "worthy",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "invaluable",
+          "result": "true"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "treasured",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 8,
+      "id_question": 8,
+      "content": "I remember seeing him on one other ... with his wife.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "incid_answerent",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "moment",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "occasion",
+          "result": "true"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "celebration",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 9,
+      "id_question": 9,
+      "content": "The two small companies are going to ... all the end of the year.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "mix",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "blend",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "merge",
+          "result": "true"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "meet",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 10,
+      "id_question": 10,
+      "content": "Be careful not to ... your finger with tha needle.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "bite",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "search",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "prick",
+          "result": "true"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "sting",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 11,
+      "id_question": 11,
+      "content": "After you're eaten those sweets, make sure you throw the ... in the bin.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "waste",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "junk",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "litter",
+          "result": "true"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "debris",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 12,
+      "id_question": 12,
+      "content": "How can I ... you of her inncence?",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "convince",
+          "result": "true"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "influence",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "assume",
+          "result": "false"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "prove",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 13,
+      "id_question": 13,
+      "content": "May birds ... wouth during the winter months.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "emigrate",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "originate",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "immigrate",
+          "result": "false"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "migrate",
+          "result": "true"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 14,
+      "id_question": 14,
+      "content": "Certain medicines can now help to ... life.",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "delay",
+          "result": "false"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "prolong",
+          "result": "true"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "stretch",
+          "result": "false"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "expand",
+          "result": "false"
+        }
+      ]
+    },
+    {
+      
+      "id_typedata": 1,"id_charts": 15,
+      "id_question": 15,
+      "content": "Worker are paid_answer money for their ...",
+      "Answers": [
+        {
+          "id_answer": 1,
+          "alphabet": "A",
+          "answer": "labour",
+          "result": "true"
+        },
+        {
+          "id_answer": 2,
+          "alphabet": "B",
+          "answer": "duty",
+          "result": "false"
+        },
+        {
+          "id_answer": 3,
+          "alphabet": "C",
+          "answer": "job",
+          "result": "false"
+        },
+        {
+          "id_answer": 4,
+          "alphabet": "D",
+          "answer": "career",
+          "result": "false"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "id_typedata": 1,
+      "id_question": 1,
+      "name": "quy",
+      "email": "congquy1000@gmail.com",
+      "password": "123456",
+      "phone": "0326969696"
+    },
+    {
+      "id_typedata": 2,
+      "id_question": 2,
+      "name": "quy123",
+      "email": "congquy2000@gmail.com",
+      "password": "12345678",
+      "phone": "038676869"
+    },
+    {
+      "id_typedata": 3,
+      "id_question": 3,
+      "name": "quy1234",
+      "email": "congquy3000@gmail.com",
+      "password": "123456789",
+      "phone": "0382777666"
+    }
+  ],
+  "charts": [
+    {
+      "id_charts": 1,
+      "name": "quy",
+      "point": "500"
+    },
+    {
+      "id_charts": 2,
+      "name": "quy123",
+      "point": "700"
+    },
+    {
+      "id_charts": 3,
+      "name": "quy1234",
+      "point": "800"
+    }
+  ],
+  "typedata": [
+    {
+      "id_typedata": 1,
+      "type": "ĐỀ THI HỌC KỲ",
+      "contentdata": "Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được trộn tạo đề theo cấu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi học kỳ theo các chủ đề đã học."
+    },
+    {
+      "id_typedata": 2,
+      "type": "ĐỀ THI THPT QG",
+      "contentdata": "Tổng hợp đề thi trắc nghiệm online THPT QG của các môn Toán, Tiếng Anh, Vật lý, Hóa học, Sinh học, Địa lý, Lịch sử, GDCD kèm đáp án và lời giải chi tiết."
+    },
+    {
+      "id_typedata": 3,
+      "type": "ĐỀ THI KIỂM TRA",
+      "contentdata": " Hệ thống bài kiểm tra 1 tiết, kiểm tra 15 phút được thiết kế theo hình thức trắc nghiệm online giúp học sinh có thể tạo ra đề tự luyện tập và chấm điểm trực tuyến."
+    }
+  ]
+}

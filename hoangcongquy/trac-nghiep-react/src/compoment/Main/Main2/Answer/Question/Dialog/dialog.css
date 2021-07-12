@@ -1,0 +1,53 @@
+.dialog {
+  width: 500px;
+  height: 360px;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+
+  box-shadow: 0 0 50px black;
+
+  position: fixed;
+  right: 25em;
+  bottom: 8em;
+ 
+}
+.dialog h2 {
+  color: #e1dec9;
+  width: 100%;
+  background: #2b3cb0;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 48px;
+  padding: 21px 0;
+}
+.dialog p {
+  margin: 25px 0;
+  background: #0400ffe3;
+  width: 125px;
+  height: 100px;
+  text-align: center;
+  margin: auto;
+  color: white;
+  margin-top: 25p;
+  padding: 15px 5px 0 5px;
+  border-radius: 10px;
+}
+
+.dialog i {
+  display: block;
+  margin: 15px 0;
+  color: blue;
+}
+.btn-new {
+  margin-top: 30px;
+}
+.dialog-result {
+  display: flex;
+}
+.dialog span {
+  display: block;
+  padding-top: 8px;
+  color: yellow;
+  font-weight: 500;
+}
