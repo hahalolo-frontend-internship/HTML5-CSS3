@@ -1,208 +1,266 @@
 import React from 'react';
 
-function Home() {
+export default function Home() {
     return (
-        <>
-            <div className="banner">
+        <div className="main__body">
+            <div className="session session__banner">
                 <div className="container">
-                    <div className="banner_menu">
-                        <ul className="banner_list">
-                            <li className="nav_item">
-                                <a className="nav_link" href>Học viên</a>
-                                {/* <ul class="dropdown_menu">
-                                    <li class="dropdown_item"><a href="">Thông tin giáo dục</a></li>
-                                    <li class="dropdown_item"><a href="">Tự luyện</a></li>
-                                    <li class="dropdown_item"><a href="">Thi thử</a></li>
-                                    <li class="dropdown_item"><a href="">Thống kê thi các cấp</a></li>
-                                    <li class="dropdown_item"><a href="">Bảng xếp hạng tuần</a></li>
-                                    <li class="dropdown_item"><a href="">Xem kết quả thi</a></li>
-                                    <li class="dropdown_item"><a href="">Tin từ ban tổ chức</a></li>
-                                </ul> */}
-                            </li>
-                            <li className="nav_item">
-                                <a className="nav_link" href>Giáo viên</a>
-                                {/* <ul class="dropdown_menu">
-                                    <li class="dropdown_item"><a href="">Thi cấp trường</a></li>
-                                    <li class="dropdown_item"><a href="">Kết quả thi các cấp</a></li>
-                                    <li class="dropdown_item"><a href="">Kết quả thi trắc nghiệm</a></li>
-                                    <li class="dropdown_item"><a href="">Quản lí mã thi</a></li>
-                                    <li class="dropdown_item"><a href="">Thư viện kiến thức</a></li>
-                                    <li class="dropdown_item"><a href="">Tin từ ban tổ chức</a></li>
-                                    <li class="dropdown_item"><a href="">Quản lí lớp</a></li>
-                                    <li class="dropdown_item"><a href="">Quản lí bài tập</a></li>
-                                </ul> */}
-                            </li>
-                            <li className="nav_item">
-                                <a className="nav_link" href>Tin tức</a>
-                                {/* <ul class="dropdown_menu">
-                                        <li class="dropdown_item"><a href="">Tin từ ban tổ chức</a></li>
-                                        <li class="dropdown_item"><a href="">Sự kiện</a></li>
-                                        <li class="dropdown_item"><a href="">Tin tức muôn nơi</a></li>
-                                        <li class="dropdown_item"><a href="">tạp chí tiếng anh</a></li>
-                                    </ul> */}
-                            </li>
-                            <li className="nav_item">
-                                <a className="nav_link" href>Cuộc thi</a>
-                                {/* <ul class="dropdown_menu">
-                                            <li class="dropdown_item"><a href="">Thể lệ cuộc thi</a></li>
-                                            <li class="dropdown_item"><a href="">Công văn địa phương</a></li>
-                                            <li class="dropdown_item"><a href="">Thống kê</a></li>
-                                        </ul> */}
-                            </li>
-                            <li className="nav_item">
-                                <a className="nav_link" href>Hướng dẫn</a>
-                                {/* <ul class="dropdown_menu">
-                                        <li class="dropdown_item"><a href="">Hướng dẫn chung</a></li>
-                                        <li class="dropdown_item"><a href="">Hướng dẫn làm bài thi</a></li>
-                                        <li class="dropdown_item"><a href="">Câu hỏi thường gặp</a></li>
-                                    </ul> */}
-                            </li>
-                            <li className="nav_item">
-                            <a className="nav_link" href>Kết quả</a>
-                            {/* <ul class="dropdown_menu">
-                                    <li class="dropdown_item"><a href="">Tra cứu kết quả</a></li>
-                                    <li class="dropdown_item"><a href="">Kết quả thi</a></li>
-                                </ul> */}
-                        </li>
-                        </ul>
-                        <div className="search">
-                        <input type="text" placeholder="Tìm kiếm" />
-                        <i className="far fa-search" />
-                        </div>
-                    </div>       
-                </div>
-                <ul className="banner_content">
-                    <div className="container">
-                        <li className="content_item banner_intro">
-                            <p>CHÀO MỪNG BẠN ĐẾN VỚI LUYỆN THI IOE TRONG 30 NGÀY</p>
-                            <p>Vào tự luyện ngay</p>
-                            <p>Lịch thi IOE</p>
-                        </li>
-                        <li className="content_item banner_countdown">
-                            <p>HOÀN THÀNH CÁC VÒNG THI CHÍNH THỨC TRONG 2020-2021</p>
-                        </li>
-                        <li className="content_item home_contact">
-                            <ul className="home_contact-infor">
-                                <h3>HỖ TRỢ</h3>
-                                <li className="infor_item">
-                                    <i className="fal fa-phone-volume" />
-                                    <div className="infor-content infor_item-phone">
-                                    <p>Tổng đài 0969966742</p>
-                                    <p>Từ 8:00 đến 17:30(T2-T6)</p>
-                                    </div>
-                                </li>
-                                <li className="infor_item">
-                                    <i className="far fa-envelope" />
-                                    <div className="infor-content infor_item-email">
-                                    <p>Email: IOE@GO.VN</p>
-                                    <p>Hỗ trợ nội dung và thể lệ cuộc thi</p>
-                                    </div>
-                                </li>
-                                <li className="infor_item">
-                                    <i className="far fa-comment-alt-dots" />
-                                    <div className="infor-content infor_item-messager">
-                                    <p>Messager trên Facebook</p>
-                                    <p>Từ 8:00 đến 17:30(T2-T6)</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div className="home_contact-option">
-                                <h3>Hướng dẫn</h3>
-                                <p><i className="fas fa-play" />Hướng dẫn chung</p>
-                                <p><i className="fas fa-play" />Hướng dẫn làm bài thi</p>
-                                <p><i className="fas fa-play" />Câu hỏi thường gặp</p>
+                    <h3 className="session__title">TRẮC NGHIỆM ONLINE</h3>
+                    <ul className="row row__banner">
+                        <li className="row__col row__col--1-3 row__col--center">
+                            <div className="card card__banner">
+                                <div className="card__img">
+                                    <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/feature1.jpg" alt="thumbnail" />
+                                </div>
+                                <div className="card__content">
+                                    <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
+                                    <p className="card__description">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                    <button className="card__button button button">Làm ngay</button>
+                                </div>
                             </div>
                         </li>
-                    </div>    
-                </ul>      
-            </div>
-            <div className="hot-new">
-                <div className="container">
-                    <div className="hot-new_left">
-                        <div className="title_underline">
-                            <p className="title_head">THÔNG TIN TỪ BAN TỔ CHỨC</p>
-                            <span>TIN MỚI NHẤT</span>
-                            <hr />
-                        </div>
-                        <ul className="hot-new_list">
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
+                        <li className="row__col row__col--1-3 row__col--center">
+                            <div className="card card__banner">
+                                <div className="card__img">
+                                    <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/feature1.jpg" alt="thumbnail" />
                                 </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
+                                <div className="card__content">
+                                    <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
+                                    <p className="card__description">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                    <button className="card__button button button">Làm ngay</button>
                                 </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-3 row__col--center">
+                            <div className="card card__banner">
+                                <div className="card__img">
+                                    <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/feature1.jpg" alt="thumbnail" />
                                 </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
+                                <div className="card__content">
+                                    <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
+                                    <p className="card__description card__description--center">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                    <button className="card__button button button">Làm ngay</button>
                                 </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
-                                </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
-                                </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="hot-new_right">
-                        <div className="title_underline">
-                            <p className="title_head">SỰ KIỆN</p>
-                            <span>TIN MỚI NHẤT</span>
-                            <hr />
-                        </div>
-                        <ul className="hot-new_list">
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
-                                </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
-                                </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                            <li className="hot-new_item">
-                                <div className="hot-new-day">
-                                    TH.TƯ
-                                    <span>25/5/2021</span>
-                                </div>
-                                <p className="hot-new-content">BTC IOE thông báo về việc trao giải kỳ thi cấp Quốc gia năm học 2020-2021</p>
-                            </li>
-                        </ul>    
-                    </div>
+                            </div>
+                        </li>   
+                    </ul>
                 </div>
             </div>
-        </>
+
+            <div className="session session__testing--english">
+                <div className="container">
+                    <div className="row__col row__col--1-2 row__col--left row__col--480">
+                        <div className="card card--english">
+                            <div className="card__content">
+                                <h3 className="session__title session__title--left">TRẮC NGHIỆM TIẾNG ANH</h3>
+                                <p className="card__description">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                <button className="card__button button button__left">Làm ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+
+            </div>        
+
+            <div className="session session__testing-IT">
+                <div className="container">
+                    <div className="row row__col--left">
+                        <div className="row__col row__col--1-2">
+                            <div className="image__IT">
+                                <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/lession2.jpg" alt="thumbnail" />
+                            </div>
+                        </div>      
+                        <div className="row__col row__col--1-2">
+                            <div className="card">
+                                <div className="card__content">
+                                    <h3 className="session__title session__title--left">TRẮC NGHIỆM IT</h3>
+                                    <p className="card__description">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                    <button className="card__button button button__left">Làm ngay</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>  
+
+            <div className="session session__shadown-box">
+                <div className="container">
+                    <h3 className="session__title">ĐỊNH HƯỚNG TƯƠNG LAI</h3>
+                    <ul className="row">
+                        <li className="row__col row__col--1-2 row__col--center">
+                            <div className="card card__orient">
+                                <div className="card__img">
+                                    <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/dinhhuong1.jpg" alt="thumbnail" />
+                                </div>
+                                <div className="card__content">
+                                    <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
+                                    <p className="card__description card__description--other">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                    <button className="card__button button">Làm ngay</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-2 row__col--center">
+                            <div className="card card__orient">
+                                <div className="card__img">
+                                    <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/dinhhuong1.jpg" alt="thumbnail" />
+                                </div>
+                                <div className="card__content">
+                                    <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
+                                    <p className="card__description card__description--other">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                    <button className="card__button button">Làm ngay</button>
+                                </div>
+                            </div>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+
+            <div className="session session__testing">
+                <div className="container">
+                    <h3 className="session__title">Trắc nghiệm thông minh</h3>
+                    <ul className="row">
+                        <li className="row__col row__col--1-3 row__col--center">
+                            <div className="card">
+                                <div className="card__img">
+                                    <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/feature1.jpg" alt="thumbnail" />
+                                </div>
+                                <div className="card__content">
+                                    <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
+                                    <p className="card__description">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-3 row__col--center">
+                            <div className="card">
+                                <div className="card__img">
+                                    <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/feature1.jpg" alt="thumbnail" />
+                                </div>
+                                <div className="card__content">
+                                    <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
+                                    <p className="card__description">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                </div>
+                            </div>
+                        </li>  
+                        <li className="row__col row__col--1-3 row__col--center">
+                            <div className="card">
+                                <div className="card__img">
+                                    <img className="card__thumbnail" src="https://s.tracnghiem.net/assets/images/home/feature1.jpg" alt="thumbnail" />
+                                </div>
+                                <div className="card__content">
+                                    <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
+                                    <p className="card__description">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                </div>
+                            </div>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        
+            <div className="session session__near-footer">
+                <div className="container">
+                    <h3 className="session__title">TRẮC NGHIỆM ONLINE</h3>
+                    <ul className="row">
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul className="row">
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                        <li className="row__col row__col--1-6 row__col--center">
+                            <div className="card">
+                                <div className="card__img card__img--near-footer">
+                                    <img style={{width: '100%'}} className="card__thumbnail" src="https://s.tracnghiem.net/images/share/thumb/230x144/397_1599859214.jpg" alt="thumbnail" />
+                                </div>
+                                <p className="card__description card__description--near-footer">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được tạo ra..</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     )
 }
-
-export default Home

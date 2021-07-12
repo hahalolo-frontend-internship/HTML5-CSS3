@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:3000
+
+# Questions
+# @name getAllQuestions
+GET {{baseUrl}}/question_english
+
+###
+
+# Users
+# @name getUsers
+GET {{baseUrl}}/users
+
+###
+
+# @name addNewUser
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "name": "Bom",
+    "email": "bom@gmail.com"
+}
+
+###
+
+# @name updateUser
+PATCH {{baseUrl}}/users/3
+Content-Type: application/json
+
+{
+    "password": "0905259"
+}
+
+### 
+
+# @name deleteUser
+DELETE {{baseUrl}}/users/2
+
+

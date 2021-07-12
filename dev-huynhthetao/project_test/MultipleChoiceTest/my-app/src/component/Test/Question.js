@@ -3,36 +3,51 @@ import PropTypes from 'prop-types';
 
 Question.propTypes = {
     questions: PropTypes.array,
+    onHandleChange: PropTypes.func,
+    onSubmit: PropTypes.func,
 };
 
-Question.propsDefault = {
+Question.defaultProps = {
     questions: [],
+    onHandleChange: null,
+    onSubmit: null
 };
 
-function Question(props) {
-    const {questions} = props;
-    
-    function handleSubmit(e) {
-        e.preventDefault(e)
-        console.log('ahihi');
+export default function Question(props) {
+    const { questions, onHandleChange, onSubmit } = props;
 
+    function handleChange(answer) {
+        if(onHandleChange) {
+            onHandleChange(answer)
+        }
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        if(!onSubmit) return;
+        onSubmit();
     }
 
     return (
-        <form className="block_input" onSubmit={handleSubmit}>
-        {   
-            questions.map(question => { 
-                const answers = question.answer;    
+        <form className="form__test" onSubmit={handleSubmit}>
+        {
+            questions.map((question, key) => { 
+                const answers = question.answers;
                 return (  
                     <>
-                        <p key={question.id}>{question.test}</p>   
+                        <p key={question.id}>{(key + 1) + '. ' + question.content}</p>   
                         {
                             answers && 
                             answers.map(answer => {
                                 return(
-                                    <div className="block_answer">
-                                        <input type="radio" />
-                                        <label>{answer.answer}</label><br></br> 
+                                    <div key={answer.id} className="session__answer">
+                                        <input 
+                                            type="radio" 
+                                            name={'answer' + answer.questionId} 
+                                            value={answer.result} 
+                                            onChange={() => handleChange(answer)} 
+                                        />
+                                        <label>{answer.numerical_order + '. ' + answer.answer}</label><br></br> 
                                     </div>  
                                 )
                             })
@@ -41,12 +56,16 @@ function Question(props) {
                 )  
             })
         }
-        <input type="submit" value="Nộp bài" />
+        <input className="button button__test" type="submit" value="Nộp bài" />
         </form>
     );
 }
 
-export default Question;
+// loi key child
+
+
+
+
 
 
 
