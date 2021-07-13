@@ -25,10 +25,10 @@ function FinishExam(props) {
       <h3 className="finish-exam_foot">
         {props.answer === props.listQuestion.length ? (
           <span className="txt_success">
-            Chúc mừng bạn hoàn thành tốt bài thi!
+            Chúc mừng bạn đã hoàn thành tốt bài thi!
           </span>
         ) : (
-          <span className="txt_danger">Bạn cần cố gắng thêm nữa!</span>
+          <span className="txt_danger">Bạn cần cố gắng hơn nữa!</span>
         )}
       </h3>
     </div>

@@ -1,11 +1,11 @@
-import React, { useEffect, useState, createContext } from "react";
-import Header from "./layouts/header/Header";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./components/Login/Login";
+import SignUp from "./components/SignUp/SignUp";
+import "./grid.scss";
 import Body from "./layouts/body/Body";
 import Footer from "./layouts/footer/Footer";
-import SignUp from "./components/SignUp/SignUp";
-import Login from "./components/Login/Login";
-import "./grid.scss";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "./layouts/header/Header";
 export default function App() {
   const [user, setUser] = useState();
   const [isSignIn, setIsSignIn] = useState("");

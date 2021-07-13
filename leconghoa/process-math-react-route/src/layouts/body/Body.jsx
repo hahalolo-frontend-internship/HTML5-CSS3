@@ -10,20 +10,16 @@ import TopRank from "../../components/TopRank/TopRank";
 import { Switch, Route, useHistory } from "react-router-dom";
 function Body(props) {
   const history = useHistory();
-  //toogle
-
-  const [finish, setFinish] = useState(false);
   // result
   const [listQuestion, setListQuestion] = useState([]);
-  const [answersTrue, setAnswersTrue] = useState(null);
-  // const [listAnswer, setListAnswer] = useState(null);
+  const [answersTrue, setAnswersTrue] = useState(0);
+  // const [listAnswer, setListAnswer] = useState(0);
   const [time, setTime] = useState(0);
+
   function getTime(data) {
     setTime(data);
   }
-  function toogleFinish() {
-    setFinish(!finish);
-  }
+
   function toogleStart1() {
     if (
       localStorage.getItem("isSignIn") === null ||
@@ -47,10 +43,33 @@ function Body(props) {
     );
     setAnswersTrue(answer);
     // setListAnswer(data);
+
+    let user = JSON.parse(localStorage.getItem("isSignIn"));
+    const score = (answer / listQuestion.length) * 10;
+    user.score < score
+      ? updateScore(user.id, Number.parseFloat(score), 2700 - time)
+      : user.score === score &&
+        user.time > 2700 - time &&
+        updateScore(user.id, Number.parseFloat(score), 2700 - time);
+  }
+  async function updateScore(id, score, time) {
+    let demo = await fetch(`http://localhost:5000/users/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        score: score,
+        time: time,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    demo = await demo.json();
+    localStorage.setItem("isSignIn", JSON.stringify(demo));
   }
   useEffect(() => {
     async function fetchQuestions() {
-      const requestUrl = "http://localhost:5000/list_questions";
+      const requestUrl = "http://localhost:5000/list_question";
       const response = await fetch(requestUrl);
       const responseJSON = await response.json();
       setListQuestion(responseJSON);
@@ -63,6 +82,7 @@ function Body(props) {
     if (str1.includes(str2) || str1 === "/") return true;
     else return false;
   }
+
   return (
     <div className="main">
       <div className="grid wide">
@@ -76,7 +96,6 @@ function Body(props) {
                     <ItemQuestion
                       data={listQuestion}
                       result={resultAnswer}
-                      finish={toogleFinish}
                       getTime={getTime}
                       time={time}
                     />
@@ -92,7 +111,6 @@ function Body(props) {
                     <ItemQuestion
                       data={listQuestion}
                       result={resultAnswer}
-                      finish={toogleFinish}
                       getTime={getTime}
                       time={time}
                     />
@@ -115,7 +133,7 @@ function Body(props) {
                       alt="icon check"
                       className="detail-question_icon"
                     />
-                    <span>30 câu</span>
+                    <span>{listQuestion.length} câu</span>
                   </div>
                   <div className="flex-items-center">
                     <img
@@ -132,20 +150,13 @@ function Body(props) {
             <Route path="/tutorial">
               <Tutorial onClick={toogleStart2} />
             </Route>
-            <Route
-              path="/finish"
-              render={() =>
-                answersTrue > 0 ? (
-                  <FinishExam
-                    answer={answersTrue}
-                    listQuestion={listQuestion}
-                    time={time}
-                  />
-                ) : (
-                  <ListQuestion data={listQuestion} onClick={toogleStart1} />
-                )
-              }
-            ></Route>
+            <Route path="/finish">
+              <FinishExam
+                answer={answersTrue}
+                listQuestion={listQuestion}
+                time={time}
+              />
+            </Route>
             <Route
               path="/"
               exact

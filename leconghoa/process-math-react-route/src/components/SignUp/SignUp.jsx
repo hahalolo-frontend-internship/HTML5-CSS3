@@ -23,18 +23,20 @@ export default function SignUp(props) {
   }
 
   async function onSubmit(data) {
+    const data2 = { ...data, score: 0, time: 0 };
     if (confirm === data.password) {
       if (checkRegister(data.email, data.numberphone)) {
         setError("");
-        await fetch("http://localhost:5000/users", {
+        let user = await fetch("http://localhost:5000/users", {
           method: "POST",
-          body: JSON.stringify(data),
+          body: JSON.stringify(data2),
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
         });
-        localStorage.setItem("isSignIn", JSON.stringify(data));
+        user = await user.json();
+        localStorage.setItem("isSignIn", JSON.stringify(user));
         history.push("/");
         props.signIn("register");
       } else setError("Đăng ký thất bại");

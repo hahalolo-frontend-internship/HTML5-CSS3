@@ -9,21 +9,24 @@ import Clock from "../Clock/Clock";
 import { useHistory, useParams } from "react-router-dom";
 
 function ItemQuestion(props) {
+  const history = useHistory();
   let { quest } = useParams();
   if (quest === undefined || quest === "0") quest = 1;
-  const history = useHistory();
+  const item = props.data[quest - 1];
+  //toogle
+  const [dropdown, setDropdown] = useState(false);
+  const [popup, setPopup] = useState(false);
+  //result
   const [listAnswer, setListAnswer] = useState([]);
   const [timer, setTimer] = useState(0);
   const [listReview, setListReview] = useState([]);
-  const [toogleQuestionTable, setToogleQuestionTable] = useState(false);
-  const [popup, setPopup] = useState(false);
-  const item = props.data[quest - 1];
+
   const getTimeDown = (data) => {
     setTimer(data);
   };
   function handleQuestion(number) {
     number < 1
-      ? history.push("/")
+      ? history.push("/itemquestion/")
       : number <= props.data.length
       ? history.push(`${"/itemquestion/" + number}`)
       : history.push(props.data.length);
@@ -53,11 +56,10 @@ function ItemQuestion(props) {
       : setListReview([...listReview, obj]);
   }
   function toogleTable() {
-    setToogleQuestionTable(!toogleQuestionTable);
+    setDropdown(!dropdown);
   }
   function finishExercise() {
     props.result(listAnswer);
-    props.finish();
     props.getTime(seconds_to(2700 - props.time));
     history.push("/finish");
   }
@@ -65,6 +67,7 @@ function ItemQuestion(props) {
     setPopup(!popup);
     props.getTime(timer);
   }
+
   function resultClass(arr1, arr2, item) {
     return (
       (arr1.filter((e) => e.id === item.id).length > 0 ? "done " : "") +
@@ -140,7 +143,7 @@ function ItemQuestion(props) {
             </div>
           </div>
           <div className="exercise-controls_flex">
-            {quest === 1 ? null : (
+            {Number.parseInt(quest) === 1 ? null : (
               <div
                 className="btn-controls"
                 onClick={() => handleQuestion(Number.parseInt(quest) - 1)}
@@ -148,7 +151,7 @@ function ItemQuestion(props) {
                 <img src={back} alt="btn quay lại" />
               </div>
             )}
-            {quest === props.data.length ? null : (
+            {Number.parseInt(quest) === props.data.length ? null : (
               <div
                 className="btn-controls"
                 onClick={() => handleQuestion(Number.parseInt(quest) + 1)}
@@ -161,7 +164,7 @@ function ItemQuestion(props) {
             </div>
           </div>
         </div>
-        {toogleQuestionTable ? (
+        {dropdown ? (
           <div className="question-table">
             <div className="question-table_top exercise-controls_flex">
               <span>Bấm vào câu muốn trả lời</span>

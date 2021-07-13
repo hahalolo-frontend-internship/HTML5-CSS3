@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import gold from "../../img/gold.png";
-import silver from "../../img/silver.png";
-import bronze from "../../img/bronze.png";
 import "./TopRank.scss";
 function TopRank(props) {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    async function fetchUsers() {
+      const requestUrl = "http://localhost:5000/users";
+      const response = await fetch(requestUrl);
+      const responseJSON = await response.json();
+      setUsers(responseJSON);
+    }
+    fetchUsers();
+  }, []);
   return (
     <div className="top-rank">
       <div className="top-rank_head">Top lượt thi</div>
@@ -15,30 +23,21 @@ function TopRank(props) {
               <th>Điểm</th>
               <th>Thời gian</th>
             </tr>
-            <tr>
-              <td className="left">
-                <img src={gold} alt="" />
-                <span> Trịnh Công A</span>
-              </td>
-              <td>8</td>
-              <td>5:00</td>
-            </tr>
-            <tr>
-              <td className="left">
-                <img src={silver} alt="" />
-                <span> Phan Văn B</span>
-              </td>
-              <td>7</td>
-              <td>5:30</td>
-            </tr>
-            <tr>
-              <td className="left">
-                <img src={bronze} alt="" />
-                <span> Trần Đình C</span>
-              </td>
-              <td>6</td>
-              <td>6:00</td>
-            </tr>
+            {users.map(
+              (item, index) =>
+                item.score > 5 && (
+                  <tr key={index}>
+                    <td className="left">
+                      <img src={gold} alt="" />
+                      <span>
+                        {item.firstname} {item.lastname}
+                      </span>
+                    </td>
+                    <td>{item.score}</td>
+                    <td>{item.time}</td>
+                  </tr>
+                )
+            )}
           </tbody>
         </table>
         <button className="btn btn-seemore">Xem thêm</button>
