@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
 import "./style.scss";
-import Input from "../../common/Input";
 import { useHistory } from "react-router";
 import { v4 } from "uuid";
 import { contextApp } from "../../App";
 import { useContext } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { Button } from "@material-ui/core/";
+import TextField from "@material-ui/core/TextField";
 
 // validation
 const schema = yup.object().shape({
@@ -70,7 +71,9 @@ export default function SignUp() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Đăng Ký</h2>
         <div className="group-form">
-          <Input type="button" value="ĐĂNG KÝ BẰNG FACEBOOK" />
+          <Button variant="contained" color="primary" fullWidth size="large">
+            ĐĂNG KÝ BẰNG FACEBOOK
+          </Button>
         </div>
         <div className=" group-form">
           <div className="login-or">
@@ -80,42 +83,57 @@ export default function SignUp() {
         </div>
         <div className="group-form">
           <div className="firstname">
-            <Input
-              autoComplete="true"
-              {...register("firstname", { required: true })}
-              placeholder="Họ"
+            <TextField
+              id="outlined-basic"
+              label="Họ"
+              variant="outlined"
+              {...register("firstname")}
+              fullWidth
             />
             <p>{errors.firstname?.message}</p>
           </div>
           <div className="lastname">
-            <Input
-              autoComplete="true"
-              {...register("lastname", { required: true })}
-              placeholder="Tên"
+            <TextField
+              id="outlined-basic"
+              label="Tên"
+              variant="outlined"
+              {...register("lastname")}
+              fullWidth
             />
             <p className="placeholer-name">{errors.lastname?.message}</p>
           </div>
         </div>
         <div className="group-form">
-          <Input
-            autoComplete="true"
-            {...register("username", { required: true })}
-            placeholder="Nhập tên đăng nhập/ Email"
-            type="text"
+          <TextField
+            id="outlined-basic"
+            label="Nhập tên đăng nhập/ Email"
+            variant="outlined"
+            {...register("username")}
+            fullWidth
           />
           <p>{errors.username?.message}</p>
         </div>
         <div className="group-form">
-          <Input
-            autoComplete="true"
+          <TextField
+            id="outlined-basic"
+            label="Nhập mật khẩu"
+            variant="outlined"
             {...register("password")}
-            placeholder="Nhập mật khẩu"
+            fullWidth
             type="password"
           />
           <p>{errors.password?.message}</p>
         </div>
         <div className="group-form">
-          <Input type="submit" value="ĐĂNG KÝ NGAY" />
+          <Button
+            variant="contained"
+            color="secondary"
+            fullWidth
+            size="large"
+            type="submit"
+          >
+            ĐĂNG KÝ NGAY
+          </Button>
         </div>
         <p className="signup">
           Khi bấm Đăng ký, bạn đã đồng ý với <a href="/#">chính sách</a> của

@@ -3,9 +3,28 @@ import { contextApp } from "../../../App";
 import { mainExam } from "../index";
 import { useContext, useState } from "react";
 import RatingItem from "./RatingItem";
+import Button from "@material-ui/core/Button";
+import { Box, makeStyles } from "@material-ui/core";
+import clsx from "clsx";
+import { useButton } from "../../../common/Btn";
+const useStyle = makeStyles({
+  Button: {
+    width: "100px",
+    fontSize: "14px",
+    margin: "0 auto",
+    display: "block",
+  },
+});
+
 export default function MainRight() {
+  // material
+  const classes = useStyle();
+  const classesBtn = useButton();
+
+  // context
   const appContext = useContext(contextApp);
   const mainExamContext = useContext(mainExam);
+
   // list state
   const [number, setNumber] = useState(3);
 
@@ -52,14 +71,24 @@ export default function MainRight() {
         </ul>
 
         {number < 10 && (
-          <div className="cart__group-footer">
-            <button onClick={handleSeeMore}>Xem thêm</button>
-          </div>
+          <Box width="100%" paddingBottom="15px">
+            <Button
+              className={clsx(classesBtn.Button, classes.Button)}
+              onClick={handleSeeMore}
+            >
+              Xem thêm
+            </Button>
+          </Box>
         )}
         {number >= 10 && (
-          <div className="cart__group-footer">
-            <button onClick={handleHideNumber}>Ẩn bớt</button>
-          </div>
+          <Box width="100%" paddingBottom="15px">
+            <Button
+              className={clsx(classes.Button, classesBtn.Button)}
+              onClick={handleHideNumber}
+            >
+              Ẩn bớt
+            </Button>
+          </Box>
         )}
       </div>
     </div>

@@ -254,7 +254,7 @@
       color: #fff;
     }
     #active {
-      background-color: rgb(161, 190, 29);
+      background-color: orange;
       color: #fff;
       &:hover {
         background-color: #ffb83c;
@@ -262,29 +262,33 @@
       }
     }
   }
-  button {
-    // padding: 10px;
-    height: 30px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    color: #000;
-    &:hover {
-      background-color: #ffb83c;
-      color: #fff;
-    }
-    &:disabled {
-      background-color: #d0d3e9;
-      color: #959595;
-    }
+  // button {
+  //   // padding: 10px;
+  //   height: 30px;
+  //   font-size: 18px;
+  //   display: flex;
+  //   align-items: center;
+  //   background-color: #fff;
+  //   color: #000;
+  //   &:hover {
+  //     background-color: #ffb83c;
+  //     color: #fff;
+  //   }
+  //   &:disabled {
+  //     background-color: #d0d3e9;
+  //     color: #959595;
+  //   }
+  // }
+  .MuiCheckbox-colorSecondary.Mui-checked {
+    color: orange;
   }
   .exam__pagination {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     align-content: center;
     justify-content: space-between;
-    width: 25%;
+    width: 30%;
   }
 }
 

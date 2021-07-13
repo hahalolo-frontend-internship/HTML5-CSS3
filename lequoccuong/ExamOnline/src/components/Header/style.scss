@@ -48,12 +48,6 @@ header {
       flex-basis: 179px;
       text-align: right;
       position: relative;
-      span &-name {
-        width: 60px !important; // chiều rộng bằng khối bao nó
-        white-space: nowrap;
-        overflow: hidden; // ẩn các nội dung khi kích thước lớn hơn chiều rộng khối bên ngoài
-        text-overflow: ellipsis; //thêm 3 dấu chấm ở cuối
-      }
       .logout {
         display: none;
         z-index: 2;
@@ -96,8 +90,16 @@ header {
           display: block;
         }
       }
-
+      .header__login-name {
+        width: 90px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 16px;
+        padding-left: 8px;
+      }
       span {
+        display: inline-block;
         font-family: "Nunito", sans-serif;
         font-size: 13px;
         line-height: 1.1;

@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { contextApp } from "../../App";
 import { useForm } from "react-hook-form";
 import "./style.scss";
-import Input from "../../common/Input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Link, useHistory } from "react-router-dom";
-
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 // validation
 const schema = yup.object().shape({
   username: yup
@@ -14,8 +14,6 @@ const schema = yup.object().shape({
     .email("Email không hợp lệ")
     .required("Bạn phải nhập tên đăng nhập!"),
   password: yup.string().required("Bạn phải nhập mật khẩu!"),
-  // .min(3, "Mật khẩu phải từ 3-30 ký tự")
-  // .max(30, "Mật khẩu phải từ 3-30 ký tự"),
 });
 
 export default function Login() {
@@ -51,11 +49,9 @@ export default function Login() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Đăng Nhập</h2>
         <div className="group-form">
-          <Input
-            type="button"
-            value="ĐĂNG NHẬP BẰNG FACEBOOK"
-            autoComplete="true"
-          />
+          <Button variant="contained" color="primary" fullWidth size="large">
+            ĐĂNG NHẬP BẰNG FACEBOOK
+          </Button>
         </div>
         <div className=" group-form">
           <div className="login-or">
@@ -64,17 +60,23 @@ export default function Login() {
           </div>
         </div>
         <div className="group-form">
-          <Input
+          <TextField
+            id="outlined-basic"
+            label="Nhập tên đăng nhập/ Email"
+            variant="outlined"
             {...register("username")}
-            placeholder="Nhập tên đăng nhập/ Email"
+            fullWidth
           />
           <p> {errors.username?.message}</p>
         </div>
         <div className="group-form">
-          <Input
+          <TextField
+            id="outlined-basic"
+            label="Nhập mật khẩu"
+            variant="outlined"
             {...register("password")}
-            placeholder="Nhập mật khẩu"
             type="password"
+            fullWidth
           />
           <p> {errors.password?.message}</p>
         </div>
@@ -82,7 +84,15 @@ export default function Login() {
           Quên mật khẩu? <a href="/#"> Nhấn vào đây</a>
         </p>
         <div className="group-form">
-          <Input type="submit" value="ĐĂNG NHẬP" />
+          <Button
+            variant="contained"
+            color="secondary"
+            fullWidth
+            size="large"
+            type="submit"
+          >
+            ĐĂNG NHẬP
+          </Button>
         </div>
         <p className="signup">
           Nếu bạn chưa có tài khoản? <Link to="/SignUp"> Đăng ký ngay</Link>
