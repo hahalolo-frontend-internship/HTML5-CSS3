@@ -52,7 +52,7 @@ function Body(props) {
   }
   useEffect(() => {
     async function fetchQuestions() {
-      const requestUrl = "http://localhost:5000/list_questions";
+      const requestUrl = "http://localhost:5000/list_question";
       const response = await fetch(requestUrl);
       const responseJSON = await response.json();
       setListQuestion(responseJSON);

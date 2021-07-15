@@ -5,7 +5,8 @@ import SignUp from "./components/SignUp/SignUp";
 import "./grid.scss";
 import Body from "./layouts/body/Body";
 import Footer from "./layouts/footer/Footer";
-import Header from "./layouts/header/Header";
+import Header from "./layouts/header/index";
+
 export default function App() {
   const [user, setUser] = useState();
   const [isSignIn, setIsSignIn] = useState("");
@@ -15,6 +16,7 @@ export default function App() {
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("isSignIn")));
   }, [isSignIn]);
+
   return (
     <Router>
       <Header user={user} signIn={signIn} />

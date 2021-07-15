@@ -1,17 +1,65 @@
+import { yupResolver } from "@hookform/resolvers/yup";
+import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import "../Login/Login.scss";
+import * as yup from "yup";
+const useStyles = makeStyles(() => ({
+  login_or: {
+    position: "relative",
+  },
+  span_or: {
+    position: "absolute",
+    top: "-10px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    backgroundColor: "#fff",
+    padding: "0 16px",
+  },
+}));
+const schema = yup.object().shape({
+  firstname: yup.string().required("Vui lòng nhập họ"),
+  lastname: yup.string().required("Vui lòng nhập tên"),
+  numberphone: yup
+    .string()
+    .required("Vui lòng nhập số điện thoại")
+    .min(9, "Vui lòng nhập số điện thoại hợp lệ")
+    .max(11, "Vui lòng nhập số điện thoại hợp lệ"),
+  email: yup
+    .string()
+    .email("Vui lòng nhập email hợp lệ")
+    .required("Vui lòng nhập email")
+    .matches(
+      /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
+      "Vui lòng nhập email hợp lệ"
+    ),
+  password: yup
+    .string()
+    .required("Vui lòng nhập mật khẩu")
+    .min(6, "Mật khẩu quá ngắn"),
+  rppassword: yup
+    .string()
+    .required("Vui lòng xác nhận mật khẩu")
+    .oneOf([yup.ref("password"), null], "Xác nhận mật khẩu thất bại"),
+});
+
 export default function SignUp(props) {
+  const classes = useStyles();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
   const history = useHistory();
-  const [error, setError] = useState();
-  const [confirm, setConfirm] = useState();
   const [users, setUsers] = useState();
+  const [error, setError] = useState();
 
   function checkRegister(email, phone) {
     let result;
@@ -23,27 +71,30 @@ export default function SignUp(props) {
   }
 
   async function onSubmit(data) {
-    const data2 = { ...data, score: 0, time: 0 };
-    if (confirm === data.password) {
-      if (checkRegister(data.email, data.numberphone)) {
-        setError("");
-        let user = await fetch("http://localhost:5000/users", {
-          method: "POST",
-          body: JSON.stringify(data2),
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        });
-        user = await user.json();
-        localStorage.setItem("isSignIn", JSON.stringify(user));
-        history.push("/");
-        props.signIn("register");
-      } else setError("Đăng ký thất bại");
-    } else {
-      setError("Sai mật khẩu");
-      return;
-    }
+    const data2 = {
+      firstname: data.firstname,
+      lastname: data.lastname,
+      numberphone: data.numberphone,
+      email: data.email,
+      password: data.password,
+      score: 0,
+      time: 0,
+    };
+    if (checkRegister(data.email, data.numberphone)) {
+      setError("");
+      let user = await fetch("http://localhost:5000/users", {
+        method: "POST",
+        body: JSON.stringify(data2),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      user = await user.json();
+      localStorage.setItem("isSignIn", JSON.stringify(user));
+      history.push("/");
+      props.signIn("register");
+    } else setError("Đăng ký thất bại");
   }
   useEffect(() => {
     async function fetchUsers() {
@@ -54,107 +105,129 @@ export default function SignUp(props) {
     }
     fetchUsers();
   }, []);
-  // console.log(errors);
-  function handleConfirm(e) {
-    setConfirm(e.target.value);
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      setError();
+    }, 1000);
+  }, [error]);
+
   return (
-    <div className="grid wide">
-      <div className="login align_center">
-        <h3 className="login-title">Đăng ký miễn phí</h3>
-        <button className="btn btn-login_fb">
+    <Container maxWidth="md">
+      <Box
+        variant="outlined"
+        border="1px solid #e1e1e1 "
+        pl={10}
+        pr={10}
+        m={8}
+        borderRadius={15}
+      >
+        <Box m={5} fontWeight="fontWeightMedium">
+          <Typography variant="h5" component="h5" align="center">
+            Đăng ký miễn phí!
+          </Typography>
+        </Box>
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          disableElevation
+          size="large"
+        >
           Đăng ký bằng facebook (Khuyến khích)
-        </button>
-        <div className="login-or">
-          <hr className="hr-or" />
-          <span className="span-or">hoặc đăng ký mới</span>
-        </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="fullname">
-            <input
-              type="text"
-              placeholder="Họ"
-              {...register("firstname", {
-                required: "Họ không được để trống",
-                maxLength: 15,
-              })}
-              autoComplete="off"
+        </Button>
+        <Box className={classes.login_or} mt={5} mb={3}>
+          <Box borderBottom="1px solid #e1e1e1"></Box>
+          <Typography className={classes.span_or} color="textSecondary">
+            hoặc đăng ký mới
+          </Typography>
+        </Box>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate autoComplete="off">
+          <Box display="flex" mt={5} mb={1}>
+            <TextField
+              error={!!errors.firstname}
+              helperText={errors.firstname && errors.firstname.message}
+              label="Họ"
+              variant="outlined"
+              fullWidth
+              required
+              {...register("firstname")}
             />
-            <input
-              type="text"
-              placeholder="Tên"
-              {...register("lastname", {
-                required: "Tên không được để trống",
-                maxLength: 30,
-              })}
-              autoComplete="off"
+            <TextField
+              error={!!errors.lastname}
+              helperText={errors.lastname && errors.lastname.message}
+              label="Tên"
+              variant="outlined"
+              fullWidth
+              required
+              {...register("lastname")}
             />
-          </div>
-          <div className="error_name">
-            {errors.firstname && (
-              <p className="error">{errors.firstname.message}</p>
-            )}
-            {errors.lastname && (
-              <p className="error">{errors.lastname.message}</p>
-            )}
-          </div>
-          <input
-            type="number"
-            placeholder="Số điện thoại"
-            {...register("numberphone", {
-              required: "Vui lòng nhập số điện thoại",
-              maxLength: {
-                value: 11,
-                message: "Vui lòng kiểm tra lại só điện thoại",
-              },
-              minLength: {
-                value: 10,
-                message: "Vui lòng kiểm tra lại só điện thoại",
-              },
-            })}
-            autoComplete="off"
+          </Box>
+          <TextField
+            error={!!errors.numberphone}
+            helperText={errors.numberphone && errors.numberphone.message}
+            label="Số điện thoại"
+            variant="outlined"
+            fullWidth
+            required
+            {...register("numberphone")}
+            margin="normal"
           />
-          {errors.numberphone && (
-            <p className="error">{errors.numberphone.message}</p>
-          )}
-          <input
-            type="email"
-            placeholder="Email"
-            {...register("email", {
-              required: "Vui lòng nhập email",
-              pattern: {
-                value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
-                message: "Không nhập ký tự đặc biệt",
-              },
-            })}
-            autoComplete="off"
+          <TextField
+            error={!!errors.email}
+            helperText={errors.email && errors.email.message}
+            label="Email"
+            variant="outlined"
+            fullWidth
+            required
+            {...register("email")}
+            margin="normal"
           />
-          {errors.email && <p className="error">{errors.email.message}</p>}
-          <input
+          <TextField
             type="password"
-            placeholder="Nhập mật khẩu"
-            {...register("password", {
-              required: "Vui lòng nhập mật khẩu",
-              minLength: { value: 6, message: "Mật khẩu quá ngắn" },
-            })}
+            error={!!errors.password}
+            helperText={errors.password && errors.password.message}
+            label="Mật khẩu"
+            variant="outlined"
+            fullWidth
+            required
+            {...register("password")}
+            margin="normal"
           />
-          {errors.password && (
-            <p className="error">{errors.password.message}</p>
-          )}
-          <input
+          <TextField
             type="password"
-            placeholder="Nhập lại mật khẩu"
-            name="rppassword"
-            onChange={(e) => handleConfirm(e)}
+            error={!!errors.rppassword}
+            helperText={errors.rppassword && errors.rppassword.message}
+            label="Xác nhận mật khẩu"
+            variant="outlined"
+            fullWidth
+            required
+            {...register("rppassword")}
+            margin="normal"
           />
-          {error && <p className="error">{error}</p>}
-          <input type="submit" className="btn btn-submit" value="Đăng ký" />
+          {error && (
+            <Typography color="error" align="left">
+              {error}
+            </Typography>
+          )}
+          <Box mt={3} mb={3}>
+            <Button
+              type="submit"
+              variant="contained"
+              color="secondary"
+              fullWidth
+              disableElevation
+              size="large"
+              margin="normal"
+            >
+              Đăng ký
+            </Button>
+          </Box>
         </form>
-        <p className="policy">
+        <Box mt={3} mb={3} fontSize="fontSize">
           Khi bấm Đăng ký, bạn đã đồng ý với <a href="/#">chính sách</a> và
           <a href="/#"> điều kiện sử dụng</a> của tracnghiem.net
-        </p>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Container>
   );
 }

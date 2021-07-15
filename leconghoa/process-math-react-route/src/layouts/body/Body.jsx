@@ -11,6 +11,8 @@ import { Switch, Route, useHistory } from "react-router-dom";
 function Body(props) {
   const history = useHistory();
   // result
+  const [users, setUsers] = useState([]);
+  const [random, setRandom] = useState(0);
   const [listQuestion, setListQuestion] = useState([]);
   const [answersTrue, setAnswersTrue] = useState(0);
   // const [listAnswer, setListAnswer] = useState(0);
@@ -51,6 +53,7 @@ function Body(props) {
       : user.score === score &&
         user.time > 2700 - time &&
         updateScore(user.id, Number.parseFloat(score), 2700 - time);
+    setRandom(Math.random());
   }
   async function updateScore(id, score, time) {
     let demo = await fetch(`http://localhost:5000/users/${id}`, {
@@ -76,6 +79,15 @@ function Body(props) {
     }
     fetchQuestions();
   }, []);
+  useEffect(() => {
+    async function fetchUsers() {
+      const requestUrl = "http://localhost:5000/users";
+      const response = await fetch(requestUrl);
+      const responseJSON = await response.json();
+      setUsers(responseJSON);
+    }
+    fetchUsers();
+  }, [random]);
   const path = window.location.pathname;
   const str = "/tutorial";
   function check(str1, str2) {
@@ -166,7 +178,7 @@ function Body(props) {
             />
           </div>
           <div className="sidebar-right align_center">
-            {path.includes("/finish") && <TopRank />}
+            {path.includes("/finish") && <TopRank users={users} />}
             {path === "/" && (
               <>
                 <p className="">Bạn có muốn chinh phục đề thi này</p>

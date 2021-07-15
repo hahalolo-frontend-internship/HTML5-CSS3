@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
-import gold from "../../img/gold.png";
+import React, { useState } from "react";
 import "./TopRank.scss";
 function TopRank(props) {
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    async function fetchUsers() {
-      const requestUrl = "http://localhost:5000/users";
-      const response = await fetch(requestUrl);
-      const responseJSON = await response.json();
-      setUsers(responseJSON);
-    }
-    fetchUsers();
-  }, []);
+  const [seeMore, setSeeMore] = useState(3);
+  let arrUser = props.users.sort((a, b) =>
+    b.point - a.point === 0 ? a.time - b.time : b.score - a.score
+  );
+
   return (
     <div className="top-rank">
       <div className="top-rank_head">Top lượt thi</div>
@@ -23,12 +17,12 @@ function TopRank(props) {
               <th>Điểm</th>
               <th>Thời gian</th>
             </tr>
-            {users.map(
+            {arrUser.map(
               (item, index) =>
-                item.score > 5 && (
-                  <tr key={index}>
+                item.score > 5 &&
+                index < seeMore && (
+                  <tr key={index} className="top-rank_item">
                     <td className="left">
-                      <img src={gold} alt="" />
                       <span>
                         {item.firstname} {item.lastname}
                       </span>
@@ -40,7 +34,15 @@ function TopRank(props) {
             )}
           </tbody>
         </table>
-        <button className="btn btn-seemore">Xem thêm</button>
+        {arrUser.length > 3 && seeMore === 3 ? (
+          <button className="btn btn-seemore" onClick={() => setSeeMore(10)}>
+            Xem thêm
+          </button>
+        ) : (
+          <button className="btn btn-seemore" onClick={() => setSeeMore(3)}>
+            Ẩn bớt
+          </button>
+        )}
       </div>
     </div>
   );

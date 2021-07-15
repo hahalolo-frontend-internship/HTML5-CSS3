@@ -12,20 +12,48 @@
     border: 1px solid #d9d9d9;
     border-radius: 0 0 4px 4px;
   }
+  &_item {
+    span {
+      background-repeat: no-repeat;
+    }
+    &:nth-child(2) {
+      span {
+        padding-left: 24px;
+        background-image: url(../../img/gold.png);
+      }
+    }
+    &:nth-child(3) {
+      span {
+        padding-left: 24px;
+        background-image: url(../../img/silver.png);
+      }
+    }
+    &:nth-child(4) {
+      span {
+        padding-left: 24px;
+        background-image: url(../../img/bronze.png);
+      }
+    }
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
     .left {
       text-align: start;
+      display: flex;
+      align-items: center;
     }
     tr {
-      border-bottom: 1px solid #d9d9d9;
       th {
         padding: 12px 0;
       }
       td {
         padding: 12px 0;
       }
+    }
+    tr + tr {
+      border-top: 1px solid #d9d9d9;
     }
   }
   .btn-seemore {
