@@ -4,7 +4,9 @@ import { mainExam } from "../index";
 import { useContext, useState } from "react";
 import RatingItem from "./RatingItem";
 import Button from "@material-ui/core/Button";
-import { Box, makeStyles } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
 import { useButton } from "../../../common/Btn";
 const useStyle = makeStyles({
@@ -43,12 +45,12 @@ export default function MainRight() {
     .sort((a, b) => b.point - a.point);
 
   return (
-    <div className="main__right">
-      <div className="empty"></div>
-      <div className="cart__group">
-        <div className="cart__group-header">
-          <h2>Top 3/{appContext.charts?.length} lượt thi</h2>
-        </div>
+    <Box className="main__right">
+      <Box className="empty"></Box>
+      <Box className="cart__group">
+        <Box className="cart__group-header">
+          <Typography component="h2">Top 3</Typography>
+        </Box>
         <ul className="cart__group-body">
           <li className="cart__group-item">
             <ul className="cart__group-item-title">
@@ -90,7 +92,7 @@ export default function MainRight() {
             </Button>
           </Box>
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }

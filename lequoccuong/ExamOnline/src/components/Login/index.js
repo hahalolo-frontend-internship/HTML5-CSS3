@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import { contextApp } from "../../App";
 import { useForm } from "react-hook-form";
-import "./style.scss";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Link, useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import { useStyleLogin } from "./styleLogin";
+import Container from "@material-ui/core/Container";
 // validation
 const schema = yup.object().shape({
   username: yup
@@ -17,6 +20,8 @@ const schema = yup.object().shape({
 });
 
 export default function Login() {
+  const classes = useStyleLogin();
+
   // context
   const contextOfApp = useContext(contextApp);
 
@@ -45,45 +50,58 @@ export default function Login() {
     }
   };
   return (
-    <div className="wrapper-login">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h2>Đăng Nhập</h2>
-        <div className="group-form">
-          <Button variant="contained" color="primary" fullWidth size="large">
+    <Container maxWidth="md">
+      <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+        <Typography component="h2" className={classes.h2}>
+          Đăng Nhập
+        </Typography>
+        <Box className={classes.groupForm}>
+          <Button
+            className={classes.BtnFb}
+            variant="contained"
+            fullWidth
+            size="large"
+          >
             ĐĂNG NHẬP BẰNG FACEBOOK
           </Button>
-        </div>
-        <div className=" group-form">
-          <div className="login-or">
-            <hr />
-            <h5>hoặc</h5>
-          </div>
-        </div>
-        <div className="group-form">
+        </Box>
+        <Box className={classes.loginOr} padding={2}>
+          <hr />
+          <Typography component="h5" className={classes.h5}>
+            hoặc
+          </Typography>
+        </Box>
+        <Box className={classes.groupForm}>
           <TextField
-            id="outlined-basic"
             label="Nhập tên đăng nhập/ Email"
             variant="outlined"
             {...register("username")}
             fullWidth
+            autoComplete="true"
+            error={errors.username && true}
+            helperText={errors.username && errors.username?.message}
           />
-          <p> {errors.username?.message}</p>
-        </div>
-        <div className="group-form">
+        </Box>
+        <Box className={classes.groupForm}>
           <TextField
-            id="outlined-basic"
             label="Nhập mật khẩu"
             variant="outlined"
             {...register("password")}
             type="password"
             fullWidth
+            autoComplete="true"
+            error={errors.password  && true}
+            helperText={errors.password && errors.password?.message}
           />
-          <p> {errors.password?.message}</p>
-        </div>
-        <p className="forget-password">
-          Quên mật khẩu? <a href="/#"> Nhấn vào đây</a>
-        </p>
-        <div className="group-form">
+        </Box>
+        <Typography component="p">
+          Quên mật khẩu?{" "}
+          <a href="/#" className={classes.a}>
+            {" "}
+            Nhấn vào đây
+          </a>
+        </Typography>
+        <Box className={classes.groupForm}>
           <Button
             variant="contained"
             color="secondary"
@@ -93,11 +111,15 @@ export default function Login() {
           >
             ĐĂNG NHẬP
           </Button>
-        </div>
-        <p className="signup">
-          Nếu bạn chưa có tài khoản? <Link to="/SignUp"> Đăng ký ngay</Link>
-        </p>
+        </Box>
+        <Typography component="p" className={classes.signup}>
+          Nếu bạn chưa có tài khoản?{" "}
+          <Link to="/SignUp" className={classes.a}>
+            {" "}
+            Đăng ký ngay
+          </Link>
+        </Typography>
       </form>
-    </div>
+    </Container>
   );
 }

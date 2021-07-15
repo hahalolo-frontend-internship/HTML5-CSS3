@@ -8,7 +8,7 @@
   &-alarm {
     user-select: none;
     position: fixed;
-    left: 13%;
+    left: 10vw;
     width: 80px;
     height: 80px;
     color: #fff;
@@ -142,9 +142,9 @@
     &-result {
       width: 720px;
       position: fixed;
-      top: 30%;
-      left: 410px;
-      transform: translateY(-30%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 10;
       background-color: #fff;
       border-radius: 10px;
@@ -220,7 +220,6 @@
       align-items: center;
       label {
         display: inline-block;
-        margin-left: 10px;
         color: #fff;
         span {
           user-select: none;

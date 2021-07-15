@@ -4,12 +4,13 @@ import Notify from "./Notify";
 import Button from "@material-ui/core/Button";
 import { useButton } from "../../../common/Btn";
 import { mainExam } from "../index";
-// import InputWithLabel from "../../../common/InputWithLabel";
 import clsx from "clsx";
-import { makeStyles } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import Checkbox from "@material-ui/core/Checkbox";
 const useStyle = makeStyles({
   Button: {
@@ -57,9 +58,9 @@ export default function ExamContainer({
       {openconfirm && <Notify />}
       {context.timeDown === 0 && <Notify />}
 
-      <div className="choose-question">
-        <div className="choose-question__header">
-          <div className="review">
+      <Box className="choose-question">
+        <Box className="choose-question__header">
+          <Box className="review">
             <Button
               className={clsx(classesBtn.Button, classes.Button)}
               onClick={onChangeConfirm}
@@ -73,26 +74,26 @@ export default function ExamContainer({
                   <FormControlLabel
                     key={item.id}
                     checked={reviews.includes(item.id)}
+                    label="Xem Lại"
                     control={
                       <Checkbox
                         className={classes.checkbox}
                         id="review"
-                        onChange={() => handleChangeChecked(item.id)}
+                        onChange={(e) => handleChangeChecked(item.id, e)}
                       />
                     }
-                    label="Xem Lại"
                   />
                 )
             )}
-          </div>
-          <div className="exam__pagination">
+          </Box>
+          <Box className="exam__pagination">
             <Button
               className={clsx(classesBtn.Button, classes.ButtonNav)}
               size="small"
               onClick={prevPagination}
               disabled={count > 0 ? false : true}
             >
-              <i className="fas fa-arrow-left"></i>
+              <ArrowLeftIcon />
             </Button>
             <Button
               className={clsx(classesBtn.Button, classes.ButtonNav)}
@@ -100,7 +101,7 @@ export default function ExamContainer({
               onClick={nextPagination}
               disabled={count < context.dataTest.length - 1 ? false : true}
             >
-              <i className="fas fa-arrow-right"></i>
+              <ArrowRightIcon />
             </Button>
             <Button
               className={clsx(classesBtn.Button, classes.ButtonNav)}
@@ -109,10 +110,10 @@ export default function ExamContainer({
             >
               <i className="fas fa-ellipsis-h"></i>
             </Button>
-          </div>
-        </div>
+          </Box>
+        </Box>
         {flagListQuestion && (
-          <div className="choose-question__list">
+          <Box className="choose-question__list">
             {context.dataTest.map((item, index) => (
               <Typography
                 component="span"
@@ -124,9 +125,9 @@ export default function ExamContainer({
                 {index + 1}
               </Typography>
             ))}
-          </div>
+          </Box>
         )}
-      </div>
+      </Box>
     </form>
   );
 }

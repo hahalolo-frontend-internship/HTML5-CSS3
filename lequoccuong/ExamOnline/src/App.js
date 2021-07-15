@@ -7,6 +7,7 @@ import SignUp from "./components/Login/SignUp";
 import Footer from "./components/Footer";
 import ChooseTopic from "./components/Main/ChooseTopic";
 import { Switch, Route, Redirect } from "react-router-dom";
+import ExamTheme from "./ExamTheme";
 
 export const contextApp = React.createContext();
 
@@ -50,31 +51,33 @@ function App() {
 
   return (
     <div className="app">
-      <contextApp.Provider value={listContextApp}>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={ChooseTopic} />
-          <Route
-            path="/exam"
-            render={() => {
-              return !user ? <Login /> : <Main to="/exam" />;
-            }}
-          />
-          <Route
-            path="/Login"
-            render={() => {
-              return !user ? <Login /> : <Redirect to="/" />;
-            }}
-          />
-          <Route
-            path="/SignUp"
-            render={() => {
-              return !user ? <SignUp /> : <Redirect to="/exam" />;
-            }}
-          />
-        </Switch>
-        <Footer />
-      </contextApp.Provider>
+      <ExamTheme>
+        <contextApp.Provider value={listContextApp}>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={ChooseTopic} />
+            <Route
+              path="/exam"
+              render={() => {
+                return !user ? <Login /> : <Main />;
+              }}
+            />
+            <Route
+              path="/Login"
+              render={() => {
+                return !user ? <Login /> : <Redirect to="/" />;
+              }}
+            />
+            <Route
+              path="/SignUp"
+              render={() => {
+                return !user ? <SignUp /> : <Redirect />;
+              }}
+            />
+          </Switch>
+          <Footer />
+        </contextApp.Provider>
+      </ExamTheme>
     </div>
   );
 }

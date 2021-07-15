@@ -1,14 +1,16 @@
 import { useForm } from "react-hook-form";
-import "./style.scss";
 import { useHistory } from "react-router";
 import { v4 } from "uuid";
 import { contextApp } from "../../App";
 import { useContext } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Button } from "@material-ui/core/";
+import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-
+import Typography from "@material-ui/core/Typography";
+import { useStyleLogin } from "./styleLogin";
+import { Container } from "@material-ui/core";
 // validation
 const schema = yup.object().shape({
   firstname: yup
@@ -33,6 +35,7 @@ const schema = yup.object().shape({
 });
 
 export default function SignUp() {
+  const classes = useStyleLogin();
   // list context
   const contextOfApp = useContext(contextApp);
 
@@ -66,65 +69,77 @@ export default function SignUp() {
       alert("Tên đăng nhập bị trùng");
     }
   };
+
   return (
-    <div className="wrapper-login">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h2>Đăng Ký</h2>
-        <div className="group-form">
-          <Button variant="contained" color="primary" fullWidth size="large">
+    <Container maxWidth="md">
+      <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+        <Typography component="h2" className={classes.h2}>
+          Đăng Ký
+        </Typography>
+        <Box className={classes.groupForm}>
+          <Button
+            variant="contained"
+            className={classes.BtnFb}
+            fullWidth
+            size="large"
+          >
             ĐĂNG KÝ BẰNG FACEBOOK
           </Button>
-        </div>
-        <div className=" group-form">
-          <div className="login-or">
-            <hr />
-            <h5>hoặc</h5>
-          </div>
-        </div>
-        <div className="group-form">
-          <div className="firstname">
+        </Box>
+        <Box className={classes.loginOr} padding={2}>
+          <hr />
+          <Typography component="h5" className={classes.h5}>
+            hoặc
+          </Typography>
+        </Box>
+        <Box className={classes.groupForm}>
+          <Box className={classes.firstname}>
             <TextField
-              id="outlined-basic"
+              autoComplete="true"
               label="Họ"
               variant="outlined"
               {...register("firstname")}
               fullWidth
+              error={errors.firstname && true}
+              helperText={errors.firstname && errors.firstname?.message}
             />
-            <p>{errors.firstname?.message}</p>
-          </div>
-          <div className="lastname">
+          </Box>
+          <Box className={classes.lastname}>
             <TextField
-              id="outlined-basic"
+              autoComplete="true"
               label="Tên"
               variant="outlined"
               {...register("lastname")}
               fullWidth
+              error={errors.lastname && true}
+              helperText={errors.lastname && errors.lastname?.message}
             />
-            <p className="placeholer-name">{errors.lastname?.message}</p>
-          </div>
-        </div>
-        <div className="group-form">
+          </Box>
+        </Box>
+        <Box className={classes.groupForm}>
           <TextField
-            id="outlined-basic"
+            autoComplete="true"
             label="Nhập tên đăng nhập/ Email"
             variant="outlined"
             {...register("username")}
             fullWidth
+            error={errors.username && true}
+            helperText={errors.username && errors.username?.message}
           />
-          <p>{errors.username?.message}</p>
-        </div>
-        <div className="group-form">
+        </Box>
+        <Box className={classes.groupForm}>
           <TextField
-            id="outlined-basic"
             label="Nhập mật khẩu"
             variant="outlined"
             {...register("password")}
             fullWidth
             type="password"
+            autoComplete="true"
+            error={errors.password && true}
+            helperText={errors.password && errors.password?.message}
           />
-          <p>{errors.password?.message}</p>
-        </div>
-        <div className="group-form">
+        </Box>
+        <Box className={classes.groupForm}>
           <Button
             variant="contained"
             color="secondary"
@@ -134,12 +149,14 @@ export default function SignUp() {
           >
             ĐĂNG KÝ NGAY
           </Button>
-        </div>
-        <p className="signup">
-          Khi bấm Đăng ký, bạn đã đồng ý với <a href="/#">chính sách</a> của
-          tracnghiem.vn <a href="/#"> điều kiện sử dụng </a>
-        </p>
+        </Box>
+        <Typography component="p" className={classes.signup}>
+          Khi bấm Đăng ký, bạn đã đồng ý với{" "}
+          <a href="/#" className={classes.a}>
+            chính sách của tracnghiem.vn{" "}
+          </a>
+        </Typography>
       </form>
-    </div>
+    </Container>
   );
 }

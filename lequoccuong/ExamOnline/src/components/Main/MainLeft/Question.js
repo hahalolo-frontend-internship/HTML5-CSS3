@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { examContainerContext } from "./Exam";
-
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import { Box } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+
 export default function Question({ dataItem }) {
   // get context
   const contextExam = useContext(examContainerContext);
@@ -13,10 +14,10 @@ export default function Question({ dataItem }) {
   // Hàm trả về id những câu đã được chọn
   const activeAnswer = contextExam.selectedRadio.map((i) => i.answer_id);
   return (
-    <div>
+    <Box>
       <ul className="exam">
-        <h4>{dataItem.name}:</h4>
-        <p>{dataItem.content}</p>
+        <Typography component="h4">{dataItem.name}:</Typography>
+        <Typography component="p">{dataItem.content}</Typography>
         {dataItem.answers.map((i) => (
           <Box
             border="1px solid #eee"
@@ -42,6 +43,6 @@ export default function Question({ dataItem }) {
           </Box>
         ))}
       </ul>
-    </div>
+    </Box>
   );
 }
