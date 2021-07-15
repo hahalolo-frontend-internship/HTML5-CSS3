@@ -19,9 +19,9 @@ function Index({ prevQuestion, nextQuestion, handleSelectQuestionClick }) {
     setOpenListQuestion(!openListQuestion);
   };
 
-  function selectCheckedChange(e, id) {
-    const check = e.target.checked;
-    if (check) {
+  function selectCheckedChange(id) {
+    const check = document.getElementById(id);
+    if (check.checked) {
       setSelectChecked([...selectChecked, id]);
     } else {
       selectChecked.splice(selectChecked.indexOf(id), 1);
@@ -56,7 +56,7 @@ function Index({ prevQuestion, nextQuestion, handleSelectQuestionClick }) {
                       <Checkbox
                         color="secondary"
                         id={item.id}
-                        onChange={(e) => selectCheckedChange(e, item.id)}
+                        onChange={() => selectCheckedChange(item.id)}
                       />
                     }
                     label="Xem Lại"

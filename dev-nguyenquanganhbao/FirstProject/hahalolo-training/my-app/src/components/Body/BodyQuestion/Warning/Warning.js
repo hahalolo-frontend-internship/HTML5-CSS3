@@ -16,9 +16,9 @@ function Warning({ handleCloseWarning, handleWarningBoxSubmit, timerNow }) {
         <p>Bạn đồng ý nộp bài chư ?</p>
         <div className="buttons">
           <Button
-            variant="contained"
             type="button"
             onClick={handleWarningBoxSubmit}
+            variant="contained"
           >Nộp bài</Button>
           <Button
             type="button"
