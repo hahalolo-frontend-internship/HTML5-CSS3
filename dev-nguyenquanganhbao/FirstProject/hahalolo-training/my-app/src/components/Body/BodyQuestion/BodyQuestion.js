@@ -16,7 +16,7 @@ function Index({ handleEndClick }) {
   const classes = useButtonStyles();
   const contextapp = useContext(contextApp);
   const [dataQuestion, setDataQuestion] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const sleep = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -24,7 +24,6 @@ function Index({ handleEndClick }) {
 
   useEffect(() => {
     const fetchQuestion = async () => {
-      setIsLoading(true);
       await sleep(1500);
       const responseJson = await fetch("http://localhost:3000/question");
       const response = await responseJson.json();
@@ -39,9 +38,17 @@ function Index({ handleEndClick }) {
   const [count, setCount] = useState(0);
   const [flagStopTime, setFlagStopTime] = useState(false);
   const [timeOut, setTimeOut] = useState(0);
-  const [timerNow, setTimeNow] = useState(0);
+  // const [timerNow, setTimeNow] = useState(0);
   const [warning, setWarning] = useState(false);
   const [result, setResult] = useState();
+
+  //lock scroll khi open modal
+  if(openModal || warning) {
+    document.body.classList.add('lockScroll');
+  }else{
+    document.body.classList.remove('lockScroll');
+  }
+ 
 
   const handleGetAnswerChange = (data) => {
     if (selectQuestion.length > 0) {
@@ -109,6 +116,8 @@ function Index({ handleEndClick }) {
     setOpenModal(false);
     handleEndClick(true);
     fetchQuestion();
+    setOpenModal(false);
+    document.body.classList.remove('lockScroll');
   };
 
   const fetchQuestion = async () => {
@@ -193,15 +202,15 @@ function Index({ handleEndClick }) {
     setTimeOut(data);
   };
 
-  const getTimeNow = (data) => {
-    setTimeNow(data);
-    if (data === 0) {
-      setOpenModal(true);
-      setFlagStopTime(true);
-      setWarning(false);
-      getResult();
-    }
-  };
+  // const getTimeNow = (data) => {
+  //   setTimeNow(data);
+  //   if (data === 0) {
+  //     setOpenModal(true);
+  //     setFlagStopTime(true);
+  //     setWarning(false);
+  //     getResult();
+  //   }
+  // };
 
   let listContext = {
     dataQuestion: dataQuestion,
@@ -209,7 +218,7 @@ function Index({ handleEndClick }) {
     count: count,
     formatTime: formatTime,
     getTimeOut: getTimeOut,
-    getTimeNow: getTimeNow,
+    // getTimeNow: getTimeNow,
     timeOut: timeOut,
     flagStopTime: flagStopTime,
     result: result,
@@ -249,14 +258,14 @@ function Index({ handleEndClick }) {
                 handleSelectQuestionClick={handleSelectQuestionClick}
               />
 
-              <Button className={clsx(classes.button, classes.mt)} type="submit">Nộp bài</Button>
+              <Button variant="contained" className={clsx(classes.button, classes.mt)} type="submit">Nộp bài</Button>
             </form>
 
             {warning && (
               <Warning
                 handleCloseWarning={handleCloseWarning}
                 handleWarningBoxSubmit={handleWarningBoxSubmit}
-                timerNow={timerNow}
+                // timerNow={timerNow}
               />
             )}
 

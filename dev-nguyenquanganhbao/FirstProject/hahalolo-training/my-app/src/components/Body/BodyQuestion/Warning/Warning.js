@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import "./style-warning.scss";
 import Button from "@material-ui/core/Button";
 import { contextBodyQuestion } from "../BodyQuestion";
-function Warning({ handleCloseWarning, handleWarningBoxSubmit, timerNow }) {
+function Warning({ handleCloseWarning, handleWarningBoxSubmit
+  // , timerNow
+ }) {
   const context = useContext(contextBodyQuestion);
   return (
     <>
@@ -12,15 +14,16 @@ function Warning({ handleCloseWarning, handleWarningBoxSubmit, timerNow }) {
           Bạn còn {context.dataQuestion.length - context.selectQuestion.length}{" "}
           câu chưa trả lời
         </h1>
-        <p>Thời gian còn {context.formatTime(timerNow)}</p>
+        {/* <p>Thời gian còn {context.formatTime(timerNow)}</p> */}
         <p>Bạn đồng ý nộp bài chư ?</p>
         <div className="buttons">
           <Button
+            variant="contained"
             type="button"
             onClick={handleWarningBoxSubmit}
-            variant="contained"
           >Nộp bài</Button>
           <Button
+            variant="contained"
             type="button"
             onClick={handleCloseWarning}
           >Làm tiếp</Button>

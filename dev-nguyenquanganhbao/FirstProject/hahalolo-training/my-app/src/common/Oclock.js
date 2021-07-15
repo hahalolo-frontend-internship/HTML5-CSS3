@@ -13,9 +13,10 @@ export default function Oclock() {
     if (context.flagStopTime) {
       clearInterval(timeInterval);
       context.getTimeOut(timeDown);
-    } else {
-      context.getTimeNow(timeDown);
-    }
+    } 
+    // else {
+    //   context.getTimeNow(timeDown);
+    // }
 
     return () => {
       clearInterval(timeInterval);
