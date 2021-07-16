@@ -1,0 +1,96 @@
+.session {
+    width: 100%;
+    max-width: 1012px;
+    margin: 50px auto 0;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+.row__col--1-3 {
+    width: 30%;
+}
+.row__col--1-2 {
+    width: 49%;
+}
+.row__col--1-6 {
+    width: 16%;
+}
+.row__col--center {
+    text-align: center;
+}
+
+
+
+.session__title {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 0 30px;
+    text-align: center;
+}
+.session__title--left {
+    text-align: start;
+}
+.card__banner {
+    height: 350px;
+    padding-top: 30px;
+    box-shadow: 0 7px 15px 0 rgb(58 75 205 / 33%);
+    border-radius: 8px;
+}
+.row__banner {
+    padding: 0 110px;
+}
+.card__img {
+    min-height: 100px;
+}
+.card__title {
+    font-size: 20px;
+    margin-top: 20px;
+}
+.card__description {
+    font-size: 14px;
+}
+.card__description--pd {
+    padding: 5px 20px;
+}
+.card__description--banner {
+    padding: 8px 22px 4px;
+}
+.card__orient {
+    padding: 20px 40px;
+    box-shadow: 0 7px 15px 0 rgb(58 75 205 / 33%);
+    border-radius: 8px;
+}
+.card__description--other {
+    padding: 8px 50px 8px;
+}
+
+.session__testing--english {
+    width: 100%;
+    max-width: 1350px;
+    margin: 50px auto 0;
+
+    background: url('https://s.tracnghiem.net/assets/images/home/lession1.jpg');
+    width: 100%;
+    min-height: 480px;
+}
+.session__container {
+    width: 100%;
+    max-width: 1012px;
+    margin: 50px auto 0;
+}
+.image__IT {
+    text-align: center;
+}
+.session__near-footer {
+    margin-bottom: 50px;
+}
+.card__img--near-footer {
+    min-height: 100px;
+}
+.card__description--near-footer {
+    padding: 5px 0 20px;
+}
+
+/* sua css */
+

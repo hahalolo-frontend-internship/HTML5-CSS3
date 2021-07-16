@@ -1,0 +1,23 @@
+.form__account {
+    width: 30%;
+    min-height: 450px;
+    margin: 50px auto;
+    padding: 20px 50px;
+
+    text-align: center;
+    border: solid 1px #d9d9d9;
+    border-radius: 8px;
+}
+.underline {
+    position: relative;
+    margin-bottom: 35px;
+}
+.underline p {
+    font-size: 14px;
+    position: absolute;
+    top: -12px;
+    left: 45%;
+    /* transform: translateX(180px); */
+    width: 40px;
+    background: #fff;
+}
