@@ -1,10 +1,10 @@
 import React from "react";
-import Anwers from "./Answer";
+import Exercise from "./Exercise";
 
 function Main2() {
   return (
     <>
-      <Anwers />
+      <Exercise/>
     </>
   );
 }

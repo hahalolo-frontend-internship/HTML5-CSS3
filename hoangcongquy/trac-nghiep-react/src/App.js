@@ -20,9 +20,6 @@ function App() {
           </Route>
           <Route path="/" component={Container} />
           <Route component={NotFound} />
-        
-         
-          
         </Switch>
       </BrowserRouter>
     </Suspense>

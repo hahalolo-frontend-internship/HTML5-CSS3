@@ -1,8 +1,8 @@
 {
   "question": [
     {
-      
-      "id_typedata": 1,"id_charts": 1,
+      "id_typedata": 1,
+      "id_charts": 1,
       "id_question": 1,
       "content": "It took us almost four hour to ... too London.",
       "Answers": [
@@ -33,8 +33,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 2,
+      "id_typedata": 1,
+      "id_charts": 2,
       "id_question": 2,
       "content": "Some medicines are only available on ... ",
       "Answers": [
@@ -65,8 +65,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 3,
+      "id_typedata": 1,
+      "id_charts": 3,
       "id_question": 3,
       "content": "She hasd to pay th adult ... on the bus because she was 18.",
       "Answers": [
@@ -97,8 +97,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 4,
+      "id_typedata": 1,
+      "id_charts": 4,
       "id_question": 4,
       "content": "If you're on a diet, you should ... honey for sugar in you tea.",
       "Answers": [
@@ -129,8 +129,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 5,
+      "id_typedata": 1,
+      "id_charts": 5,
       "id_question": 5,
       "content": "Be ..., you can't expect to learn a language in a week.",
       "Answers": [
@@ -161,8 +161,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 6,
+      "id_typedata": 1,
+      "id_charts": 6,
       "id_question": 6,
       "content": "It's difficult to ... the difference between margarine and butter.",
       "Answers": [
@@ -224,8 +224,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 8,
+      "id_typedata": 1,
+      "id_charts": 8,
       "id_question": 8,
       "content": "I remember seeing him on one other ... with his wife.",
       "Answers": [
@@ -256,8 +256,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 9,
+      "id_typedata": 1,
+      "id_charts": 9,
       "id_question": 9,
       "content": "The two small companies are going to ... all the end of the year.",
       "Answers": [
@@ -288,8 +288,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 10,
+      "id_typedata": 1,
+      "id_charts": 10,
       "id_question": 10,
       "content": "Be careful not to ... your finger with tha needle.",
       "Answers": [
@@ -320,8 +320,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 11,
+      "id_typedata": 1,
+      "id_charts": 11,
       "id_question": 11,
       "content": "After you're eaten those sweets, make sure you throw the ... in the bin.",
       "Answers": [
@@ -352,8 +352,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 12,
+      "id_typedata": 1,
+      "id_charts": 12,
       "id_question": 12,
       "content": "How can I ... you of her inncence?",
       "Answers": [
@@ -384,8 +384,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 13,
+      "id_typedata": 1,
+      "id_charts": 13,
       "id_question": 13,
       "content": "May birds ... wouth during the winter months.",
       "Answers": [
@@ -416,8 +416,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 14,
+      "id_typedata": 1,
+      "id_charts": 14,
       "id_question": 14,
       "content": "Certain medicines can now help to ... life.",
       "Answers": [
@@ -448,8 +448,8 @@
       ]
     },
     {
-      
-      "id_typedata": 1,"id_charts": 15,
+      "id_typedata": 1,
+      "id_charts": 15,
       "id_question": 15,
       "content": "Worker are paid_answer money for their ...",
       "Answers": [
@@ -482,24 +482,21 @@
   ],
   "accounts": [
     {
-      "id_typedata": 1,
-      "id_question": 1,
+      "id": 1,
       "name": "quy",
       "email": "congquy1000@gmail.com",
       "password": "123456",
       "phone": "0326969696"
     },
     {
-      "id_typedata": 2,
-      "id_question": 2,
+      "id": 2,
       "name": "quy123",
       "email": "congquy2000@gmail.com",
       "password": "12345678",
       "phone": "038676869"
     },
     {
-      "id_typedata": 3,
-      "id_question": 3,
+      "id": 3,
       "name": "quy1234",
       "email": "congquy3000@gmail.com",
       "password": "123456789",
@@ -510,17 +507,20 @@
     {
       "id_charts": 1,
       "name": "quy",
-      "point": "500"
+      "point": "800",
+      "time": "825"
     },
     {
       "id_charts": 2,
       "name": "quy123",
-      "point": "700"
+      "point": "700",
+      "time": "773"
     },
     {
       "id_charts": 3,
       "name": "quy1234",
-      "point": "800"
+      "point": "600",
+      "time": "761"
     }
   ],
   "typedata": [
@@ -538,6 +538,20 @@
       "id_typedata": 3,
       "type": "ĐỀ THI KIỂM TRA",
       "contentdata": " Hệ thống bài kiểm tra 1 tiết, kiểm tra 15 phút được thiết kế theo hình thức trắc nghiệm online giúp học sinh có thể tạo ra đề tự luyện tập và chấm điểm trực tuyến."
+    }
+  ],
+  "categorys": [
+    {
+      "id": 1,
+      "content": "Ngữ pháp tiếng anh"
+    },
+    {
+      "id": 2,
+      "content": "Từ vựng tiếng anh"
+    },
+    {
+      "id": 3,
+      "content": "Tiếng anh THPT quốc gia"
     }
   ]
 }

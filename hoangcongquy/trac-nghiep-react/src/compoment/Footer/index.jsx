@@ -1,7 +1,18 @@
+// import { Card, Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react'
 
+// const useStyles = makeStyles((theme) => ({
+
+// }));
+
 function Footer () {
+
+  // const classes = useStyles();
+
    return (
+
+
+    <>
       <footer className="footer">
       <h1>Trắc Nghiệm</h1>
       <div className="footer-nav">
@@ -33,6 +44,7 @@ function Footer () {
       </div>
       <div className="copyright">Copyright © 2020 by Tracnghiem.net</div>
     </footer>
+    </>
    )
 }
 

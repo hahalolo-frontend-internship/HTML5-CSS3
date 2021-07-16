@@ -1,13 +1,92 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import "./main1.css";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import { Button, Container, Grid } from "@material-ui/core";
+import Collapse from "@material-ui/core/Collapse";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import ListItemText from "@material-ui/core/ListItemText";
+import Checkbox from "@material-ui/core/Checkbox";
+import IconButton from "@material-ui/core/IconButton";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
+
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  task: {
+    marginBottom: "50px",
+  },
+  breadcrumb: {
+    background: "#4aa7c3a6",
+    padding: "15px",
+    fontWeight: "500",
+  },
+  rank: {
+    width: "90%",
+    "min-height": "100px",
+    "text-align": "center",
+    "margin-top": "50px",
+    opacity: "0.5",
+    border: "1px solid",
+    height: "100px",
+    "border-radius": "10px",
+  },
+  name: {
+    marginBottom: "25px",
+  },
+  advertisement: {
+    border: "1px solid",
+    padding: "40px !important",
+    "border-radius": "15px",
+    margin: "40px 0",
+    "min-height": "480px",
+  },
+  formControl: {
+    marginBottom: "20px",
+    marginRight: "200px",
+  },
+  paragraph: {
+    margin: "15px 0",
+  },
+  btn: {
+    textAlign: "center",
+    marginTop: "30px",
+  },
+});
 
 function Main1(props) {
+  const classes = useStyles();
+
   const { id } = useParams();
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  console.log("isloading", isLoading);
 
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
+  ///😍😍
   useEffect(() => {
     setIsLoading(true);
     async function fetchData() {
@@ -15,7 +94,6 @@ function Main1(props) {
         const types = await axios.get(
           `http://localhost:3000/typedata?id_typedata=${id}`
         );
-
         setData(types?.data[0]);
         setIsLoading(false);
       } catch (error) {
@@ -25,109 +103,155 @@ function Main1(props) {
     fetchData();
   }, [id]);
 
+  //const [checked, setChecked] = useState([0]);
+
+  // const handleToggle = (value) => () => {
+  //   const currentIndex = checked.indexOf(value);
+  //   const newChecked = [...checked];
+
+  //   if (currentIndex === -1) {
+  //     newChecked.push(value);
+  //   } else {
+  //     newChecked.splice(currentIndex, 1);
+  //   }
+
+  //   setChecked(newChecked);
+  // };
+
+  const history = useHistory();
+
+  const checkData = localStorage.getItem("user");
+  console.log(checkData)
+
+  function handleClick() {
+    if (checkData) {
+      history.push("/main1/1/main2");
+    } else {
+      history.push("/Login");
+    }
+  }
+
   return (
     <>
-      <main className="main-content">
-        <div className="breadcrumb">
-          <nav className="container">
-            <ol>
-              <li className="breadcrumb-item">Trang chủ</li>
-              <li className="breadcrumb-item">/ {data.type}</li>
-            </ol>
+      <Container>
+        <div className={classes.task}>
+          <nav className={classes.breadcrumb}>
+            <ul>
+              <li>
+                TRANG CHỦ<span> / </span>
+                {data.type}
+              </li>
+            </ul>
           </nav>
+          <Grid container spacing={2}>
+            <Grid item xs={8} className={classes.advertisement}>
+              <h1 className={classes.name}>Đề thi trắc nghiệm</h1>
+              <div>
+                <h3>B1: Chọn lớp và môn học</h3>
+                <div>
+                  <FormControl className={classes.formControl}>
+                    <InputLabel htmlFor="grouped-native-select">Lớp</InputLabel>
+                    <Select native defaultValue="" id="grouped-native-select">
+                      <option aria-label="None" value="" />
+                      <option value={1}>Lớp 10</option>
+                      <option value={2}>Lớp 9</option>
+                      <option value={3}>Lớp 8</option>
+                      <option value={4}>Lớp 7</option>
+                      <option value={5}>Lớp 6</option>
+                    </Select>
+                  </FormControl>
+                  <FormControl className={classes.formControl}>
+                    <InputLabel htmlFor="grouped-native-select">Môn</InputLabel>
+                    <Select native defaultValue="" id="grouped-select">
+                      <option aria-label="None" value="" />
+                      <option value={1}>Tiếng Anh</option>
+                      <option value={2}>Toán</option>
+                      <option value={3}>Vật Lý</option>
+                      <option value={4}>Hóa Học</option>
+                    </Select>
+                  </FormControl>
+                </div>
+              </div>
+              <div>
+                <h3>B2: Chọn nội dung</h3>
+                <p className={classes.paragraph}>
+                  Các em có thể chọn 1 hoặc nhiều nội dung của các chương để hệ
+                  thống tự tổng hợp ngẫu nhiên thành ma trận đề kiểm tra cho các
+                  em
+                </p>
+                <List>
+                  <ListItem
+                    dense
+                    button
+                    // onClick={handleToggle(value)}
+                  >
+                    <ListItemIcon>
+                      <Checkbox
+                        edge="start"
+                        // checked={checked.indexOf(value) !== -1}
+                        tabIndex={-1}
+                        disableRipple
+                      />
+                    </ListItemIcon>
+                    <ListItemText primary={`Ngữ pháp tiếng anh`} />
+                    <ListItemSecondaryAction>
+                      <IconButton
+                        edge="end"
+                        aria-label="comments"
+                        onClick={handleExpandClick}
+                      >
+                        <ExpandMoreIcon />
+                      </IconButton>
+                    </ListItemSecondaryAction>
+                  </ListItem>
+                </List>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                  <List>
+                    {[0, 1, 2, 3, 4].map((value) => {
+                      const labelId = `checkbox-list-label-${value}`;
+
+                      return (
+                        <React.Fragment key={value}>
+                          <ListItem
+                            dense
+                            button
+                            // onClick={handleToggle(value)}
+                          >
+                            <ListItemIcon>
+                              <Checkbox
+                                edge="start"
+                                // checked={checked.indexOf(value) !== -1}
+                                tabIndex={-1}
+                                disableRipple
+                                inputProps={{ "aria-labelledby": labelId }}
+                              />
+                            </ListItemIcon>
+                            <ListItemText
+                              id={labelId}
+                              primary={`Ngữ pháp tiếng anh ${value + 1}`}
+                            />
+                          </ListItem>
+                        </React.Fragment>
+                      );
+                    })}
+                  </List>
+                </Collapse>
+              </div>
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.btn}
+                onClick={handleClick}
+              >
+                <Link to={`/main1/${id}/main2`}>Bắt đầu làm bài</Link>
+              </Button>
+            </Grid>
+            <Grid item xs={4}>
+              <div className={classes.rank}></div>
+            </Grid>
+          </Grid>
         </div>
-        <div className="advertisement container">
-          <div className="advertisement-all advertisement-left">
-            <h1>Đề thi trắc nghiệm</h1>
-            <div className="advertisement-class">
-              <h3>B1: Chọn lớp và môn học</h3>
-              <div className="advertisement-option-all">
-                <div className="advertisement-option-left">
-                  <select defaultValue="">
-                    <option value="lop-10">Lớp 10</option>
-                    <option value="lop-9">Lớp 9</option>
-                    <option value="lop-8">Lớp 8</option>
-                    <option value="lop-7">Lớp 7</option>
-                    <option value="lop-6">Lớp 6</option>
-                  </select>
-                </div>
-                <div className="advertisement-option-item">
-                  <select defaultValue="">
-                  <option value="tieng-anh">Tiếng Anh</option>
-                    <option value="toan-hoc">Toán</option>
-                    <option value="vat-ly">Vật Lý</option>
-                    <option value="hoa-hoc">Hóa Học</option>
-                    <option value="sinh-hoc">Sinh Học</option>
-                    <option value="ngu-van">Ngữ Văn</option>
-                   
-                    <option value="lich-su">Lịch Sử</option>
-                    <option value="dia-ly">Địa Lý</option>
-                    <option value="gdcd">GDCD</option>
-                    <option value="cong-nghe">Công Nghệ</option>
-                    <option value="tin-hoc">Tin Học</option>
-                    <option value="giao-duc-quoc-phong">
-                      Giáo dục quốc phòng
-                    </option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div className="advertisement-topic">
-              <h3>B2: Loại đề</h3>
-              <div className="advertisement-poin">
-                <div className="advertisement-topic_poin">
-                  <h4>Đề thi giữa học kỳ, học kỳ</h4>
-                  <p>50 câu / 60'</p>
-                </div>
-                <div className="advertisement-topic_poin">
-                  <h4>Đề kiểm tra 1 tiết</h4>
-                  <p>30 câu / 45''</p>
-                </div>
-                <div
-                  className="advertisement-topic_poin advertisement-topic_poin-fixed"
-                  // onChange={onChange}
-                >
-                  <h4>Đề kiểm tra 15 phút</h4>
-                  <p>10 câu / 15'</p>
-                </div>
-              </div>
-            </div>
-            <div className="advertisement-topic">
-              <h3>B3: Chọn nội dung</h3>
-              <p>
-                Các em có thể chọn 1 hoặc nhiều nội dung của các chương để hệ
-                thống tự tổng hợp ngẫu nhiên thành ma trận đề kiểm tra cho các
-                em
-              </p>
-              <div className="advertisement-option-right">
-                <div className="advertisement-item">
-                  <input type="checkbox"/>
-                  <span>Ngữ pháp tiếng anh</span>
-                  <button>
-                    <i className="fas fa-chevron-down"></i>
-                  </button>
-                </div>
-                <div className="advertisement-item">
-                  <input type="checkbox" />
-                  <span>Từ vựng tiếng anh</span>
-                </div>
-                <div className="advertisement-item">
-                  <input type="checkbox" />
-                  <span>Tiếng anh THPT quốc gia</span>
-                </div>
-              </div>
-            </div>
-            <div className="main-btn-bottom">
-              <Link to={`/main1/${id}/main2`} className="bt-startnew">
-                Bắt đầu làm bài
-              </Link>
-            </div>
-          </div>
-          <div className="advertisement-section_one">
-            <h2>Bảng thống kê</h2>
-          </div>
-        </div>
-      </main>
+      </Container>
     </>
   );
 }

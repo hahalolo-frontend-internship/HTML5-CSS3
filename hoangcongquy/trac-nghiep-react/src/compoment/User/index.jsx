@@ -1,19 +1,34 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import "./user.css"
 
-function User() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  button: {
+    "margin-right": "3px",
+  },
+}));
+
+export default function User() {
+  const classes = useStyles();
+
   return (
-    <ul className="header-user">
-      <li className="header_item-log header_item-login">
+    <div className={classes.root}>
+      <Button variant="contained"  className={classes.button}>
         <Link to="/Login">Đăng nhập</Link>
-        <i className="fas fa-user-circle"></i>
-      </li>
-      <li className="header_item-log">
+      </Button>
+      <Button variant="contained" className={classes.button}>
         <Link to="/Registration">Đăng ký </Link>
-        <i className="fas fa-sign-out-alt"></i>
-      </li>
-    </ul>
+      </Button>
+    </div>
   );
 }
-export default User;

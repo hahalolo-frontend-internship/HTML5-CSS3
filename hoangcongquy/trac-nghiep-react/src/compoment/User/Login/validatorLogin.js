@@ -9,10 +9,10 @@ export default function validatorInfo(values) {
      errors.password = "* Bạn chưa nhập mật khẩu";
    }
    else if (values.password.length < 6) {
-     errors.password = "* Mật khẩu cần nhập lớn hơn 6 kí tự";
+     errors.password = "* Mật khẩu cần lớn hơn 6 kí tự";
    } 
    else {
-     errors.password = "* Mật khẩu hoặc tài khoảng không đúng";
+     errors.password = "* Mật khẩu hoặc tài khoản không đúng";
    }
    //pass
    if (!values.phone) {

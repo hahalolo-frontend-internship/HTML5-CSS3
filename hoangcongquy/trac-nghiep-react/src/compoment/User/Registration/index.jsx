@@ -1,9 +1,68 @@
 import { Link, useHistory } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import validate from "./validatorInfo";
-import "./registration.css";
 import axios from "axios";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
+import TextField from "@material-ui/core/TextField";
+import { Typography } from "@material-ui/core";
+// import { ContactSupportTwoTone } from "@material-ui/icons";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  container_login: {
+    "background-image": "url(/yasuo.jpg)",
+    "background-size": "cover",
+    "min-height": "657px",
+  },
+  content: {
+    display: "inline-block",
+    background: "white",
+    "border-radius": "0px 30px 30px 0px",
+  },
+  login_logo: {
+    display: "inline-block",
+    background: "white",
+    "border-radius": "0px 30px 30px 0px",
+    padding: "10px",
+    "margin-top": "5px",
+  },
+  name: {
+    background: "blue",
+    "border-radius": "10px 10px 0 0",
+    color: "white",
+    padding: "10px",
+    "margin-bottom": '14px',
+
+  },
+  login_form: {
+    background: "white",
+    border: "1px solid white",
+    width: "400px",
+    height: "auto",
+    "min-height": "500px",
+    margin: "auto",
+    "margin-top": "80px",
+    "margin-bottom": "50px",
+    "text-align": "center",
+    "box-shadow": "2px 2px 10px 3px #856f6f",
+    "border-radius": "10px",
+  },
+  form_group: {
+    padding: "5px 0",
+  },
+  button: {
+    margin: "25px 0",
+  },
+}));
 function Registration() {
   const [data, setData] = useState([]);
   const [errors, setErrors] = useState({});
@@ -31,97 +90,113 @@ function Registration() {
     fetchData();
   }, []);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    const find = data.every((item) => item.name !== formData.name);
+    if (
+      find === true &&
+      formData.password !== "" &&
+      formData.phone !== "" &&
+      formData.email !== ""
+    ) {
+      const result = await axios.post("http://localhost:3000/accounts", {
+        name: formData.name,
+        password: formData.password,
+        phone: formData.phone,
+        email: formData.email,
+      });
 
-    if (formData === errors) {
-      return formData;
+      localStorage.setItem('user', JSON.stringify(result.data) )
+      history.push("/main1/1");
+      setFormData({ errorConfirm: "! Bạn chưa nhập or tên tồn tại" });
     } else {
-      const find = data.every(
-        (item) =>
-          item.name !== formData.name &&
-          formData.password !== "" &&
-          formData.email !== "" &&
-          formData.phone !== ""
-      );
       setErrors(validate(formData));
-      setFormData({ errorConfirm: "Bạn chưa nhập hoặc tài khoản đã tồn tài" });
-      if (!find === false) {
-        const formValues = {
-          name: formData.name,
-          password: formData.password,
-          phone: formData.phone,
-          email: formData.email,
-        };
-        axios.post("http://localhost:3000/accounts", formValues);
-        history.push("/Login");
-        alert("Bạn đã đăng ký thành công");
-      } else {
-        return formData;
-      }
+      setFormData({ errorConfirm: "* Bạn chưa nhập or tên tồn tại" });
     }
   }
+  const classes = useStyles();
 
   return (
     <>
-      <div className="container-login">
-        <div className="login-logo">
+      <div className={classes.container_login}
+      >
+        <div className={classes.login_logo}>
           <Link to="/">
-            <h2>Trắc nghiệm</h2>
+            <h2 className={classes.content}>Trắc nghiệm</h2>
           </Link>
         </div>
-        <div className="login_form">
-          <h1>Registration</h1>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="">Username</label>
-              <input
+        <div className={classes.login_form}>
+          <h1 className={classes.name}>Registration</h1>
+          <form onSubmit={handleSubmit} noValidate autoComplete="off">
+            <div className={classes.form_group}>
+              <TextField
+                label="Nhập tài khoản"
                 type="text"
                 value={formData.name}
-                className="form-control"
-                placeholder="Nhập tên tài khoản của bạn"
+                className={classes.form_control}
                 name="name"
                 onChange={onChange}
+                size="small"
+                variant="outlined"
               />
-              <p>{formData.errorConfirm}</p>
+              {errors.name && (
+                <Typography color="error">{formData.errorConfirm}</Typography>
+              )}
             </div>
-            <div className="form-group">
-              <label htmlFor="">Password</label>
-              <input
+            <div className={classes.form_group}>
+              <TextField
+                label="Nhập mật khẩu của bạn"
                 type="password"
                 value={formData.password}
-                className="form-control"
-                placeholder="Nhập mật khẩu"
+                className={classes.form_control}
                 name="password"
                 onChange={onChange}
+                size="small"
+                variant="outlined"
               />
-              {errors.password && <p>{errors.password}</p>}
+              {errors.password && (
+                <Typography color="error">{errors.password}</Typography>
+              )}
             </div>
-            <div className="form-group">
-              <label htmlFor="">Số điện thoại</label>
-              <input
-                type="text"
+            <div className={classes.form_group}>
+              <TextField
+                label="Nhập phone của bạn"
+                type="phone"
                 value={formData.phone}
-                className="form-control"
-                placeholder="Nhập sdt"
+                className={classes.form_control}
                 name="phone"
                 onChange={onChange}
+                size="small"
+                variant="outlined"
               />
-              {errors.phone && <p>{errors.phone}</p>}
+              {errors.phone && (
+                <Typography color="error">{errors.phone}</Typography>
+              )}
             </div>
-            <div className="form-group">
-              <label htmlFor="">Email</label>
-              <input
+            <div className={classes.form_group}>
+              <TextField
+                label="Nhập email của bạn"
                 type="email"
                 value={formData.email}
-                className="form-control"
-                placeholder="Nhập email"
+                className={classes.form_control}
                 name="email"
                 onChange={onChange}
+                size="small"
+                  variant="outlined"
               />
-              {errors.email && <p>{errors.email}</p>}
+              {errors.email && (
+                <Typography color="error">{errors.email}</Typography>
+              )}
             </div>
-            <button className="btn btn-registration">Đăng Ký</button>
+            <Button
+              variant="contained"
+              color="secondary"
+              type="submit"
+              className={classes.button}
+              // disabled={true}
+            >
+              Đăng ký
+            </Button>
             <Link to="/Login">
               <h6>Forgot Login? ClickHere</h6>
             </Link>
