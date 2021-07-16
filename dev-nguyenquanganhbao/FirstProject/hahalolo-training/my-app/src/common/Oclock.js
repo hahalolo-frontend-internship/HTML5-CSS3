@@ -23,5 +23,5 @@ export default function Oclock() {
     };
   }, [timeDown]);
 
-  return <p>{context.formatTime(timeDown)}</p>;
+  return <p className="oclock">{context.formatTime(timeDown)}</p>;
 }

@@ -2,13 +2,14 @@ import React, { useState, useEffect, createContext, useContext } from "react";
 import DetailQuestion from "./DetailQuestion";
 import QuestionItems from "./QuestionItems";
 import Button from "@material-ui/core/Button";
-import ResultModal from "./ResultModal/ResultModal";
 import ControllerQuestion from "./ControlleQuestion/ControlleQuestion";
-import Warning from "./Warning/Warning";
 import Spinner from "./Loading/Loading";
 import { contextApp } from "../../../App";
 import { useButtonStyles } from "../../../common/ButtonStyle";
 import clsx from "clsx";
+
+import DialogWarning from "./DialogWarning";
+import DialogResult from "./DialogResult";
 
 export const contextBodyQuestion = createContext();
 
@@ -24,7 +25,7 @@ function Index({ handleEndClick }) {
 
   useEffect(() => {
     const fetchQuestion = async () => {
-      await sleep(1500);
+      await sleep(1000);
       const responseJson = await fetch("http://localhost:3000/question");
       const response = await responseJson.json();
       setDataQuestion(response);
@@ -38,17 +39,9 @@ function Index({ handleEndClick }) {
   const [count, setCount] = useState(0);
   const [flagStopTime, setFlagStopTime] = useState(false);
   const [timeOut, setTimeOut] = useState(0);
-  // const [timerNow, setTimeNow] = useState(0);
   const [warning, setWarning] = useState(false);
   const [result, setResult] = useState();
 
-  //lock scroll khi open modal
-  if(openModal || warning) {
-    document.body.classList.add('lockScroll');
-  }else{
-    document.body.classList.remove('lockScroll');
-  }
- 
 
   const handleGetAnswerChange = (data) => {
     if (selectQuestion.length > 0) {
@@ -117,7 +110,6 @@ function Index({ handleEndClick }) {
     handleEndClick(true);
     fetchQuestion();
     setOpenModal(false);
-    document.body.classList.remove('lockScroll');
   };
 
   const fetchQuestion = async () => {
@@ -134,23 +126,22 @@ function Index({ handleEndClick }) {
 
     let check = contextapp.listResult.find((item) => item.id_user === user.id);
 
-    async function updateListResult(){
+    async function updateListResult() {
       await fetch(`http://localhost:3000/listResult/${check.id}`, {
-          method: "PATCH",
-          body: JSON.stringify({
-            "scores": data.scores,
-            "timeOut": data.timeOut,
-          }),
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        });
+        method: "PATCH",
+        body: JSON.stringify({
+          scores: data.scores,
+          timeOut: data.timeOut,
+        }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
     }
 
-
     if (check) {
-      if (data.scores > check.scores) {     
+      if (data.scores > check.scores) {
         updateListResult();
       } else {
         if (data.scores === check.scores) {
@@ -202,16 +193,6 @@ function Index({ handleEndClick }) {
     setTimeOut(data);
   };
 
-  // const getTimeNow = (data) => {
-  //   setTimeNow(data);
-  //   if (data === 0) {
-  //     setOpenModal(true);
-  //     setFlagStopTime(true);
-  //     setWarning(false);
-  //     getResult();
-  //   }
-  // };
-
   let listContext = {
     dataQuestion: dataQuestion,
     selectQuestion: selectQuestion,
@@ -258,19 +239,24 @@ function Index({ handleEndClick }) {
                 handleSelectQuestionClick={handleSelectQuestionClick}
               />
 
-              <Button variant="contained" className={clsx(classes.button, classes.mt)} type="submit">Nộp bài</Button>
+              {/* <Button
+                variant="contained"
+                style={{padding: "10px 50px"}}
+                className={clsx(classes.button, classes.mt)}
+                type="submit"
+              >
+                Nộp bài
+              </Button> */}
             </form>
 
-            {warning && (
-              <Warning
-                handleCloseWarning={handleCloseWarning}
-                handleWarningBoxSubmit={handleWarningBoxSubmit}
-                // timerNow={timerNow}
-              />
-            )}
+            <DialogWarning
+              handleCloseWarning={handleCloseWarning}
+              handleWarningBoxSubmit={handleWarningBoxSubmit}
+              warning={warning}
+            />
 
             {openModal && (
-              <ResultModal closeResultModalClick={closeResultModalClick} />
+              <DialogResult openModal={openModal} closeResultModalClick={closeResultModalClick} />
             )}
           </div>
         </contextBodyQuestion.Provider>
