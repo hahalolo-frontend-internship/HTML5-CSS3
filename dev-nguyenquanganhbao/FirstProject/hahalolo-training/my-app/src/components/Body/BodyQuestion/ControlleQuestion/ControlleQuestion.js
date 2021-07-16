@@ -7,6 +7,7 @@ import { useButtonStyles } from "../../../../common/ButtonStyle";
 import Oclock from "../../../../common/Oclock";
 import { contextBodyQuestion } from "../BodyQuestion";
 
+
 function Index({ prevQuestion, nextQuestion, handleSelectQuestionClick }) {
   const classes = useButtonStyles();
   const context = useContext(contextBodyQuestion);
@@ -58,6 +59,7 @@ function Index({ prevQuestion, nextQuestion, handleSelectQuestionClick }) {
                 />
               )
           )}
+
           <Oclock />
           
         </div>

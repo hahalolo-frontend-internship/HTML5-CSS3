@@ -7,8 +7,7 @@ export default function Oclock() {
 
   useEffect(() => {
     const timeInterval = setInterval(() => {
-      const timer = timeDown;
-      if (timer > 0) setTimeDown(timer - 1);
+      if (timeDown > 0) setTimeDown(timeDown => timeDown - 1);
     }, 1000);
     if (context.flagStopTime) {
       clearInterval(timeInterval);

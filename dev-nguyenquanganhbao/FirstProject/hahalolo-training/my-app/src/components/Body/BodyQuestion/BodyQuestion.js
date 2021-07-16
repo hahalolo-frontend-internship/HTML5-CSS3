@@ -1,12 +1,11 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 import DetailQuestion from "./DetailQuestion";
 import QuestionItems from "./QuestionItems";
-import Button from "@material-ui/core/Button";
+
 import ControllerQuestion from "./ControlleQuestion/ControlleQuestion";
 import Spinner from "./Loading/Loading";
 import { contextApp } from "../../../App";
-import { useButtonStyles } from "../../../common/ButtonStyle";
-import clsx from "clsx";
+
 
 import DialogWarning from "./DialogWarning";
 import DialogResult from "./DialogResult";
@@ -14,7 +13,6 @@ import DialogResult from "./DialogResult";
 export const contextBodyQuestion = createContext();
 
 function Index({ handleEndClick }) {
-  const classes = useButtonStyles();
   const contextapp = useContext(contextApp);
   const [dataQuestion, setDataQuestion] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -57,13 +55,14 @@ function Index({ handleEndClick }) {
     } else {
       setSelectQuestion([...selectQuestion, data]);
     }
-
+    
     if (count < dataQuestion.length - 1) {
       setTimeout(() => {
-        setCount(count + 1);
+        setCount(count => count  + 1);
       }, 300);
     }
   };
+
 
   function getResult() {
     let result;
@@ -199,7 +198,6 @@ function Index({ handleEndClick }) {
     count: count,
     formatTime: formatTime,
     getTimeOut: getTimeOut,
-    // getTimeNow: getTimeNow,
     timeOut: timeOut,
     flagStopTime: flagStopTime,
     result: result,
