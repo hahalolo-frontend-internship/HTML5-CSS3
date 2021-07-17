@@ -513,37 +513,36 @@
   ],
   "users": [
     {
-      "id": 1,
-      "name": "Tao",
-      "email": "huynhthetao987@gmail.com",
-      "password": "1234567"
-    },
-    {
-      "name": "Bom",
+      "name": "Bin",
       "email": "bom@gmail.com",
-      "id": 3,
-      "password": "0905259"
+      "password": "111111",
+      "result": 9,
+      "time": 10,
+      "id": 1
     },
     {
-      "name": "bom",
-      "email": "bomhihi@gmail.com",
-      "pwd": "111111",
-      "confirmPwd": "111111",
+      "name": "Bảo",
+      "email": "bom1@gmail.com",
+      "password": "111111",
+      "result": 7,
+      "time": 11,
+      "id": 2
+    },
+    {
+      "name": "Khánh",
+      "email": "bom2@gmail.com",
+      "password": "111111",
+      "result": 10,
+      "time": 10,
+      "id": 3
+    },
+    {
+      "name": "Tuân",
+      "email": "bom3@gmail.com",
+      "password": "111111",
+      "result": 5,
+      "time": 9,
       "id": 4
-    },
-    {
-      "name": "bom",
-      "email": "bom11@gmail.com",
-      "pwd": "111111",
-      "confirmPwd": "111111",
-      "id": 5
-    },
-    {
-      "name": "bom",
-      "email": "bom111@gmail.com",
-      "pwd": "111111",
-      "confirmPwd": "111111",
-      "id": 6
     }
   ]
 }
