@@ -369,8 +369,8 @@
       "id_user": "uxpjgc",
       "firstName": "Trần",
       "lastName": "Đức Bo",
-      "timeOut": 592,
-      "scores": 5
+      "timeOut": 591,
+      "scores": 6
     },
     {
       "id": "2ls16",
@@ -393,16 +393,16 @@
       "id_user": "04h06",
       "firstName": "Ngô Bá",
       "lastName": "Khá",
-      "timeOut": 591,
-      "scores": 6
+      "timeOut": 588,
+      "scores": 8
     },
     {
-      "id": "9l64ql",
+      "id": "z4tro9",
       "id_user": "qfn8pl",
       "firstName": "Nguyễn Văn",
       "lastName": "Hợi",
-      "timeOut": 593,
-      "scores": 5
+      "timeOut": 595,
+      "scores": 2
     }
   ]
 }

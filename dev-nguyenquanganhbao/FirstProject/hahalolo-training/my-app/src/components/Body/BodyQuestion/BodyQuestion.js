@@ -10,27 +10,25 @@ import { contextApp } from "../../../App";
 import DialogWarning from "./DialogWarning";
 import DialogResult from "./DialogResult";
 
+import {useAxios} from "../../../hooks/useAxios";
+import axios from "axios";
+
 export const contextBodyQuestion = createContext();
 
 function Index({ handleEndClick }) {
   const contextapp = useContext(contextApp);
-  const [dataQuestion, setDataQuestion] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [dataQuestion, setDataQuestion] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  const sleep = (ms) => {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  };
+  // const sleep = (ms) => {
+  //   return new Promise((resolve) => setTimeout(resolve, ms));
+  // };
 
-  useEffect(() => {
-    const fetchQuestion = async () => {
-      await sleep(1000);
-      const responseJson = await fetch("http://localhost:3000/question");
-      const response = await responseJson.json();
-      setDataQuestion(response);
-      setIsLoading(false);
-    };
-    fetchQuestion();
-  }, []);
+  const { response: dataQuestion, loading : isLoading } = useAxios({
+    method: 'get',
+    url: 'http://localhost:3000/question'
+});
+
 
   const [selectQuestion, setSelectQuestion] = useState([]);
   const [openModal, setOpenModal] = useState(false);
@@ -126,17 +124,11 @@ function Index({ handleEndClick }) {
     let check = contextapp.listResult.find((item) => item.id_user === user.id);
 
     async function updateListResult() {
-      await fetch(`http://localhost:3000/listResult/${check.id}`, {
-        method: "PATCH",
-        body: JSON.stringify({
-          scores: data.scores,
-          timeOut: data.timeOut,
-        }),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
+      let data1 = {
+        scores: data.scores,
+          timeOut: data.timeOut
+      }
+      axios.patch(`http://localhost:3000/listResult/${check.id}`, data1)
     }
 
     if (check) {
@@ -150,14 +142,7 @@ function Index({ handleEndClick }) {
         }
       }
     } else {
-      await fetch("http://localhost:3000/listResult", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
+      axios.post("http://localhost:3000/listResult",data)
     }
 
     contextapp.handleListResult(ramdomID);
