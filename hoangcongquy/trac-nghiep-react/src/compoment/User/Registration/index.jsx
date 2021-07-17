@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 
 import TextField from "@material-ui/core/TextField";
 import { Typography } from "@material-ui/core";
-// import { ContactSupportTwoTone } from "@material-ui/icons";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -193,7 +193,6 @@ function Registration() {
               color="secondary"
               type="submit"
               className={classes.button}
-              // disabled={true}
             >
               Đăng ký
             </Button>

@@ -5,39 +5,4 @@
   text-decoration: none;
   list-style: none;
 }
-/**/
-.footer {
-  background: #3a4bcd;
-  text-align: center;
-}
-.footer h1 {
-  padding-top: 20px;
-  color: white;
-}
-.footer h3 {
-  color: #fc0;
-}
-.footer-nav {
-  margin: 20px 200px;
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  padding: 15px 15px;
-}
-.footer-nav-right {
-  margin: 25px;
-}
-.footer-nav li a {
-  color: currentcolor;
-  margin-top: 5px;
-}
-.footer-nav li {
-  text-align: left;
-  margin: 10px 10px;
-  color: #fff;
-}
-.copyright {
-  padding-bottom: 25px;
-  color: white;
-}
+

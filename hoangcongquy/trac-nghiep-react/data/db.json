@@ -501,6 +501,13 @@
       "email": "congquy3000@gmail.com",
       "password": "123456789",
       "phone": "0382777666"
+    },
+    {
+      "name": "quyaaaaaaa",
+      "password": "1111111111",
+      "phone": "123456789",
+      "email": "congquy@gmail.com",
+      "id": 4
     }
   ],
   "charts": [

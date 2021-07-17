@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button, Container, Grid } from "@material-ui/core";
+import { Breadcrumbs, Button, Container, Grid } from "@material-ui/core";
 import Collapse from "@material-ui/core/Collapse";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
     marginBottom: "50px",
   },
   breadcrumb: {
-    background: "#4aa7c3a6",
+    borderBottom: "1px solid",
     padding: "15px",
     fontWeight: "500",
   },
@@ -103,25 +103,10 @@ function Main1(props) {
     fetchData();
   }, [id]);
 
-  //const [checked, setChecked] = useState([0]);
-
-  // const handleToggle = (value) => () => {
-  //   const currentIndex = checked.indexOf(value);
-  //   const newChecked = [...checked];
-
-  //   if (currentIndex === -1) {
-  //     newChecked.push(value);
-  //   } else {
-  //     newChecked.splice(currentIndex, 1);
-  //   }
-
-  //   setChecked(newChecked);
-  // };
-
   const history = useHistory();
 
   const checkData = localStorage.getItem("user");
-  console.log(checkData)
+  console.log(checkData);
 
   function handleClick() {
     if (checkData) {
@@ -130,19 +115,18 @@ function Main1(props) {
       history.push("/Login");
     }
   }
-
   return (
     <>
       <Container>
         <div className={classes.task}>
-          <nav className={classes.breadcrumb}>
-            <ul>
-              <li>
-                TRANG CHỦ<span> / </span>
-                {data.type}
-              </li>
-            </ul>
-          </nav>
+          <Breadcrumbs aria-label="breadcrumb" className={classes.breadcrumb}>
+            <Link color="inherit" to="/">
+              TRANG CHỦ
+            </Link>
+            <Link color="inherit" to="/">
+              {data.type}
+            </Link>
+          </Breadcrumbs>
           <Grid container spacing={2}>
             <Grid item xs={8} className={classes.advertisement}>
               <h1 className={classes.name}>Đề thi trắc nghiệm</h1>

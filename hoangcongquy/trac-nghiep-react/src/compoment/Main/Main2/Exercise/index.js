@@ -6,13 +6,6 @@ function Exercise() {
   const [data, setData] = useState([]);
   const [result, setResult] = useState("");
   const [poni, setPoni] = useState("");
-  const [dialog, setDialog] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  
-  function onClose(){
-    setDialog(false)
-  }
 
   const arr = [];
   useEffect(() => {
@@ -25,7 +18,6 @@ function Exercise() {
 
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
-    // pick 2 questions at random
     //side effect
     function randomData() {
       if (data.length > 0) {
@@ -40,9 +32,6 @@ function Exercise() {
   }, [data, questions]);
 
   function handleSubmit() {
-    // clearInterval(secondsPause);
-    setDialog(true);
-    setIsSubmitting(true)
     selectedRadio.map((i) => {
       if (i.result === "true") {
         arr.push(i.result);
@@ -51,7 +40,6 @@ function Exercise() {
         setResult(arr.length + "/" + questions.length);
         const point = Number((10 / questions.length) * arr.length);
         setPoni(point.toFixed(2));
-        setIsSubmitting(false)
       } else {
         setResult("0/" + questions.length);
         setPoni("0");
@@ -59,7 +47,6 @@ function Exercise() {
       return "0";
     });
   }
-  
   //clock
   const [selectedRadio, setSelectedRadio] = useState([]);
 
@@ -88,10 +75,6 @@ function Exercise() {
         onSubmit={handleSubmit}
         poni={poni}
         result={result}
-        dialog={dialog}
-        onClose={onClose}
-        isSubmitting={isSubmitting}
-        
       />
     </div>
    
