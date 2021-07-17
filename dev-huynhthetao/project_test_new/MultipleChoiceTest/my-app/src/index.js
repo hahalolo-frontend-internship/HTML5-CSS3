@@ -12,7 +12,7 @@ import App from './App';
 import Home from './component/Layout/Home/Home';
 import Register from './component/Account/Register';
 import Login from './component/Account/Login';
-import Test from './component/Test/Test/Test';
+import Test from './component/Test/Test';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

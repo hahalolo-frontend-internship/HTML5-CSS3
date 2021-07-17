@@ -7,14 +7,12 @@ import {
 export default function Header() {
     const [ flag, setFlag ] = useState(true)
     function renderLogin() {
-        const dataUser = localStorage.getItem('dataUser');
-        console.log(dataUser);
+        const dataUser = JSON.parse(localStorage.getItem('dataUser'));
         if(dataUser) {
             return (
                 <>
                     <li className="item__button">
-                        {/* <span>{`Hi,${dataUser.name}`}</span> */}
-                        <span>Hi, Tao</span>
+                        <span>{`Hi, ${dataUser.name}`}</span>
                         <img style={{width: '30px', borderRadius: '50%'}} src="https://scontent-hkt1-2.xx.fbcdn.net/v/t1.6435-9/205286388_1655715521291274_5893127134735839267_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=5457dZALcjcAX_jxU_R&_nc_ht=scontent-hkt1-2.xx&oh=21cdbb5d1769b65dc0110c2949643a0e&oe=60E8C352" alt="avt" />
                     </li>
                     <li>
@@ -49,4 +47,5 @@ export default function Header() {
         </header>
     );
 }
+
 

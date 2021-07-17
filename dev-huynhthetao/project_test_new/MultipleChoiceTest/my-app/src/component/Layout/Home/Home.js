@@ -26,7 +26,7 @@ export default function Home() {
                             </div>
                             <div className="card__content">
                                 <h4 className="card__title">ĐỀ THI HỌC KÌ</h4>
-                                <p className="card__description">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
+                                <p className="card__description card__description--pd">Ngân hàng câu hỏi đầy đủ các môn cấp 1,2,3 được pha trộn tạo đề theo casu trúc phân loại giúp các em dễ dàng ôn tập online đề thi giữa học kỳ, thi họ kì theo các chủ đề đã học.</p>
                                 <button className="card__button button button">Làm ngay</button>
                             </div>
                         </div>

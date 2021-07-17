@@ -52,6 +52,7 @@
 }
 .card__description--pd {
     padding: 5px 20px;
+    text-align: justify;
 }
 .card__description--banner {
     padding: 8px 22px 4px;
