@@ -14,7 +14,7 @@ import back from "../../img/back-question-icon.png";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import next from "../../img/next-question-icon.png";
 import Clock from "../Clock/Clock";
-import "./ItemQuestion.scss";
+import Button from "../Button";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 const styles = makeStyles({
   radio_btn: {
@@ -31,8 +31,27 @@ const styles = makeStyles({
     height: "30px",
     margin: 0,
   },
-  haha: {
-    background: "red",
+  controls: {
+    background: "#065592",
+  },
+  controlsLeft: {
+    background: "#efefef",
+    "&.done": {
+      background: "#9dd5fb",
+    },
+    "&.review": {
+      background: "#ffdeb7",
+    },
+  },
+  controlsMore: {
+    background: "#00335a",
+  },
+  seeback: {
+    background: "#fff",
+    width: "18px",
+    height: "18px",
+    borderRadius: "2px",
+    marginLeft: "8px",
   },
 });
 function ItemQuestion(props) {
@@ -143,15 +162,20 @@ function ItemQuestion(props) {
           />
         ))}
       </RadioGroup>
-      <Box className={classes.haha}>
+      <Box className={classes.controls} p={2}>
         <Box display="flex" justifyContent="space-between">
           <Box display="flex" justifyContent="space-between">
             <Box
               display="flex"
               justifyContent="space-between"
               alignItems="center"
+              className={classes.controlsLeft}
+              borderRadius="4px"
+              mr={2}
+              p="0 8px"
             >
               <AccessTimeIcon fontSize="small" />
+              &nbsp;
               <Clock
                 getTimeDown={getTimeDown}
                 finish={finishExercise}
@@ -159,64 +183,90 @@ function ItemQuestion(props) {
               />
             </Box>
             <FormControlLabel
-              // className={classes.checkbox_btn}
               onChange={(e) => addReview(item.id, e.target.checked)}
               checked={checked(listReview, null)}
-              control={<Checkbox color="primary" />}
-              label={"Xem lại"}
+              control={
+                <Checkbox color="secondary" className={classes.seeback} />
+              }
+              label={
+                <Box color="#fff" ml={1}>
+                  Xem lại
+                </Box>
+              }
             />
           </Box>
           <Box display="flex" justifyContent="space-between">
             {Number.parseInt(quest) === 1 ? null : (
-              <div
-                className="btn-controls"
+              <Box
+                display="flex"
+                alignItems="center"
                 onClick={() => handleQuestion(Number.parseInt(quest) - 1)}
               >
                 <img src={back} alt="btn quay lại" />
-              </div>
+              </Box>
             )}
             {Number.parseInt(quest) === props.data.length ? null : (
-              <div
-                className="btn-controls"
+              <Box
+                display="flex"
+                alignItems="center"
+                ml={2}
                 onClick={() => handleQuestion(Number.parseInt(quest) + 1)}
               >
                 <img src={next} alt="btn tiếp theo" />
-              </div>
+              </Box>
             )}
-            <div className="btn-controls" onClick={toogleTable}>
+            <Box
+              display="flex"
+              alignItems="center"
+              ml={2}
+              onClick={toogleTable}
+            >
               <img src={three_dot} alt="show list question" />
-            </div>
+            </Box>
           </Box>
         </Box>
-
         {dropdown ? (
-          <div className="question-table">
-            <div className="question-table_top exercise-controls_flex">
-              <span>Bấm vào câu muốn trả lời</span>
+          <Box className={classes.controlsMore} mt={2} p={2}>
+            <Box display="flex" justifyContent="space-between">
+              <Box color="#fff">Bấm vào câu muốn trả lời</Box>
 
-              <button className="btn btn-finish" onClick={finishSoon}>
+              <Button
+                onClick={finishSoon}
+                margin="0"
+                width="max-content"
+                height="max-content"
+                padding="8px"
+                texttransform="unset"
+                background="#ffb83c"
+                backgroundhover="#e39000"
+              >
                 {listAnswer.length === props.data.length
                   ? "Nộp bài"
                   : "Nộp bài sớm"}
-              </button>
-            </div>
-            <div className="question-table_list">
+              </Button>
+            </Box>
+            <Box display="flex" flexWrap="wrap" margin="0 -1.25%">
               {props.data.map((item, index) => (
-                <div
-                  className={
-                    "question-table_item " +
-                    resultClass(listAnswer, listReview, item)
-                  }
+                <Box
+                  textAlign="center"
+                  margin="1.25%"
+                  width="10%"
+                  borderRadius="4px"
+                  className={`${classes.controlsLeft} ${resultClass(
+                    listAnswer,
+                    listReview,
+                    item
+                  )}`}
                   key={item.id}
                   onClick={() =>
                     history.push(`${"/itemquestion/" + (index + 1)}`)
                   }
                 >
                   {item.name}
-                </div>
+                </Box>
               ))}
-            </div>
-          </div>
+            </Box>
+          </Box>
         ) : null}
       </Box>
 

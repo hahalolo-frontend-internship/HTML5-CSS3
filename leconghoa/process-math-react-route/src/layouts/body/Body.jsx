@@ -11,7 +11,7 @@ import ListQuestion from "../../components/ListQuestion/ListQuestion";
 import TopRank from "../../components/TopRank/TopRank";
 import Tutorial from "../../components/Tutorial/Tutorial";
 const useStyles = makeStyles(() => ({
-  root: {
+  detail_question: {
     background: "#ececec",
   },
 }));
@@ -157,8 +157,8 @@ function Body(props) {
                   justifyContent="space-between"
                   padding="20px"
                   mb={3}
-                  borderradius="8px"
-                  className={classes.root}
+                  borderRadius="8px"
+                  className={classes.detail_question}
                 >
                   <Box display="flex" justifyContent="space-between">
                     <CheckBoxOutlinedIcon fontSize="small" />
