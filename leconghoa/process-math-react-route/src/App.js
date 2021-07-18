@@ -5,11 +5,11 @@ import SignUp from "./components/SignUp/SignUp";
 import "./grid.scss";
 import Body from "./layouts/body/Body";
 import Footer from "./layouts/footer/Footer";
-import Header from "./layouts/header/index";
+import Header from "./layouts/header/Header";
 
 export default function App() {
   const [user, setUser] = useState();
-  const [isSignIn, setIsSignIn] = useState("");
+  const [isSignIn, setIsSignIn] = useState("default");
   function signIn(data) {
     setIsSignIn(data);
   }

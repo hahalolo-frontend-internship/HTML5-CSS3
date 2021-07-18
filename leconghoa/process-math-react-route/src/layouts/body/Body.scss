@@ -38,11 +38,6 @@
   .sidebar-right {
     flex: 1;
     font-size: 13px;
-    p {
-      color: red;
-      font-size: 14px;
-      margin: 8px;
-    }
     .btn-already {
       background-color: #ffb83c;
       height: 50px;
@@ -93,4 +88,5 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }

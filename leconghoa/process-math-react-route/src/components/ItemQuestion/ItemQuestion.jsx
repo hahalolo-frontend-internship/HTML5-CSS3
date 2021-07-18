@@ -1,14 +1,42 @@
+import {
+  Box,
+  Checkbox,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  Typography,
+} from "@material-ui/core";
 import React, { useState } from "react";
-import next from "../../img/next-question-icon.png";
-import back from "../../img/back-question-icon.png";
-import three_dot from "../../img/3-dotted.png";
-import clock from "../../img/clock-regular.svg";
-import PopupFinish from "../../components/PopupFinish/PopupFinish";
-import "./ItemQuestion.scss";
-import Clock from "../Clock/Clock";
 import { useHistory, useParams } from "react-router-dom";
-
+import PopupFinish from "../../components/PopupFinish/PopupFinish";
+import three_dot from "../../img/3-dotted.png";
+import back from "../../img/back-question-icon.png";
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import next from "../../img/next-question-icon.png";
+import Clock from "../Clock/Clock";
+import "./ItemQuestion.scss";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+const styles = makeStyles({
+  radio_btn: {
+    margin: "8px 0",
+    padding: 8,
+    border: "1px solid #d9d9d9",
+    borderRadius: 6,
+    transition: "all .5s",
+    "&:hover": {
+      background: "#bbe2ff",
+    },
+  },
+  checkbox_btn: {
+    height: "30px",
+    margin: 0,
+  },
+  haha: {
+    background: "red",
+  },
+});
 function ItemQuestion(props) {
+  const classes = styles();
   const history = useHistory();
   let { quest } = useParams();
   if (quest === undefined || quest === "0") quest = 1;
@@ -96,53 +124,49 @@ function ItemQuestion(props) {
   };
   return (
     <div className="item-question">
-      <h4 className="item-question_title">{item.name}</h4>
-      <div className="item-question_content">{item.question}</div>
-      <div className="list-answer">
-        {item.results.map((ele) => (
-          <div
-            className="item-question_answer flex-items-center radio_item"
-            key={item.id + ele.name_answer}
-          >
-            <input
-              defaultChecked={checked(listAnswer, ele)}
-              type="radio"
-              name={item.id}
-              value={ele.result_answer}
-              id={ele.result_answer}
-              onClick={() => addAnwer(item.id, ele.result_answer)}
-            />
-            <label htmlFor={ele.result_answer}>
-              {ele.name_answer}.{ele.result_answer}
-            </label>
-          </div>
+      <Box component="h4">{item.name}:</Box>
+      <Typography>{item.question}</Typography>
+      <RadioGroup>
+        {item.results.map((ele, index) => (
+          <FormControlLabel
+            className={classes.radio_btn}
+            onChange={() => addAnwer(item.id, ele.result_answer)}
+            checked={checked(listAnswer, ele)}
+            key={index}
+            value={ele.result_answer}
+            control={<Radio color="primary" />}
+            label={
+              <>
+                {ele.name_answer}.{ele.result_answer}
+              </>
+            }
+          />
         ))}
-      </div>
-
-      <div className="controls item-question_answer">
-        <div className="exercise-controls flex-items-center">
-          <div className=" exercise-controls_flex">
-            <div className="countdown exercise-controls_flex">
-              <img src={clock} alt="Đồng hồ" className="clock" />
+      </RadioGroup>
+      <Box className={classes.haha}>
+        <Box display="flex" justifyContent="space-between">
+          <Box display="flex" justifyContent="space-between">
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <AccessTimeIcon fontSize="small" />
               <Clock
                 getTimeDown={getTimeDown}
                 finish={finishExercise}
                 clock={seconds_to}
               />
-            </div>
-            <div className="exercise-controls_flex">
-              <input
-                type="checkbox"
-                id="seeback"
-                checked={checked(listReview, null)}
-                onChange={(e) => addReview(item.id, e.target.checked)}
-              />
-              <label htmlFor="seeback" className="seeback">
-                Xem lại
-              </label>
-            </div>
-          </div>
-          <div className="exercise-controls_flex">
+            </Box>
+            <FormControlLabel
+              // className={classes.checkbox_btn}
+              onChange={(e) => addReview(item.id, e.target.checked)}
+              checked={checked(listReview, null)}
+              control={<Checkbox color="primary" />}
+              label={"Xem lại"}
+            />
+          </Box>
+          <Box display="flex" justifyContent="space-between">
             {Number.parseInt(quest) === 1 ? null : (
               <div
                 className="btn-controls"
@@ -162,8 +186,9 @@ function ItemQuestion(props) {
             <div className="btn-controls" onClick={toogleTable}>
               <img src={three_dot} alt="show list question" />
             </div>
-          </div>
-        </div>
+          </Box>
+        </Box>
+
         {dropdown ? (
           <div className="question-table">
             <div className="question-table_top exercise-controls_flex">
@@ -193,7 +218,8 @@ function ItemQuestion(props) {
             </div>
           </div>
         ) : null}
-      </div>
+      </Box>
+
       {popup && (
         <PopupFinish
           onOK={finishExercise}

@@ -1,5 +1,3 @@
-import Button from "../Button";
-import Box from "@material-ui/core/Box";
 import React from "react";
 import Question from "../Question/Question";
 
@@ -7,21 +5,16 @@ function ListQuestion(props) {
   const data = props.data;
   return (
     <>
-      <Box>
+      <div className="list-question">
         {data.map((item, index) => (
           <Question key={index} detail={item} />
         ))}
-      </Box>
-      <Box width={330} margin={"auto"}>
-        <Button
-          onClick={props.onClick}
-          fullWidth
-          background="#ffb83c"
-          borderradius="8px"
-        >
+      </div>
+      <div className="align_center">
+        <button className="btn btn-start" onClick={props.onClick}>
           Bắt đầu
-        </Button>
-      </Box>
+        </button>
+      </div>
     </>
   );
 }

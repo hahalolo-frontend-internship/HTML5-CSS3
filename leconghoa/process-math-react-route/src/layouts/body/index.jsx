@@ -1,22 +1,14 @@
-import { Container, Grid, makeStyles } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
-import CheckBoxOutlinedIcon from "@material-ui/icons/CheckBoxOutlined";
-import PersonSharpIcon from "@material-ui/icons/PersonSharp";
 import React, { useEffect, useState } from "react";
-import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
-import Button from "../../components/Button";
-import FinishExam from "../../components/FinishExam/FinishExam";
-import ItemQuestion from "../../components/ItemQuestion/ItemQuestion";
+import "./Body.scss";
+import icon_check from "../../img/icon-check.svg";
+import icon_user from "../../img/user-solid.svg";
 import ListQuestion from "../../components/ListQuestion/ListQuestion";
-import TopRank from "../../components/TopRank/TopRank";
 import Tutorial from "../../components/Tutorial/Tutorial";
-const useStyles = makeStyles(() => ({
-  root: {
-    background: "#ececec",
-  },
-}));
+import ItemQuestion from "../../components/ItemQuestion/ItemQuestion";
+import FinishExam from "../../components/FinishExam/FinishExam";
+import TopRank from "../../components/TopRank/TopRank";
+import { Switch, Route, useHistory, useRouteMatch } from "react-router-dom";
 function Body(props) {
-  const classes = useStyles();
   const history = useHistory();
   // result
   const [users, setUsers] = useState([]);
@@ -104,10 +96,10 @@ function Body(props) {
   }
   let match = useRouteMatch();
   return (
-    <Container>
-      <Grid container spacing={3}>
-        <Grid item xs={9}>
-          <Box border="1px solid #d9d9d9" p={3} borderradius={12} m="32px 0">
+    <div className="main">
+      <div className="grid wide">
+        <div className="row no-gutters">
+          <div className="c-9 main-question">
             <Switch>
               <Route
                 path={`/itemquestion/:quest`}
@@ -142,34 +134,29 @@ function Body(props) {
             </Switch>
             {check(path, str) && (
               // Khung số câu , số phút
-              <Box>
-                <Box
-                  fontWeight="fontWeightBold"
-                  mb={3}
-                  component="h5"
-                  fontSize="24px"
-                  color="#065592"
-                >
+              <>
+                <h4 className="title-test">
                   Đề kiểm tra 1 tiết môn Toán Lớp 6
-                </Box>
-                <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  padding="20px"
-                  mb={3}
-                  borderradius="8px"
-                  className={classes.root}
-                >
-                  <Box display="flex" justifyContent="space-between">
-                    <CheckBoxOutlinedIcon fontSize="small" />
-                    <Box>{listQuestion.length} câu</Box>
-                  </Box>
-                  <Box display="flex" justifyContent="space-between">
-                    <PersonSharpIcon fontSize="small" />
-                    <Box>45 phút</Box>
-                  </Box>
-                </Box>
-              </Box>
+                </h4>
+                <div className="detail-question">
+                  <div className="flex-items-center">
+                    <img
+                      src={icon_check}
+                      alt="icon check"
+                      className="detail-question_icon"
+                    />
+                    <span>{listQuestion.length} câu</span>
+                  </div>
+                  <div className="flex-items-center">
+                    <img
+                      src={icon_user}
+                      alt="icon user"
+                      className="detail-question_icon"
+                    />
+                    <span>45 phút</span>
+                  </div>
+                </div>
+              </>
             )}
 
             <Route path="/tutorial">
@@ -195,40 +182,22 @@ function Body(props) {
                 <ListQuestion data={listQuestion} onClick={toogleStart1} />
               )}
             />
-          </Box>
-        </Grid>
-        <Grid item xs={3}>
-          <Box textAlign="center" m="32px 0">
+          </div>
+          <div className="sidebar-right align_center">
             {path.includes("/finish") && <TopRank users={users} />}
             {(path === "/" || path === "/login" || path === "/signup") && (
-              <Box>
-                <Box color="red" component="p" fontSize={14} m="16px 0">
-                  Bạn có muốn chinh phục đề thi này
-                </Box>
-                <Button
-                  background="#ffb83c"
-                  backgroundhover="#ffa201"
-                  fullWidth
-                  texttransform="unset"
-                  onClick={toogleStart1}
-                  margin="0 0 24px 0"
-                >
+              <>
+                <p className="">Bạn có muốn chinh phục đề thi này</p>
+                <button className="btn btn-already" onClick={toogleStart1}>
                   Có, tôi muốn!
-                </Button>
-                <Button
-                  background="#375aab"
-                  backgroundhover="#0b3cae"
-                  fullWidth
-                  texttransform="unset"
-                >
-                  Chia sẻ Facebook
-                </Button>
-              </Box>
+                </button>
+                <button className="btn btn-share">Chia sẻ Facebook</button>
+              </>
             )}
-          </Box>
-        </Grid>
-      </Grid>
-    </Container>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
