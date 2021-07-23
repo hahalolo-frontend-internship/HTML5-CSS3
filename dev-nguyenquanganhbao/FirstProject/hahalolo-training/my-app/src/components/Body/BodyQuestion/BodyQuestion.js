@@ -1,34 +1,22 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
-import DetailQuestion from "./DetailQuestion";
-import QuestionItems from "./QuestionItems";
-
-import ControllerQuestion from "./ControlleQuestion/ControlleQuestion";
-import Spinner from "./Loading/Loading";
-import { contextApp } from "../../../App";
-
-
-import DialogWarning from "./DialogWarning";
-import DialogResult from "./DialogResult";
-
-import {useAxios} from "../../../hooks/useAxios";
 import axios from "axios";
+import React, { createContext, useState } from "react";
+import { useAxios } from "../../../hooks/useAxios";
+import ControllerQuestion from "./ControlleQuestion/ControlleQuestion";
+import DetailQuestion from "./DetailQuestion";
+import DialogResult from "./DialogResult";
+import DialogWarning from "./DialogWarning";
+import Spinner from "./Loading/Loading";
+import QuestionItems from "./QuestionItems";
 
 export const contextBodyQuestion = createContext();
 
-function Index({ handleEndClick }) {
-  const contextapp = useContext(contextApp);
-  // const [dataQuestion, setDataQuestion] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+function BodyQuestion(props) {
+  const { handleEndClick, triggerUpdateListResult, listResult } = props;
 
-  // const sleep = (ms) => {
-  //   return new Promise((resolve) => setTimeout(resolve, ms));
-  // };
-
-  const { response: dataQuestion, loading : isLoading } = useAxios({
-    method: 'get',
-    url: 'http://localhost:3000/question'
-});
-
+  const { response: dataQuestion, loading: isLoading } = useAxios({
+    method: "get",
+    url: "http://localhost:3000/question",
+  });
 
   const [selectQuestion, setSelectQuestion] = useState([]);
   const [openModal, setOpenModal] = useState(false);
@@ -37,7 +25,6 @@ function Index({ handleEndClick }) {
   const [timeOut, setTimeOut] = useState(0);
   const [warning, setWarning] = useState(false);
   const [result, setResult] = useState();
-
 
   const handleGetAnswerChange = (data) => {
     if (selectQuestion.length > 0) {
@@ -53,14 +40,13 @@ function Index({ handleEndClick }) {
     } else {
       setSelectQuestion([...selectQuestion, data]);
     }
-    
+
     if (count < dataQuestion.length - 1) {
       setTimeout(() => {
-        setCount(count => count  + 1);
+        setCount((count) => count + 1);
       }, 300);
     }
   };
-
 
   function getResult() {
     let result;
@@ -121,14 +107,16 @@ function Index({ handleEndClick }) {
       scores: result.scores,
     };
 
-    let check = contextapp.listResult.find((item) => item.id_user === user.id);
+    let check = listResult.find((item) => item.id_user === user.id);
 
-    async function updateListResult() {
+    function updateListResult() {
       let data1 = {
         scores: data.scores,
-          timeOut: data.timeOut
-      }
-      axios.patch(`http://localhost:3000/listResult/${check.id}`, data1)
+        timeOut: data.timeOut,
+      };
+
+      triggerUpdateListResult(check.id, data1);
+      // axios.patch(`http://localhost:3000/listResult/${check.id}`, data1);
     }
 
     if (check) {
@@ -142,10 +130,8 @@ function Index({ handleEndClick }) {
         }
       }
     } else {
-      axios.post("http://localhost:3000/listResult",data)
+      axios.post("http://localhost:3000/listResult", data);
     }
-
-    contextapp.handleListResult(ramdomID);
   };
 
   const prevQuestion = () => {
@@ -221,15 +207,6 @@ function Index({ handleEndClick }) {
                 nextQuestion={nextQuestion}
                 handleSelectQuestionClick={handleSelectQuestionClick}
               />
-
-              {/* <Button
-                variant="contained"
-                style={{padding: "10px 50px"}}
-                className={clsx(classes.button, classes.mt)}
-                type="submit"
-              >
-                Nộp bài
-              </Button> */}
             </form>
 
             <DialogWarning
@@ -239,7 +216,10 @@ function Index({ handleEndClick }) {
             />
 
             {openModal && (
-              <DialogResult openModal={openModal} closeResultModalClick={closeResultModalClick} />
+              <DialogResult
+                openModal={openModal}
+                closeResultModalClick={closeResultModalClick}
+              />
             )}
           </div>
         </contextBodyQuestion.Provider>
@@ -248,4 +228,4 @@ function Index({ handleEndClick }) {
   }
 }
 
-export default Index;
+export default BodyQuestion;

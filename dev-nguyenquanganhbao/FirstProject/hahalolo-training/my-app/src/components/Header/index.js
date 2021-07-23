@@ -1,19 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import Image from "../../common/Image";
 import "./header-style.scss";
-import { contextApp } from "../../App";
 
-function Header() {
-  const context = useContext(contextApp);
+function Header({ triggerGetAccount }) {
   let history = useHistory();
   const user = JSON.parse(localStorage.getItem("user-info"));
 
   const handleLogoutClick = () => {
-    context.handleReset("logout");
-    localStorage.removeItem("user-info");
+    triggerGetAccount();
     history.push("/login");
+    localStorage.removeItem("user-info");
   };
 
   return (

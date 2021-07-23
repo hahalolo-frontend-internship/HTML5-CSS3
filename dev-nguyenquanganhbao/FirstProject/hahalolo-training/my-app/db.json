@@ -353,6 +353,13 @@
       "account": "hoi123@gmail.com",
       "password": "123",
       "id": "qfn8pl"
+    },
+    {
+      "firstName": "Nguyen",
+      "lastName": "Bao",
+      "account": "bao123@gmail.com",
+      "password": "123",
+      "id": "9rs2kg"
     }
   ],
   "listResult": [
@@ -401,8 +408,8 @@
       "id_user": "qfn8pl",
       "firstName": "Nguyễn Văn",
       "lastName": "Hợi",
-      "timeOut": 595,
-      "scores": 2
+      "timeOut": 594,
+      "scores": 4
     }
   ]
 }
