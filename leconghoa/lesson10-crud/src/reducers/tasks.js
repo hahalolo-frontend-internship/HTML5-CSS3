@@ -35,24 +35,39 @@ let findIndex = (tasks, id) => {
 let data = JSON.parse(localStorage.getItem("tasks"));
 let initialState = data ? data : [];
 let myReducer = (state = initialState, action) => {
+  let id;
+  let index = -1;
   switch (action.type) {
     case types.LIST_ALL:
       return state;
-    case types.ADD_TASK:
-      let newTask = {
-        id: randomID(),
+    case types.SAVE_TASK:
+      let task = {
+        id: action.task.id,
         name: action.task.name,
         status: action.task.status === "true" ? true : false,
       };
-      state.push(newTask);
+      if (!task.id && task.name !== "") {
+        task.id = randomID();
+        state.push(task);
+      } else {
+        index = findIndex(state, task.id);
+        state[index] = task;
+      }
       localStorage.setItem("tasks", JSON.stringify(state));
       return [...state];
     case types.UPDATE_STATUS_TASK:
-      let id = action.id;
-      let index = findIndex(state, id);
-      state[index] = { ...state[index],status: !state[index].status };
+      id = action.id;
+      index = findIndex(state, id);
+      state[index] = { ...state[index], status: !state[index].status };
       localStorage.setItem("tasks", JSON.stringify(state));
       return [...state];
+    case types.DELETE_TASK:
+      id = action.id;
+      index = findIndex(state, id);
+      state.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(state));
+      return [...state];
+
     default:
       return state;
   }
