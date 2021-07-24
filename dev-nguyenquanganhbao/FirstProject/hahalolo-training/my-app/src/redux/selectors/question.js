@@ -13,7 +13,19 @@ const makeSelectListQuestion = () =>
 const makeSelectQuestion = () =>
   createSelector(selectQuestionDomain, (substate) => substate.selectQuestion);
 
+const makeSelectTimeOut = () =>
+  createSelector(selectQuestionDomain, (substate) => substate.timeOut);
+
+const makeSelectResult = () =>
+  createSelector(selectQuestionDomain, (substate) => substate.result);
+
 const makeSelectStatusFlags = () =>
   createSelector(selectQuestionDomain, (substate) => substate.statusFlags);
 
-export { makeSelectListQuestion, makeSelectStatusFlags, makeSelectQuestion };
+export {
+  makeSelectListQuestion,
+  makeSelectStatusFlags,
+  makeSelectQuestion,
+  makeSelectTimeOut,
+  makeSelectResult,
+};

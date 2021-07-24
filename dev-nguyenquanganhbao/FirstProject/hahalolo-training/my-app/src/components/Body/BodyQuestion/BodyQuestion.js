@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import ControllerQuestion from "./ControlleQuestion/ControlleQuestion";
+import ControllerQuestion from "./ControlleQuestion";
 import DetailQuestion from "./DetailQuestion";
 import DialogResult from "./DialogResult";
 import DialogWarning from "./DialogWarning";
@@ -20,6 +20,13 @@ function BodyQuestion(props) {
     selectQuestion,
     addSelectQuestion,
     reSetSelectQuestion,
+    stopTime,
+    resetStopTime,
+    timeOut,
+    reSetTimeOut,
+    getResult,
+    resetResult,
+    result,
   } = props;
 
   useEffect(() => {
@@ -31,10 +38,6 @@ function BodyQuestion(props) {
   const [openModal, setOpenModal] = useState(false);
   const [warning, setWarning] = useState(false);
 
-  const [flagStopTime, setFlagStopTime] = useState(false);
-  const [timeOut, setTimeOut] = useState(0);
-  const [result, setResult] = useState();
-
   const handleGetAnswerChange = (data) => {
     addSelectQuestion(data);
 
@@ -45,38 +48,20 @@ function BodyQuestion(props) {
     }
   };
 
-  function getResult() {
-    let result;
-    let sumQuestion = listQuestion.length;
-    let countQuestionCorrect = 0;
-    let countQuestionWrong = 0;
-    selectQuestion.map((i) =>
-      i.result ? countQuestionCorrect++ : countQuestionWrong++
-    );
-    let scores =
-      Math.round(countQuestionCorrect * (10 / sumQuestion) * 100) / 100;
-    result = {
-      scores: scores,
-      countQuestionCorrect: countQuestionCorrect,
-      countQuestionWrong: countQuestionWrong,
-    };
-    setResult(result);
-  }
-
   const handleQuestionSubmit = (e) => {
     e.preventDefault();
     if (selectQuestion.length < 10) {
       setWarning(true);
     } else {
       setOpenModal(true);
-      setFlagStopTime(true);
+      stopTime();
       getResult();
     }
   };
 
   const handleWarningBoxSubmit = () => {
     setOpenModal(true);
-    setFlagStopTime(true);
+    stopTime();
     setWarning(false);
     getResult();
   };
@@ -85,12 +70,16 @@ function BodyQuestion(props) {
     setWarning(false);
   };
 
+  //Xong
   const closeResultModalClick = () => {
     setOpenModal(false);
     handleEndClick(true);
     updateListResult();
     setOpenModal(false);
-    reSetSelectQuestion();
+    reSetSelectQuestion([]);
+    resetStopTime();
+    reSetTimeOut();
+    resetResult();
   };
 
   const updateListResult = async () => {
@@ -145,30 +134,6 @@ function BodyQuestion(props) {
     setCount(index);
   };
 
-  const formatTime = (sec) => {
-    var hours = Math.floor(sec / 3600);
-    hours >= 1 ? (sec = sec - hours * 3600) : (hours = "00");
-    var min = Math.floor(sec / 60);
-    min >= 1 ? (sec = sec - min * 60) : (min = "00");
-    sec < 1 ? (sec = "00") : void 0;
-    min.toString().length === 1 ? (min = "0" + min) : void 0;
-    sec.toString().length === 1 ? (sec = "0" + sec) : void 0;
-    return hours + ":" + min + ":" + sec;
-  };
-
-  const getTimeOut = (data) => {
-    setTimeOut(data);
-  };
-
-  let listContext = {
-    // count: count,
-    formatTime: formatTime,
-    getTimeOut: getTimeOut,
-    timeOut: timeOut,
-    flagStopTime: flagStopTime,
-    result: result,
-  };
-
   if (StatusFlags.isLoading) {
     return (
       <div className="body-question">
@@ -180,52 +145,49 @@ function BodyQuestion(props) {
       <div className="body-question">
         <DetailQuestion />
 
-        <contextBodyQuestion.Provider value={listContext}>
-          <div className="body-question__list">
-            <form
-              className="body-question__form"
-              onSubmit={handleQuestionSubmit}
-            >
-              {listQuestion.map(
-                (item, index) =>
-                  index === count && (
-                    <QuestionItems
-                      handleGetAnswerChange={handleGetAnswerChange}
-                      key={item.id}
-                      itemQuestion={item}
-                      selectQuestion={selectQuestion}
-                    />
-                  )
-              )}
-
-              <ControllerQuestion
-                prevQuestion={prevQuestion}
-                nextQuestion={nextQuestion}
-                handleSelectQuestionClick={handleSelectQuestionClick}
-                listQuestion={listQuestion}
-                selectQuestion={selectQuestion}
-                count={count}
-              />
-            </form>
-
-            <DialogWarning
-              handleCloseWarning={handleCloseWarning}
-              handleWarningBoxSubmit={handleWarningBoxSubmit}
-              listQuestion={listQuestion}
-              warning={warning}
-              selectQuestion={selectQuestion}
-            />
-
-            {openModal && (
-              <DialogResult
-                openModal={openModal}
-                closeResultModalClick={closeResultModalClick}
-                listQuestion={listQuestion}
-                selectQuestion={selectQuestion}
-              />
+        <div className="body-question__list">
+          <form className="body-question__form" onSubmit={handleQuestionSubmit}>
+            {listQuestion.map(
+              (item, index) =>
+                index === count && (
+                  <QuestionItems
+                    handleGetAnswerChange={handleGetAnswerChange}
+                    key={item.id}
+                    itemQuestion={item}
+                    selectQuestion={selectQuestion}
+                  />
+                )
             )}
-          </div>
-        </contextBodyQuestion.Provider>
+
+            <ControllerQuestion
+              prevQuestion={prevQuestion}
+              nextQuestion={nextQuestion}
+              handleSelectQuestionClick={handleSelectQuestionClick}
+              listQuestion={listQuestion}
+              selectQuestion={selectQuestion}
+              count={count}
+            />
+          </form>
+
+          <DialogWarning
+            handleCloseWarning={handleCloseWarning}
+            handleWarningBoxSubmit={handleWarningBoxSubmit}
+            listQuestion={listQuestion}
+            warning={warning}
+            selectQuestion={selectQuestion}
+          />
+
+          {openModal && (
+            <DialogResult
+              openModal={openModal}
+              closeResultModalClick={closeResultModalClick}
+              listQuestion={listQuestion}
+              selectQuestion={selectQuestion}
+              timeOut={timeOut}
+              result={result}
+            />
+          )}
+        </div>
       </div>
     );
   }

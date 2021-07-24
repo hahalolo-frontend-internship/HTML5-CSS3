@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
 import clsx from "clsx";
-import { contextBodyQuestion } from "./BodyQuestion";
+import React from "react";
 
 const useStyleDialog = makeStyles(() => ({
   titleRusult: {
@@ -44,13 +43,25 @@ const useStyleDialog = makeStyles(() => ({
   },
 }));
 
+const formatTime = (sec) => {
+  var hours = Math.floor(sec / 3600);
+  hours >= 1 ? (sec = sec - hours * 3600) : (hours = "00");
+  var min = Math.floor(sec / 60);
+  min >= 1 ? (sec = sec - min * 60) : (min = "00");
+  sec < 1 ? (sec = "00") : void 0;
+  min.toString().length === 1 ? (min = "0" + min) : void 0;
+  sec.toString().length === 1 ? (sec = "0" + sec) : void 0;
+  return hours + ":" + min + ":" + sec;
+};
+
 export default function CustomizedDialogs({
   closeResultModalClick,
   listQuestion,
   selectQuestion,
+  timeOut,
+  result,
 }) {
   const classes = useStyleDialog();
-  const context = useContext(contextBodyQuestion);
 
   return (
     <Dialog open={true}>
@@ -65,16 +76,16 @@ export default function CustomizedDialogs({
 
       <Box className={classes.containerStatistical}>
         <Typography className={classes.textStatistical} component="p">
-          Thời gian: {context.formatTime(600 - context.timeOut)}
+          Thời gian: {formatTime(600 - timeOut)}
         </Typography>
         <Typography className={classes.textStatistical} component="p">
-          Điểm số: {context.result.scores}
+          Điểm số: {result.scores}
         </Typography>
         <Typography className={classes.textStatistical} component="p">
-          Số câu đúng: {context.result.countQuestionCorrect}
+          Số câu đúng: {result.countQuestionCorrect}
         </Typography>
         <Typography className={classes.textStatistical} component="p">
-          Số câu sai: {context.result.countQuestionWrong}
+          Số câu sai: {result.countQuestionWrong}
         </Typography>
       </Box>
 

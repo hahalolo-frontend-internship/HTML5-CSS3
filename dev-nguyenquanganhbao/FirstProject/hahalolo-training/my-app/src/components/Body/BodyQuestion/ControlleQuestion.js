@@ -3,8 +3,8 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import clsx from "clsx";
 import React, { useState } from "react";
-import { useButtonStyles } from "../../../../common/ButtonStyle";
-import Oclock from "../../../../common/Oclock";
+import { useButtonStyles } from "../../../common/ButtonStyle";
+import Oclock from "../../../common/Oclock";
 
 function Index({
   listQuestion,

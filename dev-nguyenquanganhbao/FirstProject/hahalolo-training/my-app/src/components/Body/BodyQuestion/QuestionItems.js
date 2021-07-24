@@ -10,7 +10,7 @@ function QuestionItems({
   handleGetAnswerChange,
   selectQuestion,
 }) {
-  const activeAnswer = selectQuestion?.map((e) => e.answer_id);
+  const activeAnswer = selectQuestion.map((e) => e.answer_id);
   return (
     <div className="body-question__items">
       <h3 className="name">{itemQuestion.name}</h3>
