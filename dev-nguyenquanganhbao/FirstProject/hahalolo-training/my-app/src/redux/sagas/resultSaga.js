@@ -6,8 +6,14 @@ import {
   getListResultSuccess,
   updateListResultSuccess,
   updateListResultFailed,
+  addResultSuccess,
+  addResultFailed,
 } from "../actions/result";
-import { GET_LIST_RESULT, UPDATE_LIST_RESULT } from "../constants/result";
+import {
+  GET_LIST_RESULT,
+  UPDATE_LIST_RESULT,
+  ADD_RESULT,
+} from "../constants/result";
 
 // function that makes the api request and returns a Promise for response
 function fetchResult() {
@@ -19,6 +25,10 @@ function fetchResult() {
 
 function UpdateResult({ id, infoResult }) {
   return axios.patch(`http://localhost:3000/listResult/${id}`, infoResult);
+}
+
+function AddResult({ infoResult }) {
+  return axios.post("http://localhost:3000/listResult", infoResult);
 }
 
 // worker saga: makes the api call when watcher saga sees the action
@@ -45,8 +55,22 @@ function* callApiUpdateResult({ id, infoResult }) {
   }
 }
 
+function* callApiAddResult({ infoResult }) {
+  try {
+    const response = yield call(AddResult, { infoResult });
+    if (response.status === 201) {
+      yield put(addResultSuccess(infoResult));
+    } else {
+      yield put(addResultFailed(response));
+    }
+  } catch (error) {
+    yield put(addResultFailed(error));
+  }
+}
+
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export default function* rerultSaga() {
   yield takeLatest(GET_LIST_RESULT, callApiResult);
   yield takeLatest(UPDATE_LIST_RESULT, callApiUpdateResult);
+  yield takeLatest(ADD_RESULT, callApiAddResult);
 }

@@ -44,7 +44,11 @@ const useStyleDialog = makeStyles(() => ({
   },
 }));
 
-export default function CustomizedDialogs({closeResultModalClick }) {
+export default function CustomizedDialogs({
+  closeResultModalClick,
+  listQuestion,
+  selectQuestion,
+}) {
   const classes = useStyleDialog();
   const context = useContext(contextBodyQuestion);
 
@@ -79,7 +83,7 @@ export default function CustomizedDialogs({closeResultModalClick }) {
           Đáp án của bạn
         </Typography>
         <Box className={classes.tableResult}>
-          {context.selectQuestion.map((item) => (
+          {selectQuestion.map((item) => (
             <Typography
               component="span"
               key={item.answer_id}
@@ -104,10 +108,12 @@ export default function CustomizedDialogs({closeResultModalClick }) {
           Đáp án đúng
         </Typography>
         <Box className={classes.tableResult}>
-          {context.dataQuestion.map((item, index) => (
-            <Typography 
-            component="span"
-            className={classes.itemTableResult} key={item.id}>
+          {listQuestion.map((item, index) => (
+            <Typography
+              component="span"
+              className={classes.itemTableResult}
+              key={item.id}
+            >
               {item.answers.map((i) =>
                 i.result
                   ? `${index + 1} - 

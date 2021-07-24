@@ -1,6 +1,4 @@
-import axios from "axios";
-import React, { createContext, useState } from "react";
-import { useAxios } from "../../../hooks/useAxios";
+import React, { createContext, useEffect, useState } from "react";
 import ControllerQuestion from "./ControlleQuestion/ControlleQuestion";
 import DetailQuestion from "./DetailQuestion";
 import DialogResult from "./DialogResult";
@@ -11,37 +9,36 @@ import QuestionItems from "./QuestionItems";
 export const contextBodyQuestion = createContext();
 
 function BodyQuestion(props) {
-  const { handleEndClick, triggerUpdateListResult, listResult } = props;
+  const {
+    handleEndClick,
+    triggerUpdateListResult,
+    listResult,
+    triggerAddResult,
+    triggerGetListQuestion,
+    listQuestion,
+    StatusFlags,
+    selectQuestion,
+    addSelectQuestion,
+    reSetSelectQuestion,
+  } = props;
 
-  const { response: dataQuestion, loading: isLoading } = useAxios({
-    method: "get",
-    url: "http://localhost:3000/question",
-  });
+  useEffect(() => {
+    triggerGetListQuestion();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const [selectQuestion, setSelectQuestion] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
   const [count, setCount] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const [warning, setWarning] = useState(false);
+
   const [flagStopTime, setFlagStopTime] = useState(false);
   const [timeOut, setTimeOut] = useState(0);
-  const [warning, setWarning] = useState(false);
   const [result, setResult] = useState();
 
   const handleGetAnswerChange = (data) => {
-    if (selectQuestion.length > 0) {
-      const index = selectQuestion.findIndex(
-        (item) => item.parent_id === data.parent_id
-      );
-      if (index >= 0) {
-        selectQuestion[index] = data;
-        setSelectQuestion([...selectQuestion]);
-      } else {
-        setSelectQuestion([...selectQuestion, data]);
-      }
-    } else {
-      setSelectQuestion([...selectQuestion, data]);
-    }
+    addSelectQuestion(data);
 
-    if (count < dataQuestion.length - 1) {
+    if (count < listQuestion.length - 1) {
       setTimeout(() => {
         setCount((count) => count + 1);
       }, 300);
@@ -50,7 +47,7 @@ function BodyQuestion(props) {
 
   function getResult() {
     let result;
-    let sumQuestion = dataQuestion.length;
+    let sumQuestion = listQuestion.length;
     let countQuestionCorrect = 0;
     let countQuestionWrong = 0;
     selectQuestion.map((i) =>
@@ -91,11 +88,12 @@ function BodyQuestion(props) {
   const closeResultModalClick = () => {
     setOpenModal(false);
     handleEndClick(true);
-    fetchQuestion();
+    updateListResult();
     setOpenModal(false);
+    reSetSelectQuestion();
   };
 
-  const fetchQuestion = async () => {
+  const updateListResult = async () => {
     let ramdomID = Math.random().toString(36).substring(7);
     const user = JSON.parse(localStorage.getItem("user-info"));
     let data = {
@@ -116,7 +114,6 @@ function BodyQuestion(props) {
       };
 
       triggerUpdateListResult(check.id, data1);
-      // axios.patch(`http://localhost:3000/listResult/${check.id}`, data1);
     }
 
     if (check) {
@@ -130,7 +127,7 @@ function BodyQuestion(props) {
         }
       }
     } else {
-      axios.post("http://localhost:3000/listResult", data);
+      triggerAddResult(data);
     }
   };
 
@@ -139,7 +136,7 @@ function BodyQuestion(props) {
   };
 
   const nextQuestion = () => {
-    if (count < dataQuestion.length - 1) {
+    if (count < listQuestion.length - 1) {
       setCount((count) => count + 1);
     }
   };
@@ -164,9 +161,7 @@ function BodyQuestion(props) {
   };
 
   let listContext = {
-    dataQuestion: dataQuestion,
-    selectQuestion: selectQuestion,
-    count: count,
+    // count: count,
     formatTime: formatTime,
     getTimeOut: getTimeOut,
     timeOut: timeOut,
@@ -174,7 +169,7 @@ function BodyQuestion(props) {
     result: result,
   };
 
-  if (isLoading) {
+  if (StatusFlags.isLoading) {
     return (
       <div className="body-question">
         <Spinner />
@@ -191,13 +186,14 @@ function BodyQuestion(props) {
               className="body-question__form"
               onSubmit={handleQuestionSubmit}
             >
-              {dataQuestion.map(
+              {listQuestion.map(
                 (item, index) =>
                   index === count && (
                     <QuestionItems
                       handleGetAnswerChange={handleGetAnswerChange}
                       key={item.id}
                       itemQuestion={item}
+                      selectQuestion={selectQuestion}
                     />
                   )
               )}
@@ -206,19 +202,26 @@ function BodyQuestion(props) {
                 prevQuestion={prevQuestion}
                 nextQuestion={nextQuestion}
                 handleSelectQuestionClick={handleSelectQuestionClick}
+                listQuestion={listQuestion}
+                selectQuestion={selectQuestion}
+                count={count}
               />
             </form>
 
             <DialogWarning
               handleCloseWarning={handleCloseWarning}
               handleWarningBoxSubmit={handleWarningBoxSubmit}
+              listQuestion={listQuestion}
               warning={warning}
+              selectQuestion={selectQuestion}
             />
 
             {openModal && (
               <DialogResult
                 openModal={openModal}
                 closeResultModalClick={closeResultModalClick}
+                listQuestion={listQuestion}
+                selectQuestion={selectQuestion}
               />
             )}
           </div>

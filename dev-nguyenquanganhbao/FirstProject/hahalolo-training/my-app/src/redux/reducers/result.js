@@ -6,6 +6,9 @@ import {
   UPDATE_LIST_RESULT,
   UPDATE_LIST_RESULT_SUCCESS,
   UPDATE_LIST_RESULT_FAILED,
+  ADD_RESULT,
+  ADD_RESULT_SUCCESS,
+  ADD_RESULT_FAILED,
 } from "../constants/result";
 
 export const initialState = {
@@ -51,14 +54,29 @@ const resultReducer = (state = initialState, action) =>
         const index = state.listResult.findIndex(
           (item) => item.id === action.payload.id
         );
-
         if (index >= 0) {
           draft.listResult[index] = {
             ...state.listResult[index],
             ...action.payload.infoResult,
           };
         }
+        break;
+      }
 
+      case ADD_RESULT: {
+        draft.statusFlags.isLoading = true;
+        break;
+      }
+
+      case ADD_RESULT_SUCCESS: {
+        draft.statusFlags.isLoading = false;
+        draft.listResult = [...state.listResult, action.payload];
+        console.log(action.payload);
+        break;
+      }
+      case ADD_RESULT_FAILED: {
+        draft.statusFlags.isLoading = false;
+        draft.log.error = action.message;
         break;
       }
 

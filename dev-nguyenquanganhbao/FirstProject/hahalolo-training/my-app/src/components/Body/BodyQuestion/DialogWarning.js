@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-
-import { contextBodyQuestion } from "./BodyQuestion";
+import React from "react";
 
 const useStyleDialog = makeStyles(() => ({
   containerDialog: {
@@ -24,16 +22,16 @@ export default function CustomizedDialogs({
   warning,
   handleCloseWarning,
   handleWarningBoxSubmit,
+  listQuestion,
+  selectQuestion,
 }) {
   const classes = useStyleDialog();
-  const context = useContext(contextBodyQuestion);
 
   return (
     <Dialog onClose={handleCloseWarning} open={warning}>
       <Box className={classes.containerDialog}>
         <Typography component="h5" variant="h5" align="center">
-          Bạn còn {context.dataQuestion.length - context.selectQuestion.length}{" "}
-          câu chưa trả lời
+          Bạn còn {listQuestion.length - selectQuestion.length} câu chưa trả lời
         </Typography>
         <Typography className={classes.mg} align="center" component="p">
           Bạn đồng ý nộp chứ?
