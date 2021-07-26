@@ -24,8 +24,13 @@ async function fetchQuestion() {
 function* callApiQuestion() {
   try {
     const response = yield call(fetchQuestion);
+
     const data = _get(response, "data", []);
-    yield put(getListQuestionSuccess(data));
+    if (response.status === 200) {
+      yield put(getListQuestionSuccess(data));
+    } else {
+      yield put(getListQuestionFailed(response));
+    }
   } catch (error) {
     yield put(getListQuestionFailed(error));
   }

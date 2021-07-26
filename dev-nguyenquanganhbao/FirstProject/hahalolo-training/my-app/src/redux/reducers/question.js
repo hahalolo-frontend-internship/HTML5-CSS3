@@ -52,14 +52,18 @@ const questionReducer = (state = initialState, action) =>
             (item) => item.parent_id === action.question.parent_id
           );
           if (index >= 0) {
-            state.selectQuestion[index] = action.question;
-            draft.selectQuestion = [...state.selectQuestion];
+            //update selectQuestion
+            draft.selectQuestion[index] = {
+              ...state.selectQuestion[index],
+              ...action.question,
+            };
           } else {
             draft.selectQuestion = [...state.selectQuestion, action.question];
           }
         } else {
           draft.selectQuestion = [...state.selectQuestion, action.question];
         }
+
         break;
       }
 

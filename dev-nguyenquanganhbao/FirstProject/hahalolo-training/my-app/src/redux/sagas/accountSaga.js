@@ -33,7 +33,11 @@ function* callApiAccount() {
   try {
     const response = yield call(fetchAccount);
     const data = _get(response, "data", []);
-    yield put(getListAccountSuccess(data));
+    if (response.status === 200) {
+      yield put(getListAccountSuccess(data));
+    } else {
+      yield put(getListAccountFailed(response));
+    }
   } catch (error) {
     yield put(getListAccountFailed(error));
   }

@@ -36,7 +36,11 @@ function* callApiResult() {
   try {
     const response = yield call(fetchResult);
     const data = _get(response, "data", []);
-    yield put(getListResultSuccess(data));
+    if (response.status === 200) {
+      yield put(getListResultSuccess(data));
+    } else {
+      yield put(getListResultFailed(response));
+    }
   } catch (error) {
     yield put(getListResultFailed(error));
   }
