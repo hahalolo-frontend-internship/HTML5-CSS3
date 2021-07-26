@@ -1,12 +1,12 @@
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
 import AppBar from "@material-ui/core/AppBar";
+import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import logo from "../../img/logo.png";
@@ -16,7 +16,6 @@ import icon_user from "../../img/user-icon.png";
 const useStyles = makeStyles(() => ({
   title: {
     flexGrow: 1,
-    
   },
   btn_radius: {
     borderRadius: 30,
@@ -52,6 +51,9 @@ const useStyles = makeStyles(() => ({
       background: "#57b5fc",
       color: "#fff",
     },
+  },
+  btn_login: {
+    textDecoration: "none",
   },
 }));
 
@@ -127,8 +129,8 @@ export default function Header(props) {
                     )}
                   </>
                 ) : (
-                  <Link to="/login">
-                    <p className="user-name">Đăng nhập</p>
+                  <Link to="/login" className={classes.btn_login}>
+                    Đăng nhập
                   </Link>
                 )}
               </Button>

@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "../CustomButton/Button";
 import Box from "@material-ui/core/Box";
 import React from "react";
 import Question from "../Question/Question";

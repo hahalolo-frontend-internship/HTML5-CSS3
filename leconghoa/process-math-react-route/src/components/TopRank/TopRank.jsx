@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../CustomButton/Button";
 import "./TopRank.scss";
 function TopRank(props) {
   const [seeMore, setSeeMore] = useState(3);
@@ -35,13 +36,13 @@ function TopRank(props) {
           </tbody>
         </table>
         {arrUser.length > 3 && seeMore === 3 ? (
-          <button className="btn btn-seemore" onClick={() => setSeeMore(10)}>
+          <Button background="#ffb83c" onClick={() => setSeeMore(10)}>
             Xem thêm
-          </button>
+          </Button>
         ) : (
-          <button className="btn btn-seemore" onClick={() => setSeeMore(3)}>
+          <Button background="#ffb83c" onClick={() => setSeeMore(3)}>
             Ẩn bớt
-          </button>
+          </Button>
         )}
       </div>
     </div>

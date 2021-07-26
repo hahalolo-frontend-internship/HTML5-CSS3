@@ -4,7 +4,7 @@ import CheckBoxOutlinedIcon from "@material-ui/icons/CheckBoxOutlined";
 import PersonSharpIcon from "@material-ui/icons/PersonSharp";
 import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
-import Button from "../../components/Button";
+import Button from "../../components/CustomButton/Button";
 import FinishExam from "../../components/FinishExam/FinishExam";
 import ItemQuestion from "../../components/ItemQuestion/ItemQuestion";
 import ListQuestion from "../../components/ListQuestion/ListQuestion";
@@ -107,7 +107,7 @@ function Body(props) {
     <Container>
       <Grid container spacing={3}>
         <Grid item xs={9}>
-          <Box border="1px solid #d9d9d9" p={3} borderradius={12} m="32px 0">
+          <Box border="1px solid #d9d9d9" p={3} borderRadius={12} m="32px 0">
             <Switch>
               <Route
                 path={`/itemquestion/:quest`}

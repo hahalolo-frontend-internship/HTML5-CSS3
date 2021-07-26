@@ -1,21 +1,24 @@
-import {
-  Box,
-  Checkbox,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  Typography,
-} from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import Checkbox from "@material-ui/core/Checkbox";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import Typography from "@material-ui/core/Typography";
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import PopupFinish from "../../components/PopupFinish/PopupFinish";
 import three_dot from "../../img/3-dotted.png";
 import back from "../../img/back-question-icon.png";
-import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import next from "../../img/next-question-icon.png";
 import Clock from "../Clock/Clock";
-import Button from "../Button";
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import Button from "../CustomButton/Button";
+
 const styles = makeStyles({
   radio_btn: {
     margin: "8px 0",
@@ -54,6 +57,7 @@ const styles = makeStyles({
     marginLeft: "8px",
   },
 });
+
 function ItemQuestion(props) {
   const classes = styles();
   const history = useHistory();
@@ -229,7 +233,6 @@ function ItemQuestion(props) {
           <Box className={classes.controlsMore} mt={2} p={2}>
             <Box display="flex" justifyContent="space-between">
               <Box color="#fff">Bấm vào câu muốn trả lời</Box>
-
               <Button
                 onClick={finishSoon}
                 margin="0"
@@ -270,13 +273,41 @@ function ItemQuestion(props) {
         ) : null}
       </Box>
 
-      {popup && (
-        <PopupFinish
-          onOK={finishExercise}
-          onClose={() => setPopup(!popup)}
-          time={seconds_to(props.time)}
-        />
-      )}
+      <Dialog
+        open={popup}
+        keepMounted
+        onClose={() => setPopup(!popup)}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          Bạn còn nhiều câu chưa trả lời!
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Thời gian làm bài còn {seconds_to(props.time)}
+          </DialogContentText>
+          <DialogContentText>Bạn có đồng ý nộp bài</DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={finishExercise}
+            texttransform="unset"
+            background="#ffb83c"
+            backgroundhover="#e39000"
+          >
+            Nộp bài
+          </Button>
+          <Button
+            onClick={() => setPopup(!popup)}
+            texttransform="unset"
+            background="#375aab"
+            backgroundhover="#032f96"
+          >
+            Làm tiếp
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

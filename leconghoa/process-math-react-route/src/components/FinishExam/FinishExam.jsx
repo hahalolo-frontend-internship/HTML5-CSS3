@@ -1,37 +1,73 @@
+import { Box, Typography } from "@material-ui/core";
 import React from "react";
-import "./FinishExam.scss";
 function FinishExam(props) {
   return (
-    <div className="finish-exam align_center">
-      <h3 className="finish-exam_head">Kết quả bạn đạt được</h3>
-      <div className="finish-exam_body ">
-        <div className="finish-exam_body_item">
-          <p>Số câu đúng</p>
-          <div>
+    <Box>
+      <Box mt={2} mb={5}>
+        <Typography variant="h5" align="center">
+          <strong>Kết quả bạn đạt được</strong>
+        </Typography>
+      </Box>
+      <Box display="flex" justifyContent="space-around">
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          width="150px"
+          height="150px"
+          bgcolor="#3a4bcd"
+          borderRadius={15}
+          color="#fff"
+        >
+          <Typography variant="body2">Số câu đúng</Typography>
+          <Box fontSize={35}>
             {props.answer}/{props.listQuestion.length}
-          </div>
-        </div>
-        <div className="finish-exam_body_item">
-          <p>Điểm số</p>
-          <div>
-            {((props.answer / props.listQuestion.length) * 10).toFixed(2)}
-          </div>
-        </div>
-        <div className="finish-exam_body_item">
-          <p>Thời gian làm</p>
-          <div>{props.time}</div>
-        </div>
-      </div>
-      <h3 className="finish-exam_foot">
+          </Box>
+        </Box>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          width="150px"
+          height="150px"
+          bgcolor="#3a4bcd"
+          borderRadius={15}
+          color="#fff"
+        >
+          <Typography variant="body2">Điểm số</Typography>
+          <Box fontSize={35}>
+            {props.answer}/{props.listQuestion.length}
+          </Box>
+        </Box>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          width="150px"
+          height="150px"
+          bgcolor="#3a4bcd"
+          borderRadius={15}
+          color="#fff"
+        >
+          <Typography variant="body2">Thời gian làm</Typography>
+          <Box fontSize={35}> {props.time}</Box>
+        </Box>
+      </Box>
+      <Box mt={3} textAlign="center">
         {props.answer === props.listQuestion.length ? (
-          <span className="txt_success">
+          <Typography variant="h5" color="primary">
             Chúc mừng bạn đã hoàn thành tốt bài thi!
-          </span>
+          </Typography>
         ) : (
-          <span className="txt_danger">Bạn cần cố gắng hơn nữa!</span>
+          <Typography variant="h5" color="secondary">
+            Bạn cần cố gắng hơn nữa!
+          </Typography>
         )}
-      </h3>
-    </div>
+      </Box>
+    </Box>
   );
 }
 
