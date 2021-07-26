@@ -5,14 +5,14 @@ import Container from "@material-ui/core/Container";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { compose } from "redux";
 import { createStructuredSelector } from "reselect";
 import * as yup from "yup";
-import { regesterAccount, setIsSuccess } from "../../redux/actions/account";
+import { getAccount, regesterAccount } from "../../redux/actions/account";
 import {
   makeSelectListAccount,
   makeSelectStatusFlags,
@@ -42,7 +42,7 @@ const schema = yup.object().shape({
 });
 
 function Register(props) {
-  const { triggerRegisterAccount, triggerResetIsSuccess, listAccount, status } =
+  const { triggerRegisterAccount, triggerGetAccount, listAccount, status } =
     props;
   const classes = useFormStyle();
   let history = useHistory();
@@ -62,19 +62,14 @@ function Register(props) {
     if (!check) {
       e.target.reset();
       triggerRegisterAccount(data);
+
+      triggerGetAccount(data);
+      setMessage(false);
+      history.push("/");
     } else {
       setMessage(true);
     }
   }
-
-  useEffect(() => {
-    if (status.isSuccess) {
-      setMessage(false);
-      history.push("/");
-      triggerResetIsSuccess();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status.isSuccess]);
 
   return (
     <Container className={classes.wrapperLogin} maxWidth="sm">
@@ -188,7 +183,7 @@ function Register(props) {
 
 Register.propTypes = {
   triggerRegisterAccount: PropTypes.func,
-  triggerResetIsSuccess: PropTypes.func,
+  triggerGetAccount: PropTypes.func,
   listAccount: PropTypes.array,
   status: PropTypes.object,
 };
@@ -203,7 +198,7 @@ function mapDispatchToProps(dispatch) {
     triggerRegisterAccount: (infoAccount) =>
       dispatch(regesterAccount(infoAccount)),
 
-    triggerResetIsSuccess: () => dispatch(setIsSuccess()),
+    triggerGetAccount: (infoAccount) => dispatch(getAccount(infoAccount)),
   };
 }
 

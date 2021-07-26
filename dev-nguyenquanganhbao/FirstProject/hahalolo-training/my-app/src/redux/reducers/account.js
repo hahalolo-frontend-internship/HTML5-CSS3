@@ -6,7 +6,6 @@ import {
   REGESTER_ACCOUNT,
   REGESTER_ACCOUNT_SUCCESS,
   REGESTER_ACCOUNT_FAILED,
-  SET_ISSUCCESS,
   GET_ACCOUNT,
 } from "../constants/account";
 
@@ -15,7 +14,6 @@ export const initialState = {
   infoAccount: null,
   statusFlags: {
     isLoading: false,
-    isSuccess: false,
   },
   log: {
     error: "",
@@ -44,13 +42,11 @@ const accountReducer = (state = initialState, action) =>
 
       case REGESTER_ACCOUNT: {
         draft.statusFlags.isLoading = true;
-        draft.statusFlags.isSuccess = false;
         break;
       }
 
       case REGESTER_ACCOUNT_SUCCESS: {
         draft.statusFlags.isLoading = false;
-        draft.statusFlags.isSuccess = true;
         draft.listAccount = [...state.listAccount, action.payload];
         localStorage.setItem("user-info", JSON.stringify(action.payload));
         break;
@@ -58,12 +54,7 @@ const accountReducer = (state = initialState, action) =>
 
       case REGESTER_ACCOUNT_FAILED: {
         draft.statusFlags.isLoading = false;
-        draft.statusFlags.isSuccess = false;
         draft.log.error = action.message;
-        break;
-      }
-      case SET_ISSUCCESS: {
-        draft.statusFlags.isSuccess = false;
         break;
       }
 

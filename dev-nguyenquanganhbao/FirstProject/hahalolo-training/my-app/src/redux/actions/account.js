@@ -5,7 +5,6 @@ import {
   REGESTER_ACCOUNT,
   REGESTER_ACCOUNT_SUCCESS,
   REGESTER_ACCOUNT_FAILED,
-  SET_ISSUCCESS,
   GET_ACCOUNT,
 } from "../constants/account";
 
@@ -54,11 +53,5 @@ export function regesterAccountFailed(message = "") {
   return {
     type: REGESTER_ACCOUNT_FAILED,
     message,
-  };
-}
-
-export function setIsSuccess() {
-  return {
-    type: SET_ISSUCCESS,
   };
 }
