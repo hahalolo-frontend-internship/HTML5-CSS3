@@ -3,7 +3,7 @@ import ControllerQuestion from "./ControlleQuestion";
 import DetailQuestion from "./DetailQuestion";
 import DialogResult from "./DialogResult";
 import DialogWarning from "./DialogWarning";
-import Spinner from "./Loading/Loading";
+import Spinner from "./Loading";
 import QuestionItems from "./QuestionItems";
 
 export const contextBodyQuestion = createContext();

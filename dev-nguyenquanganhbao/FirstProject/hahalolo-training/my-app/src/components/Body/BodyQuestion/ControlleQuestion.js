@@ -68,6 +68,7 @@ function Index({
         </div>
         <div>
           <Button
+            variant="contained"
             disabled={count === 0 ? true : false}
             type="button"
             className={clsx(
@@ -81,6 +82,7 @@ function Index({
           </Button>
 
           <Button
+            variant="contained"
             disabled={count < listQuestion.length - 1 ? false : true}
             type="button"
             className={clsx(
@@ -94,6 +96,7 @@ function Index({
           </Button>
 
           <Button
+            variant="contained"
             type="button"
             className={clsx(
               classes.button,

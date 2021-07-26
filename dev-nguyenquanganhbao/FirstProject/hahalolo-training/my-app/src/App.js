@@ -5,7 +5,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { compose } from "redux";
 import { createStructuredSelector } from "reselect";
 import "./assets/app-style.scss";
-import Body from "./components/Body/Body";
+import Body from "./components/Body/index.js";
 import Footer from "./components/Footer/index";
 import Login from "./components/Form/Login";
 import Register from "./components/Form/Register";

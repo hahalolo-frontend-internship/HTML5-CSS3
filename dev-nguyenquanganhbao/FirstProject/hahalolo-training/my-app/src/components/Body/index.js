@@ -23,9 +23,9 @@ import {
 } from "../../redux/selectors/question";
 import { makeSelectListResult } from "../../redux/selectors/result";
 import "./body-style.scss";
-import BodyQuesiton from "./BodyQuestion/BodyQuestion";
-import ChooseTopic from "./BodyQuestion/ChooseTopic/ChooseTopic";
-import RatingsTable from "./RatingsTable/RatingsTable";
+import BodyQuesiton from "./BodyQuestion/index.js";
+import ChooseTopic from "./BodyQuestion/ChooseTopic";
+import RatingsTable from "./RatingsTable";
 import PropTypes from "prop-types";
 function Body({
   triggerUpdateListResult,
