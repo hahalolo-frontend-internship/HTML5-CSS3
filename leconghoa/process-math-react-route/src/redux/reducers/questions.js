@@ -1,12 +1,12 @@
 import produce from "immer";
 import {
-  GET_LIST_USER,
-  GET_LIST_USER_SUCCESS,
-  GET_LIST_USER_FAILED,
-} from "../constants/user.js";
+  GET_LIST_QUESTION,
+  GET_LIST_QUESTION_SUCCESS,
+  GET_LIST_QUESTION_FAILED,
+} from "../constants/questions";
 
 export const initialState = {
-  users: [],
+  questions: [],
   statusFlags: {
     isLoading: false,
   },
@@ -20,16 +20,16 @@ const appReducer = (state = initialState, action) =>
   produce(state, (draft) => {
     const { type } = action;
     switch (type) {
-      case GET_LIST_USER: {
+      case GET_LIST_QUESTION: {
         draft.statusFlags.isLoading = true;
         break;
       }
-      case GET_LIST_USER_SUCCESS: {
+      case GET_LIST_QUESTION_SUCCESS: {
         draft.statusFlags.isLoading = false;
-        draft.users = action.payload;
+        draft.questions = action.payload;
         break;
       }
-      case GET_LIST_USER_FAILED: {
+      case GET_LIST_QUESTION_FAILED: {
         draft.statusFlags.isLoading = false;
         draft.log.error = action.message;
         break;

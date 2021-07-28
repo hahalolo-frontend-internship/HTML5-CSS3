@@ -8,26 +8,21 @@ import Footer from "./layouts/footer/Footer";
 import Header from "./layouts/header/Header";
 
 export default function App() {
-  const [user, setUser] = useState();
-  const [isSignIn, setIsSignIn] = useState("default");
-  function signIn(data) {
-    setIsSignIn(data);
-  }
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("isSignIn")));
-  }, [isSignIn]);
-
   return (
     <Router>
-      <Header user={user} signIn={signIn} />
+      <Header />
       <Switch>
         <Route
           path="/login"
-          render={() => (user ? <Body /> : <Login signIn={signIn} />)}
+          render={() =>
+            localStorage.getItem("isSignIn") ? <Body /> : <Login />
+          }
         />
         <Route
           path="/signup"
-          render={() => (user ? <Body /> : <SignUp signIn={signIn} />)}
+          render={() =>
+            localStorage.getItem("isSignIn") ? <Body /> : <SignUp />
+          }
         />
         <Route exact component={Body} />
       </Switch>

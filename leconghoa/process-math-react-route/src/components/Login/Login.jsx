@@ -5,10 +5,17 @@ import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
+import { createStructuredSelector } from "reselect";
 import * as yup from "yup";
+import { login } from "../../redux/actions/login";
+import {
+  makeSelectError,
+  makeSelectStatusLoginFlags,
+} from "../../redux/selectors/login";
 
 const useStyles = makeStyles(() => ({
   login_or: {
@@ -30,7 +37,7 @@ const schema = yup.object().shape({
     .required("Vui lòng nhập mật khẩu")
     .min(6, "Mật khẩu ngắn"),
 });
-export default function Login(props) {
+function Login(props) {
   const classes = useStyles();
   const {
     register,
@@ -39,39 +46,15 @@ export default function Login(props) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const [users, setUsers] = useState();
   const [error, setError] = useState();
   const history = useHistory();
-  function SignIn(data) {
-    setError("");
-    localStorage.setItem("isSignIn", JSON.stringify(data));
-    history.push("/");
-    props.signIn("login");
-  }
-  const onSubmit = (data) => {
-    const user = users.filter(
-      (item) =>
-        (item.email === data.username && item.password === data.password) ||
-        (item.numberphone === data.username && item.password === data.password)
-    );
-    user[0] ? SignIn(user[0]) : setError("Đăng nhập thất bại");
-  };
-  // console.log(errors);
 
-  useEffect(() => {
-    async function fetchUsers() {
-      const requestUrl = "http://localhost:5000/users";
-      const response = await fetch(requestUrl);
-      const responseJSON = await response.json();
-      setUsers(responseJSON);
-    }
-    fetchUsers();
-  }, []);
-  useEffect(() => {
-    setTimeout(() => {
-      setError();
-    }, 1000);
-  }, [error]);
+  const onSubmit = (data) => {
+    props.triggerLogin(data);
+    if (props.statusLoginFlags.isSuccessLogin) {
+      history.push("/");
+    } else setError(props.error.error);
+  };
 
   return (
     <Container maxWidth="md">
@@ -158,3 +141,15 @@ export default function Login(props) {
     </Container>
   );
 }
+
+const mapStateToProps = createStructuredSelector({
+  statusLoginFlags: makeSelectStatusLoginFlags(),
+  error: makeSelectError(),
+});
+function mapDispatchToProps(dispatch) {
+  return {
+    triggerLogin: (userInfo) => dispatch(login(userInfo)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -8,10 +8,14 @@ import Tabs from "@material-ui/core/Tabs";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
+import { createStructuredSelector } from "reselect";
 import logo from "../../img/logo.png";
 import icon_logout from "../../img/sign-out-alt-solid.svg";
 import icon_user from "../../img/user-icon.png";
+import { logout } from "../../redux/actions/login";
+import { makeSelectLogin } from "../../redux/selectors/login";
 // import clsx from "clsx";
 const useStyles = makeStyles(() => ({
   title: {
@@ -42,8 +46,8 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     position: "absolute",
     background: "#fff",
-    top: "calc(100% + 10px)",
-    right: "0",
+    top: "calc(100%)",
+    right: "20px",
     width: "max-content",
     border: "1px solid #d9d9d9",
     borderRadius: "8px",
@@ -57,7 +61,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function Header(props) {
+function Header(props) {
+  console.log(props.user);
   const classes = useStyles();
   const [value, setValue] = useState(1);
   const handleChange = (event, newValue) => {
@@ -67,9 +72,8 @@ export default function Header(props) {
   const history = useHistory();
   function logout() {
     setToogle(false);
-    localStorage.removeItem("isSignIn");
-    history.push("/");
-    props.signIn("logout");
+    props.triggerLogout();
+    history.push("/login");
   }
   function toogleLogout() {
     setToogle(!toogle);
@@ -109,24 +113,11 @@ export default function Header(props) {
                   </Box>
                 }
               >
-                {props.user ? (
+                {props.user && props.user.length !== 0 ? (
                   <>
                     <Typography onClick={toogleLogout}>
                       {props.user.firstname} {props.user.lastname}
                     </Typography>
-                    {toogle && (
-                      <Button
-                        className={classes.appear}
-                        onClick={() => logout()}
-                        endIcon={
-                          <Box className={classes.logout}>
-                            <img src={icon_logout} alt="avatar" />
-                          </Box>
-                        }
-                      >
-                        Đăng xuất
-                      </Button>
-                    )}
                   </>
                 ) : (
                   <Link to="/login" className={classes.btn_login}>
@@ -134,6 +125,19 @@ export default function Header(props) {
                   </Link>
                 )}
               </Button>
+              {toogle && (
+                <Button
+                  className={classes.appear}
+                  onClick={() => logout()}
+                  endIcon={
+                    <Box className={classes.logout}>
+                      <img src={icon_logout} alt="avatar" />
+                    </Box>
+                  }
+                >
+                  Đăng xuất
+                </Button>
+              )}
             </Box>
           </Toolbar>
         </Container>
@@ -144,3 +148,14 @@ export default function Header(props) {
     </>
   );
 }
+
+const mapStateToProps = createStructuredSelector({
+  user: makeSelectLogin(),
+});
+function mapDispatchToProps(dispatch) {
+  return {
+    triggerLogout: () => dispatch(logout()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

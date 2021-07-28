@@ -2,26 +2,32 @@ import { Container, Grid, makeStyles } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import CheckBoxOutlinedIcon from "@material-ui/icons/CheckBoxOutlined";
 import PersonSharpIcon from "@material-ui/icons/PersonSharp";
-import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import React, { memo, useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
+import { compose } from "redux";
+import { createStructuredSelector } from "reselect";
 import Button from "../../components/CustomButton/Button";
 import FinishExam from "../../components/FinishExam/FinishExam";
 import ItemQuestion from "../../components/ItemQuestion/ItemQuestion";
 import ListQuestion from "../../components/ListQuestion/ListQuestion";
 import TopRank from "../../components/TopRank/TopRank";
 import Tutorial from "../../components/Tutorial/Tutorial";
+import { getListQuestion } from "../../redux/actions/questions";
+import {
+  makeSelectQuestions,
+  makeSelectStatusFlags,
+} from "../../redux/selectors/questions";
 const useStyles = makeStyles(() => ({
   detail_question: {
     background: "#ececec",
   },
 }));
-function Body(props) {
+function Body({ triggerGetListQuestion, listQuestion }) {
   const classes = useStyles();
   const history = useHistory();
   // result
-  const [users, setUsers] = useState([]);
-  const [random, setRandom] = useState(0);
-  const [listQuestion, setListQuestion] = useState([]);
   const [answersTrue, setAnswersTrue] = useState(0);
   // const [listAnswer, setListAnswer] = useState(0);
   const [time, setTime] = useState(0);
@@ -61,7 +67,6 @@ function Body(props) {
       : user.score === score &&
         user.time > 2700 - time &&
         updateScore(user.id, Number.parseFloat(score), 2700 - time);
-    setRandom(Math.random());
   }
   async function updateScore(id, score, time) {
     let demo = await fetch(`http://localhost:5000/users/${id}`, {
@@ -79,23 +84,8 @@ function Body(props) {
     localStorage.setItem("isSignIn", JSON.stringify(demo));
   }
   useEffect(() => {
-    async function fetchQuestions() {
-      const requestUrl = "http://localhost:5000/list_question";
-      const response = await fetch(requestUrl);
-      const responseJSON = await response.json();
-      setListQuestion(responseJSON);
-    }
-    fetchQuestions();
+    triggerGetListQuestion();
   }, []);
-  useEffect(() => {
-    async function fetchUsers() {
-      const requestUrl = "http://localhost:5000/users";
-      const response = await fetch(requestUrl);
-      const responseJSON = await response.json();
-      setUsers(responseJSON);
-    }
-    fetchUsers();
-  }, [random]);
   const path = window.location.pathname;
   const str = "/tutorial";
   function check(str1, str2) {
@@ -199,7 +189,7 @@ function Body(props) {
         </Grid>
         <Grid item xs={3}>
           <Box textAlign="center" m="32px 0">
-            {path.includes("/finish") && <TopRank users={users} />}
+            {path.includes("/finish") && <TopRank />}
             {(path === "/" || path === "/login" || path === "/signup") && (
               <Box>
                 <Box color="red" component="p" fontSize={14} m="16px 0">
@@ -232,4 +222,23 @@ function Body(props) {
   );
 }
 
-export default Body;
+Body.propTypes = {
+  triggerGetListQuestion: PropTypes.func,
+  listQuestion: PropTypes.array,
+  statusFlags: PropTypes.object,
+};
+
+const mapStateToProps = createStructuredSelector({
+  listQuestion: makeSelectQuestions(),
+  statusFlags: makeSelectStatusFlags(),
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    triggerGetListQuestion: () => dispatch(getListQuestion()),
+  };
+}
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(withConnect, memo)(Body);

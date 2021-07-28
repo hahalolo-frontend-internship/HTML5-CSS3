@@ -118,7 +118,6 @@ function ItemQuestion(props) {
     setPopup(!popup);
     props.getTime(timer);
   }
-
   function resultClass(arr1, arr2, item) {
     return (
       (arr1.filter((e) => e.id === item.id).length > 0 ? "done " : "") +
