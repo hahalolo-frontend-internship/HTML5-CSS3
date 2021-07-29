@@ -15,7 +15,10 @@ import logo from "../../img/logo.png";
 import icon_logout from "../../img/sign-out-alt-solid.svg";
 import icon_user from "../../img/user-icon.png";
 import { logout } from "../../redux/actions/login";
-import { makeSelectLogin } from "../../redux/selectors/login";
+import {
+  makeSelectIsSuccessLogin,
+  makeSelectLogin,
+} from "../../redux/selectors/login";
 // import clsx from "clsx";
 const useStyles = makeStyles(() => ({
   title: {
@@ -62,7 +65,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 function Header(props) {
-  console.log(props.user);
   const classes = useStyles();
   const [value, setValue] = useState(1);
   const handleChange = (event, newValue) => {
@@ -113,7 +115,7 @@ function Header(props) {
                   </Box>
                 }
               >
-                {props.user && props.user.length !== 0 ? (
+                {props.flagsLogin.isLoginSuccess ? (
                   <>
                     <Typography onClick={toogleLogout}>
                       {props.user.firstname} {props.user.lastname}
@@ -151,11 +153,11 @@ function Header(props) {
 
 const mapStateToProps = createStructuredSelector({
   user: makeSelectLogin(),
+  flagsLogin: makeSelectIsSuccessLogin(),
 });
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
     triggerLogout: () => dispatch(logout()),
   };
-}
-
+};
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

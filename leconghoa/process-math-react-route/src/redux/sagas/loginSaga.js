@@ -1,39 +1,34 @@
 import axios from "axios";
-import _find from "lodash/find";
-import _get from "lodash/get";
 import { call, put, takeLatest } from "redux-saga/effects";
-import { loginFailure, loginSuccess } from "../actions/login";
 import { LOGIN } from "../constants/login";
+import _get from "lodash/get";
+import _find from "lodash/find";
+import { loginFailed, loginSuccess } from "../actions/login";
 
-// function that makes the api request and returns a Promise for response
-function fetchUsers() {
+function fetchUser() {
   return axios({
     method: "GET",
     url: "http://localhost:5000/users",
   });
 }
 
-// worker saga: makes the api call when watcher saga sees the action
-function* callApiUsers(userInfo) {
+function* loginSagaFunc(userInfo) {
   const user = userInfo.userInfo;
-  const response = yield call(fetchUsers);
-  const data = _get(response, "data", []);
-  const findUser = _find(
-    data,
-    (item) =>
-      (item.email === user.username || item.numberphone === user.username) &&
-      item.password === user.password
+  const response = yield call(fetchUser);
+  const userData = _get(response, "data", []);
+  let findOut = _find(
+    userData,
+    (i) =>
+      (i.numberphone === user.username || i.email === user.username) &&
+      i.password === user.password
   );
-  if (findUser) {
-    localStorage.setItem("isSignIn", JSON.stringify(findUser));
-    yield put(loginSuccess(findUser));
+  if (findOut) {
+    localStorage.setItem("isSignIn", JSON.stringify(findOut));
+    yield put(loginSuccess(findOut));
   } else {
-    console.log("thất bại");
-    yield put(loginFailure("Đăng nhập thất bại"));
+    yield put(loginFailed("Sai tài khoản hoặc mật khẩu"));
   }
 }
-
-// watcher saga: watches for actions dispatched to the store, starts worker saga
-export default function* userSaga() {
-  yield takeLatest(LOGIN, callApiUsers);
+export default function* loginSaga() {
+  yield takeLatest(LOGIN, loginSagaFunc);
 }

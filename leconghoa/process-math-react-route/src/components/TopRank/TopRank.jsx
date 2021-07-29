@@ -1,12 +1,6 @@
-import React, { memo, useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import { createStructuredSelector } from "reselect";
-import { makeSelectUsers } from "../../redux/selectors/login";
+import React, { useState } from "react";
 import Button from "../CustomButton/Button";
-import PropTypes from "prop-types";
 import "./TopRank.scss";
-import { getListUser } from "../../redux/actions/login";
 function TopRank(props) {
   console.log(props.users);
   const [seeMore, setSeeMore] = useState(3);
@@ -15,9 +9,6 @@ function TopRank(props) {
     .sort((a, b) =>
       b.point - a.point === 0 ? a.time - b.time : b.score - a.score
     );
-  useEffect(() => {
-    props.triggerGetListUser();
-  }, []);
   return (
     <div className="top-rank">
       <div className="top-rank_head">Top lượt thi</div>
@@ -72,6 +63,4 @@ function TopRank(props) {
 //   };
 // }
 
-const withConnect = connect(null, null);
-
-export default compose(withConnect, memo)(TopRank);
+export default TopRank;

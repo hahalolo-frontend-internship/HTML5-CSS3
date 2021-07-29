@@ -5,15 +5,16 @@ import { initialState } from "../reducers/login";
  * Direct selector to the app state domain
  */
 
-const selectLoginDomain = (state) => state.user || initialState;
+const selectLoginDomain = (state) => {
+  return state.login || initialState;
+};
 
 const makeSelectLogin = () =>
   createSelector(selectLoginDomain, (substate) => substate.user);
 
-const makeSelectStatusLoginFlags = () =>
-  createSelector(selectLoginDomain, (substate) => substate.statusLoginFlags);
-
+const makeSelectIsSuccessLogin = () =>
+  createSelector(selectLoginDomain, (substate) => substate.statusFlags);
 const makeSelectError = () =>
-  createSelector(selectLoginDomain, (substate) => substate.log);
+  createSelector(selectLoginDomain, (substate) => substate.logs);
 
-export { makeSelectLogin, makeSelectStatusLoginFlags, makeSelectError };
+export { makeSelectLogin, makeSelectIsSuccessLogin, makeSelectError };

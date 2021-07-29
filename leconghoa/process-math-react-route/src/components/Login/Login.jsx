@@ -14,9 +14,9 @@ import * as yup from "yup";
 import { login } from "../../redux/actions/login";
 import {
   makeSelectError,
-  makeSelectStatusLoginFlags,
+  makeSelectIsSuccessLogin,
+  makeSelectLogin,
 } from "../../redux/selectors/login";
-
 const useStyles = makeStyles(() => ({
   login_or: {
     position: "relative",
@@ -37,7 +37,7 @@ const schema = yup.object().shape({
     .required("Vui lòng nhập mật khẩu")
     .min(6, "Mật khẩu ngắn"),
 });
-function Login(props) {
+function Login({ triggeLogin, isLoginSuccess, logs, user }) {
   const classes = useStyles();
   const {
     register,
@@ -50,10 +50,10 @@ function Login(props) {
   const history = useHistory();
 
   const onSubmit = (data) => {
-    props.triggerLogin(data);
-    if (props.statusLoginFlags.isSuccessLogin) {
+    triggeLogin(data);
+    if (isLoginSuccess.isLoginSuccess) {
       history.push("/");
-    } else setError(props.error.error);
+    } else setError(logs.err);
   };
 
   return (
@@ -143,13 +143,15 @@ function Login(props) {
 }
 
 const mapStateToProps = createStructuredSelector({
-  statusLoginFlags: makeSelectStatusLoginFlags(),
-  error: makeSelectError(),
+  user: makeSelectLogin(),
+  logs: makeSelectError(),
+  isLoginSuccess: makeSelectIsSuccessLogin(),
 });
-function mapDispatchToProps(dispatch) {
+
+const mapDispatchToProps = (dispatch) => {
   return {
-    triggerLogin: (userInfo) => dispatch(login(userInfo)),
+    triggeLogin: (userInfo) => dispatch(login(userInfo)),
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

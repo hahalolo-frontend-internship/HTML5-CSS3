@@ -1,28 +1,26 @@
 import { LOGIN, LOGIN_SUCCESS, LOGIN_FAILED, LOGOUT } from "../constants/login";
-
-export function login(userInfo) {
+// Đăng nhập
+export const login = (userInfo) => {
   return {
     type: LOGIN,
     userInfo,
   };
-}
-
-export function loginSuccess(payload) {
+};
+export const loginSuccess = (payload) => {
   return {
     type: LOGIN_SUCCESS,
-    payload, // payload: payload
+    payload,
   };
-}
-
-export function loginFailure(message = "") {
+};
+export const loginFailed = (message) => {
   return {
     type: LOGIN_FAILED,
-    message, // message: message
+    message,
   };
-}
-
-export function logout() {
+};
+// Đăng xuất
+export const logout = () => {
   return {
     type: LOGOUT,
   };
-}
+};
