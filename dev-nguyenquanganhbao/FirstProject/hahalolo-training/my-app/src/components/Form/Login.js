@@ -32,7 +32,7 @@ function Login(props) {
   const { listAccount, triggerGetAccount } = props;
 
   const classes = useFormStyle();
-  let history = useHistory();
+  const history = useHistory();
 
   const {
     register,

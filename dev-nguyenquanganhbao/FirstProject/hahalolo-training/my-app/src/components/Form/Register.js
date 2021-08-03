@@ -45,7 +45,7 @@ function Register(props) {
   const { triggerRegisterAccount, triggerGetAccount, listAccount, status } =
     props;
   const classes = useFormStyle();
-  let history = useHistory();
+  const history = useHistory();
   const [message, setMessage] = useState(false);
 
   const {
