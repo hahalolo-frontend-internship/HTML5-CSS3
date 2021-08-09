@@ -1206,85 +1206,84 @@
   "accounts": [
     {
       "id": 1,
+      "name": "admin",
+      "email": "congquy2509@gmail.com",
+      "password": "123456",
+      "phone": "0326937460"
+    },
+    {
+      "id": 2,
       "name": "quy",
       "email": "congquy1000@gmail.com",
       "password": "123456",
       "phone": "0326969696"
     },
     {
-      "id": 2,
-      "name": "quy123",
-      "email": "congquy2000@gmail.com",
-      "password": "12345678",
-      "phone": "038676869"
-    },
-    {
       "id": 3,
-      "name": "quy1234",
-      "email": "congquy3000@gmail.com",
-      "password": "123456789",
-      "phone": "0382777666"
-    },
-    {
-      "id": 4,
       "name": "Garvy",
       "email": "gmanshaw3@xrea.com",
       "password": "Zi9wEvygCA",
-      "phone": "44-684-3425"
+      "phone": "446843425"
+    },
+    {
+      "id": 4,
+      "name": " Sebastiano ",
+      "email": " sgaythorpe4@hexun.com ",
+      "password": "Gp8HZAHYRZu",
+      "phone": "075025965"
     },
     {
       "id": 5,
-      " name ": " Sebastiano ",
-      " email ": " sgaythorpe4@hexun.com ",
-      " password ": " Gp8HZAHYRZu ",
-      " phone ": " 07-502-5965 "
+      "name": "quy123",
+      "email": "doibai09@gmail.com",
+      "password": "12345678",
+      "phone": "038676869"
     },
     {
       "id": 6,
       "name": "Eleen",
       "email": "erobert5@paginegialle.it",
       "password": "f27ywBKow",
-      "phone": "97-920-2268"
+      "phone": "979202268"
     },
     {
       "id": 7,
       "name": "Mariquilla",
       "email": "mfuggle6@nymag.com",
       "password": "XtchSaQd",
-      "phone": "23-772-4663"
-    },
-    {
-      "id": 8,
-      "name": "admin",
-      "email": "congquy2509@gmail.com",
-      "password": "123456",
-      "phone": "0326937460"
+      "phone": "237724663"
     }
   ],
   "charts": [
     {
       "id": 1,
       "name": "quypro",
-      "point": "101",
-      "time": 10
+      "point": "8",
+      "time": "45"
     },
     {
       "id": 2,
-      "name": "abc",
-      "point": "101",
-      "time": 10
+      "name": "quy",
+      "point": "7.5",
+      "time": "50"
     },
     {
       "id": 3,
-      "name": "quyss",
-      "point": "101",
-      "time": "101"
+      "name": "quy",
+      "point": "7.5",
+      "time": "50"
+    },
+    {
+      "id": 4,
+      "name": "hung",
+      "point": "2",
+      "time": "111"
     },
     {
       "name": "quy",
-      "point": "12",
-      "time": "22",
-      "id": 4
+      "point": "2",
+      "time": "33",
+      "id": 5
     }
   ],
   "typedata": [
