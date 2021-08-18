@@ -7,8 +7,15 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { createStructuredSelector } from "reselect";
 import * as yup from "yup";
+import { signup } from "../../redux/actions/login";
+import {
+  makeSelectError,
+  makeSelectIsSuccessLogin,
+} from "../../redux/selectors/login";
 const useStyles = makeStyles(() => ({
   login_or: {
     position: "relative",
@@ -48,7 +55,7 @@ const schema = yup.object().shape({
     .oneOf([yup.ref("password"), null], "Xác nhận mật khẩu thất bại"),
 });
 
-export default function SignUp(props) {
+function SignUp(props) {
   const classes = useStyles();
   const {
     register,
@@ -58,19 +65,56 @@ export default function SignUp(props) {
     resolver: yupResolver(schema),
   });
   const history = useHistory();
-  const [users, setUsers] = useState();
   const [error, setError] = useState();
 
-  function checkRegister(email, phone) {
-    let result;
-    users.filter((item) => item.numberphone === phone || item.email === email)
-      .length === 0
-      ? (result = true)
-      : (result = false);
-    return result;
-  }
+  // const [users, setUsers] = useState();
+  // function checkRegister(email, phone) {
+  //   let result;
+  //   users.filter((item) => item.numberphone === phone || item.email === email)
+  //     .length === 0
+  //     ? (result = true)
+  //     : (result = false);
+  //   return result;
+  // }
 
-  async function onSubmit(data) {
+  // async function onSubmit(data) {
+  //   const data2 = {
+  //     firstname: data.firstname,
+  //     lastname: data.lastname,
+  //     numberphone: data.numberphone,
+  //     email: data.email,
+  //     password: data.password,
+  //     score: 0,
+  //     time: 0,
+  //   };
+  //   if (checkRegister(data.email, data.numberphone)) {
+  //     setError("");
+  //     let user = await fetch("http://localhost:5000/users", {
+  //       method: "POST",
+  //       body: JSON.stringify(data2),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //     });
+  //     user = await user.json();
+  //     localStorage.setItem("isSignIn", JSON.stringify(user));
+  //     history.push("/");
+  //     props.signIn("register");
+  //   } else setError("Đăng ký thất bại");
+  // }
+
+  // useEffect(() => {
+  //   async function fetchUsers() {
+  //     const requestUrl = "http://localhost:5000/users";
+  //     const response = await fetch(requestUrl);
+  //     const responseJSON = await response.json();
+  //     setUsers(responseJSON);
+  //   }
+  //   fetchUsers();
+  // }, []);
+
+  const onSubmit = async (data) => {
     const data2 = {
       firstname: data.firstname,
       lastname: data.lastname,
@@ -80,35 +124,18 @@ export default function SignUp(props) {
       score: 0,
       time: 0,
     };
-    if (checkRegister(data.email, data.numberphone)) {
-      setError("");
-      let user = await fetch("http://localhost:5000/users", {
-        method: "POST",
-        body: JSON.stringify(data2),
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
-      user = await user.json();
-      localStorage.setItem("isSignIn", JSON.stringify(user));
+    await props.triggerSignup(data2);
+    if (props.statusFlags.isLoginSuccess) {
       history.push("/");
-      props.signIn("register");
-    } else setError("Đăng ký thất bại");
-  }
-  useEffect(() => {
-    async function fetchUsers() {
-      const requestUrl = "http://localhost:5000/users";
-      const response = await fetch(requestUrl);
-      const responseJSON = await response.json();
-      setUsers(responseJSON);
+    } else {
+      setError("Đăng ký thất bại");
     }
-    fetchUsers();
-  }, []);
+  };
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setError();
     }, 1000);
+    return () => clearTimeout(timeout);
   }, [error]);
 
   return (
@@ -231,3 +258,14 @@ export default function SignUp(props) {
     </Container>
   );
 }
+const mapStateToProps = createStructuredSelector({
+  statusFlags: makeSelectIsSuccessLogin(),
+  logs: makeSelectError(),
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    triggerSignup: (userInfor) => dispatch(signup(userInfor)),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

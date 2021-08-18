@@ -243,16 +243,6 @@
   ],
   "users": [
     {
-      "firstname": "Hòa",
-      "lastname": "Lê",
-      "numberphone": "0839117563",
-      "email": "haha@gmail.com",
-      "password": "310119",
-      "score": 10,
-      "time": 17,
-      "id": 1
-    },
-    {
       "firstname": "Bảo",
       "lastname": "Lê",
       "numberphone": "0123456789",
@@ -291,6 +281,16 @@
       "score": 0,
       "time": 0,
       "id": 5
+    },
+    {
+      "firstname": "Hòa",
+      "lastname": "Lê",
+      "numberphone": "0839117563",
+      "email": "haha@gmail.com",
+      "password": "310119",
+      "score": 0,
+      "time": 0,
+      "id": 6
     }
   ]
 }

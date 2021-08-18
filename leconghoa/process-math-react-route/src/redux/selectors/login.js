@@ -11,7 +11,6 @@ const selectLoginDomain = (state) => {
 
 const makeSelectLogin = () =>
   createSelector(selectLoginDomain, (substate) => substate.user);
-
 const makeSelectIsSuccessLogin = () =>
   createSelector(selectLoginDomain, (substate) => substate.statusFlags);
 const makeSelectError = () =>

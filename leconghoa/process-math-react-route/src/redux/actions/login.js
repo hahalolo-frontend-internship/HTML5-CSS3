@@ -1,4 +1,12 @@
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAILED, LOGOUT } from "../constants/login";
+import {
+  LOGIN,
+  LOGIN_SUCCESS,
+  LOGIN_FAILED,
+  LOGOUT,
+  SIGNUP,
+  SIGNUP_SUCCESS,
+  SIGNUP_FAILED,
+} from "../constants/login";
 // Đăng nhập
 export const login = (userInfo) => {
   return {
@@ -22,5 +30,24 @@ export const loginFailed = (message) => {
 export const logout = () => {
   return {
     type: LOGOUT,
+  };
+};
+// Đăng ký
+export const signup = (userInfo) => {
+  return {
+    type: SIGNUP,
+    userInfo,
+  };
+};
+export const signupSuccess = (payload) => {
+  return {
+    type: SIGNUP_SUCCESS,
+    payload,
+  };
+};
+export const signupFailed = (message) => {
+  return {
+    type: SIGNUP_FAILED,
+    message,
   };
 };
