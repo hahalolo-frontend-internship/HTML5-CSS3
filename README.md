@@ -8,4 +8,4 @@
 
 [JS](./leconghoa/JS/node_js.md)
 
-[BAI TAP LAYOUT1](https://hoacong.github.io/Layout_1_Brand/Layout1/index.html)
+[BAI TAP LAYOUT1](https://hoacong.github.io/Layout/Layout1/index.html)
